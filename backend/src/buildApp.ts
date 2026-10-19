@@ -27,9 +27,11 @@ export async function buildApp(deps: AppDeps, opts: { logger?: boolean; fastify?
   });
 
   await app.register(helmet);
+  // Exact origins only. Quotes, spaces and a trailing "/" (common copy-paste slips) are ignored so it still matches.
+  const corsOrigins = deps.config.CORS_ORIGINS.split(",").map((o) => o.trim().replace(/^["']+|["']+$/g, "").replace(/\/+$/, "")).filter(Boolean);
+  if (opts.logger !== false) app.log.info({ corsOrigins }, corsOrigins.length ? "browser origins allowed" : "no browser origins allowed (CORS_ORIGINS is empty)");
   await app.register(cors, {
-    // Exact origins only. A trailing "/" (common when copying a URL) is ignored so it still matches.
-    origin: deps.config.CORS_ORIGINS.split(",").map((o) => o.trim().replace(/\/+$/, "")).filter(Boolean),
+    origin: corsOrigins,
     // @fastify/cors defaults to GET/HEAD/POST; the admin app also edits (PATCH/PUT) and removes (DELETE).
     methods: ["GET", "HEAD", "POST", "PATCH", "PUT", "DELETE"],
     allowedHeaders: ["Authorization", "Content-Type"],
