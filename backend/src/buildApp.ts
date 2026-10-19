@@ -28,8 +28,13 @@ export async function buildApp(deps: AppDeps, opts: { logger?: boolean; fastify?
 
   await app.register(helmet);
   await app.register(cors, {
-    origin: deps.config.CORS_ORIGINS.split(",").map((o) => o.trim()).filter(Boolean),
+    // Exact origins only. A trailing "/" (common when copying a URL) is ignored so it still matches.
+    origin: deps.config.CORS_ORIGINS.split(",").map((o) => o.trim().replace(/\/+$/, "")).filter(Boolean),
+    // @fastify/cors defaults to GET/HEAD/POST; the admin app also edits (PATCH/PUT) and removes (DELETE).
+    methods: ["GET", "HEAD", "POST", "PATCH", "PUT", "DELETE"],
+    allowedHeaders: ["Authorization", "Content-Type"],
     credentials: false,
+    maxAge: 600,
   });
   await app.register(rateLimit, { global: false });
   await app.register(multipart, { limits: { fileSize: deps.config.PHOTO_MAX_BYTES, files: 1, fields: 10 } });

@@ -116,6 +116,19 @@ describe("brute force", () => {
   });
 });
 
+describe("CORS", () => {
+  it("lets an allowed browser origin edit and delete, and gives others nothing", async () => {
+    const pre = (origin: string, method: string) =>
+      app.inject({ method: "OPTIONS", url: "/api/admin/vehicles/x", headers: { origin, "access-control-request-method": method, "access-control-request-headers": "authorization,content-type" } });
+    const ok = await pre("http://localhost:8082", "PATCH");
+    expect(ok.headers["access-control-allow-origin"]).toBe("http://localhost:8082");
+    expect(String(ok.headers["access-control-allow-methods"])).toContain("PATCH");
+    expect(String(ok.headers["access-control-allow-methods"])).toContain("DELETE");
+    const evil = await pre("https://evil.example", "PATCH");
+    expect(evil.headers["access-control-allow-origin"]).toBeUndefined();
+  });
+});
+
 describe("CSV export", () => {
   it("neutralises spreadsheet formulas, including ones that start with a number", () => {
     const csv = toCsv([
