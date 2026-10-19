@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
     "outDir": "dist"
   },
   "include": ["src", "scripts", "test"]
