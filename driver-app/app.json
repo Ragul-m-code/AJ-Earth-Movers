@@ -18,7 +18,8 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "in.ajearthmovers.driver"
+      "package": "in.ajearthmovers.driver",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png",

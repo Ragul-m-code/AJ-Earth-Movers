@@ -1,14 +1,25 @@
 {
-  "cli": { "version": ">= 16.0.0", "appVersionSource": "local" },
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "local"
+  },
   "build": {
     "preview": {
       "distribution": "internal",
-      "android": { "buildType": "apk" },
-      "environment": "preview"
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://aj-earth-movers.vercel.app"
+      }
     },
     "production": {
-      "android": { "buildType": "app-bundle" },
-      "environment": "production"
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://aj-earth-movers.vercel.app"
+      }
     }
   }
 }
