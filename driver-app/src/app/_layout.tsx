@@ -37,7 +37,7 @@ export default function RootLayout() {
   if (!fontsLoaded) {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: color.canvas }}>
-        <ActivityIndicator size="large" color={color.navy} />
+        <ActivityIndicator accessibilityLabel="Loading" size="large" color={color.navy} />
       </View>
     );
   }

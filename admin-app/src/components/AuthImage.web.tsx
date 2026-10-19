@@ -29,7 +29,7 @@ export function AuthImage({ path, style, label }: { path: string; style: ImageSt
   if (!src) {
     return (
       <View style={[style, { alignItems: "center", justifyContent: "center", backgroundColor: color.recessed }]}>
-        {failed ? <Text style={{ color: color.muted }}>Photo unavailable</Text> : <ActivityIndicator />}
+        {failed ? <Text style={{ color: color.muted }}>Photo unavailable</Text> : <ActivityIndicator accessibilityLabel="Loading" />}
       </View>
     );
   }

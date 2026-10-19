@@ -26,8 +26,8 @@ export function Icon({ name, size = 22, tint = color.navy }: { name: IconName; s
 /** AJ Earth Movers Control lockup (brand spec "Control" variant): mark, wordmark and navy CONTROL badge. */
 export function Logo({ size = 32, withText = true }: { size?: number; withText?: boolean }) {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }} accessibilityLabel="AJ Earth Movers Control">
-      <Image source={require("../../assets/admin-mark.png")} style={{ width: size, height: size, borderRadius: size * 0.2 }} contentFit="contain" />
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+      <Image source={require("../../assets/admin-mark.png")} accessibilityLabel="AJ Earth Movers Control" style={{ width: size, height: size, borderRadius: size * 0.2 }} contentFit="contain" />
       {withText && (
         <View style={{ gap: 3 }}>
           <Text style={{ fontFamily: font.extrabold, fontSize: size * 0.36, color: color.navy, letterSpacing: -0.4 }}>AJ Earth Movers</Text>
@@ -180,7 +180,7 @@ export function Btn({ label, onPress, variant = "dark", icon, disabled, loading,
         pressed && { transform: [{ scale: 0.98 }] },
       ]}
     >
-      {loading ? <ActivityIndicator color={v.fg} /> : icon ? <Icon name={icon} tint={v.fg} size={20} /> : null}
+      {loading ? <ActivityIndicator accessibilityLabel="Loading" color={v.fg} /> : icon ? <Icon name={icon} tint={v.fg} size={20} /> : null}
       <View style={{ alignItems: "center", flexShrink: 1 }}>
         <Text style={[type.labelLg, { color: v.fg, fontFamily: font.bold, fontSize: compact ? 14 : 15, textAlign: "center" }]} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7}>{label}</Text>
         {sub ? <Text style={[type.labelMd, { color: v.fg, opacity: 0.85, textAlign: "center", fontFamily: font.medium }]}>{sub}</Text> : null}
@@ -256,7 +256,7 @@ export function Field({ label, error, hint, required, ...input }: TextInputProps
 export function LoadingView({ label = "Loading…" }: { label?: string }) {
   return (
     <View style={styles.center} accessibilityLiveRegion="polite" accessibilityLabel={label}>
-      <ActivityIndicator size="large" color={color.navy} />
+      <ActivityIndicator accessibilityLabel="Loading" size="large" color={color.navy} />
       <Text style={[type.bodyMd, { color: color.muted }]}>{label}</Text>
     </View>
   );
@@ -269,7 +269,7 @@ export function StatusScreen({ icon, title, body, children, busy }: { icon?: Ico
     <View style={[styles.statusScreen, { paddingTop: insets.top + space.xl, paddingBottom: insets.bottom + space.xl }]}>
       <View style={{ alignItems: "center", gap: space.md, width: "100%", maxWidth: 420 }}>
         <Logo size={56} withText={false} />
-        {busy ? <ActivityIndicator size="large" color={color.navy} /> : icon ? <Icon name={icon} size={44} tint={color.muted} /> : null}
+        {busy ? <ActivityIndicator accessibilityLabel="Loading" size="large" color={color.navy} /> : icon ? <Icon name={icon} size={44} tint={color.muted} /> : null}
         <Text style={[type.headlineMd, { color: color.ink, textAlign: "center" }]} accessibilityRole="header">{title}</Text>
         {body ? <Text style={[type.bodyMd, { color: color.muted, textAlign: "center" }]}>{body}</Text> : null}
         {children ? <View style={{ alignSelf: "stretch", gap: space.sm, marginTop: space.sm }}>{children}</View> : null}
@@ -317,7 +317,7 @@ export function EmptyView({ icon, title, body }: { icon: IconName; title: string
 
 export function Chips<T extends string>({ options, value, onChange }: { options: { value: T; label: string; count?: number }[]; value: T; onChange: (v: T) => void }) {
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: space.sm }}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: space.sm }} accessibilityRole="tablist">
       {options.map((o) => {
         const selected = o.value === value;
         return (

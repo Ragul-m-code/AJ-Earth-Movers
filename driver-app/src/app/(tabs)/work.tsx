@@ -142,7 +142,7 @@ export default function MyWork() {
         }
         ListEmptyComponent={
           loading ? (
-            <ActivityIndicator style={{ marginTop: space.xl }} color={color.navy} />
+            <ActivityIndicator accessibilityLabel="Loading" style={{ marginTop: space.xl }} color={color.navy} />
           ) : error ? (
             <ErrorView error={error} onRetry={() => setFocusTick((n) => n + 1)} />
           ) : (
