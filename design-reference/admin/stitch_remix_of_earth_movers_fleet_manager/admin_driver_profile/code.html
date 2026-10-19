@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#dae2fd", "surface": "#f8f9ff", "primary-container": "#f59e0b", "surface-bright": "#f8f9ff", "inverse-primary": "#ffb95f", "secondary-fixed": "#dae2fd", "surface-tint": "#855300", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#3a485c", "on-surface-variant": "#534434", "secondary": "#565e74", "primary-fixed": "#ffddb8", "surface-variant": "#d3e4fe", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "on-tertiary-fixed": "#0d1c2f", "surface-container-highest": "#d3e4fe", "surface-dim": "#cbdbf5", "tertiary-fixed-dim": "#b9c7e0", "background": "#f8f9ff", "outline-variant": "#d8c3ad", "tertiary-container": "#a3b2ca", "on-primary": "#ffffff", "on-primary-fixed-variant": "#653e00", "primary-fixed-dim": "#ffb95f", "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "primary": "#855300", "outline": "#867461", "on-background": "#0b1c30", "on-primary-fixed": "#2a1700", "on-secondary": "#ffffff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "tertiary": "#515f74", "secondary-fixed-dim": "#bec6e0", "inverse-surface": "#213145", "on-primary-container": "#613b00", "surface-container-high": "#dce9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#374559", "surface-container": "#e5eeff", "tertiary-fixed": "#d5e3fd", "error-container": "#ffdad6", "on-surface": "#0b1c30", "inverse-on-surface": "#eaf1ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter": "1rem", "gutter-desktop": "1.5rem", "margin-desktop": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "1rem" }, fontFamily: { "headline-xl": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "label-caps": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Inter"], "label-numeric-sm": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "label-numeric-md": ["JetBrains Mono"] }, fontSize: { "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-numeric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-numeric-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-numeric-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="AJ EARTH MOVERS Mobile App Icon &amp; Machine Emblem (Square 1:1 format). Rugged industrial aesthetic, deep charcoal (#20242B) squircle frame, high-visibility construction yellow (#F5B800) and pure white excavator boom &amp; bucket 'AJ' monogram. Optimized for 48px to 512px app icons, machine stickers, and driver uniform patches.. Brand logo. - Primary color: #f59e0b - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULY_2Q2RTWx22EUwBaHJ-VV1iK2wtViKwm1BkX1yhmdADTgcLkOqlmFzDvz4B2xr_CDjtavtCRm-LL_jEOP0CMK-_F-MBjSOUx7Rv5QjnYo5wz4fOnYEIj4Tco4-p7QryNh4PTXW3TQIAicctMzy5ksMwCVmdpXM0meHsmf9l49qbeEpWI3HbrvarIoWkmQojJHWTOEPH4DwyvCY1yj1XuXAsP_s_ESvm5DwUw0vqj1VnRGIWq2X4Iv3s"/><div class="flex flex-col"><span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">AJ Earth Movers</span><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Dashboard</span></div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-surface-variant rounded-lg"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- Role Perspective Simulator Banner -->
+<div class="px-gutter pt-space-sm pb-space-xs">
+<div class="bg-surface-container flex items-center justify-between px-space-md py-space-xs rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Role Mode:</span>
+<span class="font-label-caps text-label-caps text-on-surface font-bold" id="role-display-label">Admin (Full Access)</span>
+</div>
+<button class="bg-surface-container-highest active:bg-surface-container-high px-space-sm py-1 rounded text-body-sm font-body-sm text-primary font-semibold flex items-center gap-1 transition-colors" id="toggle-role-btn">
+<span class="material-symbols-outlined text-[14px]">swap_horiz</span>
+<span>Switch to Supervisor</span>
+</button>
+</div>
+</div>
+<!-- Profile Identity Card -->
+<div class="px-gutter py-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Amber Industrial Accent Notch -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pt-1">
+<!-- Avatar Badge with Machine Ring -->
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-inverse-surface flex items-center justify-center text-primary-container font-headline-md font-bold tracking-tight shadow-md">
+            SK
+          </div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Name & Badges -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Suresh Kumar</h1>
+<button aria-label="Edit Driver Profile" class="w-9 h-9 rounded-lg bg-surface-container active:bg-surface-variant flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Senior Excavator Pilot • 6+ Yrs Fleet Exp</p>
+<div class="flex flex-wrap items-center gap-space-xs mt-2">
+<!-- Active Machine Status Pill -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface font-label-caps text-label-caps shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Active • On Duty</span>
+</span>
+<!-- HMV Certification Pill -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">badge</span>
+<span>HMV Verified</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Quick Communication Touchpoints (48dp min touch targets) -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<a class="h-12 bg-surface-container-lowest active:bg-surface-variant rounded-lg flex items-center justify-center gap-space-xs text-on-surface shadow-sm font-body-sm font-semibold" href="tel:+919845012345">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span>
+<span>+91 98450 12345</span>
+</a>
+<a class="h-12 bg-surface-container-lowest active:bg-surface-variant rounded-lg flex items-center justify-center gap-space-xs text-on-surface shadow-sm font-body-sm font-semibold" href="https://wa.me/919845012345">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>WhatsApp Log</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Operational Summary Grid -->
+<div class="px-gutter py-space-xs grid grid-cols-2 gap-space-sm">
+<!-- Active Unit Deployment -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">precision_manufacturing</span>
+          Current Machine Assignment
+        </span>
+<span class="font-label-caps text-label-caps text-on-primary bg-primary-container px-2 py-0.5 rounded font-bold">In-Cab Working</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">JCB 3DX Super</span>
+<span class="block font-label-numeric-sm text-label-numeric-sm text-on-surface-variant mt-0.5">KA-04-EA-2104 • Telematics Unit #44</span>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant block">Work Order</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">#WO-2024-884</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 pt-2 bg-surface-container-low px-space-sm py-1 rounded truncate">
+        Site: <strong class="text-on-surface">Prestige Tech Park Ext. - Phase 2</strong> (Deep Excavation)
+      </p>
+</div>
+<!-- Operating Hours Dial Gauge / Metric -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Runtime SMU</span>
+<span class="font-label-caps text-label-caps text-primary">Oct 2024 ▾</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-extrabold">148.5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-bold">hrs</span>
+</div>
+</div>
+<div class="mt-2 pt-1.5 flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">sync_saved_locally</span>
+<span class="font-label-caps text-label-caps">99.2% GPS Track Match</span>
+</div>
+</div>
+<!-- Compensation / Settlement Glance (RBAC Sensitive) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between" id="salary-glance-card">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Batta Balance</span>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</div>
+<div class="mt-2 flex items-baseline gap-1" id="salary-glance-unpaid">
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary font-extrabold">₹4,200</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Due</span>
+</div>
+<div class="mt-2 hidden" id="salary-glance-restricted">
+<span class="font-label-caps text-label-caps text-on-surface-variant font-bold italic">Restricted Role</span>
+</div>
+</div>
+<div class="mt-2 pt-1.5" id="salary-glance-meta">
+<span class="font-body-sm text-body-sm text-on-surface-variant block truncate">12 shifts awaiting batch sign-off</span>
+</div>
+</div>
+</div>
+<!-- Segmented Tab Navigation -->
+<div class="px-gutter pt-space-md">
+<div class="bg-surface-container p-1 rounded-xl flex items-center justify-between">
+<button class="tab-trigger flex-1 py-2 rounded-lg font-body-sm text-body-sm font-semibold transition-all bg-surface-container-lowest text-on-surface shadow-sm" data-tab-target="tab-overview">
+        Overview
+      </button>
+<button class="tab-trigger flex-1 py-2 rounded-lg font-body-sm text-body-sm font-semibold text-on-surface-variant transition-all" data-tab-target="tab-history">
+        Work Logs
+      </button>
+<button class="tab-trigger flex-1 py-2 rounded-lg font-body-sm text-body-sm font-semibold text-on-surface-variant transition-all" data-tab-target="tab-salary">
+        Settlement
+      </button>
+<button class="tab-trigger flex-1 py-2 rounded-lg font-body-sm text-body-sm font-semibold text-on-surface-variant transition-all" data-tab-target="tab-docs">
+        Docs
+      </button>
+</div>
+</div>
+<!-- TAB PANELS -->
+<div class="px-gutter py-space-sm space-y-space-md">
+<!-- 1. OVERVIEW TAB PANEL -->
+<div class="tab-content space-y-space-sm" id="tab-overview">
+<!-- Live Machinery Telematics & Geofence Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">sensors</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Assigned Unit Telematics</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">Online</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm mt-space-xs">
+<div class="bg-inverse-surface text-surface rounded-lg p-space-sm">
+<span class="font-label-caps text-label-caps text-tertiary-fixed uppercase block">Machine SMU Meter</span>
+<div class="font-label-numeric-md text-label-numeric-md text-primary-container font-extrabold mt-1 tracking-wider">
+              2,418.5 <span class="text-surface font-body-sm text-body-sm">h</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Fuel Level</span>
+<div class="font-label-numeric-md text-label-numeric-md text-on-surface font-extrabold mt-1">
+              74% <span class="text-on-surface-variant font-body-sm text-body-sm">(125 L)</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Geofence:
+          </span>
+<span class="font-semibold text-on-surface">Bengaluru East Tech Corridor</span>
+</div>
+</div>
+<!-- Contact & Deployment Specs -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">contact_emergency</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Deployment &amp; Personal</h2>
+</div>
+<div class="space-y-space-xs divide-y divide-surface-container-low text-body-sm font-body-sm">
+<div class="flex justify-between py-1.5">
+<span class="text-on-surface-variant">Emergency Contact</span>
+<span class="font-semibold text-on-surface text-right">Ramesh Kumar (Brother) • +91 94480 88901</span>
+</div>
+<div class="flex justify-between py-1.5">
+<span class="text-on-surface-variant">Fleet Quarters</span>
+<span class="font-semibold text-on-surface">Depot Room #14, Hoskote</span>
+</div>
+<div class="flex justify-between py-1.5">
+<span class="text-on-surface-variant">Commercial License</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">KA-03-2018-00918</span>
+</div>
+<div class="flex justify-between py-1.5">
+<span class="text-on-surface-variant">License Expiry</span>
+<span class="font-semibold text-primary">Valid till 14 Nov 2028</span>
+</div>
+</div>
+</div>
+<!-- Quick Machine Skills Tags -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block pb-space-xs">Certified Machinery Handled</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded bg-surface-container font-body-sm text-body-sm font-semibold text-on-surface">JCB 3DX Super (Backhoe)</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-body-sm text-body-sm font-semibold text-on-surface">Komatsu PC210 (20 Tonner)</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-body-sm text-body-sm font-semibold text-on-surface">CAT 320D Hydraulic</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-body-sm text-body-sm font-semibold text-on-surface">Rock Breaker Wet-Kit</span>
+</div>
+</div>
+</div>
+<!-- 2. WORK LOGS TAB PANEL -->
+<div class="tab-content hidden space-y-space-sm" id="tab-history">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase font-bold">Recent Deployments &amp; Shifts</span>
+<span class="font-label-caps text-label-caps text-primary">Export CSV</span>
+</div>
+<!-- Shift Card 1: Active -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="pl-2">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold block">Active Shift Assignment</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Prestige Tech Park Ext.</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">JCB 3DX Super • Trenching &amp; Leveling</p>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container text-on-surface font-bold px-2 py-1 rounded">Oct 18 - Present</span>
+</div>
+<div class="mt-space-sm grid grid-cols-3 gap-2 bg-surface-container-low p-2 rounded-lg text-center">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Logged Hrs</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">38.5 hrs</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Supervisor</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate block">Murugan R.</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Status</span>
+<span class="font-label-caps text-label-caps text-primary font-bold block">Live Verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Shift Card 2: Completed -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Completed Work Order #WO-2024-812</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Sobha Dream Acres Project</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Komatsu PC210 • Basement Foundation Dig</p>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container-low text-on-surface-variant px-2 py-1 rounded">Oct 04 - Oct 16</span>
+</div>
+<div class="mt-space-sm grid grid-cols-3 gap-2 bg-surface-container-low p-2 rounded-lg text-center">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Approved</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">86.0 hrs</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Fuel Efficiency</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">14.2 L/h</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Voucher</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold block">#VC-8911</span>
+</div>
+</div>
+</div>
+<!-- Shift Card 3: Completed -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Completed Work Order #WO-2024-740</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Whitefield Metro Pier 14</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">CAT 320D • Rock Breaking &amp; Night Hauling</p>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container-low text-on-surface-variant px-2 py-1 rounded">Sep 20 - Oct 02</span>
+</div>
+<div class="mt-space-sm grid grid-cols-3 gap-2 bg-surface-container-low p-2 rounded-lg text-center">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Approved</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">94.0 hrs</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Settlement</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Paid in Full</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Voucher</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold block">#VC-8504</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. SALARY & SETTLEMENT TAB PANEL (Role Guarded) -->
+<div class="tab-content hidden space-y-space-sm" id="tab-salary">
+<!-- Full Access View (Owner / Depot Accounts) -->
+<div class="space-y-space-sm" id="salary-full-view">
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">lock_open</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase font-bold">RBAC: Depot Manager Level</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary">Ledger #AJ-PAY-042</span>
+</div>
+<!-- Master Compensation Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Monthly Base Retainer</span>
+<div class="font-label-numeric-lg text-label-numeric-lg font-bold text-on-surface mt-1">₹24,000 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ mo</span></div>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Daily Site Batta</span>
+<div class="font-label-numeric-md text-label-numeric-md font-bold text-primary mt-1">₹350 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ shift</span></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-1.5">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">October Shifts Worked:</span>
+<span class="font-semibold text-on-surface">24 Shifts</span>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Earned Shift Batta:</span>
+<span class="font-semibold text-on-surface">₹8,400 (24 × ₹350)</span>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Disbursed Mid-Month Advance:</span>
+<span class="font-semibold text-on-surface-variant">- ₹4,200</span>
+</div>
+<div class="flex justify-between text-body-sm font-body-sm pt-1 border-t border-surface-container font-bold">
+<span class="text-on-surface">Net Pending Batta Voucher:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary">₹4,200 Due</span>
+</div>
+</div>
+</div>
+<!-- Settlement History Records -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase block pb-1">Recent Payout Vouchers</span>
+<div class="flex items-center justify-between py-2 border-b border-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">receipt</span>
+<div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface block">Batta Batch #VC-8911</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">12 Shifts • Direct UPI Transfer</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">₹4,200</span>
+<span class="font-label-caps text-label-caps text-primary block">15 Oct 2024</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+<div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface block">September Monthly Wage</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">NEFT Ref: #SBIN9281740</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">₹24,000</span>
+<span class="font-label-caps text-label-caps text-primary block">01 Oct 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Restricted View (When toggled to Site Supervisor role) -->
+<div class="hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-sm text-center space-y-space-sm" id="salary-restricted-view">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mx-auto text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Salary &amp; Wage Ledger Restricted</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xs mx-auto">
+            Site Dispatchers and Field Supervisors do not have clearance to view driver commercial terms. Please contact Depot Central Accounts.
+          </p>
+</div>
+<button class="bg-surface-container px-space-md py-2 rounded-lg font-body-sm text-body-sm font-semibold text-primary inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span>Depot Accounting Desk</span>
+</button>
+</div>
+</div>
+<!-- 4. DOCUMENTS TAB PANEL -->
+<div class="tab-content hidden space-y-space-sm" id="tab-docs">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Verified Credentials</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary bg-surface-container px-2 py-0.5 rounded font-bold">All 3 Valid</span>
+</div>
+<!-- Document Item 1 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">id_card</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface block">Commercial HMV Driving License</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant block">KA-03-2018-00918 • PDF</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Document Item 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface block">Excavator Operator Certificate</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant block">JCB Training Institute • 2018</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Document Item 3 -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">folder_shared</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface block">Aadhaar &amp; Police Verification</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant block">Depot Security Stamp • 2024</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Ergonomic Floating Action Suite (Tactile, Gloved-Finger Friendly) -->
+<div class="px-gutter pt-space-xs pb-space-md">
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="h-12 bg-surface-container-lowest active:bg-surface-container font-body-md text-body-md font-bold text-on-surface rounded-xl flex items-center justify-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">published_with_changes</span>
+<span>Reassign Unit</span>
+</button>
+<button class="h-12 bg-primary-container active:translate-y-0.5 font-body-md text-body-md font-bold text-on-primary-container rounded-xl flex items-center justify-center gap-space-xs shadow-md transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span>Log Shift Punch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Behaviors: Tab Switching & Role Mode Switcher -->
+<script>
+  (function initDriverProfileInteractions() {
+    // 1. Tab Navigation Logic
+    const triggers = document.querySelectorAll('.tab-trigger');
+    const tabPanels = document.querySelectorAll('.tab-content');
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const targetId = trigger.getAttribute('data-tab-target');
+
+        // Reset triggers style
+        triggers.forEach(t => {
+          t.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+          t.classList.add('text-on-surface-variant');
+        });
+
+        // Activate clicked trigger
+        trigger.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        trigger.classList.remove('text-on-surface-variant');
+
+        // Toggle Panels
+        tabPanels.forEach(panel => {
+          if (panel.id === targetId) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 2. Role Switcher Simulation (Owner/Admin vs Site Supervisor)
+    let isAdminRole = true;
+    const roleBtn = document.getElementById('toggle-role-btn');
+    const roleLabel = document.getElementById('role-display-label');
+    const salaryFullView = document.getElementById('salary-full-view');
+    const salaryRestrictedView = document.getElementById('salary-restricted-view');
+    const glanceUnpaid = document.getElementById('salary-glance-unpaid');
+    const glanceRestricted = document.getElementById('salary-glance-restricted');
+    const glanceMeta = document.getElementById('salary-glance-meta');
+
+    if (roleBtn) {
+      roleBtn.addEventListener('click', () => {
+        isAdminRole = !isAdminRole;
+
+        if (isAdminRole) {
+          roleLabel.textContent = 'Admin (Full Access)';
+          roleBtn.querySelector('span:last-child').textContent = 'Switch to Supervisor';
+          salaryFullView.classList.remove('hidden');
+          salaryRestrictedView.classList.add('hidden');
+          glanceUnpaid.classList.remove('hidden');
+          glanceRestricted.classList.add('hidden');
+          glanceMeta.classList.remove('opacity-0');
+        } else {
+          roleLabel.textContent = 'Site Supervisor (Restricted)';
+          roleBtn.querySelector('span:last-child').textContent = 'Switch to Admin';
+          salaryFullView.classList.add('hidden');
+          salaryRestrictedView.classList.remove('hidden');
+          glanceUnpaid.classList.add('hidden');
+          glanceRestricted.classList.remove('hidden');
+          glanceMeta.classList.add('opacity-0');
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-caps text-label-caps mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="work-orders" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-label-caps text-label-caps mt-0.5">Work</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="fleet-inventory" href="#"><span class="material-symbols-outlined text-[22px]">precision_manufacturing</span><span class="font-label-caps text-label-caps mt-0.5">Fleet</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="finance-ledgers" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-caps text-label-caps mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-caps text-label-caps mt-0.5">More</span></a></div></nav>
+</body></html>

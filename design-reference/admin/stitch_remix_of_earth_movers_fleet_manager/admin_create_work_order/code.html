@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#3a485c", "surface": "#f8f9ff", "on-tertiary": "#ffffff", "tertiary": "#515f74", "on-background": "#0b1c30", "secondary-fixed": "#dae2fd", "tertiary-fixed": "#d5e3fd", "outline-variant": "#d8c3ad", "surface-tint": "#855300", "primary": "#855300", "surface-dim": "#cbdbf5", "background": "#f8f9ff", "inverse-surface": "#213145", "surface-variant": "#d3e4fe", "on-tertiary-container": "#374559", "on-tertiary-fixed": "#0d1c2f", "surface-container-highest": "#d3e4fe", "secondary-container": "#dae2fd", "primary-container": "#f59e0b", "on-primary-container": "#613b00", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#3f465c", "primary-fixed-dim": "#ffb95f", "on-surface": "#0b1c30", "surface-container-high": "#dce9ff", "on-secondary-fixed": "#131b2e", "surface-container": "#e5eeff", "primary-fixed": "#ffddb8", "on-surface-variant": "#534434", "on-error": "#ffffff", "inverse-primary": "#ffb95f", "on-primary": "#ffffff", "on-error-container": "#93000a", "secondary": "#565e74", "surface-bright": "#f8f9ff", "on-primary-fixed": "#2a1700", "on-primary-fixed-variant": "#653e00", "on-secondary": "#ffffff", "outline": "#867461", "secondary-fixed-dim": "#bec6e0", "surface-container-lowest": "#ffffff", "tertiary-container": "#a3b2ca", "tertiary-fixed-dim": "#b9c7e0", "inverse-on-surface": "#eaf1ff", "error": "#ba1a1a", "on-secondary-container": "#5c647a", "surface-container-low": "#eff4ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1.5rem", "margin-desktop": "2rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2.5rem", "gutter": "1rem" }, fontFamily: { "label-numeric-sm": ["JetBrains Mono"], "headline-lg": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "body-md": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "label-numeric-md": ["JetBrains Mono"], "label-caps": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"] }, fontSize: { "label-numeric-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-numeric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "label-numeric-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go back" class="min-h-[44px] min-w-[44px] -ml-2 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="AJ EARTH MOVERS Mobile App Icon &amp; Machine Emblem (Square 1:1 format). Rugged industrial aesthetic, deep charcoal (#20242B) squircle frame, high-visibility construction yellow (#F5B800) and pure white excavator boom &amp; bucket 'AJ' monogram. Optimized for 48px to 512px app icons, machine stickers, and driver uniform patches.. Brand logo. - Primary color: #f59e0b - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvMsSbz9xv3_vHF5H41a0LBunhVUjq9mhPYXjFKktNiUKDHc8UGUExo3_J7f4Wn9ePRl_cJhUQKxxmPH7h78PDvZfxkvz0D1EpkZwz2g6EuQg090p8_TIGw5f6NcJHnp5dTGBNiJCuG60s31Sdyf8IINZU7c2Hnhd14JGkX2DJH4Z2t8X8V0bbPMDijH-KV17seEfrkUgxIO_PiTXqm7wL89SUpcED-UIgyudIBoFpZY25ZsRfIT0Q0Q"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Create Work Order</h1><span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high text-on-tertiary-container font-label-caps text-label-caps flex-shrink-0"><span class="material-symbols-outlined text-[12px] text-primary">lock</span>SSL</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate">New Site Dispatch &amp; Contract</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Close modal" class="min-h-[44px] min-w-[44px] rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-margin pt-16 pb-safe bg-surface flex-1 min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full pb-28">
+<!-- Operational Header Context Banner -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl p-space-md shadow-md mb-space-md relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm relative z-10">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-label-caps text-[10px]">WO</span>
+<span class="font-label-caps text-label-caps tracking-widest text-primary-fixed uppercase">Contract Dispatch Engine</span>
+</div>
+<h2 class="font-headline-md text-headline-md tracking-tight text-white leading-tight">Create Work Order</h2>
+<p class="font-body-sm text-body-sm text-surface-dim mt-0.5">Heavy Plant Mobilization, Driver Assignment &amp; Live Tariff Binder</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary-fixed bg-surface-variant/20 px-2 py-0.5 rounded">#WO-2024-089</span>
+<span class="text-[10px] text-surface-dim mt-0.5">Draft Autosaved</span>
+</div>
+</div>
+<!-- Subtle industrial warning stripe accent -->
+<div class="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-primary-container via-surface-tint to-primary-container opacity-80"></div>
+</div>
+<!-- SECTION 01: Customer and Site Details -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-inverse-surface text-white flex items-center justify-center font-label-numeric-sm text-[12px] font-bold">01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide text-[14px]">Customer &amp; Site Details</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-primary-container bg-primary-container/20 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+        Verified Entity
+      </span>
+</div>
+<!-- Customer Card Picker -->
+<div class="bg-surface-container-low rounded-lg p-space-sm mb-space-sm">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Client Ledger</span>
+<button class="text-primary font-headline-sm text-[11px] flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+          + New Customer
+        </button>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm shadow-sm flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-2.5 min-w-0">
+<div class="w-9 h-9 rounded bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-headline-sm text-[14px] text-on-surface truncate">Prestige Estates Projects Ltd</h4>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-caps text-[9px] uppercase px-1 py-0.2 rounded bg-surface-container-highest text-on-surface-variant">GST Registered</span>
+<span class="font-label-numeric-sm text-[11px] text-tertiary">29AABCP1330L1ZU</span>
+</div>
+</div>
+</div>
+<button aria-label="Change Client" class="p-1 rounded text-tertiary hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+</div>
+</div>
+<!-- Site Name & Geofence Address -->
+<div class="space-y-space-sm">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Project Site Identification</label>
+<div class="flex items-center gap-2 bg-surface-container-low px-space-sm py-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">location_city</span>
+<span class="font-headline-sm text-[13px] text-on-surface truncate">Prestige Tech Park Ext. (Phase 2)</span>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Geofence / Full Delivery Address</label>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5 flex-shrink-0">pin_drop</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight">Survey #48/2, Marathahalli - Sarjapur Outer Ring Rd, Kadubeesanahalli, Bengaluru 560103</p>
+</div>
+</div>
+<!-- Site Contact Card -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Site Point of Contact</label>
+<div class="bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-white flex items-center justify-center font-headline-sm text-[11px]">RP</div>
+<div>
+<p class="font-headline-sm text-[13px] text-on-surface">Raghavan Pillai</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Project Site Manager</p>
+</div>
+</div>
+<a class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-numeric-sm text-[12px] shadow-sm active:scale-95 transition-transform" href="tel:+919845277102">
+<span class="material-symbols-outlined text-[14px] text-primary">call</span>
+            +91 98452 77102
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 02: Equipment, Pilot & Rigging Allocation -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-inverse-surface text-white flex items-center justify-center font-label-numeric-sm text-[12px] font-bold">02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide text-[14px]">Equipment &amp; Pilot Allocation</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded">Plant Staging</span>
+</div>
+<!-- Machine Select Tile -->
+<div class="mb-space-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Target Machinery</span>
+<span class="font-body-sm text-[11px] text-tertiary">LiveLink Synced</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm relative">
+<div class="flex items-center gap-3">
+<img class="w-14 h-14 rounded-lg object-cover flex-shrink-0 bg-surface-container shadow-sm" data-alt="Close up photograph of a bright yellow industrial JCB 3DX Super 4WD Backhoe Loader parked on hard packed dirt quarry ground, high contrast tropical afternoon sunlight, bold hydraulic arms and heavy duty treaded tires, industrial AJ Earth Movers fleet equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbQ2gZ1EWulJ-wGyR-h3stwSBIjzzjvf75jTkYD0dolLi__QM58J321doYuQMKd8Nv3-7DLeOU8ev0VVCc4bDDVMjKDU5GblN5le1U88l5kdGLceYGeFNPccrFyUcGE1UkIP1buZfkDKG4GANtekf_CVVRtRKFkRyuxwV7UcTi-Ba1L1Y-Dzuty-TE5WbBa_u5KDdwKTkAUqT6KMrhMBIVL4RkaADJN73wt6ze-xb0P8qHCn-TJc373Q"/>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="font-label-caps text-[9px] px-1.5 py-0.5 rounded bg-inverse-surface text-primary-fixed uppercase tracking-wider">JCB-01</span>
+<span class="font-label-numeric-sm text-[11px] text-tertiary">KA-04-EA-2104</span>
+</div>
+<h4 class="font-headline-sm text-[13px] text-on-surface truncate">JCB 3DX Super 4WD</h4>
+<div class="flex items-center gap-1 mt-1 text-[11px] text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-body-sm text-[11px]">Available from Oct 26 (Current job ends Oct 25)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Driver Select Tile -->
+<div class="mb-space-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Assigned Plant Pilot</span>
+<span class="font-label-caps text-[10px] text-primary flex items-center gap-0.5 font-bold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+          HMV Certified
+        </span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<img class="w-11 h-11 rounded-full object-cover bg-surface-container" data-alt="Professional portrait of Indian heavy machinery operator Suresh Kumar wearing high visibility orange vest and safety helmet, warm confident smile, construction site background out of focus, cinematic realistic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj0K5tmKm8J1jzETXJ14wyfFz3hTYtlmkHeuD97lTUalvCbfD9s7N36zNrjFxNU8BdOKYCSwbhechd-7W2ix7CxjW3clEGTbrSEYU3js0gpsCx_-38gDaU9CR4-V72OPfSfAvHhBl0fZmU6dp6RwfjzmmpwL12-oQHA-wcbRGtphsCJLREBra4r8ehbh6BEeAxr9AUy1exk1AhNMiB9NyyqFMQ-fAtPRvB9ius7SPJ2QTXDKLV1dIknw"/>
+<div>
+<div class="flex items-center gap-1.5">
+<h4 class="font-headline-sm text-[13px] text-on-surface">Suresh Kumar</h4>
+<span class="font-label-numeric-sm text-[10px] bg-surface-container-highest px-1.5 py-0.2 rounded text-on-surface-variant">DRV-042</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Senior Backhoe Pilot (Grade A1)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Billable Attachment Toggle (HM380 Breaker) -->
+<div class="bg-surface-container-high rounded-xl p-space-sm mb-space-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">construction</span>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface">Billable Heavy Attachment</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Hydraulic auxiliary circuit active</p>
+</div>
+</div>
+<!-- Active Switch UI -->
+<div class="w-11 h-6 bg-primary-container rounded-full relative flex items-center px-0.5 shadow-inner">
+<div class="w-5 h-5 rounded-full bg-white ml-auto shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-primary-container font-bold">check</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-2.5 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-[12px] text-on-surface">JCB HM380 Hydraulic Breaker</span>
+<span class="font-label-numeric-sm text-[10px] text-tertiary">#ATT-BRK-03</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-primary">link</span>
+            Quick Coupler Ready
+          </span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-md text-label-numeric-md text-primary">+₹450</span>
+<span class="block font-label-caps text-[9px] text-on-surface-variant uppercase">/ Hr Additive</span>
+</div>
+</div>
+</div>
+<!-- Real-Time Conflict Validation Guardrail Banner -->
+<div class="bg-surface-container-highest rounded-lg p-space-sm flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">verified_user</span>
+<div>
+<p class="font-headline-sm text-[12px] text-on-surface leading-tight">Zero Scheduling Conflict Detected</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-snug">
+          Machine JCB-01 and Pilot Suresh Kumar are 100% clear for dispatch starting 26 Oct 2024. Next scheduled preventive service is in <strong class="font-label-numeric-sm text-on-surface">81.5 SMU hrs</strong>.
+        </p>
+</div>
+</div>
+</section>
+<!-- SECTION 03: Work Details & Commercial Tariffs -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-inverse-surface text-white flex items-center justify-center font-label-numeric-sm text-[12px] font-bold">03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide text-[14px]">Scope &amp; Commercial Tariffs</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded">Tariff Engine</span>
+</div>
+<!-- Work Scope -->
+<div class="mb-space-sm">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Contract Scope Description</label>
+<div class="bg-surface-container-low rounded-lg p-2.5 font-body-sm text-body-sm text-on-surface leading-relaxed">
+        Deep basement rock excavation, storm water drainage trenching, and foundation boulder breaking.
+      </div>
+</div>
+<!-- Date & Planning Window -->
+<div class="grid grid-cols-2 gap-2 mb-space-sm">
+<div class="bg-surface-container-low rounded-lg p-2.5">
+<span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">Scheduled Dispatch</span>
+<span class="font-headline-sm text-[12px] text-on-surface block leading-tight">26 Oct 2024</span>
+<span class="font-label-numeric-sm text-[11px] text-tertiary">08:00 AM IST</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5">
+<span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">Planning Window</span>
+<span class="font-headline-sm text-[12px] text-on-surface block leading-tight">10 Shift Days</span>
+<span class="font-label-numeric-sm text-[11px] text-tertiary">~80 Est. SMU Hrs</span>
+</div>
+</div>
+<!-- LiveLink SMU Billing Disclaimer -->
+<div class="bg-surface-container-high p-2 rounded-lg mb-space-sm flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">
+<strong class="text-on-surface font-semibold">Strict Rule:</strong> Final billing is strictly derived from verified daily telematics/analog SMU meter cards, NOT scheduled duration estimate.
+      </p>
+</div>
+<!-- Commercial Rate Engine Breakdown (Industrial Ledger Style) -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl p-space-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-[10px] tracking-wider text-primary-fixed uppercase">Billing Ledger Calculation</span>
+<span class="font-label-caps text-[9px] bg-white/10 px-1.5 py-0.5 rounded text-white">INR (₹)</span>
+</div>
+<div class="space-y-1.5 text-[12px]">
+<div class="flex items-center justify-between text-surface-dim">
+<span>Base Machine Rate (Wet - HSD Incl.)</span>
+<span class="font-label-numeric-sm text-white">₹1,850 / hr</span>
+</div>
+<div class="flex items-center justify-between text-surface-dim">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary-fixed">add</span>
+            Breaker Attachment Add-on
+          </span>
+<span class="font-label-numeric-sm text-primary-fixed">+₹450 / hr</span>
+</div>
+<div class="flex items-center justify-between py-1 border-t border-white/10 font-bold">
+<span class="text-white font-headline-sm text-[12px]">Combined Operating Hourly Rate</span>
+<span class="font-label-numeric-md text-primary-container">₹2,300 / hr</span>
+</div>
+<div class="flex items-center justify-between text-surface-dim pt-1 border-t border-white/5">
+<span>Mobilization / Lowbed Freight</span>
+<span class="font-label-numeric-sm text-white">₹6,500</span>
+</div>
+<div class="flex items-center justify-between bg-white/5 p-1.5 rounded mt-2">
+<div class="flex items-center gap-1 text-primary-fixed text-[11px]">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+<span>Advance Deposit Verified</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-sm text-white">₹25,000</span>
+<span class="block text-[9px] text-surface-dim font-label-numeric-sm">UTR-908234</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 04: Billing Arrangement & Invoicing Architecture -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-inverse-surface text-white flex items-center justify-center font-label-numeric-sm text-[12px] font-bold">04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide text-[14px]">Invoicing Architecture</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-tertiary-container bg-surface-container-highest px-2 py-0.5 rounded">Audit Ready</span>
+</div>
+<!-- Billing Basis Toggle -->
+<div class="mb-space-sm">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1.5">Basis of Operational Billing</label>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<div>
+<p class="font-headline-sm text-[12px] text-on-surface">Approved Operating Hours</p>
+<p class="font-body-sm text-[10px] text-on-surface-variant">Dual SMU Counter &amp; Photo Proof Verified</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">radio_button_checked</span>
+</div>
+</div>
+<!-- Invoicing Cycle Dropdown Preset -->
+<div class="mb-space-sm">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Shift Billing Cycle</label>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">calendar_view_week</span>
+<div>
+<span class="font-headline-sm text-[12px] text-on-surface">Weekly Shift Batch</span>
+<span class="block font-body-sm text-[10px] text-tertiary">Cutoff Every Sunday 23:59 IST</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Invoice Grouping Scheme -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1.5">Ledger Grouping</label>
+<div class="space-y-1.5">
+<label class="flex items-center gap-2 bg-surface-container-high p-2 rounded-lg cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[18px]">radio_button_checked</span>
+<span class="font-headline-sm text-[12px] text-on-surface">Invoice individually for this Work Order</span>
+</label>
+<label class="flex items-center gap-2 bg-surface-container-low p-2 rounded-lg opacity-75 cursor-pointer">
+<span class="material-symbols-outlined text-outline text-[18px]">radio_button_unchecked</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Merge in Prestige Estates consolidated monthly statement</span>
+</label>
+</div>
+</div>
+</section>
+<!-- SECTION 05: Evidence, Site Permits & Internal Notes -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded bg-inverse-surface text-white flex items-center justify-center font-label-numeric-sm text-[12px] font-bold">05</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide text-[14px]">Site Permits &amp; Depot Notes</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded">Attachments</span>
+</div>
+<!-- Attached Document Chip -->
+<div class="mb-space-sm">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Attached Compliance Documents</label>
+<div class="space-y-1.5">
+<div class="bg-surface-container-low rounded-lg p-2 flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">picture_as_pdf</span>
+<div class="truncate">
+<span class="font-headline-sm text-[12px] text-on-surface block truncate">Site_Safety_Permit_Phase2.pdf</span>
+<span class="font-label-numeric-sm text-[10px] text-tertiary">1.4 MB • Uploaded &amp; Validated</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px] flex-shrink-0">check_circle</span>
+</div>
+<button class="w-full py-2 bg-surface-container-high hover:bg-surface-container rounded-lg flex items-center justify-center gap-1.5 text-primary font-headline-sm text-[12px] transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+          + Attach Work Order PO / Site Instruction
+        </button>
+</div>
+</div>
+<!-- Internal Depot Notes -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Internal Depot &amp; Pilot Notes</label>
+<div class="bg-surface-container-low rounded-lg p-2.5 font-body-sm text-[12px] text-on-surface leading-relaxed">
+        Client requested lowbed transport arrival by 6:00 AM to avoid Whitefield peak traffic restrictions. Breaker chisel inspected and greased on 24 Oct.
+      </div>
+</div>
+</section>
+<!-- High-Contrast Commercial Summary Deck (Clearly labeled as ESTIMATE) -->
+<div class="bg-inverse-surface rounded-xl p-space-md text-inverse-on-surface shadow-lg mb-space-md relative overflow-hidden">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-[10px] text-primary-fixed uppercase tracking-wider font-bold">Planned Operational Projection</span>
+<span class="font-label-caps text-[9px] bg-primary-container text-on-primary-container px-2 py-0.5 rounded font-bold uppercase">Commercial Estimate</span>
+</div>
+<div class="my-2">
+<span class="block font-body-sm text-[11px] text-surface-dim">ESTIMATED DISPATCH VALUE</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary-fixed">~₹1,90,500</span>
+<span class="font-body-sm text-[12px] text-surface-dim">(Excl. GST)</span>
+</div>
+</div>
+<div class="bg-white/5 rounded-lg p-2 mt-2">
+<p class="font-body-sm text-[11px] text-surface-dim leading-snug">
+        *Estimated on ~80 planned hours @ ₹2,300/hr + ₹6,500 mobilization. Actual billing strictly driven by daily verified shift SMU logs.
+      </p>
+</div>
+</div>
+<!-- Sticky Bottom Creation & Navigation Bar -->
+<div class="fixed bottom-0 inset-x-0 bg-surface/95 backdrop-blur-md p-space-sm pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.08)] z-40">
+<div class="max-w-[420px] mx-auto flex items-center gap-space-sm">
+<!-- Cancel Secondary Action -->
+<button class="h-12 px-space-md rounded-xl bg-surface-container text-on-surface font-headline-sm text-[13px] active:scale-95 transition-all flex items-center justify-center" onclick="history.back()" type="button">
+        Cancel
+      </button>
+<!-- Primary Sticky CTA Button (Construction Yellow #F59E0B) -->
+<button class="h-12 flex-1 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-[14px] font-bold shadow-md active:translate-y-0.5 active:shadow-sm transition-all flex items-center justify-center gap-2" id="createWorkOrderBtn" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">check_circle</span>
+<span>Create Work Order</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Interactive Confirmation Toast Feedback
+  document.getElementById('createWorkOrderBtn')?.addEventListener('click', function() {
+    const originalContent = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Dispatching Equipment...';
+    this.classList.add('opacity-90');
+    setTimeout(() => {
+      this.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span> Work Order Activated!';
+      this.classList.remove('bg-primary-container', 'text-on-primary-container');
+      this.classList.add('bg-white', 'text-inverse-surface');
+      setTimeout(() => {
+        window.history.back();
+      }, 900);
+    }, 800);
+  });
+</script></main></body></html>

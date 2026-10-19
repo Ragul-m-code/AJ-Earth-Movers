@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#5b5e67", "primary-fixed": "#ffdf9f", "on-error": "#ffffff", "on-secondary-container": "#61646d", "tertiary-container": "#bac1db", "surface-container-low": "#eff4ff", "surface-container-lowest": "#ffffff", "surface-tint": "#795900", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "on-background": "#0b1c30", "secondary-container": "#dfe2ec", "surface-container-high": "#dce9ff", "on-tertiary-fixed": "#131b2e", "on-tertiary-container": "#474f65", "on-secondary": "#ffffff", "on-error-container": "#93000a", "on-surface": "#0b1c30", "surface-container": "#e5eeff", "surface-variant": "#d3e4fe", "inverse-primary": "#fabd0d", "error-container": "#ffdad6", "on-surface-variant": "#4f4632", "background": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-tertiary-fixed-variant": "#3f465c", "tertiary-fixed": "#dae2fd", "tertiary-fixed-dim": "#bec6e0", "on-primary-fixed": "#261a00", "on-primary-container": "#664b00", "on-primary": "#ffffff", "inverse-surface": "#213145", "primary-fixed-dim": "#fabd0d", "secondary-fixed": "#dfe2ec", "on-secondary-fixed": "#181c23", "on-tertiary": "#ffffff", "tertiary": "#565e74", "outline": "#827660", "on-secondary-fixed-variant": "#43474f", "inverse-on-surface": "#eaf1ff", "outline-variant": "#d4c5ac", "on-primary-fixed-variant": "#5b4300", "secondary-fixed-dim": "#c3c6d0", "primary-container": "#f5b800", "primary": "#795900", "surface": "#f8f9ff", "surface-bright": "#f8f9ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "margin-sm": "0.75rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "space-xl": "1.75rem", "gutter-sm": "0.75rem", "margin": "1rem", "gutter": "1rem", "space-xs": "0.25rem", "space-md": "0.875rem" }, fontFamily: { "label-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "display-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "metric-num": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "500" }], "display-sm": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "700" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.03em", fontWeight: "800" }], "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["13px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }], "metric-num": ["28px", { lineHeight: "32px", letterSpacing: "-0.03em", fontWeight: "800" }], "headline-md": ["19px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-sm": ["17px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface text-on-surface font-body-md antialiased min-h-full flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Back to Dashboard" class="flex items-center justify-center w-11 h-11 -ml-space-xs rounded-lg text-on-surface active:bg-surface-container-high transition-colors" onclick="window.location.href='#';history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI"/><div class="flex items-center gap-space-xs truncate pl-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Driver Notifications</h1><span class="inline-flex items-center justify-center h-6 min-w-[24px] px-space-xs rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-extrabold">3</span></div></div><div class="flex items-center gap-space-sm shrink-0"><button class="h-11 px-space-sm rounded-lg flex items-center gap-space-xs text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[18px] text-primary">done_all</span><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-bold">Mark all read</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-safe px-gutter flex flex-col"><div class="flex flex-col w-full pb-8">
+<!-- QA / Simulation Controller Strip -->
+<section class="w-full bg-inverse-surface rounded-xl p-space-sm mb-space-md text-inverse-on-surface shadow-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary-container text-[18px]">tune</span>
+<span class="font-label-md text-label-md tracking-wider text-surface-variant font-bold uppercase truncate">Harness • DRV-104 (Ramesh Kumar)</span>
+</div>
+<span class="font-label-sm text-label-sm bg-primary-container text-on-primary-container px-space-xs py-0.5 rounded font-extrabold shrink-0">QA TEST</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs sm:grid-cols-4">
+<button class="sim-btn h-11 px-space-xs rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-all" id="sim-btn-active" onclick="switchState('active')">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+<span>1. Active (3 Unread)</span>
+</button>
+<button class="sim-btn h-11 px-space-xs rounded bg-surface-variant/20 hover:bg-surface-variant/30 text-inverse-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-all" id="sim-btn-read" onclick="switchState('read')">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>2. All Read</span>
+</button>
+<button class="sim-btn h-11 px-space-xs rounded bg-surface-variant/20 hover:bg-surface-variant/30 text-inverse-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-all" id="sim-btn-empty" onclick="switchState('empty')">
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+<span>3. Empty State</span>
+</button>
+<button class="sim-btn h-11 px-space-xs rounded bg-surface-variant/20 hover:bg-surface-variant/30 text-inverse-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-all" id="sim-btn-error" onclick="switchState('error')">
+<span class="material-symbols-outlined text-[16px]">cloud_off</span>
+<span>4. Network Error</span>
+</button>
+</div>
+</section>
+<!-- Filter Rail -->
+<nav aria-label="Notification Categories" class="w-full mb-space-md">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 no-scrollbar -mx-gutter px-gutter">
+<button class="filter-chip h-10 px-space-md rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold flex items-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform" data-filter="all" onclick="filterStream('all')">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+<span>All (7)</span>
+</button>
+<button class="filter-chip h-10 px-space-md rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1.5 shrink-0 active:scale-95 transition-transform" data-filter="unread" onclick="filterStream('unread')">
+<span>Unread</span>
+<span class="inline-flex items-center justify-center h-5 px-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold">3</span>
+</button>
+<button class="filter-chip h-10 px-space-md rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1.5 shrink-0 active:scale-95 transition-transform" data-filter="action" onclick="filterStream('action')">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span>Action Req. (1)</span>
+</button>
+<button class="filter-chip h-10 px-space-md rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 shrink-0 active:scale-95 transition-transform" data-filter="approvals" onclick="filterStream('approvals')">
+<span>Approvals (2)</span>
+</button>
+<button class="filter-chip h-10 px-space-md rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 shrink-0 active:scale-95 transition-transform" data-filter="assignments" onclick="filterStream('assignments')">
+<span>Assignments (2)</span>
+</button>
+</div>
+</nav>
+<!-- Network Banner (Displayed when in offline state) -->
+<div class="hidden mb-space-md p-space-md bg-error-container text-on-error-container rounded-xl flex items-start gap-space-sm shadow-sm" id="offline-banner">
+<span class="material-symbols-outlined text-error text-[24px] shrink-0 mt-0.5">signal_wifi_off</span>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-error-container">4G Field Telemetry Disconnected</h3>
+<p class="font-body-sm text-body-sm text-on-error-container/90 mt-0.5">Showing cached alerts from local memory. Dial reading uploads will queue until satellite / tower handshake restores.</p>
+<button class="mt-space-sm h-11 px-space-md bg-error text-on-error rounded-lg font-label-lg text-label-lg font-bold flex items-center gap-space-xs active:opacity-90" onclick="switchState('active')">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Retry Handshake</span>
+</button>
+</div>
+</div>
+<!-- Notification Stream Container -->
+<div class="flex flex-col gap-space-lg w-full" id="notification-stream">
+<!-- TODAY SECTION -->
+<section class="notification-group flex flex-col gap-space-sm" data-section="today">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider font-extrabold">Today</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">24 Oct 2024</span>
+</div>
+<!-- Item 1: Action Required (Meter Reading Rejected) -->
+<article class="notification-card unread group relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all" data-category="action unread">
+<div class="absolute left-0 top-3 bottom-3 w-1.5 bg-error rounded-r"></div>
+<div class="pl-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-extrabold tracking-wide uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              Rejected • Retake Photo
+            </span>
+<div class="flex items-center gap-1 shrink-0">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping mr-1"></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">18:05 IST</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs">
+            Meter Reading Rejected — #WO-2024-875
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Site Supervisor Vikram Patil flagged dial glare on Komatsu PC210 closing photo. 3rd decimal digit unreadable. Retake photo to release wage hold.
+          </p>
+<div class="flex items-center gap-space-xs mt-space-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-error">pin_drop</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">L&amp;T Infra Site B • Hinjawadi Bypass</span>
+</div>
+<!-- Deep-link Action -->
+<div class="mt-space-md pt-space-xs flex gap-space-xs">
+<button class="flex-1 h-12 bg-on-background active:bg-surface-tint text-surface-container-lowest rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-sm transition-all" onclick="handleAction('retake')">
+<span class="material-symbols-outlined text-primary-container text-[20px]">photo_camera</span>
+<span>Retake Meter Photo</span>
+</button>
+<button aria-label="Dismiss Alert" class="w-12 h-12 rounded-lg bg-surface-container hover:bg-surface-container-high text-secondary flex items-center justify-center shrink-0 transition-colors" onclick="dismissNotification(this)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 2: Success / Hours Approved -->
+<article class="notification-card unread relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all" data-category="approvals unread">
+<div class="absolute left-0 top-3 bottom-3 w-1.5 bg-primary-container rounded-r"></div>
+<div class="pl-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-extrabold tracking-wide uppercase">
+<span class="material-symbols-outlined text-primary text-[14px]">verified</span>
+              Hours Approved
+            </span>
+<div class="flex items-center gap-1 shrink-0">
+<span class="w-2 h-2 rounded-full bg-primary-container mr-1"></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">19:15 IST</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs">
+            8.5 Hours Approved &amp; Credited — #WO-2024-884
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Shift closing reading 1,250.0 → 1,258.5 verified by Supervisor Arjun Singh. Base + 0.5h OT posted to wage ledger.
+          </p>
+<div class="flex items-center gap-space-xs mt-space-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">engineering</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">Tata Infra Ring Road • Pkg 3</span>
+</div>
+<div class="mt-space-md pt-space-xs">
+<button class="w-full h-12 bg-surface-container-low hover:bg-surface-container text-on-surface active:bg-surface-container-high rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs transition-colors" onclick="handleAction('wage_view')">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<span>View Approved Wage Record</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 3: New Assignment -->
+<article class="notification-card unread relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all" data-category="assignments unread">
+<div class="absolute left-0 top-3 bottom-3 w-1.5 bg-on-background rounded-r"></div>
+<div class="pl-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-extrabold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[14px]">assignment_add</span>
+              New Assignment
+            </span>
+<div class="flex items-center gap-1 shrink-0">
+<span class="w-2 h-2 rounded-full bg-primary-container mr-1"></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">14:30 IST</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs">
+            Shift Dispatched: Pune Metro Line 4 Trenching
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Work Order #WO-2024-892 assigned for Tomorrow (07:00 AM – 17:00 PM). Machine CAT 320D Excavator (Unit #15) with Hydraulic Breaker.
+          </p>
+<div class="flex items-center gap-space-xs mt-space-sm text-secondary">
+<span class="material-symbols-outlined text-[16px] text-on-surface">person_pin</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">Fleet Mgr Arjun Singh • Central Yard</span>
+</div>
+<div class="mt-space-md pt-space-xs flex gap-space-xs">
+<button class="flex-1 h-12 bg-primary-container active:bg-primary-fixed-dim text-on-primary-container rounded-lg font-label-lg text-label-lg font-extrabold flex items-center justify-center gap-space-xs shadow-sm transition-colors" onclick="handleAction('accept_shift')">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Review &amp; Accept Shift</span>
+</button>
+<button aria-label="Route to Worksite" class="w-12 h-12 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 transition-colors" onclick="handleAction('view_route')">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- YESTERDAY SECTION -->
+<section class="notification-group flex flex-col gap-space-sm" data-section="yesterday">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider font-extrabold">Yesterday</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">23 Oct 2024</span>
+</div>
+<!-- Item 4: Telemetry Synced -->
+<article class="notification-card read relative bg-surface-container-lowest/80 rounded-xl p-space-md transition-all" data-category="approvals">
+<div class="flex items-start justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-secondary text-[14px]">sync_saved_locally</span>
+            Telemetry Synced
+          </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">17:46 IST</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-space-xs">
+          Shift Submission Receipt: #WO-2024-881
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+          Closing meter 1,259.0 hrs and 2 photos uploaded successfully via 4G. Queued for Central Dispatch audit.
+        </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-secondary truncate">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm text-label-sm font-medium truncate">Hinjawadi Pier 18</span>
+</div>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 shrink-0" onclick="handleAction('audit_ticket')">
+<span>Audit Ticket</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Item 5: Muster Point Relocated -->
+<article class="notification-card read relative bg-surface-container-lowest/80 rounded-xl p-space-md transition-all" data-category="assignments">
+<div class="flex items-start justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-secondary text-[14px]">swap_calls</span>
+            Assignment Update
+          </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">11:20 IST</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-space-xs">
+          Worksite Muster Point Relocated
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+          Pier 18 entrance closed for concrete pouring. Access CAT 320D via Gate 3 (Hinjawadi Bypass Road).
+        </p>
+<div class="flex items-center gap-space-xs mt-space-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span class="font-label-sm text-label-sm font-medium">Central Yard Dispatch Bulletin</span>
+</div>
+</article>
+</section>
+<!-- EARLIER THIS WEEK -->
+<section class="notification-group flex flex-col gap-space-sm" data-section="earlier">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary/60"></span>
+<h2 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider font-extrabold">Earlier This Week</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Mid Oct</span>
+</div>
+<!-- Item 6: Wage Settlement -->
+<article class="notification-card read relative bg-surface-container-lowest/80 rounded-xl p-space-md transition-all" data-category="approvals">
+<div class="flex items-start justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-primary text-[14px]">payments</span>
+            Wage Disbursement
+          </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">22 Oct, 10:00 IST</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-space-xs">
+          Weekly Wage Settlement Disbursed
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+          Net payout for period 14 Oct – 20 Oct credited to HDFC Bank (UTR #HDFC-NEFT-99482104928). Official salary slip available.
+        </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-secondary truncate">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span class="font-label-sm text-label-sm font-medium truncate">Payroll Desk • Pune HQ</span>
+</div>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1 shrink-0" onclick="handleAction('download_slip')">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Salary Slip</span>
+</button>
+</div>
+</article>
+<!-- Item 7: Security PIN Authenticated -->
+<article class="notification-card read relative bg-surface-container-lowest/80 rounded-xl p-space-md transition-all" data-category="system">
+<div class="flex items-start justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-secondary text-[14px]">phonelink_lock</span>
+            Terminal PIN
+          </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">21 Oct, 06:55 IST</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-space-xs">
+          Terminal PIN Verified on Device
+        </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+          Field terminal login authenticated with Biometric unlock on authorized cab handset (IMEI ending -8821).
+        </p>
+<div class="flex items-center gap-space-xs mt-space-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-sm text-label-sm font-medium">System Security Handshake</span>
+</div>
+</article>
+</section>
+</div>
+<!-- Empty State View (Toggled via QA Strip or Clear) -->
+<div class="hidden flex-col items-center justify-center py-space-xl px-gutter text-center bg-surface-container-lowest rounded-xl shadow-sm my-space-md" id="empty-state-view">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container mb-space-sm">
+<span class="material-symbols-outlined text-[36px] text-primary">task_alt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-extrabold">All Caught Up, Ramesh!</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1 max-w-xs">
+      No unread meter rejections, dispatch notices, or pending compliance audits for Driver ID #DRV-104.
+    </p>
+<div class="mt-space-md flex items-center gap-space-xs">
+<button class="h-11 px-space-md rounded-lg bg-on-background text-surface-container-lowest font-label-md text-label-md font-bold flex items-center gap-1" onclick="switchState('active')">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>View Notification Archive</span>
+</button>
+</div>
+</div>
+<!-- Operational Footer Compliance Notice -->
+<footer class="mt-space-lg w-full flex flex-col gap-space-sm">
+<div class="bg-surface-container-high/60 rounded-xl p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">shield</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-extrabold text-on-surface">Operator Security &amp; Data Boundary</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+        AJ Earth Movers Dispatch Notifications: Alerts reflect real-time equipment assignments and supervisor telemetry audits bound to Driver ID <strong class="text-on-surface">#DRV-104</strong>. Client rental billings and corporate fleet invoices are strictly segregated.
+      </p>
+<a class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1 mt-1 hover:underline" href="#" onclick="event.preventDefault(); alert('Cab alert configuration: Sound: HIGH • Haptic: PULSE ON REJECTION');">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Manage Cab Sound &amp; Vibration Alerts in Profile</span>
+</a>
+</div>
+<!-- Quick Status Bar -->
+<div class="flex items-center justify-between text-secondary px-space-xs">
+<span class="font-label-sm text-label-sm font-medium">AJ Telemetry Sync: Connected (4G LTE)</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">App v3.4.12-ind</span>
+</div>
+</footer>
+<!-- Micro Toast Modal for actions -->
+<div class="fixed bottom-6 left-gutter right-gutter z-50 transform translate-y-32 transition-transform duration-300 pointer-events-none" id="toast-modal">
+<div class="bg-inverse-surface text-inverse-on-surface p-space-md rounded-xl shadow-xl flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary-container text-[20px]" id="toast-icon">info</span>
+<span class="font-body-sm text-body-sm font-semibold truncate" id="toast-message">Action processed</span>
+</div>
+<button class="p-1 rounded text-surface-variant hover:text-inverse-on-surface shrink-0" onclick="hideToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function switchState(state) {
+    const stream = document.getElementById('notification-stream');
+    const empty = document.getElementById('empty-state-view');
+    const offline = document.getElementById('offline-banner');
+    
+    // Reset buttons styling in harness
+    document.querySelectorAll('.sim-btn').forEach(btn => {
+      btn.className = 'sim-btn h-11 px-space-xs rounded bg-surface-variant/20 hover:bg-surface-variant/30 text-inverse-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-all';
+    });
+
+    const activeBtn = document.getElementById(`sim-btn-${state}`);
+    if (activeBtn) {
+      activeBtn.className = 'sim-btn h-11 px-space-xs rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-all';
+    }
+
+    if (state === 'active') {
+      stream.classList.remove('hidden');
+      empty.classList.add('hidden');
+      empty.classList.remove('flex');
+      offline.classList.add('hidden');
+      markItemsUnread();
+      showToast('check_circle', 'Stream loaded with 3 active unread notifications');
+    } else if (state === 'read') {
+      stream.classList.remove('hidden');
+      empty.classList.add('hidden');
+      empty.classList.remove('flex');
+      offline.classList.add('hidden');
+      markItemsRead();
+      showToast('done_all', 'All alerts marked as read');
+    } else if (state === 'empty') {
+      stream.classList.add('hidden');
+      empty.classList.remove('hidden');
+      empty.classList.add('flex');
+      offline.classList.add('hidden');
+      showToast('inbox', 'Empty state simulated: No unread items');
+    } else if (state === 'error') {
+      stream.classList.remove('hidden');
+      empty.classList.add('hidden');
+      empty.classList.remove('flex');
+      offline.classList.remove('hidden');
+      showToast('wifi_off', 'Simulated 4G dropped: Showing cached notifications');
+    }
+  }
+
+  function markItemsRead() {
+    document.querySelectorAll('.notification-card').forEach(card => {
+      card.classList.remove('unread');
+      card.classList.add('read');
+      // Hide red/amber left bars and pingers
+      const leftBar = card.querySelector('.absolute.left-0');
+      if (leftBar) leftBar.classList.add('hidden');
+      const pinger = card.querySelector('.animate-ping');
+      if (pinger) pinger.classList.add('hidden');
+    });
+    // Update badge in shell if exists
+    const badge = document.querySelector('header .bg-primary-container');
+    if (badge) badge.innerText = '0';
+  }
+
+  function markItemsUnread() {
+    document.querySelectorAll('.notification-card').forEach(card => {
+      if (card.dataset.category && card.dataset.category.includes('unread')) {
+        card.classList.add('unread');
+        card.classList.remove('read');
+        const leftBar = card.querySelector('.absolute.left-0');
+        if (leftBar) leftBar.classList.remove('hidden');
+        const pinger = card.querySelector('.animate-ping');
+        if (pinger) pinger.classList.remove('hidden');
+      }
+    });
+    const badge = document.querySelector('header .bg-primary-container');
+    if (badge) badge.innerText = '3';
+  }
+
+  function filterStream(filter) {
+    const chips = document.querySelectorAll('.filter-chip');
+    chips.forEach(chip => {
+      if (chip.dataset.filter === filter) {
+        chip.className = 'filter-chip h-10 px-space-md rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold flex items-center gap-1.5 shrink-0 shadow-sm active:scale-95 transition-transform';
+      } else {
+        chip.className = 'filter-chip h-10 px-space-md rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1.5 shrink-0 active:scale-95 transition-transform';
+      }
+    });
+
+    const cards = document.querySelectorAll('.notification-card');
+    cards.forEach(card => {
+      const category = card.dataset.category || '';
+      if (filter === 'all') {
+        card.classList.remove('hidden');
+      } else if (filter === 'unread' && category.includes('unread')) {
+        card.classList.remove('hidden');
+      } else if (filter === 'action' && category.includes('action')) {
+        card.classList.remove('hidden');
+      } else if (filter === 'approvals' && category.includes('approvals')) {
+        card.classList.remove('hidden');
+      } else if (filter === 'assignments' && category.includes('assignments')) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Check if sections have visible items
+    document.querySelectorAll('.notification-group').forEach(group => {
+      const visible = group.querySelectorAll('.notification-card:not(.hidden)').length > 0;
+      if (visible) {
+        group.classList.remove('hidden');
+      } else {
+        group.classList.add('hidden');
+      }
+    });
+  }
+
+  function dismissNotification(btn) {
+    const card = btn.closest('.notification-card');
+    if (card) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(20px)';
+      setTimeout(() => {
+        card.remove();
+        showToast('check', 'Notification dismissed');
+      }, 200);
+    }
+  }
+
+  function handleAction(type) {
+    if (type === 'retake') {
+      showToast('photo_camera', 'Opening Camera: Calibrate dial alignment...');
+    } else if (type === 'wage_view') {
+      showToast('receipt_long', 'Loading shift wage breakdown: ₹1,850 credited');
+    } else if (type === 'accept_shift') {
+      showToast('check_circle', 'Shift Accepted: CAT 320D allocated to DRV-104');
+    } else if (type === 'view_route') {
+      showToast('map', 'Routing navigation to Pier 18 Gate 3');
+    } else if (type === 'download_slip') {
+      showToast('download', 'Generating PDF Salary Slip for Oct 14-20');
+    } else if (type === 'audit_ticket') {
+      showToast('assignment', 'Audit Ticket #WO-2024-881: Under Central Review');
+    }
+  }
+
+  let toastTimer = null;
+  function showToast(icon, msg) {
+    const toast = document.getElementById('toast-modal');
+    const toastIcon = document.getElementById('toast-icon');
+    const toastMsg = document.getElementById('toast-message');
+    
+    toastIcon.textContent = icon;
+    toastMsg.textContent = msg;
+    toast.classList.remove('translate-y-32');
+    toast.classList.add('translate-y-0');
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(hideToast, 3500);
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('toast-modal');
+    toast.classList.remove('translate-y-0');
+    toast.classList.add('translate-y-32');
+  }
+</script></main></body></html>

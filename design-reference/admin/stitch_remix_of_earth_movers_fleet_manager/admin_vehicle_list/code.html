@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#dae2fd", "surface": "#f8f9ff", "primary-container": "#f59e0b", "surface-bright": "#f8f9ff", "inverse-primary": "#ffb95f", "secondary-fixed": "#dae2fd", "surface-tint": "#855300", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#3a485c", "on-surface-variant": "#534434", "secondary": "#565e74", "primary-fixed": "#ffddb8", "surface-variant": "#d3e4fe", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "on-tertiary-fixed": "#0d1c2f", "surface-container-highest": "#d3e4fe", "surface-dim": "#cbdbf5", "tertiary-fixed-dim": "#b9c7e0", "background": "#f8f9ff", "outline-variant": "#d8c3ad", "tertiary-container": "#a3b2ca", "on-primary": "#ffffff", "on-primary-fixed-variant": "#653e00", "primary-fixed-dim": "#ffb95f", "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "primary": "#855300", "outline": "#867461", "on-background": "#0b1c30", "on-primary-fixed": "#2a1700", "on-secondary": "#ffffff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "tertiary": "#515f74", "secondary-fixed-dim": "#bec6e0", "inverse-surface": "#213145", "on-primary-container": "#613b00", "surface-container-high": "#dce9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#374559", "surface-container": "#e5eeff", "tertiary-fixed": "#d5e3fd", "error-container": "#ffdad6", "on-surface": "#0b1c30", "inverse-on-surface": "#eaf1ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter": "1rem", "gutter-desktop": "1.5rem", "margin-desktop": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "1rem" }, fontFamily: { "headline-xl": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "label-caps": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Inter"], "label-numeric-sm": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "label-numeric-md": ["JetBrains Mono"] }, fontSize: { "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-numeric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-numeric-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-numeric-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="AJ EARTH MOVERS Mobile App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULY_2Q2RTWx22EUwBaHJ-VV1iK2wtViKwm1BkX1yhmdADTgcLkOqlmFzDvz4B2xr_CDjtavtCRm-LL_jEOP0CMK-_F-MBjSOUx7Rv5QjnYo5wz4fOnYEIj4Tco4-p7QryNh4PTXW3TQIAicctMzy5ksMwCVmdpXM0meHsmf9l49qbeEpWI3HbrvarIoWkmQojJHWTOEPH4DwyvCY1yj1XuXAsP_s_ESvm5DwUw0vqj1VnRGIWq2X4Iv3s"/><div class="flex flex-col"><span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">AJ Earth Movers</span><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Admin   Vehicle List</span></div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-surface-variant rounded-lg"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive View Switcher & Action Top Bar -->
+<div class="px-gutter pt-space-sm pb-space-xs flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Fleet</span>
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full font-label-caps text-label-caps uppercase font-bold tracking-wider">18 Units</span>
+</div>
+</div>
+<!-- Primary Industrial Tactile Button -->
+<button aria-label="Add Vehicle" class="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-body-sm uppercase tracking-wide font-bold shadow-md active:translate-y-0.5 transition-transform" id="addVehicleBtn">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Add Vehicle</span>
+</button>
+</div>
+<!-- Search Field with Industrial Recessed Contrast -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-10 pr-10 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md shadow-sm focus:outline-none focus:ring-0 focus:bg-surface-container-low transition-colors" id="fleetSearchInput" placeholder="Search by machine name, reg no (KA-04...), or type..." type="search"/>
+<button aria-label="Clear search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface p-1" id="clearSearchBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Filter Pills (Horizontally Scrollable) -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1 -mx-gutter px-gutter">
+<button class="filter-pill flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-inverse-surface text-inverse-on-surface font-label-caps text-label-caps whitespace-nowrap shadow-sm font-bold" data-filter="all">
+<span>All</span>
+<span class="bg-surface-container-lowest/20 px-1.5 py-0.2 rounded-full font-label-numeric-sm text-label-numeric-sm">18</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps whitespace-nowrap shadow-sm hover:bg-surface-container" data-filter="working">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span>Working</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">11</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps whitespace-nowrap shadow-sm hover:bg-surface-container" data-filter="available">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Available</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">4</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps whitespace-nowrap shadow-sm hover:bg-surface-container" data-filter="maintenance">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Maintenance</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">2</span>
+</button>
+<button class="filter-pill flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps whitespace-nowrap shadow-sm hover:bg-surface-container" data-filter="inactive">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Inactive</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">1</span>
+</button>
+</div>
+<!-- Fleet Micro Metric Status Banner -->
+<div class="grid grid-cols-3 gap-space-xs p-2.5 rounded-xl bg-surface-container-lowest shadow-sm mt-0.5">
+<div class="flex flex-col items-center justify-center p-1.5 rounded-lg bg-surface-container-low text-center">
+<div class="flex items-center gap-1">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">11/18</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-0.5">On Duty (61%)</span>
+</div>
+<div class="flex flex-col items-center justify-center p-1.5 rounded-lg bg-surface-container-low text-center">
+<div class="flex items-center gap-1">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">4 Ready</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-0.5">Yard Dispatch</span>
+</div>
+<div class="flex flex-col items-center justify-center p-1.5 rounded-lg bg-surface-container-low text-center">
+<div class="flex items-center gap-1">
+<span class="font-label-numeric-md text-label-numeric-md text-error font-bold">2 In Bay</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-0.5">Under Service</span>
+</div>
+</div>
+</div>
+<!-- Vehicle Card Listing Container -->
+<div class="px-gutter flex flex-col gap-space-sm pt-space-xs pb-space-md" id="fleetCardList">
+<!-- Card 1: JCB 3DX Super (Working) -->
+<article class="fleet-item-card flex flex-col rounded-xl bg-surface-container-lowest shadow-md overflow-hidden transition-all" data-search="jcb 3dx super ka-04-ea-2104 backhoe loader suresh kumar prestige" data-status="working">
+<!-- Card Header Strip -->
+<div class="p-3.5 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-on-primary-fixed text-[24px]">front_loader</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">JCB 3DX Super</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-numeric-sm text-label-numeric-sm font-bold">#JCB-01</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant tracking-wider">KA-04-EA-2104 • Backhoe Loader</span>
+</div>
+</div>
+<!-- Status Pill -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container/20 text-on-primary-container shrink-0">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-caps text-label-caps font-bold">WORKING</span>
+</div>
+</div>
+<!-- Site Location Tag -->
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">Prestige Tech Park Ext. Phase 2 (Bengaluru East)</span>
+</div>
+</div>
+<!-- Card Body Telematics & Operator Details -->
+<div class="p-3.5 flex flex-col gap-3">
+<!-- Assigned Operator Row -->
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center font-bold text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pilot / Operator</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Suresh Kumar (Pilot #DRV-042)</span>
+</div>
+</div>
+<a aria-label="Call Operator" class="w-9 h-9 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="tel:+919880012345">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<!-- High-Touch Analog SMU Hour Tumbler Module -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-inverse-surface text-inverse-on-surface">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed-dim">speed</span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-wider">SMU Cumulative Run</span>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary-fixed-dim mt-0.5">LiveLink Telematics • 08:30 AM</span>
+</div>
+<!-- Recessed Counter Box -->
+<div class="flex items-baseline bg-surface-container-lowest text-on-surface px-2.5 py-1 rounded-lg shadow-inner">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-extrabold tracking-tight">2,418.5</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1 font-bold">HRS</span>
+</div>
+</div>
+<!-- Telemetry Gauges / Specs Grid -->
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Fuel Gauge Pill -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">local_gas_station</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">HSD Fuel</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">74%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">(125L)</span>
+</div>
+</div>
+<!-- Geofence Lock Status -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">share_location</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Geofence</span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-bold">SECURED</span>
+</div>
+</div>
+</div>
+<!-- Card Footer CTA Link -->
+<button class="w-full py-2.5 px-3.5 bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-between transition-colors">
+<span class="font-body-sm text-body-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">sensors</span>
+          View Live Machine Telematics
+        </span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
+</button>
+</article>
+<!-- Card 2: CAT 320D Excavator (Working - Wet Breaker Active) -->
+<article class="fleet-item-card flex flex-col rounded-xl bg-surface-container-lowest shadow-md overflow-hidden transition-all" data-search="cat 320d hydraulic excavator ka-51-m-8821 crawler 20 ton mahesh gowda l&amp;t metro" data-status="working">
+<div class="p-3.5 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-on-primary-fixed text-[24px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">CAT 320D Heavy</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-numeric-sm text-label-numeric-sm font-bold">#CAT-04</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant tracking-wider">KA-51-M-8821 • 20T Excavator</span>
+</div>
+</div>
+<!-- Status Pill -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container/20 text-on-primary-container shrink-0">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-caps text-label-caps font-bold">WORKING</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">L&amp;T Metro Phase 2 - Pier 48 (Hebbal Spur)</span>
+</div>
+</div>
+<div class="p-3.5 flex flex-col gap-3">
+<!-- Assigned Operator Row -->
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center font-bold text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pilot / Operator</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Mahesh G. Gowda (Pilot #DRV-018)</span>
+</div>
+</div>
+<a aria-label="Call Operator" class="w-9 h-9 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm active:scale-95 transition-transform" href="tel:+919880012346">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<!-- SMU Reading Banner -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-inverse-surface text-inverse-on-surface">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed-dim">speed</span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-wider">ProductLink SMU</span>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary-fixed-dim mt-0.5">Updated Yesterday, 06:15 PM</span>
+</div>
+<div class="flex items-baseline bg-surface-container-lowest text-on-surface px-2.5 py-1 rounded-lg shadow-inner">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-extrabold tracking-tight">5,842.0</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1 font-bold">HRS</span>
+</div>
+</div>
+<!-- Attachment Alert Banner -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-secondary-container text-on-secondary-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">hardware</span>
+<span class="font-body-sm text-body-sm font-semibold">Tool: Rock Breaker Hammer</span>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-bold uppercase">Wet-Rate Active</span>
+</div>
+</div>
+<button class="w-full py-2.5 px-3.5 bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-between transition-colors">
+<span class="font-body-sm text-body-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">insights</span>
+          View Machine Telematics &amp; Hydraulics
+        </span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
+</button>
+</article>
+<!-- Card 3: Komatsu PC210-10M0 (Available) -->
+<article class="fleet-item-card flex flex-col rounded-xl bg-surface-container-lowest shadow-md overflow-hidden transition-all" data-search="komatsu pc210-10m0 ka-03-nb-4410 crawler 21 ton rajesh nayak central yard whitefield" data-status="available">
+<div class="p-3.5 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">construction</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Komatsu PC210</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-numeric-sm text-label-numeric-sm font-bold">#KOM-02</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant tracking-wider">KA-03-NB-4410 • 21 Ton Excavator</span>
+</div>
+</div>
+<!-- Status Pill -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps font-bold">AVAILABLE</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">warehouse</span>
+<span class="truncate">Central Yard Depot (Whitefield Standby)</span>
+</div>
+</div>
+<div class="p-3.5 flex flex-col gap-3">
+<!-- Standby Operator / Ready State -->
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[18px]">person_check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Operator Roster</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Rajesh V. Nayak (Assigned Standby)</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-1 rounded bg-surface-container text-on-surface font-bold">Ready</span>
+</div>
+<!-- SMU Meter Box -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Stationary SMU</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">KOMTRAX GPS Locked • Battery Normal</span>
+</div>
+<div class="flex items-baseline bg-surface-container-lowest text-on-surface px-2.5 py-1 rounded-lg shadow-sm">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">3,110.2</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1 font-bold">HRS</span>
+</div>
+</div>
+<!-- High Impact Dispatch CTA -->
+<button class="w-full py-3 px-4 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-body-md font-bold uppercase tracking-wide flex items-center justify-center gap-2 shadow-sm active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined text-[20px]">assignment_add</span>
+<span>Assign to Work Order</span>
+</button>
+</div>
+</article>
+<!-- Card 4: Tata Hitachi EX200 (Maintenance) -->
+<article class="fleet-item-card flex flex-col rounded-xl bg-surface-container-lowest shadow-md overflow-hidden transition-all" data-search="tata hitachi ex200 ka-04-j-5512 heavy digger depot workshop bay 2 service oil filter" data-status="maintenance">
+<div class="p-3.5 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-error-container flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-on-error-container text-[24px]">car_repair</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Tata Hitachi EX200</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-numeric-sm text-label-numeric-sm font-bold">#HIT-07</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant tracking-wider">KA-04-J-5512 • Heavy Excavator</span>
+</div>
+</div>
+<!-- Maintenance Pill -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container shrink-0">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-caps text-label-caps font-bold">MAINTENANCE</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-error">handyman</span>
+<span class="truncate">Depot Workshop - Maintenance Bay #2</span>
+</div>
+</div>
+<div class="p-3.5 flex flex-col gap-3">
+<!-- Maintenance Alert Banner with ETA -->
+<div class="p-2.5 rounded-xl bg-error-container/40 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-error-container font-bold uppercase tracking-wider">Scheduled 2,500h Engine Service</span>
+<span class="font-label-caps text-label-caps bg-surface-container-lowest text-on-surface px-1.5 py-0.5 rounded font-bold">ETA: 6 hrs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Engine oil flush, hydraulic filter replacement &amp; track tensioning. Assigned: Service Crew 4B.
+          </p>
+</div>
+<!-- SMU & Bay Assignment -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Logged SMU</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Logged 4 hrs ago</span>
+</div>
+<div class="flex items-baseline bg-surface-container-lowest text-on-surface px-2 py-0.5 rounded shadow-sm">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">2,482.0</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1 font-bold">HRS</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 px-3.5 bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-between transition-colors">
+<span class="font-body-sm text-body-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">receipt_long</span>
+          View Service Job Card #SVC-2024-91
+        </span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">chevron_right</span>
+</button>
+</article>
+<!-- Card 5: JCB 432ZX Wheel Loader (Available) -->
+<article class="fleet-item-card flex flex-col rounded-xl bg-surface-container-lowest shadow-md overflow-hidden transition-all" data-search="jcb 432zx wheel loader ka-53-e-3309 hosakote quarry depot anand patil" data-status="available">
+<div class="p-3.5 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-highest flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">rv_hookup</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">JCB 432ZX Loader</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-numeric-sm text-label-numeric-sm font-bold">#LDR-03</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant tracking-wider">KA-53-E-3309 • Heavy Wheel Loader</span>
+</div>
+</div>
+<!-- Status Pill -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps font-bold">AVAILABLE</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">terrain</span>
+<span class="truncate">Hosakote Quarry Dispatch Depot (B-Ring)</span>
+</div>
+</div>
+<div class="p-3.5 flex flex-col gap-3">
+<!-- Operator & SMU Row -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Standby Driver</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">Anand M. Patil</span>
+</div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Fuel Tank</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">88% (Full)</span>
+</div>
+</div>
+<!-- Meter Reading Box -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Engine Run SMU</span>
+<div class="flex items-baseline bg-surface-container-lowest text-on-surface px-2 py-0.5 rounded shadow-sm">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">1,940.8</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1 font-bold">HRS</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-sm font-bold uppercase tracking-wide flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+<span>Assign to Work Order</span>
+</button>
+</div>
+</article>
+<!-- Card 6: BEML BD80 Bulldozer (Inactive / Audit) -->
+<article class="fleet-item-card flex flex-col rounded-xl bg-surface-container-lowest shadow-md overflow-hidden opacity-90 transition-all" data-search="beml bd80 heavy bulldozer ka-01-me-1120 crawler dozer annual rto fitness" data-status="inactive">
+<div class="p-3.5 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline text-[24px]">agriculture</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">BEML BD80 Dozer</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface font-label-numeric-sm text-label-numeric-sm font-bold">#BD-01</span>
+</div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant tracking-wider">KA-01-ME-1120 • Crawler Bulldozer</span>
+</div>
+</div>
+<!-- Inactive Status Pill -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant shrink-0">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-caps text-label-caps font-bold">INACTIVE</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">verified_user</span>
+<span class="truncate">Under Annual RTO Fitness Audit &amp; Hydro Cert</span>
+</div>
+</div>
+<div class="p-3.5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stationed at Main Depot • Operator: None (De-rostered)</span>
+<div class="flex items-baseline bg-surface-container-lowest text-on-surface px-2 py-0.5 rounded shadow-sm">
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">7,820.5</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant ml-1">HRS</span>
+</div>
+</div>
+</div>
+<div class="w-full py-2 px-3.5 bg-surface-container text-on-surface-variant flex items-center justify-between">
+<span class="font-label-caps text-label-caps tracking-wider uppercase font-bold">Pending Inspector Signoff</span>
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</div>
+</article>
+</div>
+<!-- Empty Search / Filter State (Hidden by default) -->
+<div class="hidden px-gutter py-12 flex-col items-center justify-center text-center" id="fleetEmptyState">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[36px] text-primary">search_off</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">No Machinery Found</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mt-1">
+      No vehicles match your active search or filter criteria. Try adjusting your query or resetting filters.
+    </p>
+<button class="mt-4 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-body-sm font-bold uppercase tracking-wider shadow-sm" id="resetFilterBtn">
+      Reset All Filters
+    </button>
+</div>
+<!-- Telematics Depot Trust Seal Footer -->
+<div class="px-gutter pt-space-sm pb-space-lg">
+<div class="p-3 rounded-xl bg-surface-container flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface uppercase tracking-wider font-bold">AIS 140 Telematics Certified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Real-time GPS geofence &amp; automated SMU hour synchronization active.</span>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Script for Filtering and Search -->
+<script>
+    (function initFleetManager() {
+      const searchInput = document.getElementById('fleetSearchInput');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const cards = document.querySelectorAll('.fleet-item-card');
+      const emptyState = document.getElementById('fleetEmptyState');
+      const resetBtn = document.getElementById('resetFilterBtn');
+
+      let currentFilter = 'all';
+      let searchQuery = '';
+
+      function applyFilters() {
+        let visibleCount = 0;
+        const normalizedQuery = searchQuery.trim().toLowerCase();
+
+        cards.forEach(card => {
+          const status = card.getAttribute('data-status');
+          const searchData = (card.getAttribute('data-search') || '').toLowerCase();
+
+          const matchesStatus = (currentFilter === 'all') || (status === currentFilter);
+          const matchesSearch = !normalizedQuery || searchData.includes(normalizedQuery);
+
+          if (matchesStatus && matchesSearch) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          emptyState.classList.add('flex');
+        } else {
+          emptyState.classList.add('hidden');
+          emptyState.classList.remove('flex');
+        }
+      }
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          filterPills.forEach(p => {
+            p.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+            p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+
+          pill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          pill.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+
+          currentFilter = pill.getAttribute('data-filter') || 'all';
+          applyFilters();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          if (searchQuery.length > 0) {
+            clearBtn.classList.remove('hidden');
+          } else {
+            clearBtn.classList.add('hidden');
+          }
+          applyFilters();
+        });
+      }
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          searchQuery = '';
+          clearBtn.classList.add('hidden');
+          applyFilters();
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (searchInput) {
+            searchInput.value = '';
+            searchQuery = '';
+            clearBtn.classList.add('hidden');
+          }
+          currentFilter = 'all';
+          filterPills.forEach((p, idx) => {
+            if (idx === 0) {
+              p.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+              p.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+            } else {
+              p.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+              p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+            }
+          });
+          applyFilters();
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="admin---operational-dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-caps text-label-caps mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="admin---driver-work-history" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-label-caps text-label-caps mt-0.5">Work</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 transition-colors text-primary font-bold" data-path="admin---vehicle-list" href="#"><span class="material-symbols-outlined text-[22px]">precision_manufacturing</span><span class="font-label-caps text-label-caps mt-0.5">Fleet</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="finance-ledgers" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-caps text-label-caps mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="admin---driver-list" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-caps text-label-caps mt-0.5">More</span></a></div></nav>
+</body></html>

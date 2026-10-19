@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>AJ Earth Movers Driver App</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-container": "#474f65", "surface-tint": "#795900", "on-surface-variant": "#4f4632", "secondary-fixed-dim": "#c3c6d0", "surface-variant": "#d3e4fe", "on-secondary-fixed-variant": "#43474f", "inverse-on-surface": "#eaf1ff", "surface": "#f8f9ff", "on-error": "#ffffff", "on-primary-fixed": "#261a00", "on-secondary": "#ffffff", "secondary-container": "#dfe2ec", "secondary-fixed": "#dfe2ec", "on-tertiary-fixed": "#131b2e", "inverse-surface": "#213145", "on-tertiary-fixed-variant": "#3f465c", "primary-container": "#f5b800", "surface-container-lowest": "#ffffff", "outline-variant": "#d4c5ac", "surface-container-high": "#dce9ff", "outline": "#827660", "tertiary-fixed-dim": "#bec6e0", "on-background": "#0b1c30", "primary-fixed-dim": "#fabd0d", "on-primary-fixed-variant": "#5b4300", "error-container": "#ffdad6", "surface-bright": "#f8f9ff", "primary": "#795900", "surface-container": "#e5eeff", "tertiary-container": "#bac1db", "tertiary-fixed": "#dae2fd", "surface-container-highest": "#d3e4fe", "background": "#f8f9ff", "on-secondary-container": "#61646d", "primary-fixed": "#ffdf9f", "on-surface": "#0b1c30", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "secondary": "#5b5e67", "on-tertiary": "#ffffff", "on-secondary-fixed": "#181c23", "tertiary": "#565e74", "on-primary": "#ffffff", "inverse-primary": "#fabd0d", "on-primary-container": "#664b00", "error": "#ba1a1a", "surface-dim": "#cbdbf5" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-sm": "0.5rem", "gutter": "1rem", "space-xs": "0.25rem", "space-md": "0.875rem", "space-lg": "1.25rem", "space-xl": "1.75rem", "gutter-sm": "0.75rem", "margin-sm": "0.75rem", "margin": "1rem" }, fontFamily: { "metric-num": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "display-sm": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-sm": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "headline-md": ["19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI"/><div class="flex flex-col min-w-0 justify-center"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary leading-none">AJ Earth Movers</span><span class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Profile</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)]" title="Cellular Network Online"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">wifi</span><span class="font-label-sm text-label-sm text-on-surface hidden sm:inline">LIVE</span></div><button aria-label="Toggle Day Mode" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full text-on-surface">
+<!-- Interactive Test Harness / QA Simulator Bar -->
+<aside aria-label="Screen State Harness" class="w-full bg-surface-container-high px-gutter py-space-sm flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">developer_mode</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">QA Driver Terminal Harness</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface font-bold" id="harness-state-indicator">Standard</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-1 -mx-gutter px-gutter">
+<button class="qa-chip active-harness-chip px-3 py-1.5 rounded-xl text-label-md font-label-md bg-inverse-surface text-inverse-on-surface shrink-0 shadow-sm transition-all flex items-center gap-1" id="btn-state-standard" onclick="setHarnessState('standard')" type="button">
+<span>1. Standard</span>
+</button>
+<button class="qa-chip px-3 py-1.5 rounded-xl text-label-md font-label-md bg-surface-container-lowest text-on-surface shrink-0 shadow-sm transition-all flex items-center gap-1" id="btn-state-edit" onclick="setHarnessState('edit')" type="button">
+<span>2. Edit Mode</span>
+</button>
+<button class="qa-chip px-3 py-1.5 rounded-xl text-label-md font-label-md bg-surface-container-lowest text-on-surface shrink-0 shadow-sm transition-all flex items-center gap-1" id="btn-state-restricted" onclick="setHarnessState('restricted')" type="button">
+<span>3. Rate Hidden</span>
+</button>
+<button class="qa-chip px-3 py-1.5 rounded-xl text-label-md font-label-md bg-surface-container-lowest text-on-surface shrink-0 shadow-sm transition-all flex items-center gap-1" id="btn-state-saving" onclick="setHarnessState('saving')" type="button">
+<span>4. Save/Success</span>
+</button>
+<button class="qa-chip px-3 py-1.5 rounded-xl text-label-md font-label-md bg-surface-container-lowest text-on-surface shrink-0 shadow-sm transition-all flex items-center gap-1" id="btn-state-network-error" onclick="setHarnessState('network-error')" type="button">
+<span>5. Error Banner</span>
+</button>
+</div>
+</aside>
+<!-- Network / Sync Error Banner (Hidden by default, triggered in state 5) -->
+<div class="hidden w-full bg-error text-on-error px-gutter py-space-sm flex items-center justify-between gap-space-sm shadow-md animate-pulse" id="network-alert-banner">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[20px] shrink-0">signal_wifi_off</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg leading-tight">Telematics Sync Severed</span>
+<span class="font-body-sm text-body-sm text-on-error/90 truncate">Unable to reach Central Dispatch. Offline cache active.</span>
+</div>
+</div>
+<button class="h-10 px-3 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-xl shrink-0 font-bold active:scale-95 transition-transform" onclick="dismissBanner()" type="button">
+      Retry
+    </button>
+</div>
+<!-- Floating Toast Notification for Feedback -->
+<div class="hidden fixed top-20 inset-x-4 z-50 bg-inverse-surface text-inverse-on-surface p-space-md rounded-xl shadow-xl flex items-center gap-3 transition-opacity duration-300" id="harness-toast">
+<span class="material-symbols-outlined text-[24px] text-primary-container" id="toast-icon" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-lg text-label-lg font-bold" id="toast-title">Profile Synchronized</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/85" id="toast-body">Changes verified and broadcasted to Pune Dispatch.</span>
+</div>
+<button class="p-1 rounded text-inverse-on-surface/70 hover:text-inverse-on-surface" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-gutter flex flex-col gap-space-lg w-full">
+<!-- 1. Operator Identity & Header Block -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-md">
+<!-- Amber Industrial Top Accent Bar -->
+<div class="absolute top-0 inset-x-0 h-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pt-1">
+<!-- Avatar with Workwear and Camera Overlay -->
+<div class="relative shrink-0">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container-high shadow-md">
+<img class="w-full h-full object-cover" data-alt="Rugged Indian heavy machinery operator Ramesh Kumar in his late 30s, wearing high-visibility reflective neon yellow-orange construction vest and a safety hardhat, confident daylight outdoor portrait at Pune excavation depot, cinematic hyper-realistic industrial documentary photography, rich warm earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD80_I-9aKLeEfDGaho-B7nE7SoJNUqHGJZ8JpPT3AkkZ65i9Evw71FzJ0wwnx2LGLuVQ71z9IwN_kgj9dpqspcYhykgidlSlv47QPzKc0oDWqojpu1KsWWhGZXElEJyS7-9cOqOcHEBcTvctAf5cHq_ZSHHqQn8cxRB5MPmpFHXoBU1oDEuXAupiISf4LupzCr5X8A-j0F-4BTUuC9_Hbw8LFhMw0C3qZeAF7RQdzaQE9p8fi8We0q"/>
+</div>
+<button aria-label="Upload New Driver Photo" class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-inverse-surface text-primary-container flex items-center justify-center shadow-lg active:scale-90 transition-transform" onclick="triggerPhotoModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</button>
+</div>
+<!-- Identity Details -->
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-bold tracking-wide">ID: #DRV-104</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">Badge #OP-4409</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface truncate leading-tight mt-1">Ramesh Kumar</h1>
+<p class="font-body-sm text-body-sm text-secondary truncate">Senior Class A Earthmover Specialist</p>
+<div class="mt-2 flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface">Verified Operator</span>
+<span class="text-secondary font-body-sm text-body-sm">• 6.2 Yrs Fleet</span>
+</div>
+</div>
+</div>
+<!-- Status Indicator Pill & Assigned Depot Tile -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs pt-1">
+<div class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-surface-container-low">
+<span class="relative flex h-3 w-3 shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold leading-none">Duty Status</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">ON-DUTY (Shift #WO-884)</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0">warehouse</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold leading-none">Primary Fleet Base</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Pune Yard #04 (Bhosari MIDC)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Permissions & Single-Operator Governance Notice -->
+<section class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wide text-primary">Security &amp; Compliance</span>
+<span class="font-label-sm text-label-sm text-secondary">• HR-GOV-09</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Role Isolation &amp; HR Governance Policy</h2>
+<p class="font-body-sm text-body-sm text-secondary mt-1 leading-relaxed">
+          You have authorized field access to update personal contact info, emergency numbers, and telemetry alert sounds. Machine wage tariffs, contractual hourly rates, and meter-verified payroll allocations are strictly locked by Central Dispatch and cannot be modified on mobile terminals.
+        </p>
+</div>
+</section>
+<!-- 3. Contractual Entitlement & Wage Rate Block (Dynamic Display) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative" id="wage-rate-section">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Contractual Entitlements</h2>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface" id="wage-transparency-pill">
+<span class="material-symbols-outlined text-[14px] text-primary">visibility</span>
+<span class="font-label-sm text-label-sm font-bold">HR-W7 Visible</span>
+</div>
+</div>
+<!-- Wage Content: Shown in Standard & Editable States -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs mt-1" id="wage-cards-grid">
+<!-- Base Hourly Rate -->
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Base Tariff</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" title="Dispatch Locked">lock</span>
+</div>
+<div class="mt-2">
+<div class="font-metric-num text-metric-num text-on-surface flex items-baseline">
+<span class="text-headline-sm font-bold mr-0.5">₹</span>150<span class="text-headline-sm font-normal text-secondary">.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Per Approved Eng. Hour</span>
+</div>
+</div>
+<!-- Overtime Calculation -->
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Overtime 1.5x</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-bold">&gt;8.0h</span>
+</div>
+<div class="mt-2">
+<div class="font-metric-num text-metric-num text-on-surface flex items-baseline">
+<span class="text-headline-sm font-bold mr-0.5">₹</span>225<span class="text-headline-sm font-normal text-secondary">.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Hourly Post Threshold</span>
+</div>
+</div>
+<!-- Night Allowance / Bata -->
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Night Bata</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">nights_stay</span>
+</div>
+<div class="mt-2">
+<div class="font-metric-num text-metric-num text-on-surface flex items-baseline">
+<span class="text-headline-sm font-bold mr-0.5">₹</span>220<span class="text-headline-sm font-normal text-secondary">.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Fixed / 22:00 - 06:00 Shift</span>
+</div>
+</div>
+</div>
+<!-- Restricted Wage State Notice (Harness State 3) -->
+<div class="hidden p-space-md rounded-xl bg-surface-container-high flex flex-col items-center justify-center text-center py-6" id="wage-restricted-notice">
+<span class="material-symbols-outlined text-[32px] text-secondary mb-1">visibility_off</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Tariff Display Restricted by Site Admin</span>
+<p class="font-body-sm text-body-sm text-secondary max-w-sm mt-1">
+          Hourly wage visibility is currently suppressed by Depot #04 Central Accounts policy. Contact your shift supervisor for payslip breakdowns.
+        </p>
+</div>
+<div class="flex items-center gap-2 pt-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span class="font-body-sm text-body-sm">Rate adjustments require Central HR authorization. Operator field editing disabled.</span>
+</div>
+</section>
+<!-- 4. Direct Shortcuts to Field Data -->
+<section class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Work History Shortcut -->
+<a class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-colors group" href="#work-history" onclick="simNavigate(event, 'My Work tab')">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">history_edu</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Shift Records</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">14 Shifts Logged</span>
+<span class="font-label-md text-label-md text-error font-bold flex items-center gap-1 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-error"></span> 1 Needs Inspection
+            </span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<!-- Monthly Analytics Shortcut -->
+<a class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between hover:bg-surface-container-low transition-colors group" href="#analytics" onclick="simNavigate(event, 'Analytics tab')">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">monitoring</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Month Accrual</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">₹19,135.00 Net</span>
+<span class="font-label-md text-label-md text-primary font-bold mt-0.5">114.5 Approved Engine Hrs</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</section>
+<!-- 5. Profile Details & Authorized Edit Mode -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Section Header with Mode Toggle -->
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Personal &amp; Field Details</h2>
+<p class="font-body-sm text-body-sm text-secondary">Authorized credentials and communication lines</p>
+</div>
+<button class="min-h-[48px] px-4 rounded-xl font-label-lg text-label-lg font-bold bg-surface-container-high text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5 active:scale-95" id="toggle-edit-mode-btn" onclick="toggleEditMode()" type="button">
+<span class="material-symbols-outlined text-[18px]" id="edit-btn-icon">edit</span>
+<span id="edit-btn-label">Edit Profile</span>
+</button>
+</div>
+<!-- Form Inputs Container -->
+<form class="flex flex-col gap-space-md" id="driver-profile-form" onsubmit="handleFormSubmit(event)">
+<!-- Read-Only Field: Driver Legal Name -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-secondary uppercase font-bold" for="input-driver-name">Legal Operator Name</label>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> Verified by RTO &amp; Aadhaar
+            </span>
+</div>
+<div class="min-h-[48px] px-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-lg text-body-lg font-semibold flex items-center justify-between">
+<span>Ramesh Kumar</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+</div>
+</div>
+<!-- Read-Only Field: Badge & Operator ID -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-secondary uppercase font-bold">Driver ID</label>
+<div class="min-h-[48px] px-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-lg text-body-lg font-semibold flex items-center">
+              #DRV-104
+            </div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-secondary uppercase font-bold">Dispatch Badge</label>
+<div class="min-h-[48px] px-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-lg text-body-lg font-semibold flex items-center">
+              #OP-4409
+            </div>
+</div>
+</div>
+<!-- Editable Field: Primary Mobile Phone -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-secondary uppercase font-bold" for="input-mobile-phone">Primary Mobile (Field Comm)</label>
+<span class="hidden font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-bold" id="otp-req-tag">OTP Required on Change</span>
+</div>
+<div class="relative">
+<input class="w-full min-h-[48px] px-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-lg text-body-lg focus:outline-none focus:bg-surface-container transition-all" id="input-mobile-phone" readonly="" type="tel" value="+91 98450 12345"/>
+<span class="material-symbols-outlined absolute right-3.5 top-3.5 text-[20px] text-secondary" id="mobile-lock-icon">lock</span>
+</div>
+</div>
+<!-- Editable Field: Emergency Contact Details -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-secondary uppercase font-bold" for="input-emergency-contact">Emergency Contact (Nominee / Relative)</label>
+<div class="relative">
+<input class="w-full min-h-[48px] px-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-lg text-body-lg focus:outline-none focus:bg-surface-container transition-all" id="input-emergency-contact" readonly="" type="text" value="Suresh Kumar (Brother) — +91 98450 98765"/>
+<span class="material-symbols-outlined absolute right-3.5 top-3.5 text-[20px] text-secondary" id="emergency-lock-icon">lock</span>
+</div>
+</div>
+<!-- Language Preference Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-secondary uppercase font-bold" for="select-language">Terminal Audio &amp; Text Language</label>
+<div class="relative">
+<select class="w-full min-h-[48px] px-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-lg text-body-lg appearance-none focus:outline-none focus:bg-surface-container transition-all disabled:opacity-90" disabled="" id="select-language">
+<option selected="" value="en">English (Primary Operational)</option>
+<option value="mr">मराठी (Marathi - Regional Yard Audio)</option>
+<option value="hi">हिन्दी (Hindi - Field Standard)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-3.5 text-[20px] text-secondary pointer-events-none">translate</span>
+</div>
+</div>
+<!-- Equipment Certifications (Strictly Read-Only) -->
+<div class="flex flex-col gap-1.5 pt-1">
+<label class="font-label-md text-label-md text-secondary uppercase font-bold">Heavy Machinery Certifications (Class A)</label>
+<div class="flex flex-wrap gap-2">
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span>CAT 320D Excavator</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">front_loader</span>
+<span>JCB 3DX Backhoe</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">engineering</span>
+<span>Komatsu PC210</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Master Heavy Equipment Competency verified by AJ Fleet Safety Division.</span>
+</div>
+<!-- Form Edit Actions (Shown when in Edit Mode) -->
+<div class="hidden flex flex-col sm:flex-row items-center gap-space-sm pt-2" id="edit-actions-bar">
+<button class="w-full sm:w-1/2 min-h-[48px] rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg font-bold active:scale-98 transition-transform" onclick="cancelEditMode()" type="button">
+            Cancel
+          </button>
+<button class="w-full sm:w-1/2 min-h-[48px] rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold shadow-md hover:brightness-105 active:scale-98 transition-all flex items-center justify-center gap-2" id="save-profile-btn" type="submit">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Save Profile Updates</span>
+</button>
+</div>
+</form>
+</section>
+<!-- 6. Security, PIN & Authentication Settings -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">security</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Security &amp; Terminal PIN</h2>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Operator Shift PIN Item -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low min-h-[56px]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px] text-secondary">pin</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Shift Terminal PIN</span>
+<span class="font-body-sm text-body-sm text-secondary">6-digit engine start &amp; shift lock code</span>
+</div>
+</div>
+<button class="min-h-[48px] px-3.5 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container transition-colors active:scale-95" onclick="openPinModal()" type="button">
+            Change PIN
+          </button>
+</div>
+<!-- Biometrics Toggle -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low min-h-[56px]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px] text-secondary">fingerprint</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Biometric Fast Terminal Unlock</span>
+<span class="font-body-sm text-body-sm text-secondary">Face / Fingerprint authentication in cab</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-h-[48px] px-1">
+<input checked="" class="sr-only peer" onchange="toggleBiometrics(this)" type="checkbox"/>
+<div class="w-11 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[14px] after:left-[6px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Terminal Hardware Footprint -->
+<div class="px-3 py-2.5 rounded-xl bg-surface-container-high text-secondary flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+<span class="font-label-sm text-label-sm">Authorized Terminal IMEI: ****-8821</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Pune Yard GPS Locked</span>
+</div>
+</div>
+</section>
+<!-- 7. Notification Preferences (Audible & Outdoor Field Alerts) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Outdoor Cab Alerts &amp; Sounds</h2>
+<p class="font-body-sm text-body-sm text-secondary">Optimized for high-ambient engine noise</p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Alert 1 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low min-h-[52px]">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<span class="material-symbols-outlined text-[22px] text-primary">campaign</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">New Shift Assignment Audio</span>
+<span class="font-body-sm text-body-sm text-secondary">Loud recurring siren + long vibration</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-h-[48px] px-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[14px] after:left-[6px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Alert 2 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low min-h-[52px]">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<span class="material-symbols-outlined text-[22px] text-primary">fact_check</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Meter Verification Decisions</span>
+<span class="font-body-sm text-body-sm text-secondary">Push notice on shift approval or supervisor queries</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-h-[48px] px-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[14px] after:left-[6px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Alert 3 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low min-h-[52px]">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<span class="material-symbols-outlined text-[22px] text-primary">sms</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Weekly Wage Disbursement SMS</span>
+<span class="font-body-sm text-body-sm text-secondary">Immediate bank credit slip via SMS</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer min-h-[48px] px-1">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-secondary-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[14px] after:left-[6px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- 8. Help, Yard Dispatch & Emergency Support -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-error">sos</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Field Support &amp; Yard Dispatch</h2>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Hotline Call Button -->
+<a class="min-h-[52px] p-3 rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-between transition-colors" href="tel:+919820044102">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Pune Yard Dispatch Hotline</span>
+<span class="font-body-sm text-body-sm text-secondary">+91 98200 44102 • Direct Site Desk</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">DIAL NOW</span>
+</a>
+<!-- SOS Line -->
+<a class="min-h-[52px] p-3 rounded-xl bg-error-container text-on-error-container flex items-center justify-between" href="tel:+919820099999">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">night_sight_auto_off</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold">24/7 Safety &amp; Breakdown SOS</span>
+<span class="font-body-sm text-body-sm opacity-90">Immediate crane rescue and medical dispatch</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold uppercase">EMERGENCY</span>
+</a>
+<!-- Issue Report Button -->
+<button class="min-h-[48px] p-3 rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-between transition-colors" onclick="openBugReportModal()" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[22px] text-secondary">bug_report</span>
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Report App Telemetry Glitch</span>
+</div>
+<span class="material-symbols-outlined text-secondary">chevron_right</span>
+</button>
+</div>
+<!-- Fleet OS Version Stamp -->
+<div class="pt-2 flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-secondary font-medium">AJ Earth Movers • FieldOS v2.4.1 (Build 420)</span>
+<span class="font-label-sm text-label-sm text-secondary/70">ISO-9001 Heavy Construction Fleet Terminal Compliance</span>
+</div>
+</section>
+<!-- 9. Logout & Session Termination -->
+<section class="flex flex-col gap-space-sm pt-2">
+<!-- Active Work Order Alert Caution Box -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">warning</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold">Notice:</strong> Shift telemetry for <strong>#WO-884</strong> is currently accumulating hours. Closing or signing out without logging end meter reading may trigger supervisor audit flag.
+        </p>
+</div>
+<button class="w-full min-h-[52px] rounded-xl bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2 shadow-md" onclick="confirmSignOutModal()" type="button">
+<span class="material-symbols-outlined text-[20px] text-error">logout</span>
+<span>Sign Out of Driver Terminal</span>
+</button>
+</section>
+</div>
+<!-- Modal: Sign Out Confirmation -->
+<div class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-gutter" id="modal-signout">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-2xl p-space-lg flex flex-col gap-space-md shadow-2xl">
+<div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">power_settings_new</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Sign Out Terminal Session?</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+          Shift #WO-884 is still active. Ensure you have photographed and verified your machine hour meter before leaving the cab.
+        </p>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full min-h-[48px] rounded-xl bg-error text-on-error font-label-lg text-label-lg font-bold active:scale-98 transition-transform" onclick="executeSignOut()" type="button">
+          Confirm Terminal Sign Out
+        </button>
+<button class="w-full min-h-[48px] rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg font-bold active:scale-98 transition-transform" onclick="closeSignOutModal()" type="button">
+          Return to Dashboard
+        </button>
+</div>
+</div>
+</div>
+<!-- Modal: Change PIN Simulator -->
+<div class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-gutter" id="modal-pin">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-2xl p-space-lg flex flex-col gap-space-md shadow-2xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">key</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Change Shift PIN</h3>
+</div>
+<button class="p-1 text-secondary" onclick="closePinModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+        Enter a new 6-digit PIN to authenticate vehicle shift ignition and sign-offs.
+      </p>
+<div class="flex justify-between gap-2 my-2">
+<input class="w-10 h-12 text-center text-headline-md font-bold rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container" maxlength="1" type="password" value="4"/>
+<input class="w-10 h-12 text-center text-headline-md font-bold rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container" maxlength="1" type="password" value="4"/>
+<input class="w-10 h-12 text-center text-headline-md font-bold rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container" maxlength="1" type="password" value="0"/>
+<input class="w-10 h-12 text-center text-headline-md font-bold rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container" maxlength="1" type="password" value="9"/>
+<input class="w-10 h-12 text-center text-headline-md font-bold rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container" maxlength="1" placeholder="•" type="password"/>
+<input class="w-10 h-12 text-center text-headline-md font-bold rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container" maxlength="1" placeholder="•" type="password"/>
+</div>
+<button class="w-full min-h-[48px] rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold active:scale-98 transition-transform" onclick="saveNewPin()" type="button">
+        Save &amp; Encrypt PIN
+      </button>
+</div>
+</div>
+</div>
+<script>
+  // State Store
+  let isEditMode = false;
+  let currentHarnessState = 'standard';
+
+  // Harness Simulator Controller
+  function setHarnessState(state) {
+    currentHarnessState = state;
+    document.querySelectorAll('.qa-chip').forEach(btn => {
+      btn.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+      btn.classList.add('bg-surface-container-lowest', 'text-on-surface');
+    });
+
+    const activeBtn = document.getElementById('btn-state-' + state);
+    if (activeBtn) {
+      activeBtn.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+      activeBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+    }
+
+    const stateIndicator = document.getElementById('harness-state-indicator');
+    const netBanner = document.getElementById('network-alert-banner');
+    const wageGrid = document.getElementById('wage-cards-grid');
+    const wageRestricted = document.getElementById('wage-restricted-notice');
+    const wagePill = document.getElementById('wage-transparency-pill');
+
+    // Reset base views
+    netBanner.classList.add('hidden');
+    wageGrid.classList.remove('hidden');
+    wageRestricted.classList.add('hidden');
+    wagePill.classList.remove('hidden');
+
+    switch (state) {
+      case 'standard':
+        stateIndicator.textContent = 'Standard';
+        if (isEditMode) cancelEditMode();
+        showToast('Standard View Loaded', 'Standard read-only field configuration active.');
+        break;
+
+      case 'edit':
+        stateIndicator.textContent = 'Edit Mode';
+        if (!isEditMode) toggleEditMode();
+        showToast('Edit Mode Enabled', 'Mobile & emergency fields unlocked for modification.');
+        break;
+
+      case 'restricted':
+        stateIndicator.textContent = 'Rate Restricted';
+        if (isEditMode) cancelEditMode();
+        wageGrid.classList.add('hidden');
+        wageRestricted.classList.remove('hidden');
+        wagePill.classList.add('hidden');
+        showToast('HR-W7 Policy Enforced', 'Wage rates masked per Pune Yard administrative policy.');
+        break;
+
+      case 'saving':
+        stateIndicator.textContent = 'Saving / Sync';
+        if (!isEditMode) toggleEditMode();
+        const saveBtn = document.getElementById('save-profile-btn');
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Syncing with Fleet DB...</span>';
+        setTimeout(() => {
+          saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">save</span><span>Save Profile Updates</span>';
+          cancelEditMode();
+          showToast('Profile Updated Successfully', 'Central Dispatch confirmed changes to #DRV-104.');
+        }, 1200);
+        break;
+
+      case 'network-error':
+        stateIndicator.textContent = 'Network Error';
+        netBanner.classList.remove('hidden');
+        showToast('Offline Mode', 'Connection to Bhosari MIDC server dropped.', true);
+        break;
+    }
+  }
+
+  // Edit Mode Logic
+  function toggleEditMode() {
+    isEditMode = !isEditMode;
+    const phoneInput = document.getElementById('input-mobile-phone');
+    const emergencyInput = document.getElementById('input-emergency-contact');
+    const langSelect = document.getElementById('select-language');
+    const editActions = document.getElementById('edit-actions-bar');
+    const toggleBtn = document.getElementById('toggle-edit-mode-btn');
+    const editBtnLabel = document.getElementById('edit-btn-label');
+    const editBtnIcon = document.getElementById('edit-btn-icon');
+    const otpTag = document.getElementById('otp-req-tag');
+    const mobLock = document.getElementById('mobile-lock-icon');
+    const emgLock = document.getElementById('emergency-lock-icon');
+
+    if (isEditMode) {
+      phoneInput.removeAttribute('readonly');
+      emergencyInput.removeAttribute('readonly');
+      langSelect.removeAttribute('disabled');
+      editActions.classList.remove('hidden');
+      otpTag.classList.remove('hidden');
+
+      phoneInput.classList.add('bg-surface-container-lowest', 'ring-2', 'ring-primary-container');
+      emergencyInput.classList.add('bg-surface-container-lowest', 'ring-2', 'ring-primary-container');
+
+      mobLock.textContent = 'edit';
+      emgLock.textContent = 'edit';
+
+      toggleBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+      toggleBtn.classList.remove('bg-surface-container-high', 'text-on-surface');
+      editBtnLabel.textContent = 'Editing...';
+      editBtnIcon.textContent = 'edit_note';
+
+      phoneInput.focus();
+    } else {
+      cancelEditMode();
+    }
+  }
+
+  function cancelEditMode() {
+    isEditMode = false;
+    const phoneInput = document.getElementById('input-mobile-phone');
+    const emergencyInput = document.getElementById('input-emergency-contact');
+    const langSelect = document.getElementById('select-language');
+    const editActions = document.getElementById('edit-actions-bar');
+    const toggleBtn = document.getElementById('toggle-edit-mode-btn');
+    const editBtnLabel = document.getElementById('edit-btn-label');
+    const editBtnIcon = document.getElementById('edit-btn-icon');
+    const otpTag = document.getElementById('otp-req-tag');
+    const mobLock = document.getElementById('mobile-lock-icon');
+    const emgLock = document.getElementById('emergency-lock-icon');
+
+    phoneInput.setAttribute('readonly', 'true');
+    emergencyInput.setAttribute('readonly', 'true');
+    langSelect.setAttribute('disabled', 'true');
+    editActions.classList.add('hidden');
+    otpTag.classList.add('hidden');
+
+    phoneInput.classList.remove('bg-surface-container-lowest', 'ring-2', 'ring-primary-container');
+    emergencyInput.classList.remove('bg-surface-container-lowest', 'ring-2', 'ring-primary-container');
+
+    mobLock.textContent = 'lock';
+    emgLock.textContent = 'lock';
+
+    toggleBtn.classList.remove('bg-primary-container', 'text-on-primary-container');
+    toggleBtn.classList.add('bg-surface-container-high', 'text-on-surface');
+    editBtnLabel.textContent = 'Edit Profile';
+    editBtnIcon.textContent = 'edit';
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const saveBtn = document.getElementById('save-profile-btn');
+    saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Transmitting OTP...</span>';
+    setTimeout(() => {
+      saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">save</span><span>Save Profile Updates</span>';
+      cancelEditMode();
+      showToast('Changes Saved', 'Verification SMS dispatched to +91 98450 12345.');
+    }, 900);
+  }
+
+  // Toast Helpers
+  function showToast(title, body, isError = false) {
+    const toast = document.getElementById('harness-toast');
+    const titleEl = document.getElementById('toast-title');
+    const bodyEl = document.getElementById('toast-body');
+    const iconEl = document.getElementById('toast-icon');
+
+    titleEl.textContent = title;
+    bodyEl.textContent = body;
+
+    if (isError) {
+      iconEl.textContent = 'error';
+      iconEl.className = 'material-symbols-outlined text-[24px] text-error';
+    } else {
+      iconEl.textContent = 'check_circle';
+      iconEl.className = 'material-symbols-outlined text-[24px] text-primary-container';
+    }
+
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      hideToast();
+    }, 4000);
+  }
+
+  function hideToast() {
+    document.getElementById('harness-toast').classList.add('hidden');
+  }
+
+  function dismissBanner() {
+    document.getElementById('network-alert-banner').classList.add('hidden');
+    showToast('Reconnection Successful', 'Connected to Pune Dispatch LTE Gateway.');
+  }
+
+  // Modal Triggers
+  function confirmSignOutModal() {
+    document.getElementById('modal-signout').classList.remove('hidden');
+  }
+  function closeSignOutModal() {
+    document.getElementById('modal-signout').classList.add('hidden');
+  }
+  function executeSignOut() {
+    closeSignOutModal();
+    showToast('Signed Out', 'Ending terminal session for Operator #OP-4409.');
+  }
+
+  function openPinModal() {
+    document.getElementById('modal-pin').classList.remove('hidden');
+  }
+  function closePinModal() {
+    document.getElementById('modal-pin').classList.add('hidden');
+  }
+  function saveNewPin() {
+    closePinModal();
+    showToast('PIN Secured', 'New Shift Terminal PIN encrypted and verified.');
+  }
+
+  function openBugReportModal() {
+    showToast('Diagnostic Report Logged', 'Cab telemetry logs attached to ticket #TKT-8841.');
+  }
+
+  function triggerPhotoModal() {
+    showToast('Camera Initialized', 'Take daylight badge photo wearing PPE hardhat.');
+  }
+
+  function toggleBiometrics(elem) {
+    if (elem.checked) {
+      showToast('Biometrics Active', 'Cab fingerprint quick-unlock enabled.');
+    } else {
+      showToast('PIN Only', 'Biometric bypass turned off.');
+    }
+  }
+
+  function simNavigate(event, target) {
+    event.preventDefault();
+    showToast('Navigating', 'Redirecting operator to ' + target + '...');
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-on-surface font-bold"><div class="flex justify-around items-stretch h-16 px-space-xs"><a class="flex flex-col items-center justify-center flex-1 min-w-[44px] min-h-[44px] gap-0.5 text-secondary hover:text-on-surface transition-colors relative" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm uppercase tracking-wide">Home</span></a><a class="flex flex-col items-center justify-center flex-1 min-w-[44px] min-h-[44px] gap-0.5 text-secondary hover:text-on-surface transition-colors relative" data-path="my-work" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-label-sm text-label-sm uppercase tracking-wide">My Work</span></a><a class="flex flex-col items-center justify-center flex-1 min-w-[44px] min-h-[44px] gap-0.5 text-secondary hover:text-on-surface transition-colors relative" data-path="analytics" href="#"><span class="material-symbols-outlined text-[22px]">monitoring</span><span class="font-label-sm text-label-sm uppercase tracking-wide">Analytics</span></a><a aria-current="page" class="flex flex-col items-center justify-center flex-1 min-w-[44px] min-h-[44px] gap-0.5 transition-colors relative text-on-surface font-bold" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-label-sm text-label-sm uppercase tracking-wide">Profile</span></a></div></nav></body></html>

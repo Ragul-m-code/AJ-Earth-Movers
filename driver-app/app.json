@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "AJ Driver",
+    "slug": "aj-earth-movers-driver",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "in.ajearthmovers.driver"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#142B45",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "in.ajearthmovers.driver"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-secure-store",
+      "expo-image",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "AJ Driver uses the camera to photograph the machine hour meter for each job.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ]
+    ],
+    "scheme": "ajdriver",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

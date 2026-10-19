@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-container": "#bac1db", "background": "#f8f9ff", "surface-tint": "#795900", "on-secondary-fixed": "#181c23", "secondary-fixed-dim": "#c3c6d0", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#43474f", "surface-container": "#e5eeff", "surface-variant": "#d3e4fe", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-secondary-container": "#61646d", "surface-container-high": "#dce9ff", "on-tertiary-container": "#474f65", "on-tertiary": "#ffffff", "surface-container-highest": "#d3e4fe", "on-primary": "#ffffff", "outline": "#827660", "on-background": "#0b1c30", "on-surface-variant": "#4f4632", "primary": "#795900", "tertiary-fixed": "#dae2fd", "outline-variant": "#d4c5ac", "surface-bright": "#f8f9ff", "secondary-container": "#dfe2ec", "on-error": "#ffffff", "tertiary": "#565e74", "primary-container": "#f5b800", "inverse-surface": "#213145", "on-surface": "#0b1c30", "secondary": "#5b5e67", "on-error-container": "#93000a", "on-tertiary-fixed": "#131b2e", "inverse-primary": "#fabd0d", "surface-container-low": "#eff4ff", "on-primary-fixed-variant": "#5b4300", "surface-container-lowest": "#ffffff", "secondary-fixed": "#dfe2ec", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "inverse-on-surface": "#eaf1ff", "primary-fixed": "#ffdf9f", "on-primary-fixed": "#261a00", "on-tertiary-fixed-variant": "#3f465c", "tertiary-fixed-dim": "#bec6e0", "primary-fixed-dim": "#fabd0d", "on-primary-container": "#664b00" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "margin": "1rem", "gutter": "1rem", "space-xl": "1.75rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-sm": "0.75rem", "margin-sm": "0.75rem", "space-md": "0.875rem" }, fontFamily: { "label-lg": ["Inter"], "display-lg": ["Inter"], "body-sm": ["Inter"], "display-sm": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "metric-num": ["Inter"], "body-lg": ["Inter"] }, fontSize: { "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "display-sm": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md": ["19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Back to My Work" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><div class="flex items-center gap-space-xs"><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-8 w-auto object-contain shrink-0 hidden sm:block" src="https://lh3.googleusercontent.com/d/1B86K_Zp8q9b99mY01q5z8X43W20hS3E1"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary leading-none">WO Active</span><span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate leading-tight">Job Details</span></div></div></div><div class="flex items-center gap-space-sm shrink-0"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wide">4G</span></div><button aria-label="Field High Glare Toggle" class="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-primary-container text-on-primary-container hover:opacity-90 transition-opacity"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full pb-28">
+<!-- TOP INTERACTIVE DEMO PREVIEW STATE SWITCHER -->
+<section class="px-margin pt-space-sm pb-space-sm bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">science</span>
+        Interactive Demo Preview State
+      </span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded-full">Driver Terminal V3.4</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="state-toggle-group">
+<button class="state-btn active-state px-3 py-1.5 rounded-lg bg-on-background text-on-primary font-label-md text-label-md whitespace-nowrap shadow-sm transition-all flex items-center gap-1.5" id="btn-standard" onclick="switchState('standard')">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+        Standard Populated
+      </button>
+<button class="state-btn px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="btn-missing-photo" onclick="switchState('missing-photo')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Missing Attachment Photo
+      </button>
+<button class="state-btn px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="btn-no-attachments" onclick="switchState('no-attachments')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        No Attachments Linked
+      </button>
+<button class="state-btn px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="btn-loading" onclick="switchState('loading')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Loading Skeleton
+      </button>
+</div>
+</section>
+<!-- LOADING SKELETON CONTAINER (Hidden by default) -->
+<div class="hidden px-margin pt-space-md flex flex-col gap-space-lg animate-pulse" id="view-skeleton">
+<div class="w-full h-52 bg-surface-container-high rounded-xl"></div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="h-20 bg-surface-container-high rounded-xl"></div>
+<div class="h-20 bg-surface-container-high rounded-xl"></div>
+<div class="h-20 bg-surface-container-high rounded-xl"></div>
+<div class="h-20 bg-surface-container-high rounded-xl"></div>
+</div>
+<div class="w-full h-36 bg-surface-container-high rounded-xl"></div>
+<div class="w-full h-44 bg-surface-container-high rounded-xl"></div>
+</div>
+<!-- MAIN OPERATIONAL CONTENT -->
+<div class="flex flex-col gap-space-lg px-margin pt-space-md" id="view-content">
+<!-- 1. PRIMARY ASSIGNED MACHINE HERO CARD -->
+<section class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col">
+<!-- Media Header with Asset Image -->
+<div class="relative w-full h-48 bg-inverse-surface overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Rugged yellow CAT 320D crawler hydraulic excavator working on heavy dusty construction site, side angle profile showing robust boom, hydraulic lines, heavy steel tracks and reinforced cab, bright harsh outdoor sunlight, professional industrial site photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3dPT1bJJHxHI2ybFxABcmEK7yuaPCn7MIyLVRV6nYjMYkP9rmkr6w2G_gFVZ3GxKzWeQ1XHgBRJc8agOjJDj9YxlwJYTouhhK2rkeKbUR6JHj2Ae37a7tzdi6qn4bY1QAUP42s33EfT4UizhL8DQsgcTxD65yA2p_cfCr_ZLvnq9Z4qZRck2ky7Z5rkEpCKeoKW7pc_6StHAGxL7eyyfOzrRHcteX4YCnTh8RhdUBJzkTuwhNyQqL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/30 to-transparent"></div>
+<!-- Top Tags Overlay -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-inverse-surface/90 backdrop-blur-md text-surface font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+            Shift Active • Assigned Lockout
+          </div>
+<button aria-label="Expand machine photo" class="w-8 h-8 rounded-lg bg-inverse-surface/80 text-surface flex items-center justify-center backdrop-blur-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+</div>
+<!-- Bottom Asset Moniker Overlay -->
+<div class="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim font-bold">AJ Earth Movers Fleet #15</span>
+<h2 class="font-headline-md text-headline-md font-bold text-surface-container-lowest leading-tight drop-shadow-sm">CAT 320D Heavy Crawler</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-extrabold">30T Class</span>
+</div>
+</div>
+<!-- Machine Card Body -->
+<div class="p-space-md flex flex-col gap-space-md bg-surface-container-lowest">
+<!-- Registration & Verified Plate -->
+<div class="flex items-center justify-between gap-space-sm p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Vehicle Registration (RTO)</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="px-2 py-0.5 bg-inverse-surface text-surface-container-lowest font-headline-sm text-headline-sm tracking-wider font-extrabold rounded">
+                IND MH-14-GH-8821
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800">
+<span class="material-symbols-outlined text-[16px] text-emerald-600" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm uppercase font-bold">Fitness OK</span>
+</div>
+</div>
+<!-- Classification & Isolation Notice -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-2.5 rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Asset Category</span>
+<span class="font-label-lg text-label-lg text-on-surface mt-0.5 font-bold">Crawler Excavator</span>
+<span class="font-body-sm text-body-sm text-secondary">Operating mass 22.8T</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Hydraulic System</span>
+<span class="font-label-lg text-label-lg text-on-surface mt-0.5 font-bold">Twin Pump Load-Sense</span>
+<span class="font-body-sm text-body-sm text-secondary">Aux Circuit Primed</span>
+</div>
+</div>
+<!-- Driver Terminal Access Level Indicator -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-high/60 text-secondary">
+<span class="material-symbols-outlined text-[18px] text-secondary">lock</span>
+<span class="font-body-sm text-body-sm flex-1 leading-snug">
+<strong class="font-label-md text-label-md text-on-surface">Driver Read-Only Profile:</strong> Master telemetry record &amp; maintenance lockout managed by Fleet Yard.
+          </span>
+</div>
+</div>
+</section>
+<!-- 2. TELEMETRY & BASELINE INSPECTION -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-tight">Telemetry Baseline</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Yard Certified</span>
+</div>
+<!-- Telemetry Bento Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Hour Meter Box (Tactile Digital Style) -->
+<div class="col-span-2 p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-secondary font-bold">Last Verified Hour-Meter</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-secondary-container">18:30 IST Yesterday</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-baseline gap-1.5">
+<!-- Digital Tape Readout -->
+<div class="flex items-center bg-inverse-surface text-surface-container-lowest px-3 py-1.5 rounded-lg tracking-widest font-metric-num text-metric-num">
+                3,410.5
+              </div>
+<span class="font-label-lg text-label-lg font-bold text-secondary uppercase">HRS</span>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="font-label-sm text-label-sm text-secondary">Verified In-Charge:</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Vikram Patil (L&amp;T)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Mandatory check: Compare mechanical gauge in cab against this reading before starting primary ignition.
+          </p>
+</div>
+<!-- Fuel Gauge Tile -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary">Fuel Level</span>
+<span class="material-symbols-outlined text-[18px] text-primary">local_gas_station</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-display-sm text-display-sm font-extrabold text-on-surface">92%</span>
+<span class="font-body-sm text-body-sm text-secondary">/ 295 L</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 92%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 mt-2 flex items-center gap-1 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Top-up Tank 1 Done
+          </span>
+</div>
+<!-- Hydraulic Pressure Tile -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary">Hyd. Pressure</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">compress</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-display-sm text-display-sm font-extrabold text-on-surface">34.5</span>
+<span class="font-body-sm text-body-sm text-secondary">MPa</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 86%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-700 mt-2 flex items-center gap-1 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Optimal A1 Grade
+          </span>
+</div>
+<!-- Greasing & PM Status Tile -->
+<div class="col-span-2 p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[22px]">build_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Preventive Maintenance Log</span>
+<span class="font-body-sm text-body-sm text-secondary">Pins greased 12 days ago • Central auto-lube clean</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-sm text-label-sm uppercase text-secondary">Next PM Due</span>
+<span class="font-label-lg text-label-lg font-extrabold text-primary">148 HRS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. WORK ORDER & SITE ASSOCIATION CARD -->
+<section class="rounded-xl bg-inverse-surface text-surface-container-lowest p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase font-extrabold">Active Assignment</span>
+<span class="font-label-md text-label-md text-secondary-fixed-dim">WO Ref: #WO-2024-892</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md font-bold text-surface-container-lowest">Pune Metro Line 4 Trenching</h3>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim mt-0.5">Client: L&amp;T Construction (Heavy Infrastructure Division)</p>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary-container shrink-0 mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-surface-container-lowest">Hinjawadi Casting Yard &amp; Pier 18-24 Corridor</span>
+<span class="font-body-sm text-body-sm text-secondary-fixed-dim">Access via Gate 3 • High-voltage line clearance mandated</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary-container shrink-0">schedule</span>
+<span class="font-body-sm text-body-sm text-surface-container-lowest font-medium">
+            Tomorrow, Fri 25 Oct • 07:00 AM - 17:00 PM <span class="text-primary-container font-bold">(Shift A)</span>
+</span>
+</div>
+</div>
+<div class="pt-2">
+<a class="w-full h-11 rounded-lg bg-surface-container-highest/20 hover:bg-surface-container-highest/30 active:scale-98 transition-all flex items-center justify-center gap-2 text-surface-container-lowest font-label-md text-label-md" href="#" onclick="history.back(); return false;">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Return to Assigned Work Order #WO-892
+        </a>
+</div>
+</section>
+<!-- 4. ASSIGNED TOOLING & ATTACHMENTS SECTION -->
+<section class="flex flex-col gap-space-sm" id="attachments-section">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">hardware</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-tight">Assigned Attachments</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm font-bold text-on-surface" id="attachment-counter">2 Units Configured</span>
+</div>
+<!-- Attachment 1: Hydraulic Rock Breaker (HB-200) -->
+<div class="attachment-item bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-extrabold">Primary Tool</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">ID: #ATT-BRK-09</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Hydraulic Rock Breaker (HB-200 Heavy Duty)</h4>
+<span class="font-body-sm text-body-sm text-secondary">Hydraulic Percussion Hammer / Breaker Chisel</span>
+</div>
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-900 font-label-sm text-label-sm font-bold shrink-0">Inspected</span>
+</div>
+<!-- Photo Tile (Populated) -->
+<div class="relative w-full h-36 bg-surface-container rounded-lg overflow-hidden" id="att-1-photo-container">
+<img class="w-full h-full object-cover" data-alt="Heavy duty excavator hydraulic rock breaker attachment with hardened steel chisel tip mounted on industrial transport frame, clear daylight studio close-up on heavy machinery auxiliary tooling, yellow and dark gray painted industrial steel" id="att-1-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUVWONcZQmOdDU2mPEoGPZw9wMPDg8QD0EbV02SOsAClP_ZcwV_yNSbaMPyWXWKpHNcOHlbtCkoQ_672VQ2nKBEi5c0Wx5pn1olHaCZeIqTvo8NOAq0cNTguJLGgknV9urxcMLihP3XEU7fryW-EUvjk5-CFUI4cbyelcabA1Nhn_iHvTDN0rIv_j4U2bdZzLYe3ulUhV5uejQpd6w6_gwkJsBZMETczC5MbHT3Ce4AP8MRDikjPO7"/>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-surface-container-lowest font-label-sm text-label-sm backdrop-blur-sm">
+            Bay 2 Equipment Yard Spec
+          </div>
+</div>
+<!-- Technical Telemetry & Flow specs -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Mounting Location</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5">Trailer #T-04 (Bay 2)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Flow Rate Requirement</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5">160 - 200 L/min</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-surface-container text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">link</span>
+<span>Quick-coupler manifold pins pre-lubricated with certified ISO 68 hydraulic oil.</span>
+</div>
+</div>
+<!-- Attachment 2: Heavy Trenching Bucket (0.26 cu.m) -->
+<div class="attachment-item bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase px-1.5 py-0.5 rounded bg-surface-container text-secondary font-bold">Secondary Tool</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">ID: #ATT-BKT-14</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Heavy Trenching Bucket (0.26 cu.m)</h4>
+<span class="font-body-sm text-body-sm text-secondary">Reinforced Hardox Rock Digging Bucket with Tiger Teeth</span>
+</div>
+<span class="px-2 py-1 rounded bg-emerald-100 text-emerald-900 font-label-sm text-label-sm font-bold shrink-0">Yard Slip #894</span>
+</div>
+<!-- Photo Container (Demonstrates missing photo placeholder state switchable) -->
+<div class="relative w-full h-36 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center" id="att-2-photo-container">
+<img class="w-full h-full object-cover" data-alt="Excavator digging trenching bucket with heavy sharp tiger teeth sitting on gravel site floor, durable heavy earthmoving machinery attachment, yellow industrial paint coating" id="att-2-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCokIVq4DGDqtmZ65qQdXfFTXOQGyXaI7agUP62SiM4ZNDQCch7LLn6crTYnVnP91mVfm7_vFXzBywfq5uKAqYZRe9E7qt1MZc-SZBMoR1RBAHMN_ZF6oT-u4Rd8AsRcxjpnAyaRT72uPd2dVzK01hRtDPHJf8fZ-pw-i0kfiMKCvNLLU_7_SYDRX7oqJll4KBOc5v6iUowzSNREJseMDMlAXi9CU8fiaZ2FhC7EnWsZqQiDB7nprES"/>
+<!-- Missing Photo Overlay Element (Toggled by preview switch) -->
+<div class="hidden absolute inset-0 bg-surface-container-high flex flex-col items-center justify-center p-4 text-center" id="att-2-missing-ui">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center mb-1 text-secondary">
+<span class="material-symbols-outlined text-[24px]">no_photography</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Photo Pending Supervisor Upload</span>
+<span class="font-body-sm text-body-sm text-secondary max-w-xs mt-0.5">Physical equipment certified under paper inspection slip #IS-894 at Dispatch Gate.</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Capacity / Width</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5">0.26 m³ • 600 mm</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Pin Dimension</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5">80 mm Standard CAT</span>
+</div>
+</div>
+</div>
+<!-- Empty State for "No Attachments Linked" Preview -->
+<div class="hidden bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col items-center text-center" id="empty-attachments-view">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[28px]">construction</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">No Secondary Tooling Assigned</h4>
+<p class="font-body-sm text-body-sm text-secondary max-w-xs mt-1">
+          This work order currently operates the CAT 320D in stock excavator configuration. Check with dispatch for auxiliary tooling.
+        </p>
+<button class="mt-3 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md">
+          Request Breaker or Auger
+        </button>
+</div>
+</section>
+<!-- 5. FIELD OPERATING PROTOCOLS & PRE-START CHECKLIST -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-tight">Pre-Start &amp; Breaker Protocols</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Mandatory SOP compliance for CAT 320D fitted with rock breaker on Hinjawadi metro trenching:</p>
+<div class="flex flex-col gap-2.5 mt-1">
+<!-- Item 1 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold">1</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Verify Quick-Coupler Safety Pin</span>
+<span class="font-body-sm text-body-sm text-secondary">Physically check the mechanical locking wedge pin before raising the boom off ground level.</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold">2</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Zero Dry-Firing Rule</span>
+<span class="font-body-sm text-body-sm text-secondary">Never cycle the hydraulic breaker dry. Ensure the chisel point is firmly seated at 90° on rock strata.</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold">3</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Opening Hour-Meter Verification</span>
+<span class="font-body-sm text-body-sm text-secondary">Take crisp photo of dashboard hour-meter reading in the Driver App camera module before groundbreaking.</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container-low">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 font-label-sm text-label-sm font-bold">4</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Immediate Line Weeping Notice</span>
+<span class="font-body-sm text-body-sm text-secondary">Stop engine and vent accumulator immediately if hose pulsation or oil sheen is noticed near quick couplers.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. STRICT FLEET DATA ISOLATION NOTICE -->
+<section class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[20px] text-secondary">shield_lock</span>
+<h4 class="font-label-lg text-label-lg font-bold">Fleet Data Isolation Notice</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong>Data Governance &amp; Confidentiality:</strong> Vehicle capital acquisition costs, commercial client rental tariffs, maintenance invoices, and internal asset depreciation ledgers are strictly isolated from driver mobile accounts. Drivers have access to machine operational telemetry, assigned tooling, and pre-start inspection specs only.
+      </p>
+<div class="flex items-center justify-between text-secondary pt-1">
+<span class="font-label-sm text-label-sm">Compliance ISO-27001 / Fleet Logistics</span>
+<span class="font-label-sm text-label-sm">Secured by AJ Ops Core</span>
+</div>
+</section>
+</div>
+<!-- 7. FIXED BOTTOM ACTION BAR / TRAY -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.08)] px-margin py-3 pb-safe">
+<div class="flex items-center gap-space-sm max-w-md mx-auto">
+<!-- Report Issue Secondary Action Button -->
+<button aria-label="Report Vehicle Issue or Pre-Start Fault" class="h-12 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface active:scale-95 transition-all flex items-center justify-center gap-1.5 shrink-0" onclick="triggerFaultReport()">
+<span class="material-symbols-outlined text-[20px] text-error">warning</span>
+<span class="font-label-md text-label-md font-bold whitespace-nowrap">Report Fault</span>
+</button>
+<!-- Primary Action: Return / Proceed with Assigned Work Order -->
+<button class="flex-1 h-12 px-4 rounded-lg bg-primary-container hover:opacity-95 text-on-primary-container active:scale-98 transition-all flex items-center justify-center gap-2 shadow-sm font-label-lg text-label-lg font-extrabold uppercase tracking-wide" onclick="history.back()">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+<span class="truncate">Back to WO #WO-892</span>
+</button>
+</div>
+</div>
+<!-- TOAST FEEDBACK MODAL FOR INTERACTIVE DEMO (Hidden by default) -->
+<div class="fixed top-20 left-4 right-4 z-50 bg-inverse-surface text-surface-container-lowest p-3 rounded-xl shadow-xl flex items-center justify-between transition-all transform -translate-y-20 opacity-0 pointer-events-none" id="demo-toast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]" id="toast-icon">info</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-msg">Switched preview state</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase">Dismiss</span>
+</div>
+</div>
+<script>
+  function switchState(state) {
+    const btnStandard = document.getElementById('btn-standard');
+    const btnMissing = document.getElementById('btn-missing-photo');
+    const btnNoAtt = document.getElementById('btn-no-attachments');
+    const btnLoading = document.getElementById('btn-loading');
+
+    const viewContent = document.getElementById('view-content');
+    const viewSkeleton = document.getElementById('view-skeleton');
+
+    const attItems = document.querySelectorAll('.attachment-item');
+    const emptyAttView = document.getElementById('empty-attachments-view');
+    const attCounter = document.getElementById('attachment-counter');
+    const att2MissingUi = document.getElementById('att-2-missing-ui');
+    const att2Img = document.getElementById('att-2-img');
+
+    // Reset button states
+    [btnStandard, btnMissing, btnNoAtt, btnLoading].forEach(b => {
+      b.classList.remove('bg-on-background', 'text-on-primary');
+      b.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+
+    // Reset default views
+    viewSkeleton.classList.add('hidden');
+    viewContent.classList.remove('hidden');
+    attItems.forEach(el => el.classList.remove('hidden'));
+    emptyAttView.classList.add('hidden');
+    att2MissingUi.classList.add('hidden');
+    att2Img.classList.remove('hidden');
+    attCounter.textContent = '2 Units Configured';
+
+    if (state === 'standard') {
+      btnStandard.classList.add('bg-on-background', 'text-on-primary');
+      btnStandard.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      showToast('Loaded standard configured state with verified CAT 320D tooling.');
+    } else if (state === 'missing-photo') {
+      btnMissing.classList.add('bg-on-background', 'text-on-primary');
+      btnMissing.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      att2MissingUi.classList.remove('hidden');
+      att2Img.classList.add('hidden');
+      showToast('Simulating missing attachment photo fallback state for Bucket.');
+    } else if (state === 'no-attachments') {
+      btnNoAtt.classList.add('bg-on-background', 'text-on-primary');
+      btnNoAtt.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      attItems.forEach(el => el.classList.add('hidden'));
+      emptyAttView.classList.remove('hidden');
+      attCounter.textContent = '0 Units';
+      showToast('Simulating bare excavator work order without attached tooling.');
+    } else if (state === 'loading') {
+      btnLoading.classList.add('bg-on-background', 'text-on-primary');
+      btnLoading.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      viewContent.classList.add('hidden');
+      viewSkeleton.classList.remove('hidden');
+      showToast('Rendering high-contrast telemetry skeleton loader.');
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('demo-toast');
+    const msgEl = document.getElementById('toast-msg');
+    msgEl.textContent = message;
+    toast.classList.remove('opacity-0', '-translate-y-20', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.add('opacity-0', '-translate-y-20', 'pointer-events-none');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2800);
+  }
+
+  function triggerFaultReport() {
+    showToast('Opening Pre-Start Inspection Fault Log Form for Unit #15...');
+  }
+</script></main></body></html>

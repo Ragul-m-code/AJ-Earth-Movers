@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>AJ Earth Movers Driver</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#0b1c30", "surface-bright": "#f8f9ff", "primary-fixed": "#ffdf9f", "surface-container-highest": "#d3e4fe", "on-error-container": "#93000a", "surface-variant": "#d3e4fe", "on-primary-container": "#664b00", "surface-dim": "#cbdbf5", "outline-variant": "#d4c5ac", "secondary-fixed": "#dfe2ec", "secondary-fixed-dim": "#c3c6d0", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#3f465c", "tertiary": "#565e74", "error": "#ba1a1a", "on-secondary-fixed": "#181c23", "on-surface-variant": "#4f4632", "primary": "#795900", "on-tertiary-container": "#474f65", "on-primary-fixed-variant": "#5b4300", "on-secondary-container": "#61646d", "error-container": "#ffdad6", "inverse-on-surface": "#eaf1ff", "surface-container": "#e5eeff", "secondary-container": "#dfe2ec", "primary-fixed-dim": "#fabd0d", "surface-container-high": "#dce9ff", "background": "#f8f9ff", "on-error": "#ffffff", "surface-tint": "#795900", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#43474f", "tertiary-fixed-dim": "#bec6e0", "on-primary": "#ffffff", "tertiary-fixed": "#dae2fd", "on-primary-fixed": "#261a00", "on-tertiary": "#ffffff", "primary-container": "#f5b800", "on-background": "#0b1c30", "inverse-primary": "#fabd0d", "secondary": "#5b5e67", "outline": "#827660", "on-tertiary-fixed": "#131b2e", "inverse-surface": "#213145", "tertiary-container": "#bac1db", "surface-container-low": "#eff4ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1.25rem", "space-xl": "1.75rem", "gutter-sm": "0.75rem", "margin": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-sm": "0.75rem", "space-md": "0.875rem" }, "fontFamily": { "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "display-sm": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "metric-num": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-sm": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 600,'GRAD' 0,'opsz' 24;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(11,28,48,0.06)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-lg text-label-lg font-bold text-on-surface truncate">AJ Driver</span><span class="px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm tracking-wider uppercase font-bold">OPERATOR</span></div><span class="font-label-md text-label-md text-on-surface-variant truncate font-medium">My Work</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="flex items-center gap-1 px-2 py-1 rounded-full bg-surface-container text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-sm text-label-sm font-bold tracking-tight text-on-surface">ONLINE 4G</span></div><a aria-label="Emergency SOS Call Supervisor" class="w-11 h-11 flex items-center justify-center rounded-xl bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors" href="tel:911"><span class="material-symbols-outlined text-[22px]">e911_emergency</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Horizontal Operational Filter Pills -->
+<section class="w-full pt-3 px-gutter">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1" id="filter-container">
+<button class="filter-pill flex-shrink-0 px-3.5 py-2 rounded-xl bg-inverse-surface text-inverse-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" onclick="setFilter('all', this)">
+<span>All</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary-fixed font-bold text-label-sm">14</span>
+</button>
+<button class="filter-pill flex-shrink-0 px-3.5 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="setFilter('active', this)">
+<span>Active</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-bold text-label-sm">1</span>
+</button>
+<button class="filter-pill flex-shrink-0 px-3.5 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="setFilter('pending', this)">
+<span>Pending Review</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-bold text-label-sm">1</span>
+</button>
+<button class="filter-pill flex-shrink-0 px-3.5 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="setFilter('disputed', this)">
+<span>Disputed</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container font-bold text-label-sm">1</span>
+</button>
+<button class="filter-pill flex-shrink-0 px-3.5 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="setFilter('completed', this)">
+<span>Completed</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-bold text-label-sm">11</span>
+</button>
+</div>
+</section>
+<!-- Industrial Network Glitch / Cache Warning Card (Zero False Success Policy) -->
+<section class="px-gutter pt-3" id="offline-cache-alert">
+<div class="w-full bg-error-container/40 rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-3">
+<!-- Caution Tape Banner Stripe -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-error via-primary-container to-error animate-pulse"></div>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-error text-on-error flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">signal_cellular_connected_no_internet_0_bar</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-error-container">Upload Failed — Net Lost</span>
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm uppercase font-bold tracking-wider">Unsaved</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1 leading-relaxed">
+<span class="font-bold text-on-surface">WO-2024-889</span> • Tata Hitachi EX200. Closing meter photo & <span class="font-bold">3,410.5 hrs</span> safely locked in local encrypted hardware cache.
+          </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 rounded-lg p-2.5 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm tracking-tight text-on-surface font-semibold">Zero False-Success Policy: Shift frozen locally</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-mono font-bold">CACHE #889</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 h-12 bg-on-surface text-surface-container-lowest rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-98 shadow-sm" id="retry-btn" onclick="triggerRetryUpload()">
+<span class="material-symbols-outlined text-[20px]" id="retry-icon">sync</span>
+<span id="retry-text">Retry Sync (4G Required)</span>
+</button>
+<button aria-label="Cache Diagnostics" class="w-12 h-12 bg-surface-container-highest text-on-surface rounded-xl flex items-center justify-center active:scale-95" onclick="showDiagModal()">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Live Shifts Container -->
+<div class="flex flex-col gap-space-lg pt-4 px-gutter">
+<!-- Section: Active & Immediate Shifts -->
+<section class="work-section" data-category="active">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Active & Assigned Shifts</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">2 Shifts</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1: Active In-Progress -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-600"></div>
+<div class="flex items-start justify-between gap-2 pl-1">
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  ENGAGED RUNNING
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">#WO-2024-884</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1.5">JCB 3DX Super Loader</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">location_on</span>
+                Tata Infra Site B • Sector 4 Cut
+              </p>
+</div>
+<img class="w-16 h-16 rounded-lg object-cover flex-shrink-0 bg-surface-container" data-alt="AJ Earth Movers bright yellow JCB 3DX backhoe loader parked firmly on red excavation earth terrain, industrial daylight, rugged construction atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtqBV6xKXoN8NrIPfSN5h7yVlQ8B12UfrNmPNMAC_V3MfQpcOOTLsewneZdNBa3hBN0Ui3vhB5wxw8oETwAN50ni0U1tT8LAKKyU9e473wF56u1rFLD45wCSOGWBfpdnFCWMf1KKitdzO9Sgv_Mo0qm8YoYojQYuu_ZT6NPbx4UuHAckxZl8A9rSg5gwFp6lutuUfY1NwmDqEWrEDIVo4ABLqFkXqWSghh-oDygrEQeiEy2rJ0qLRU"/>
+</div>
+<!-- Machine Telemetry Tape -->
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low rounded-lg p-2.5">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider block">Shift Start Meter</span>
+<span class="font-headline-sm text-headline-sm font-mono text-on-surface font-bold">1,250.0 <span class="text-label-sm font-normal">HRS</span></span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider block">Elapsed Time</span>
+<span class="font-headline-sm text-headline-sm font-mono text-emerald-700 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] animate-spin">timelapse</span>
+                04h 25m
+              </span>
+</div>
+</div>
+<div class="mt-3">
+<button class="w-full h-12 bg-primary-container text-on-primary-fixed rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-98 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>View Job & Submit End Reading</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Upcoming Assigned Shift -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary"></div>
+<div class="flex items-start justify-between gap-2 pl-1">
+<div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold">
+                  TOMORROW 07:00 AM
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">#WO-2024-892</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1.5">CAT 320D Excavator</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">pin_drop</span>
+                Pune Ring Road Yard 3 • Section C
+              </p>
+</div>
+<img class="w-16 h-16 rounded-lg object-cover flex-shrink-0 bg-surface-container" data-alt="Caterpillar 320D heavy hydraulic excavator resting in a modern industrial plant depot, golden hour dust lighting, heavy tracks and yellow boom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHM68ZGVg7DwemAHxj8SYeAZ6RFBoQcCVWJtcwLpQk2DSrkYGd7kR4YZ_jhJAxpW3dAvJzW2sUkDlARu7sgy2EeRKqW1_HqoYqXZcjOuurhBHe9NSoU7Gn0o9JdA5UcabyUaJHvfFFc8PBpZNet4GLMXLtLskJShkTb0I1eHiyb-qFHnGa_kBJ3yvhirpB23fVwVTdM-pH4zkGtWqdpl2MTjkZHeeLJrfsXTEvJEfSvbg0g--0dY4p"/>
+</div>
+<div class="mt-3 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">calendar_clock</span>
+<span class="font-body-sm text-body-sm text-on-surface">Est. 10-Hour Bulk Haul Shift</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded font-bold text-on-surface-variant">Gate Pass #GP-88</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<button class="h-12 bg-on-surface text-surface-container-lowest rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-1.5 active:scale-98 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Accept Shift</span>
+</button>
+<button class="h-12 bg-surface-container text-on-surface rounded-xl font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1.5 active:scale-98">
+<span class="material-symbols-outlined text-[18px]">navigation</span>
+<span>Route Map</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Section: Dispute / Quality Retry Resolution Card -->
+<section class="work-section" data-category="disputed">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+          Requires Action
+        </h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-bold">1 Dispute</span>
+</div>
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="pl-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-md bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera_front</span>
+                PHOTO BLURRY • RE-AUDIT
+              </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">#WO-2024-875</span>
+</div>
+<div class="mt-2 flex gap-3">
+<div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover filter blur-[1px]" data-alt="Blurry out of focus analog machine hour meter dial on an excavator console taken through dusty cab glass with harsh lens glare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC8JtmuFXtj7fPOpy0Wl9vNuEG5phn6z6V7vay8z42OIEFhZ0teSh8D76UF7wvU6jFocflOR92Z0crZPPiIEGGlMgWmPdgI_04KtmOFe9gMTXJ0_jaKVzeQh7t5-nUZUC4QIHMd4OLMVDu1JGhjHzMyDqYY-F6Jm4m_YHgH_kFQAR-34RC1K29cgUdGL1hB1iRe9c4KJzN-S3ipE-xSvYgqY8hgydwNcJ6x8CJ88wTcXSOJh59cBQN"/>
+<div class="absolute inset-0 bg-on-surface/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-bright text-[22px]">no_photography</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Komatsu PC210 • Site B</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Supervisor remark: <span class="text-error font-medium">"Decimal dial 0.8 is cut off by glare. Need clear shot of full meter face."</span>
+</p>
+<div class="font-label-sm text-label-sm text-tertiary mt-1">Reported 2 hours ago</div>
+</div>
+</div>
+<div class="mt-3">
+<button class="w-full h-12 bg-error text-on-error rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-98 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+<span>Open Camera & Re-submit</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Section: Pending Admin Review (Zero Customer Billing Shown) -->
+<section class="work-section" data-category="pending">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Pending Review</h2>
+<span class="font-label-md text-label-md text-on-surface-variant">1 Under Audit</span>
+</div>
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="pl-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+              Pending Admin Verification
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">#WO-2024-881</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-2">JCB 3DX • Trench Shift</h3>
+<!-- Shift Hour Breakdown Graphic -->
+<div class="mt-2.5 p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-body-sm text-body-sm text-tertiary">Meter Range:</span>
+<span class="font-mono text-body-md font-bold">1,250.0 → 1,259.0</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-tertiary">Logged Total:</span>
+<span class="font-headline-sm text-headline-sm font-mono text-on-surface font-extrabold">9.0 HRS</span>
+</div>
+</div>
+<!-- Driver Wage Calculation (Driver rate only, no client charge) -->
+<div class="mt-3 p-3 rounded-xl bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Your Estimated Shift Wage</span>
+<span class="font-label-sm text-label-sm text-tertiary">Rate: ₹150 / hr × 9.0 hrs</span>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg text-on-surface font-extrabold font-mono">₹1,350</span>
+<span class="block font-label-sm text-label-sm text-tertiary">To be credited</span>
+</div>
+</div>
+<div class="mt-2 flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+              Meter photos uploaded & geostamped
+            </span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Desk Review</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Section: Completed Shifts Archive -->
+<section class="work-section" data-category="completed">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Completed Shifts</h2>
+<span class="font-label-md text-label-md text-primary font-bold">11 Archived</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Completed Shift Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                  APPROVED • CREDITED
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">#WO-2024-870</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 truncate">JCB 3DX • Mumbai Pier Foundation</h3>
+<p class="font-body-sm text-body-sm text-tertiary mt-0.5">Oct 24 • Operator Shift • 8.5 HRS</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-emerald-800 font-mono font-bold block">₹1,275</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">In Bank Wallet</span>
+</div>
+</div>
+<div class="mt-2.5 pt-2 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+              Duty Slip #DS-9914 signed
+            </span>
+<button class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-0.5">
+<span>View Slip</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Completed Shift Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                  APPROVED • CREDITED
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">#WO-2024-862</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1 truncate">CAT 320D • Quarry Blasting Prep</h3>
+<p class="font-body-sm text-body-sm text-tertiary mt-0.5">Oct 22 • Double Operator • 10.0 HRS</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-emerald-800 font-mono font-bold block">₹1,500</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">In Bank Wallet</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Hardware Cache Diagnostic Bottom Drawer / Modal (Initially Hidden) -->
+<div class="hidden fixed inset-0 z-50 bg-on-surface/50 backdrop-blur-sm flex flex-col justify-end p-gutter transition-all" id="diag-modal">
+<div class="w-full bg-surface-container-lowest rounded-2xl p-space-lg shadow-2xl flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">sd_card</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Offline Shift Vault</h3>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="hideDiagModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Your records are safely held on-device. They are timestamped via GPS hardware lock and cannot be tampered with while waiting for cell towers.
+      </p>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-2 font-mono text-label-sm">
+<div class="flex justify-between">
+<span class="text-tertiary">PAYLOAD_ID:</span>
+<span class="text-on-surface font-bold">CACHE_EX200_889</span>
+</div>
+<div class="flex justify-between">
+<span class="text-tertiary">LAT/LONG HASH:</span>
+<span class="text-on-surface font-bold">18.5204 N, 73.8567 E</span>
+</div>
+<div class="flex justify-between">
+<span class="text-tertiary">LOCAL STAMP:</span>
+<span class="text-on-surface font-bold">TODAY 16:42 IST</span>
+</div>
+<div class="flex justify-between">
+<span class="text-tertiary">ENCRYPTION:</span>
+<span class="text-emerald-700 font-bold">AES-256 HARDWARE SECURE</span>
+</div>
+</div>
+<button class="w-full h-12 bg-on-surface text-surface-container-lowest rounded-xl font-label-lg text-label-lg font-bold" onclick="hideDiagModal()">
+        Close Diagnostics
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function setFilter(category, button) {
+    // Update active pill styling
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(p => {
+      p.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+      p.classList.add('bg-surface-container', 'text-on-surface');
+    });
+    button.classList.remove('bg-surface-container', 'text-on-surface');
+    button.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+
+    // Filter work sections
+    const sections = document.querySelectorAll('.work-section');
+    sections.forEach(sec => {
+      if (category === 'all') {
+        sec.style.display = 'block';
+      } else {
+        if (sec.getAttribute('data-category') === category) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      }
+    });
+  }
+
+  function triggerRetryUpload() {
+    const btn = document.getElementById('retry-btn');
+    const icon = document.getElementById('retry-icon');
+    const text = document.getElementById('retry-text');
+
+    icon.classList.add('animate-spin');
+    text.innerText = 'Connecting to AJ Fleet Gateway...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      btn.disabled = false;
+      text.innerText = 'Signal Low • Retrying in 30s';
+      setTimeout(() => {
+        text.innerText = 'Retry Sync (4G Required)';
+      }, 3000);
+    }, 2200);
+  }
+
+  function showDiagModal() {
+    document.getElementById('diag-modal').classList.remove('hidden');
+  }
+
+  function hideDiagModal() {
+    document.getElementById('diag-modal').classList.add('hidden');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(11,28,48,0.06)]" data-active-classes="text-on-surface font-bold after:content-[''] after:absolute after:top-0 after:w-10 after:h-1 after:bg-primary-container after:rounded-full"><div class="flex items-center justify-around h-16 px-gutter"><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-md text-label-md tracking-tight uppercase">Home</span></a><a aria-current="page" class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] transition-colors active:scale-95 text-on-surface font-bold after:content-[''] after:absolute after:top-0 after:w-10 after:h-1 after:bg-primary-container after:rounded-full" data-path="my-work" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-label-md text-label-md tracking-tight uppercase">My Work</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="analytics" href="#"><span class="material-symbols-outlined text-[24px]">monitoring</span><span class="font-label-md text-label-md tracking-tight uppercase">Analytics</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-label-md text-label-md tracking-tight uppercase">Profile</span></a></div></nav></body></html>

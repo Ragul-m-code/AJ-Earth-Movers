@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'secondary-fixed-dim': '#bec6e0', 'surface-container-high': '#dce9ff', 'on-secondary-container': '#5c647a', 'on-secondary-fixed-variant': '#3f465c', 'surface-bright': '#f8f9ff', 'on-background': '#0b1c30', 'on-secondary-fixed': '#131b2e', 'error': '#ba1a1a', 'on-primary': '#ffffff', 'surface-container-low': '#eff4ff', 'on-secondary': '#ffffff', 'surface-container-highest': '#d3e4fe', 'tertiary-container': '#a3b2ca', 'surface-tint': '#855300', 'on-error': '#ffffff', 'error-container': '#ffdad6', 'tertiary': '#515f74', 'on-tertiary': '#ffffff', 'surface': '#f8f9ff', 'primary-fixed-dim': '#ffb95f', 'on-surface': '#0b1c30', 'outline': '#867461', 'inverse-primary': '#ffb95f', 'on-tertiary-fixed-variant': '#3a485c', 'secondary': '#565e74', 'surface-container-lowest': '#ffffff', 'on-tertiary-fixed': '#0d1c2f', 'surface-dim': '#cbdbf5', 'primary': '#855300', 'on-primary-fixed': '#2a1700', 'primary-container': '#f59e0b', 'primary-fixed': '#ffddb8', 'secondary-fixed': '#dae2fd', 'inverse-surface': '#213145', 'on-tertiary-container': '#374559', 'on-surface-variant': '#534434', 'on-primary-fixed-variant': '#653e00', 'on-error-container': '#93000a', 'tertiary-fixed-dim': '#b9c7e0', 'surface-container': '#e5eeff', 'outline-variant': '#d8c3ad', 'surface-variant': '#d3e4fe', 'inverse-on-surface': '#eaf1ff', 'on-primary-container': '#613b00', 'tertiary-fixed': '#d5e3fd', 'background': '#f8f9ff', 'secondary-container': '#dae2fd' }, borderRadius: { DEFAULT: '0.125rem', lg: '0.25rem', xl: '0.5rem', full: '0.75rem' }, spacing: { 'gutter': '1rem', 'gutter-desktop': '1.5rem', 'space-sm': '0.5rem', 'space-md': '1rem', 'margin': '1rem', 'margin-desktop': '2rem', 'space-xs': '0.25rem', 'space-lg': '1.5rem', 'space-xl': '2.5rem' }, fontFamily: { 'label-numeric-sm': ['JetBrains Mono'], 'body-md': ['Inter'], 'label-numeric-md': ['JetBrains Mono'], 'body-sm': ['Inter'], 'headline-xl-mobile': ['Inter'], 'headline-lg': ['Inter'], 'body-lg': ['Inter'], 'headline-xl': ['Inter'], 'headline-md': ['Inter'], 'label-caps': ['Inter'], 'label-numeric-lg': ['JetBrains Mono'], 'headline-sm': ['Inter'], 'headline-lg-mobile': ['Inter'] }, fontSize: { 'label-numeric-sm': ['13px', { lineHeight: '18px', fontWeight: '600' }], 'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }], 'label-numeric-md': ['18px', { lineHeight: '24px', fontWeight: '600' }], 'body-sm': ['12px', { lineHeight: '16px', fontWeight: '500' }], 'headline-xl-mobile': ['30px', { lineHeight: '38px', letterSpacing: '-0.02em', fontWeight: '800' }], 'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '-0.015em', fontWeight: '700' }], 'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }], 'headline-xl': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '800' }], 'headline-md': ['22px', { lineHeight: '28px', fontWeight: '700' }], 'label-caps': ['11px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '700' }], 'label-numeric-lg': ['28px', { lineHeight: '32px', letterSpacing: '-0.02em', fontWeight: '700' }], 'headline-sm': ['18px', { lineHeight: '24px', fontWeight: '600' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '-0.01em', fontWeight: '700' }] } } } };</script><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Close modal" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">close</span></button><img alt="AJ EARTH MOVERS Mobile App Icon &amp; Machine Emblem (Square 1:1 format). Rugged industrial aesthetic, deep charcoal (#20242B) squircle frame, high-visibility construction yellow (#F5B800) and pure white excavator boom &amp; bucket 'AJ' monogram. Optimized for 48px to 512px app icons, machine stickers, and driver uniform patches.. Brand logo. - Primary color: #f59e0b - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XaQ99qyimBKmIYyL1HkqZTU3EL2e44UQBy-S98x579gBQHxQbhm4pEqdKihjLdfXYYE2urhMhk99psIgKSbARwSx5x8sOc-_a1KXGgvb1XMWYuhZImmPT1RWynbT8K49L1AYticLqT2-NeLFoXBHoaXQ4xb2yuT5V5Z6a8S-kWjcnM2JH8z7HZu8xID3B7vrPzGp_2y5pkLZDOU5udtaOrKimGqAG7ZaBtB7EpAVq6ktgEkW11gkWcHIY"/><div class="flex flex-col ml-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">Add Maintenance Record</h1><div class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-[14px]">verified_user</span><span class="font-label-caps text-label-caps text-secondary uppercase">SSL 256-BIT AUDIT</span></div></div></div><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-gutter pt-16 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Banner / Audit Header -->
+<div class="w-full bg-inverse-surface rounded-xl p-space-md shadow-md text-surface flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm text-primary-fixed tracking-tight">JOB CARD #SVC-2024-094</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container/20 text-surface-container-high px-2 py-0.5 rounded-full uppercase">Draft Auto-Saved</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-dim leading-snug">
+      Parts requisitions &amp; labor vouchers cross-referenced against depot ledger and telematics SMU baseline.
+    </p>
+</div>
+<form class="flex flex-col gap-space-md" id="maintenance-form" onsubmit="event.preventDefault();">
+<!-- SECTION 01: Equipment / Unit Identification -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">construction</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Unit Identification</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Sec 01</span>
+</div>
+<!-- Segmented Type Selector -->
+<div class="grid grid-cols-2 p-1 bg-surface-container rounded-lg gap-1">
+<button class="py-2 rounded font-headline-sm text-body-sm bg-inverse-surface text-surface shadow transition-all" id="tab-vehicles" onclick="switchUnitType('vehicles')" type="button">
+          Vehicles (18)
+        </button>
+<button class="py-2 rounded font-body-sm text-body-sm text-secondary hover:text-on-surface transition-all" id="tab-attachments" onclick="switchUnitType('attachments')" type="button">
+          Attachments (12)
+        </button>
+</div>
+<!-- Selected Unit Card -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tata Hitachi EX200</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary">#HIT-07</span>
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container-high px-1.5 py-0.5 rounded text-on-secondary-fixed">KA-04-J-5512</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container-highest text-primary-container px-2 py-1 rounded-full uppercase flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            Bay Staged
+          </span>
+</div>
+<!-- Telematics Recessed Meter Readout -->
+<div class="bg-inverse-surface rounded-lg p-space-sm flex items-center justify-between text-surface">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-surface-dim uppercase">Current SMU Meter</span>
+<span class="font-label-numeric-lg text-label-numeric-md text-primary-fixed">2,482.0 <span class="font-body-sm text-surface-dim">hrs</span></span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-surface-dim uppercase">Due Interval</span>
+<span class="font-label-numeric-md text-label-numeric-sm text-primary-fixed-dim">2,500.0 hrs <span class="text-error bg-error-container text-on-error-container px-1 rounded text-[10px] ml-1">18h left</span></span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm bg-surface-container rounded p-2">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">hardware</span>
+<span class="font-body-sm text-body-sm truncate">Paired: Standard 1.2m Digging Bucket</span>
+</div>
+<button class="text-primary font-headline-sm text-body-sm shrink-0 flex items-center gap-0.5" type="button">
+            Switch <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 02: Maintenance Category & Scope -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Category &amp; Scope</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Sec 02</span>
+</div>
+<!-- Category Pills Grid -->
+<div class="grid grid-cols-2 gap-2">
+<button class="cat-pill text-left p-2.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-body-sm transition-all shadow-sm flex items-center justify-between" onclick="selectCategory(this)" type="button">
+<span>Periodic PM Service</span>
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+<button class="cat-pill text-left p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-all flex items-center justify-between" onclick="selectCategory(this)" type="button">
+<span>Hydraulic &amp; Breaker</span>
+<span class="material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+<button class="cat-pill text-left p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-all flex items-center justify-between" onclick="selectCategory(this)" type="button">
+<span>Engine &amp; Transmission</span>
+<span class="material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+<button class="cat-pill text-left p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-all flex items-center justify-between" onclick="selectCategory(this)" type="button">
+<span>Undercarriage &amp; Tracks</span>
+<span class="material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+<button class="cat-pill text-left p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-all flex items-center justify-between" onclick="selectCategory(this)" type="button">
+<span>Breakdown Overhaul</span>
+<span class="material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+<button class="cat-pill text-left p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-all flex items-center justify-between" onclick="selectCategory(this)" type="button">
+<span>Welding &amp; Structural</span>
+<span class="material-symbols-outlined text-[18px] opacity-0">check_circle</span>
+</button>
+</div>
+<!-- Work Scope Description Area -->
+<div class="flex flex-col gap-1 mt-1">
+<label class="font-label-caps text-label-caps text-secondary uppercase" for="work-desc">Operational Work Description</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-inner outline-none focus:bg-surface-container-low transition-all resize-none" id="work-desc" placeholder="Enter work details..." rows="3">2,500-Hour Major Engine &amp; Hydraulic Service. Engine oil flush (15W40), primary &amp; secondary hydraulic return filter replacement, coolant system flush, and track tension inspection.</textarea>
+</div>
+<!-- Quick Scope Tags -->
+<div class="flex items-center gap-1.5 flex-wrap">
+<button class="px-2 py-1 rounded bg-surface-container text-secondary hover:text-on-surface font-label-caps text-label-caps" onclick="appendTag('+ Oil Flush')" type="button">+ Oil Flush</button>
+<button class="px-2 py-1 rounded bg-surface-container text-secondary hover:text-on-surface font-label-caps text-label-caps" onclick="appendTag('+ Filter Replacement')" type="button">+ Filter Replacement</button>
+<button class="px-2 py-1 rounded bg-surface-container text-secondary hover:text-on-surface font-label-caps text-label-caps" onclick="appendTag('+ Pressure Calibration')" type="button">+ Pressure Calibration</button>
+<button class="px-2 py-1 rounded bg-surface-container text-secondary hover:text-on-surface font-label-caps text-label-caps" onclick="appendTag('+ Grease Pack')" type="button">+ Grease Pack</button>
+</div>
+</section>
+<!-- SECTION 03: Dates & Timeline -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_clock</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Timeline &amp; Execution</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Sec 03</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Scheduled Date Input -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-label-caps text-secondary uppercase">Scheduled Service Date</label>
+<span class="font-label-caps text-label-caps text-error uppercase">Mandatory</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg shadow-inner">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">event</span>
+<span class="font-headline-sm text-body-md text-on-surface">26 Oct 2024</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary bg-surface-container px-2 py-0.5 rounded">Depot Morning Shift (08:00 AM - 04:00 PM)</span>
+</div>
+</div>
+<!-- Actual Completion Date Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-secondary uppercase">Actual Completion Date</label>
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-lg shadow-inner">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+<span class="font-body-md text-body-md italic text-secondary">Pending completion (staged)</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container text-on-secondary-container px-2 py-0.5 rounded uppercase">Auto-Stamps</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Original scheduled date is permanently preserved for audit variance logs.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 04: Service Provider & Allocation -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">engineering</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Service Provider</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Sec 04</span>
+</div>
+<!-- Provider Tabs -->
+<div class="grid grid-cols-3 p-1 bg-surface-container rounded-lg gap-1 text-center">
+<button class="py-1.5 rounded font-headline-sm text-[11px] bg-inverse-surface text-surface shadow transition-all" type="button">In-House Bay</button>
+<button class="py-1.5 rounded font-body-sm text-[11px] text-secondary hover:text-on-surface transition-all" type="button">OEM Dealer</button>
+<button class="py-1.5 rounded font-body-sm text-[11px] text-secondary hover:text-on-surface transition-all" type="button">3rd-Party</button>
+</div>
+<!-- Selected Workshop Details Card -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-sm text-body-md text-on-surface">Central Depot Workshop - Bay #2</h4>
+<p class="font-body-sm text-body-sm text-secondary">Lead: Somanna (Head Mechanic) • Crew 4B</p>
+</div>
+<a class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm" href="tel:+919845533210">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary">+91 98455 33210</span>
+<button class="font-label-caps text-label-caps text-primary uppercase flex items-center gap-0.5" type="button">
+            Change Bay <span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 05: Dual-Cost Accounting -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Cost Reconciliation</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Sec 05</span>
+</div>
+<!-- Split Dual Ledger -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Box A: Estimated Cost -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Approved Estimate</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹</span>
+<input class="w-full bg-transparent font-label-numeric-md text-label-numeric-md text-on-surface font-bold outline-none" type="text" value="38,500"/>
+</div>
+<div class="font-label-caps text-[10px] text-secondary leading-tight mt-1">
+            Parts: ₹28,000<br/>Labor: ₹10,500
+          </div>
+<span class="font-label-caps text-[9px] text-secondary-fixed-dim uppercase mt-1">Locked On Approval</span>
+</div>
+<!-- Box B: Progressive Actual Cost -->
+<div class="bg-inverse-surface rounded-lg p-space-sm flex flex-col gap-1 text-surface">
+<span class="font-label-caps text-label-caps text-surface-dim uppercase">Actual Reconciled</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary-fixed">₹</span>
+<input class="w-full bg-transparent font-label-numeric-md text-label-numeric-md text-primary-fixed font-bold outline-none" type="text" value="39,200"/>
+</div>
+<span class="font-label-caps text-[10px] bg-primary-container text-on-primary-container px-1 py-0.5 rounded self-start mt-1">
+            +₹700 (+1.8%)
+          </span>
+<span class="font-label-caps text-[9px] text-surface-dim uppercase mt-1">Within 5% Depot Tol.</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Baseline estimate is frozen upon mechanic dispatch to prevent billing drifts.</p>
+</section>
+<!-- SECTION 06: Service Lifecycle Status -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">sync</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Lifecycle Status</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Sec 06</span>
+</div>
+<!-- Segmented Status Selector -->
+<div class="grid grid-cols-4 gap-1 p-1 bg-surface-container rounded-lg text-center">
+<button class="status-btn py-2 rounded font-body-sm text-body-sm text-secondary hover:text-on-surface transition-all" onclick="setStatus(this)" type="button">Upcoming</button>
+<button class="status-btn py-2 rounded font-headline-sm text-body-sm bg-error text-on-error shadow transition-all" onclick="setStatus(this)" type="button">Due</button>
+<button class="status-btn py-2 rounded font-body-sm text-body-sm text-secondary hover:text-on-surface transition-all" onclick="setStatus(this)" type="button">In Progress</button>
+<button class="status-btn py-2 rounded font-body-sm text-body-sm text-secondary hover:text-on-surface transition-all" onclick="setStatus(this)" type="button">Completed</button>
+</div>
+<!-- Machine Lockout Toggle Option -->
+<label class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer">
+<input checked="" class="mt-0.5 w-4 h-4 accent-primary rounded cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm text-on-surface">Enforce Dispatch Lockout</span>
+<span class="font-body-sm text-body-sm text-secondary">Prevents site allocation or telematics start until job card supervisor closure.</span>
+</div>
+</label>
+</section>
+<!-- SECTION 07: Workshop Notes & Attachments -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">attach_file</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Workshop Attachments</span>
+</div>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Sec 07</span>
+</div>
+<!-- Notes Field -->
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-secondary uppercase" for="workshop-notes">Internal Mechanics Note</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all resize-none" id="workshop-notes" rows="2">OEM filter kit (Part #TH-2401-K) verified in Rack 4B. Mechanic requested high-pressure grease drum.</textarea>
+</div>
+<!-- Document Upload Tile -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-md flex flex-col items-center justify-center gap-1.5 cursor-pointer hover:bg-surface-container transition-all">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">add_a_photo</span>
+</div>
+<span class="font-headline-sm text-body-sm text-on-surface">Upload Invoice, PO or Work Photo</span>
+<span class="font-body-sm text-[11px] text-secondary">PDF, JPG up to 10MB</span>
+</div>
+<!-- Attached Items List -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-error text-[22px]">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-on-surface truncate">OEM_Parts_Estimate_TH07.pdf</span>
+<span class="font-body-sm text-[11px] text-secondary">1.8 MB • Hash Verified</span>
+</div>
+</div>
+<button class="text-secondary hover:text-error p-1" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[22px]">image</span>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-body-sm text-on-surface truncate">Pre_Inspection_Dial_Photo.jpg</span>
+<span class="font-body-sm text-[11px] text-secondary">2.4 MB • 2,482.0h SMU Stamped</span>
+</div>
+</div>
+<button class="text-secondary hover:text-error p-1" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Audit Footer Details -->
+<div class="pt-2 flex items-center justify-between text-secondary font-label-caps text-[10px]">
+<span>Recorded by: Ramesh Sharma (#ADM-001)</span>
+<span>Bangalore Central Depot</span>
+</div>
+</section>
+</form>
+</div>
+<script>
+  function switchUnitType(type) {
+    const vTab = document.getElementById('tab-vehicles');
+    const aTab = document.getElementById('tab-attachments');
+    if (type === 'vehicles') {
+      vTab.className = 'py-2 rounded font-headline-sm text-body-sm bg-inverse-surface text-surface shadow transition-all';
+      aTab.className = 'py-2 rounded font-body-sm text-body-sm text-secondary hover:text-on-surface transition-all';
+    } else {
+      aTab.className = 'py-2 rounded font-headline-sm text-body-sm bg-inverse-surface text-surface shadow transition-all';
+      vTab.className = 'py-2 rounded font-body-sm text-body-sm text-secondary hover:text-on-surface transition-all';
+    }
+  }
+
+  function selectCategory(el) {
+    document.querySelectorAll('.cat-pill').forEach(btn => {
+      btn.className = 'cat-pill text-left p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container transition-all flex items-center justify-between';
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) icon.classList.add('opacity-0');
+    });
+    el.className = 'cat-pill text-left p-2.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-body-sm transition-all shadow-sm flex items-center justify-between';
+    const activeIcon = el.querySelector('.material-symbols-outlined');
+    if (activeIcon) activeIcon.classList.remove('opacity-0');
+  }
+
+  function setStatus(el) {
+    document.querySelectorAll('.status-btn').forEach(btn => {
+      btn.className = 'status-btn py-2 rounded font-body-sm text-body-sm text-secondary hover:text-on-surface transition-all';
+    });
+    el.className = 'status-btn py-2 rounded font-headline-sm text-body-sm bg-primary-container text-on-primary-container shadow transition-all';
+  }
+
+  function appendTag(tagText) {
+    const area = document.getElementById('work-desc');
+    if (!area.value.includes(tagText.replace('+ ', ''))) {
+      area.value += (area.value ? ' ' : '') + tagText.replace('+ ', '') + ';';
+    }
+  }
+</script></main><aside class="fixed bottom-0 inset-x-0 z-40 bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(0,0,0,0.06)] pb-safe"><div class="h-20 px-gutter flex items-center gap-space-md"><button class="w-1/3 h-12 flex items-center justify-center font-headline-sm text-headline-sm text-on-surface bg-surface-container hover:bg-surface-container-high active:translate-y-0.5 rounded-lg transition-all" onclick="history.back()" type="button">Cancel</button><button class="w-2/3 h-12 flex items-center justify-center gap-2 font-headline-sm text-headline-sm text-on-primary-container bg-primary-container active:translate-y-0.5 rounded-lg shadow-md transition-all" form="maintenance-form" type="submit"><span class="material-symbols-outlined text-[20px]">save</span><span>Save Record</span></button></div></aside></body></html>

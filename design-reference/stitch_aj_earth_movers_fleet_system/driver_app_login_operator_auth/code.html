@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJ Earth Movers Driver Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #f1f5f9;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* Touch target guarantee */
+    .touch-target {
+      min-height: 52px;
+    }
+    /* Subtle industrial grid watermark */
+    .blueprint-pattern {
+      background-image: linear-gradient(to right, rgba(203, 219, 245, 0.25) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(203, 219, 245, 0.25) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="flex justify-center items-start min-h-screen p-0 sm:py-6 bg-slate-900">
+
+  <!-- Mobile Viewport 390x844 Container -->
+  <div class="w-full max-w-[390px] min-h-[844px] bg-[#f8f9ff] text-[#0f172a] flex flex-col relative shadow-2xl overflow-hidden border-x border-slate-700/30">
+    
+    <!-- Top System & Connectivity Status Bar -->
+    <div class="pt-3 px-5 pb-2 bg-[#ffffff] border-b border-[#e2e8f0] flex items-center justify-between text-xs font-semibold text-slate-600">
+      <!-- Network Hardware Ping -->
+      <div class="flex items-center gap-1.5" id="networkPill">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-emerald-200"></span>
+        <span class="font-mono-code text-[11px] font-bold text-slate-700 tracking-tight">4G CELL • ONLINE</span>
+      </div>
+
+      <!-- Fleet Terminal Badge -->
+      <div class="flex items-center gap-1.5">
+        <span class="px-2 py-0.5 rounded bg-amber-100 border border-amber-300 text-amber-900 text-[10px] font-black uppercase tracking-wider">
+          Driver App
+        </span>
+        <span class="text-slate-400 font-bold">|</span>
+        <span class="text-[11px] text-slate-500 font-medium">v2.4.1</span>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col px-6 pt-5 pb-6 blueprint-pattern relative">
+
+      <!-- Master Brand Header -->
+      <div class="flex flex-col items-center text-center mt-2 mb-6">
+        <!-- Logo Emblem -->
+        <div class="w-full max-w-[240px] mb-2 flex justify-center">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI" alt="AJ Earth Movers" class="w-full h-auto object-contain drop-shadow-sm" />
+        </div>
+        
+        <!-- Field Subtitle & Welcome -->
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-900 rounded-full text-white text-[11px] font-bold tracking-wide uppercase mt-1 mb-2">
+          <svg class="w-3.5 h-3.5 text-[#f5b800]" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+          </svg>
+          Operator Duty Terminal
+        </div>
+        <h1 class="text-xl font-extrabold text-[#0f172a] tracking-tight">Shift Sign-In</h1>
+        <p class="text-xs text-slate-500 font-medium mt-0.5">Enter your operator credentials to access your assigned JCB &amp; excavators</p>
+      </div>
+
+      <!-- State Simulation Switcher (Interactive Demo Toolbar for QA / Review) -->
+      <div class="mb-4 bg-white/90 backdrop-blur rounded-xl p-2.5 border border-slate-200/80 shadow-sm">
+        <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 mb-1.5 px-1 uppercase tracking-wider">
+          <span>Test State Preview</span>
+          <span class="text-amber-600 font-mono-code font-semibold">Demo Bar</span>
+        </div>
+        <div class="grid grid-cols-4 gap-1 text-[10px] font-bold">
+          <button onclick="setState('default')" id="btn-default" class="py-1.5 px-1 rounded border border-amber-400 bg-amber-50 text-amber-900 transition-all text-center">
+            Normal
+          </button>
+          <button onclick="setState('error-auth')" id="btn-error-auth" class="py-1.5 px-1 rounded border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 transition-all text-center">
+            Invalid PIN
+          </button>
+          <button onclick="setState('error-network')" id="btn-error-network" class="py-1.5 px-1 rounded border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 transition-all text-center">
+            No 4G
+          </button>
+          <button onclick="setState('loading')" id="btn-loading" class="py-1.5 px-1 rounded border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 transition-all text-center">
+            Signing In
+          </button>
+        </div>
+      </div>
+
+      <!-- Network Failure Global Banner (Hidden by default, shown in error-network state) -->
+      <div id="networkErrorBanner" class="hidden mb-4 p-3 bg-rose-50 border-2 border-rose-400 rounded-xl flex items-start gap-2.5 animate-fadeIn">
+        <div class="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center shrink-0 text-rose-700 mt-0.5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.166a1 1 0 111.414 1.414M1 1l22 22" />
+          </svg>
+        </div>
+        <div class="flex-1 text-left">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs font-bold text-rose-900 uppercase tracking-wide">Network Connection Lost</h4>
+            <span class="text-[10px] font-mono-code font-bold bg-rose-200/70 text-rose-900 px-1.5 py-0.5 rounded">ERR_OFFLINE</span>
+          </div>
+          <p class="text-[11px] text-rose-700 leading-snug mt-0.5">
+            Shift clocking requires live 4G GPS geofence handshake. Please verify mobile data.
+          </p>
+          <button onclick="simulateRetry()" class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 bg-rose-600 text-white rounded-lg text-xs font-bold shadow-sm active:scale-95 transition-all">
+            <svg class="w-3.5 h-3.5 animate-spin hidden" id="retrySpinner" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+            <span id="retryText">Retry 4G Handshake</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Login Form Card -->
+      <form id="driverLoginForm" onsubmit="handleFormSubmit(event)" class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-md flex flex-col gap-4">
+
+        <!-- Form Validation / Summary Notice (when invalid credentials) -->
+        <div id="authErrorAlert" class="hidden p-3 rounded-xl bg-amber-50 border border-amber-300 flex items-start gap-2.5">
+          <svg class="w-5 h-5 text-amber-700 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.2c-1.53 0-2.493-1.646-1.743-2.98l5.8-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+          </svg>
+          <div class="text-left text-xs leading-tight">
+            <p class="font-bold text-amber-900">Operator Authentication Failed</p>
+            <p class="text-amber-700 text-[11px] mt-0.5">Operator ID or Security PIN did not match active yard roster.</p>
+          </div>
+        </div>
+
+        <!-- FIELD 1: Driver ID Input -->
+        <div class="flex flex-col text-left">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="driverIdInput" class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+              <span>Driver ID</span>
+              <span class="text-rose-600">*</span>
+            </label>
+            <span class="text-[11px] font-mono-code text-slate-400 font-semibold">e.g. DRV-104</span>
+          </div>
+
+          <div class="relative flex items-center">
+            <!-- Icon -->
+            <div class="absolute left-3.5 text-slate-400 pointer-events-none flex items-center justify-center">
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+
+            <!-- Input Element -->
+            <input 
+              id="driverIdInput" 
+              type="text" 
+              name="driver_id" 
+              value="DRV-104"
+              placeholder="Enter Driver ID (DRV-XXX)" 
+              autocomplete="username"
+              autocapitalize="characters"
+              required 
+              oninput="handleDriverIdInput(this)"
+              class="w-full touch-target pl-11 pr-10 py-3.5 bg-slate-50 border-2 border-slate-300 rounded-xl text-sm font-bold text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#f5b800] focus:bg-white focus:ring-4 focus:ring-amber-400/20 transition-all font-mono-code"
+            />
+
+            <!-- Clear / Success Indicator Check -->
+            <div id="driverIdStatusIcon" class="absolute right-3.5 text-emerald-600">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Inline Error for Driver ID -->
+          <p id="driverIdError" class="hidden text-[11px] font-bold text-rose-600 mt-1.5 flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+            </svg>
+            <span>Driver ID is required (format: DRV-###)</span>
+          </p>
+        </div>
+
+        <!-- FIELD 2: Password / Security PIN Input -->
+        <div class="flex flex-col text-left">
+          <div class="flex items-center justify-between mb-1.5">
+            <label for="pinInput" class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+              <span>Security PIN / Password</span>
+              <span class="text-rose-600">*</span>
+            </label>
+            <span class="text-[11px] font-medium text-slate-400">4-6 digit field PIN</span>
+          </div>
+
+          <div class="relative flex items-center">
+            <!-- Icon -->
+            <div class="absolute left-3.5 text-slate-400 pointer-events-none flex items-center justify-center">
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+
+            <!-- PIN / Password Input (Never plain text by default) -->
+            <input 
+              id="pinInput" 
+              type="password" 
+              name="password" 
+              value="••••••"
+              placeholder="Enter secure PIN" 
+              autocomplete="current-password"
+              inputmode="numeric"
+              required 
+              oninput="handlePinInput(this)"
+              class="w-full touch-target pl-11 pr-14 py-3.5 bg-slate-50 border-2 border-slate-300 rounded-xl text-base font-bold text-slate-900 tracking-widest placeholder-slate-400 focus:outline-none focus:border-[#f5b800] focus:bg-white focus:ring-4 focus:ring-amber-400/20 transition-all font-mono-code"
+            />
+
+            <!-- Accessible Show/Hide Password Toggle (≥48px touch zone) -->
+            <button 
+              type="button" 
+              id="togglePasswordBtn"
+              onclick="togglePasswordVisibility()" 
+              aria-label="Toggle password visibility"
+              class="absolute right-1 top-1 bottom-1 w-12 flex items-center justify-center text-slate-500 hover:text-slate-800 active:scale-95 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 transition-colors"
+            >
+              <!-- Eye Off (Default Hidden) -->
+              <svg id="eyeOffIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+              </svg>
+              <!-- Eye On (Shown) -->
+              <svg id="eyeOnIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Inline Error for PIN -->
+          <p id="pinError" class="hidden text-[11px] font-bold text-rose-600 mt-1.5 flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+            </svg>
+            <span id="pinErrorText">Invalid PIN code. Please verify with site dispatch.</span>
+          </p>
+        </div>
+
+        <!-- Privacy & Data Isolation Note -->
+        <div class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-left">
+          <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span class="text-[11px] text-slate-600 font-medium leading-tight">
+            Single-driver authentication. You can only view and submit readings for machines assigned to your shift.
+          </span>
+        </div>
+
+        <!-- PRIMARY SUBMIT BUTTON: Prominent Construction Yellow (#F5B800) -->
+        <button 
+          type="submit" 
+          id="submitLoginBtn"
+          class="w-full touch-target bg-[#f5b800] hover:bg-[#e5ac00] active:bg-[#d49e00] active:scale-[0.98] text-[#0f172a] rounded-xl font-extrabold text-base tracking-wide shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 border-b-4 border-[#b45309]"
+        >
+          <!-- Regular Icon & Label -->
+          <span id="btnLabel" class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#0f172a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+            </svg>
+            Sign In &amp; Start Shift
+          </span>
+
+          <!-- Loading Spinner (Hidden by default) -->
+          <span id="btnSpinner" class="hidden flex items-center gap-2">
+            <svg class="w-5 h-5 animate-spin text-[#0f172a]" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+            <span class="font-bold">Verifying Operator Roster...</span>
+          </span>
+        </button>
+
+        <!-- Recovery / Site Dispatch Assistance Link -->
+        <div class="pt-1 flex flex-col items-center gap-1.5 text-center">
+          <button 
+            type="button" 
+            onclick="openRecoveryModal()"
+            class="text-xs font-bold text-slate-700 hover:text-amber-800 underline underline-offset-4 decoration-amber-400 decoration-2 transition-colors py-1 px-2"
+          >
+            Forgot Driver PIN or Need Shift Activation?
+          </button>
+          <span class="text-[11px] text-slate-400 font-medium">Contact Pune Yard Dispatch: +91 98200 44102</span>
+        </div>
+
+      </form>
+
+      <!-- Successful Login Transition Overlay (Simulation) -->
+      <div id="loginSuccessToast" class="hidden mt-4 p-3.5 bg-emerald-600 text-white rounded-xl shadow-lg flex items-center gap-3 animate-bounce">
+        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div class="text-left">
+          <p class="text-xs font-black uppercase tracking-wide">Operator Verified: Ramesh Kumar</p>
+          <p class="text-[11px] text-emerald-100">Redirecting to Active Shift HUD (JCB 3DX #884)...</p>
+        </div>
+      </div>
+
+      <!-- Quick Shift Helpline / Field Support Card -->
+      <div class="mt-auto pt-4 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-200/60 border border-slate-300 text-slate-700 text-[11px] font-semibold">
+          <svg class="w-3.5 h-3.5 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/>
+          </svg>
+          <span>Yard Supervisor On-Call • 24/7 Machine Support</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Security & Hardware Footer -->
+    <div class="py-2.5 px-4 bg-slate-900 border-t border-slate-800 text-[10px] text-slate-400 flex items-center justify-between">
+      <div class="flex items-center gap-1.5 font-medium">
+        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+        <span>Hardware Geofenced</span>
+      </div>
+      <div class="font-mono-code text-slate-300">
+        AJ EARTH MOVERS © FLEET-OS
+      </div>
+    </div>
+
+    <!-- Credentials Recovery Modal (Hidden by Default) -->
+    <div id="recoveryModal" class="hidden absolute inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-4">
+      <div class="w-full bg-white rounded-2xl p-5 shadow-2xl border border-slate-200 text-left animate-fadeIn">
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-800 font-bold">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-extrabold text-slate-900">Driver PIN Assistance</h3>
+              <p class="text-[11px] text-slate-500">Security Policy for Equipment Operators</p>
+            </div>
+          </div>
+          <button onclick="closeRecoveryModal()" class="text-slate-400 hover:text-slate-700 p-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="text-xs text-slate-600 space-y-2 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <p class="font-medium">
+            To prevent unauthorized hour-meter tampering or machine allocation errors, driver PINs cannot be reset via public SMS.
+          </p>
+          <div class="flex items-center gap-2 font-bold text-slate-800">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+            <span>Report to Yard Dispatch Supervisor</span>
+          </div>
+          <div class="flex items-center gap-2 font-bold text-slate-800">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+            <span>Present Heavy Machinery Driving License</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <a href="tel:+919820044102" class="w-full touch-target bg-slate-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition-all">
+            <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/>
+            </svg>
+            Call Yard Dispatcher (+91 98200 44102)
+          </a>
+          <button onclick="closeRecoveryModal()" class="w-full py-2.5 bg-slate-100 text-slate-700 rounded-xl font-bold text-xs hover:bg-slate-200 transition-all">
+            Dismiss &amp; Return to Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let isPasswordVisible = false;
+
+    function togglePasswordVisibility() {
+      const pinInput = document.getElementById('pinInput');
+      const eyeOff = document.getElementById('eyeOffIcon');
+      const eyeOn = document.getElementById('eyeOnIcon');
+
+      isPasswordVisible = !isPasswordVisible;
+      pinInput.type = isPasswordVisible ? 'text' : 'password';
+
+      if (isPasswordVisible) {
+        eyeOff.classList.add('hidden');
+        eyeOn.classList.remove('hidden');
+      } else {
+        eyeOff.classList.remove('hidden');
+        eyeOn.classList.add('hidden');
+      }
+    }
+
+    function handleDriverIdInput(input) {
+      const err = document.getElementById('driverIdError');
+      const check = document.getElementById('driverIdStatusIcon');
+      if (input.value.trim().length >= 3) {
+        err.classList.add('hidden');
+        input.classList.remove('border-rose-400');
+        check.classList.remove('hidden');
+      } else {
+        check.classList.add('hidden');
+      }
+    }
+
+    function handlePinInput(input) {
+      const err = document.getElementById('pinError');
+      if (input.value.length > 0) {
+        err.classList.add('hidden');
+        input.classList.remove('border-rose-400');
+      }
+    }
+
+    function openRecoveryModal() {
+      document.getElementById('recoveryModal').classList.remove('hidden');
+    }
+
+    function closeRecoveryModal() {
+      document.getElementById('recoveryModal').classList.add('hidden');
+    }
+
+    function simulateRetry() {
+      const spinner = document.getElementById('retrySpinner');
+      const text = document.getElementById('retryText');
+      spinner.classList.remove('hidden');
+      text.innerText = 'Connecting to Pune Base...';
+
+      setTimeout(() => {
+        spinner.classList.add('hidden');
+        text.innerText = 'Connected!';
+        setTimeout(() => {
+          setState('default');
+        }, 600);
+      }, 1200);
+    }
+
+    // Interactive State Handler for QA & Demonstration
+    function setState(stateName) {
+      const allBtns = ['btn-default', 'btn-error-auth', 'btn-error-network', 'btn-loading'];
+      allBtns.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.className = 'py-1.5 px-1 rounded border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 transition-all text-center';
+        }
+      });
+
+      const activeBtn = document.getElementById('btn-' + stateName);
+      if (activeBtn) {
+        activeBtn.className = 'py-1.5 px-1 rounded border border-amber-400 bg-amber-50 text-amber-900 font-extrabold transition-all text-center';
+      }
+
+      const netPill = document.getElementById('networkPill');
+      const netBanner = document.getElementById('networkErrorBanner');
+      const authAlert = document.getElementById('authErrorAlert');
+      const pinErr = document.getElementById('pinError');
+      const driverIdErr = document.getElementById('driverIdError');
+      const pinInput = document.getElementById('pinInput');
+      const driverInput = document.getElementById('driverIdInput');
+      const btnLabel = document.getElementById('btnLabel');
+      const btnSpinner = document.getElementById('btnSpinner');
+      const submitBtn = document.getElementById('submitLoginBtn');
+      const successToast = document.getElementById('loginSuccessToast');
+
+      // Reset
+      netBanner.classList.add('hidden');
+      authAlert.classList.add('hidden');
+      pinErr.classList.add('hidden');
+      driverIdErr.classList.add('hidden');
+      pinInput.classList.remove('border-rose-400');
+      driverInput.classList.remove('border-rose-400');
+      btnLabel.classList.remove('hidden');
+      btnSpinner.classList.add('hidden');
+      submitBtn.disabled = false;
+      successToast.classList.add('hidden');
+
+      if (stateName === 'default') {
+        netPill.innerHTML = '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-emerald-200"></span><span class="font-mono-code text-[11px] font-bold text-slate-700 tracking-tight">4G CELL • ONLINE</span>';
+        pinInput.value = '••••••';
+        driverInput.value = 'DRV-104';
+      } else if (stateName === 'error-auth') {
+        netPill.innerHTML = '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-emerald-200"></span><span class="font-mono-code text-[11px] font-bold text-slate-700 tracking-tight">4G CELL • ONLINE</span>';
+        authAlert.classList.remove('hidden');
+        pinErr.classList.remove('hidden');
+        pinInput.classList.add('border-rose-400');
+        pinInput.focus();
+      } else if (stateName === 'error-network') {
+        netPill.innerHTML = '<span class="w-2.5 h-2.5 rounded-full bg-rose-500 ring-2 ring-rose-200 animate-pulse"></span><span class="font-mono-code text-[11px] font-bold text-rose-700 tracking-tight">NO SIGNAL • OFFLINE</span>';
+        netBanner.classList.remove('hidden');
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      } else if (stateName === 'loading') {
+        netPill.innerHTML = '<span class="w-2.5 h-2.5 rounded-full bg-amber-500 ring-2 ring-amber-200 animate-ping"></span><span class="font-mono-code text-[11px] font-bold text-amber-700 tracking-tight">HANDSHAKE 4G</span>';
+        btnLabel.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+        submitBtn.disabled = true;
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const driverInput = document.getElementById('driverIdInput');
+      const pinInput = document.getElementById('pinInput');
+      const driverIdErr = document.getElementById('driverIdError');
+      const pinErr = document.getElementById('pinError');
+
+      let isValid = true;
+      if (!driverInput.value.trim()) {
+        driverIdErr.classList.remove('hidden');
+        driverInput.classList.add('border-rose-400');
+        isValid = false;
+      }
+      if (!pinInput.value.trim() || pinInput.value === '') {
+        pinErr.classList.remove('hidden');
+        pinInput.classList.add('border-rose-400');
+        isValid = false;
+      }
+
+      if (!isValid) return;
+
+      // Trigger loading state
+      setState('loading');
+
+      // Simulate API verification
+      setTimeout(() => {
+        setState('default');
+        const successToast = document.getElementById('loginSuccessToast');
+        successToast.classList.remove('hidden');
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "AJ Control",
+    "slug": "aj-earth-movers-control",
+    "version": "0.1.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "in.ajearthmovers.control"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#142B45",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "in.ajearthmovers.control"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-secure-store",
+      "expo-image",
+      "expo-font",
+      "expo-sharing"
+    ],
+    "scheme": "ajcontrol",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

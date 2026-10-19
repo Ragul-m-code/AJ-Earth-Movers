@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#dae2fd", "surface": "#f8f9ff", "primary-container": "#f59e0b", "surface-bright": "#f8f9ff", "inverse-primary": "#ffb95f", "secondary-fixed": "#dae2fd", "surface-tint": "#855300", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#3a485c", "on-surface-variant": "#534434", "secondary": "#565e74", "primary-fixed": "#ffddb8", "surface-variant": "#d3e4fe", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "on-tertiary-fixed": "#0d1c2f", "surface-container-highest": "#d3e4fe", "surface-dim": "#cbdbf5", "tertiary-fixed-dim": "#b9c7e0", "background": "#f8f9ff", "outline-variant": "#d8c3ad", "tertiary-container": "#a3b2ca", "on-primary": "#ffffff", "on-primary-fixed-variant": "#653e00", "primary-fixed-dim": "#ffb95f", "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "primary": "#855300", "outline": "#867461", "on-background": "#0b1c30", "on-primary-fixed": "#2a1700", "on-secondary": "#ffffff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "tertiary": "#515f74", "secondary-fixed-dim": "#bec6e0", "inverse-surface": "#213145", "on-primary-container": "#613b00", "surface-container-high": "#dce9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#374559", "surface-container": "#e5eeff", "tertiary-fixed": "#d5e3fd", "error-container": "#ffdad6", "on-surface": "#0b1c30", "inverse-on-surface": "#eaf1ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter": "1rem", "gutter-desktop": "1.5rem", "margin-desktop": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "1rem" }, fontFamily: { "headline-xl": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "label-caps": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Inter"], "label-numeric-sm": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "label-numeric-md": ["JetBrains Mono"] }, fontSize: { "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-numeric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-numeric-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-numeric-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="AJ EARTH MOVERS Mobile App Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULY_2Q2RTWx22EUwBaHJ-VV1iK2wtViKwm1BkX1yhmdADTgcLkOqlmFzDvz4B2xr_CDjtavtCRm-LL_jEOP0CMK-_F-MBjSOUx7Rv5QjnYo5wz4fOnYEIj4Tco4-p7QryNh4PTXW3TQIAicctMzy5ksMwCVmdpXM0meHsmf9l49qbeEpWI3HbrvarIoWkmQojJHWTOEPH4DwyvCY1yj1XuXAsP_s_ESvm5DwUw0vqj1VnRGIWq2X4Iv3s"/><div class="flex flex-col"><span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">AJ Earth Movers</span><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Admin   Vehicle List</span></div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-surface-variant rounded-lg"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Operational Sub-Bar -->
+<div class="px-gutter pt-space-xs pb-space-sm flex items-center justify-between">
+<a class="inline-flex items-center gap-1.5 text-secondary hover:text-on-surface transition-colors py-1" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary">Back to Fleet</span>
+</a>
+<div class="flex items-center gap-1.5 bg-surface-container-high px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-semibold">Admin Mode</span>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed px-1.5 py-0.2 rounded font-bold">Full Access</span>
+</div>
+</div>
+<!-- Vehicle Identification Master Card -->
+<div class="mx-gutter mb-space-md p-space-md bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(11,28,48,0.06)] relative overflow-hidden">
+<!-- Top accent machinery bar -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary-container via-primary-fixed-dim to-primary-container"></div>
+<div class="flex items-start justify-between gap-space-sm mt-1">
+<div class="flex gap-3">
+<!-- Machinery Identity Badge -->
+<div class="w-13 h-13 rounded-lg bg-inverse-surface flex flex-col items-center justify-center text-center p-1 shadow-sm shrink-0">
+<span class="material-symbols-outlined text-primary-container text-[24px]">precision_manufacturing</span>
+<span class="font-label-numeric-sm text-[11px] text-surface-bright leading-none tracking-tighter mt-0.5">#JCB-01</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">JCB 3DX Super</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">EcoXcellence 4WD • 2022 Plant Model</p>
+<!-- Plate and Live Badge -->
+<div class="flex flex-wrap items-center gap-2 mt-2">
+<!-- Indian RTO Plate Badge -->
+<div class="inline-flex items-center bg-surface-container px-2 py-0.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<span class="font-label-caps text-[9px] font-extrabold text-secondary mr-1 tracking-tighter">IND</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold tracking-wider">KA-04-EA-2104</span>
+</div>
+<!-- Live Working Status Chip -->
+<div class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-900 px-2 py-0.5 rounded-full shadow-xs">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-caps text-label-caps font-bold">Working • On Site</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Edit Action Button -->
+<button aria-label="Edit Machine Details" class="shrink-0 p-2 text-on-surface-variant hover:text-on-surface bg-surface-container-low rounded-lg transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<!-- LiveLink Sync Strip -->
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-secondary bg-surface-container-low px-3 py-1.5 rounded-lg">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">sensors</span>
+<span class="font-label-caps text-label-caps text-on-surface font-medium">LiveLink IoT Telematics</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant font-medium">Sync: 08:30 AM Today</span>
+</div>
+</div>
+<!-- Quick Key Metrics Deck -->
+<div class="px-gutter grid grid-cols-2 gap-space-sm mb-space-md">
+<!-- Card 1: Hour Meter SMU -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-semibold">Current SMU Meter</span>
+<span class="material-symbols-outlined text-primary-container text-[18px]">speed</span>
+</div>
+<div class="my-2 bg-inverse-surface text-primary-fixed-dim px-2.5 py-1.5 rounded-lg flex items-baseline justify-between shadow-inner">
+<span class="font-label-numeric-md text-label-numeric-md tracking-tight font-bold text-primary-container">2,418.5</span>
+<span class="font-label-caps text-[10px] text-surface-dim uppercase">hrs</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">trending_up</span>
+<span class="font-body-sm text-[11px] truncate">+6.2h shift total today</span>
+</div>
+</div>
+<!-- Card 2: Commercial Tariff -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-semibold">Active Billing Rate</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">currency_rupee</span>
+</div>
+<div class="my-2 flex items-baseline gap-1">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">₹1,850</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">/hr</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">local_gas_station</span>
+<span class="font-body-sm text-[11px] truncate">Wet-Rate (HSD Incl.)</span>
+</div>
+</div>
+<!-- Card 3: Approved vs Under Review Meter Deck (Full width) -->
+<div class="col-span-2 bg-surface-container-lowest p-space-sm rounded-xl shadow-xs">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-semibold">Logged Billing Hours</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-[10px] font-bold text-on-surface-variant">Oct 2024 ▾</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary font-bold">Depot Ledger</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<!-- Approved Hours -->
+<div class="bg-emerald-50 p-2.5 rounded-lg flex flex-col">
+<span class="font-label-caps text-[10px] text-emerald-800 uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-emerald-600">verified</span> Approved Hours
+          </span>
+<span class="font-label-numeric-md text-emerald-950 font-bold mt-1">148.5 <span class="text-[12px] font-normal text-emerald-700">hrs</span></span>
+<span class="font-body-sm text-[10px] text-emerald-700 mt-0.5">Certified for billing</span>
+</div>
+<!-- Under Audit / Safeguard Quarantine Hours -->
+<div class="bg-amber-50 p-2.5 rounded-lg flex flex-col">
+<span class="font-label-caps text-[10px] text-amber-900 uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-amber-700">fact_check</span> Under Audit
+          </span>
+<span class="font-label-numeric-md text-amber-950 font-bold mt-1">18.0 <span class="text-[12px] font-normal text-amber-800">hrs</span></span>
+<span class="font-body-sm text-[10px] text-amber-800 mt-0.5">Photo review pending</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Navigation Tabs -->
+<div class="px-gutter mb-space-sm overflow-x-auto no-scrollbar">
+<div class="flex space-x-1.5 min-w-max p-1 bg-surface-container rounded-xl" id="tabContainer" role="tablist">
+<button aria-selected="true" class="tab-btn px-3 py-1.5 rounded-lg font-label-caps text-label-caps tracking-wider transition-all bg-surface-container-lowest text-on-surface shadow-xs font-bold" onclick="switchTab('tab-overview', this)" role="tab">
+        Overview
+      </button>
+<button aria-selected="false" class="tab-btn px-3 py-1.5 rounded-lg font-label-caps text-label-caps tracking-wider transition-all text-on-surface-variant hover:text-on-surface font-semibold" onclick="switchTab('tab-history', this)" role="tab">
+        Work History
+      </button>
+<button aria-selected="false" class="tab-btn px-3 py-1.5 rounded-lg font-label-caps text-label-caps tracking-wider transition-all text-on-surface-variant hover:text-on-surface font-semibold" onclick="switchTab('tab-meter', this)" role="tab">
+        Meter Log
+      </button>
+<button aria-selected="false" class="tab-btn px-3 py-1.5 rounded-lg font-label-caps text-label-caps tracking-wider transition-all text-on-surface-variant hover:text-on-surface font-semibold" onclick="switchTab('tab-maintenance', this)" role="tab">
+        Maintenance
+      </button>
+<button aria-selected="false" class="tab-btn px-3 py-1.5 rounded-lg font-label-caps text-label-caps tracking-wider transition-all text-on-surface-variant hover:text-on-surface font-semibold" onclick="switchTab('tab-docs', this)" role="tab">
+        Docs &amp; Specs
+      </button>
+</div>
+</div>
+<!-- TAB PANELS CONTENT CONTAINER -->
+<div class="px-gutter pb-space-lg flex flex-col gap-space-md">
+<!-- PANEL 1: OVERVIEW & TELEMATICS (DEFAULT VISIBLE) -->
+<div class="tab-panel flex flex-col gap-space-md" id="tab-overview">
+<!-- Current Site Assignment Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md px-space-md py-space-xs rounded-t-xl">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-surface">Active Deployment</span>
+</div>
+<span class="font-label-caps text-[10px] bg-primary text-on-primary px-2 py-0.5 rounded font-bold">Shift Ongoing</span>
+</div>
+<div class="flex flex-col gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Prestige Tech Park Ext. (Phase 2)</h2>
+<p class="font-body-sm text-body-sm text-secondary">Work Order #WO-2024-884 • Deep Excavation &amp; Footing</p>
+</div>
+<!-- Pilot Card -->
+<div class="mt-2 flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">
+                SK
+              </div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Suresh Kumar</p>
+<span class="font-label-caps text-[10px] text-secondary">Assigned Operator (DRV-042)</span>
+</div>
+</div>
+<a aria-label="Call Operator" class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shadow-xs" href="tel:+919845012345">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Live Machine Health & Telemetry Module -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">analytics</span>
+<span class="font-headline-sm text-[15px] text-on-surface font-bold">Diagnostics &amp; Real-time Health</span>
+</div>
+<span class="font-label-caps text-[11px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full font-bold">Normal Telemetry</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm mb-3">
+<!-- Fuel Gauge Box -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps uppercase">Diesel Tank</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container">local_gas_station</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline justify-between mb-1">
+<span class="font-label-numeric-md font-bold text-on-surface">74%</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">125 / 160 L</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 74%"></div>
+</div>
+</div>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Est. 14 hrs continuous burn</span>
+</div>
+<!-- Hydraulic Pressure -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps uppercase">Hydraulics</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">compress</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline justify-between mb-1">
+<span class="font-label-numeric-md font-bold text-on-surface">250</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Bar</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-600 h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<span class="font-body-sm text-[10px] text-emerald-800 font-medium">Optimal pump load</span>
+</div>
+</div>
+<!-- Geofence & Hardware details -->
+<div class="flex flex-col gap-2 pt-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-[12px] text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">drive_file_stream</span> Geofence Corridor
+            </span>
+<span class="font-body-sm text-[11px] text-emerald-800 font-bold bg-emerald-50 px-2 py-0.5 rounded">Inside Site Bounds</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-[12px] text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">battery_charging_full</span> Battery Voltage
+            </span>
+<span class="font-label-numeric-sm text-[12px] text-on-surface font-semibold">12.8 V (AIS 140 Active)</span>
+</div>
+</div>
+</div>
+<!-- Service & Maintenance Milestone -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<div class="flex items-center justify-between mb-2">
+<span class="font-headline-sm text-[15px] text-on-surface font-bold">Scheduled Maintenance Status</span>
+<span class="font-label-caps text-[11px] text-amber-900 bg-amber-50 px-2 py-0.5 rounded font-bold">Bay Due Soon</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-3">2,500H Engine Lubricant &amp; Hydraulic Return Filter Flush</p>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden mb-1.5">
+<div class="bg-primary-container h-full rounded-full" style="width: 96%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-body-sm text-[11px]">Interval Elapsed: 2,418.5 / 2,500 hrs</span>
+<span class="font-label-caps text-[11px] font-bold text-primary">81.5 hrs remaining</span>
+</div>
+</div>
+</div>
+<!-- PANEL 2: WORK HISTORY -->
+<div class="tab-panel hidden flex-col gap-space-sm" id="tab-history">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Machine Assignment Ledger</span>
+<span class="font-body-sm text-body-sm text-primary font-bold">Export Logs</span>
+</div>
+<!-- Card 1: Active Ongoing Shift -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary-container font-label-caps text-[9px] px-2.5 py-0.5 rounded-bl font-extrabold uppercase tracking-wide">
+          Active Shift
+        </div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-numeric-sm text-[11px] text-secondary">WO-2024-884</span>
+<h3 class="font-headline-sm text-[16px] text-on-surface font-bold">Prestige Estates Projects Ltd</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prestige Tech Park Ext., Whitefield Corridor</p>
+<div class="grid grid-cols-2 gap-2 mt-2 pt-2 bg-surface-container-low p-2 rounded-lg">
+<div>
+<span class="font-label-caps text-[10px] text-secondary uppercase">Approved Billing</span>
+<p class="font-label-numeric-sm font-bold text-on-surface text-[14px]">28.5 hrs</p>
+</div>
+<div>
+<span class="font-label-caps text-[10px] text-primary uppercase">Live In-Cab</span>
+<p class="font-label-numeric-sm font-bold text-primary text-[14px]">9.5 hrs (Uncertified)</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-secondary pt-1 mt-1 text-[11px]">
+<span>Pilot: Suresh Kumar</span>
+<span>21 Oct 2024 – Ongoing</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Completed & Invoiced Shift -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-numeric-sm text-[11px] text-secondary">WO-2024-852</span>
+<h3 class="font-headline-sm text-[16px] text-on-surface font-bold">Sobha Developers</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sobha Dream Acres - Sector 3 Foundation</p>
+</div>
+<span class="font-label-caps text-[10px] bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-bold">Invoiced #098</span>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low p-2 rounded-lg">
+<div>
+<span class="font-label-caps text-[10px] text-secondary uppercase">Certified Billed Hours</span>
+<p class="font-label-numeric-sm font-bold text-on-surface text-[14px]">52.0 hrs</p>
+</div>
+<span class="font-body-sm text-[11px] text-emerald-800 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 100% Telematics Match
+          </span>
+</div>
+<div class="flex items-center justify-between text-secondary pt-1 text-[11px]">
+<span>Pilot: Suresh Kumar</span>
+<span>10 Oct – 17 Oct 2024</span>
+</div>
+</div>
+</div>
+<!-- PANEL 3: METER READINGS & AUDIT SAFEGUARD -->
+<div class="tab-panel hidden flex-col gap-space-md" id="tab-meter">
+<!-- Depot Audit Policy Callout -->
+<div class="bg-surface-container p-space-sm rounded-xl flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">policy</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps font-bold text-on-surface uppercase">Depot Audit Safeguard</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">
+            Only depot supervisor-certified SMU meter captures enter the commercial customer ledger and operator batta payroll. Unverified machine logs stay quarantined.
+          </p>
+</div>
+</div>
+<!-- Latest Verified Audit Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<div class="flex items-center justify-between pb-2 mb-2 bg-surface-container-low -mx-space-md -mt-space-md px-space-md py-space-xs rounded-t-xl">
+<span class="font-label-caps text-label-caps uppercase font-bold text-on-surface">Latest Verified Meter Entry</span>
+<span class="font-label-caps text-[10px] bg-emerald-50 text-emerald-900 px-2 py-0.5 rounded font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Certified
+          </span>
+</div>
+<div class="flex items-baseline justify-between mb-3">
+<div>
+<span class="font-label-caps text-[11px] text-secondary uppercase font-semibold">SMU Reading</span>
+<p class="font-label-numeric-lg text-headline-sm font-extrabold text-on-surface">2,418.5 hrs</p>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Captured: 24 Oct, 08:30 AM</span>
+</div>
+<!-- Proof Comparison Container -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[11px] text-secondary font-semibold uppercase">Physical Meter Camera Capture</span>
+<span class="font-body-sm text-[11px] text-primary font-bold">Shift Start</span>
+</div>
+<!-- Dual photo preview stub -->
+<div class="grid grid-cols-2 gap-2">
+<div class="relative rounded-lg overflow-hidden h-24 bg-surface-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Industrial analog hour meter gauge showing 2418.5 units on a JCB heavy machine dashboard under sunlight with slight dust on glass rim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTnpxmJICfAPjPCqNN_KeTb96Hr9sE5NBuDP9EsJ0sLOSaz0UtPZc0z6cCTLnymOiuq530OwSaj_U2WCyoNhwE5HvJ4yl6hdxo0jG1QFsEpGQ6M3Z2c5OcbI366FsUBBqTgpaya7pO8eEGgqRYBVXK0287hr7_CYyyYRcrAUD2Ru8wVgc0j2TsonpCPhB7wNnHK_dqMnpnP8B0siwZGKLx4BkLVpdhyeI4dC5lHb15lsl_5dnPSMQ9Yw"/>
+<div class="absolute bottom-1 left-1 bg-inverse-surface/80 text-surface-bright text-[9px] px-1 py-0.5 rounded font-mono">
+                08:30 AM • GPS OK
+              </div>
+</div>
+<div class="rounded-lg bg-surface-container p-2 flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-[10px] text-secondary font-bold uppercase">Source Verification</span>
+<p class="font-body-sm text-[11px] font-semibold text-on-surface mt-0.5">JCB LiveLink API</p>
+<p class="font-body-sm text-[10px] text-on-surface-variant">Delta: 0.00 hrs deviation</p>
+</div>
+<span class="font-label-caps text-[10px] text-emerald-800 font-bold">Depot Auditor: S. Murugan</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PANEL 4: MAINTENANCE & SPECS -->
+<div class="tab-panel hidden flex-col gap-space-sm" id="tab-maintenance">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Installed Tool Registry</h3>
+<div class="flex flex-col gap-2.5">
+<div class="flex items-start justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">construction</span>
+<div>
+<p class="font-body-sm text-body-sm font-bold text-on-surface">Standard Heavy Bucket (1.0 m³)</p>
+<span class="font-body-sm text-[11px] text-secondary">Reinforced Hardox Teeth • Certified Active</span>
+</div>
+</div>
+<span class="font-label-caps text-[10px] bg-surface-container-lowest px-1.5 py-0.5 rounded font-bold text-on-surface">Primary</span>
+</div>
+<div class="flex items-start justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">hardware</span>
+<div>
+<p class="font-body-sm text-body-sm font-bold text-on-surface">Hydraulic Rock Breaker Wet-Kit</p>
+<span class="font-body-sm text-[11px] text-secondary">Auxiliary Pipe Certified • Depot Bay Tagged</span>
+</div>
+</div>
+<span class="font-label-caps text-[10px] bg-amber-50 text-amber-900 px-1.5 py-0.5 rounded font-bold">Equipped</span>
+</div>
+</div>
+</div>
+<!-- Compliance & Insurance -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<h3 class="font-headline-sm text-[16px] text-on-surface font-bold mb-2">Statutory Fitness &amp; Insurance</h3>
+<div class="flex flex-col gap-2 text-[12px]">
+<div class="flex justify-between py-1 bg-surface-container-low px-2 rounded">
+<span class="text-secondary">Commercial RTO Fitness</span>
+<span class="font-semibold text-on-surface">Valid till 14 Nov 2025</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-low px-2 rounded">
+<span class="text-secondary">Comprehensive Policy (ICICI)</span>
+<span class="font-semibold text-on-surface">Policy #BP-992384-H</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-low px-2 rounded">
+<span class="text-secondary">Pollution Under Control (PUC)</span>
+<span class="font-semibold text-emerald-800 font-bold">Valid (Next: Feb 2025)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PANEL 5: DOCS -->
+<div class="tab-panel hidden flex-col gap-space-sm" id="tab-docs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Machinery Documents &amp; Permits</h3>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between p-2 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">RTO Registration RC Book</p>
+<span class="font-body-sm text-[10px] text-secondary">PDF • 2.4 MB • Verified</span>
+</div>
+</div>
+<button aria-label="Download Document" class="p-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-2 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">National Machine Fitness Cert</p>
+<span class="font-body-sm text-[10px] text-secondary">PDF • 1.1 MB • Exp: Nov 2025</span>
+</div>
+</div>
+<button aria-label="Download Document" class="p-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Tactile Action CTAs (Fixed / Sticky Bar above TabBar) -->
+<div class="sticky bottom-16 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md px-gutter py-space-sm shadow-[0_-4px_12px_rgba(0,0,0,0.06)] flex items-center gap-space-sm">
+<button class="flex-1 h-12 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline-sm text-[13px] rounded-lg flex items-center justify-center gap-1 transition-all active:translate-y-0.5">
+<span class="material-symbols-outlined text-[18px]">build</span>
+<span>Log Service</span>
+</button>
+<button class="flex-[1.5] h-12 bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-sm text-[14px] font-bold rounded-lg shadow-sm flex items-center justify-center gap-1.5 transition-all active:translate-y-0.5">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+<span>Reassign Machine</span>
+</button>
+</div>
+</div>
+<script>
+  function switchTab(targetPanelId, triggerBtn) {
+    // Hide all tab panels
+    document.querySelectorAll('.tab-panel').forEach(panel => {
+      panel.classList.add('hidden');
+      panel.classList.remove('flex');
+    });
+
+    // Reveal selected tab panel
+    const targetPanel = document.getElementById(targetPanelId);
+    if (targetPanel) {
+      targetPanel.classList.remove('hidden');
+      targetPanel.classList.add('flex');
+    }
+
+    // Reset tab button states
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.setAttribute('aria-selected', 'false');
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs', 'font-bold');
+      btn.classList.add('text-on-surface-variant', 'font-semibold');
+    });
+
+    // Set active tab button style
+    triggerBtn.setAttribute('aria-selected', 'true');
+    triggerBtn.classList.remove('text-on-surface-variant', 'font-semibold');
+    triggerBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs', 'font-bold');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="admin---operational-dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-caps text-label-caps mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="admin---driver-work-history" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-label-caps text-label-caps mt-0.5">Work</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 transition-colors text-primary font-bold" data-path="admin---vehicle-list" href="#"><span class="material-symbols-outlined text-[22px]">precision_manufacturing</span><span class="font-label-caps text-label-caps mt-0.5">Fleet</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="finance-ledgers" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-caps text-label-caps mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="admin---driver-list" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-caps text-label-caps mt-0.5">More</span></a></div></nav>
+</body></html>

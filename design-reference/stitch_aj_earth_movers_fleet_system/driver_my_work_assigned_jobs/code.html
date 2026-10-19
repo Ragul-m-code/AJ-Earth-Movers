@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>AJ Earth Movers Driver</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#0b1c30", "surface-bright": "#f8f9ff", "primary-fixed": "#ffdf9f", "surface-container-highest": "#d3e4fe", "on-error-container": "#93000a", "surface-variant": "#d3e4fe", "on-primary-container": "#664b00", "surface-dim": "#cbdbf5", "outline-variant": "#d4c5ac", "secondary-fixed": "#dfe2ec", "secondary-fixed-dim": "#c3c6d0", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#3f465c", "tertiary": "#565e74", "error": "#ba1a1a", "on-secondary-fixed": "#181c23", "on-surface-variant": "#4f4632", "primary": "#795900", "on-tertiary-container": "#474f65", "on-primary-fixed-variant": "#5b4300", "on-secondary-container": "#61646d", "error-container": "#ffdad6", "inverse-on-surface": "#eaf1ff", "surface-container": "#e5eeff", "secondary-container": "#dfe2ec", "primary-fixed-dim": "#fabd0d", "surface-container-high": "#dce9ff", "background": "#f8f9ff", "on-error": "#ffffff", "surface-tint": "#795900", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#43474f", "tertiary-fixed-dim": "#bec6e0", "on-primary": "#ffffff", "tertiary-fixed": "#dae2fd", "on-primary-fixed": "#261a00", "on-tertiary": "#ffffff", "primary-container": "#f5b800", "on-background": "#0b1c30", "inverse-primary": "#fabd0d", "secondary": "#5b5e67", "outline": "#827660", "on-tertiary-fixed": "#131b2e", "inverse-surface": "#213145", "tertiary-container": "#bac1db", "surface-container-low": "#eff4ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1.25rem", "space-xl": "1.75rem", "gutter-sm": "0.75rem", "margin": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-sm": "0.75rem", "space-md": "0.875rem" }, "fontFamily": { "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "display-sm": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "metric-num": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-sm": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 600,'GRAD' 0,'opsz' 24;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(11,28,48,0.06)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-lg text-label-lg font-bold text-on-surface truncate">AJ Driver</span><span class="px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm tracking-wider uppercase font-bold">OPERATOR</span></div><span class="font-label-md text-label-md text-on-surface-variant truncate font-medium">My Work</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="flex items-center gap-1 px-2 py-1 rounded-full bg-surface-container text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-sm text-label-sm font-bold tracking-tight text-on-surface">ONLINE 4G</span></div><a aria-label="Emergency SOS Call Supervisor" class="w-11 h-11 flex items-center justify-center rounded-xl bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors" href="tel:911"><span class="material-symbols-outlined text-[22px]">e911_emergency</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full text-on-surface">
+<!-- Interactive State Switcher Preview Bar (Driver Simulator Hub) -->
+<section class="sticky top-0 z-30 px-gutter py-2.5 bg-surface/95 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-primary">science</span>
+<span>Driver View State Switcher</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Field Simulator</span>
+</div>
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5" id="state-switcher-container">
+<button class="state-pill px-3 py-1.5 rounded-full font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 bg-on-surface text-surface-container-lowest shrink-0 shadow-sm" data-state="populated" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Populated (5)</span>
+</button>
+<button class="state-pill px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-tertiary bg-surface-container shrink-0 transition-all hover:bg-surface-container-high" data-state="loading" type="button">
+<span>Loading Skeleton</span>
+</button>
+<button class="state-pill px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-tertiary bg-surface-container shrink-0 transition-all hover:bg-surface-container-high" data-state="empty-no-jobs" type="button">
+<span>No Assignments</span>
+</button>
+<button class="state-pill px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-tertiary bg-surface-container shrink-0 transition-all hover:bg-surface-container-high" data-state="empty-filter" type="button">
+<span>Filter Zero</span>
+</button>
+<button class="state-pill px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-tertiary bg-surface-container shrink-0 transition-all hover:bg-surface-container-high" data-state="offline" type="button">
+<span class="material-symbols-outlined text-[14px] text-error">cloud_off</span>
+<span>Offline Sync Fail</span>
+</button>
+</div>
+</section>
+<!-- Main View Container -->
+<div class="flex flex-col gap-space-lg px-gutter pt-3 pb-8">
+<!-- Top Summary & Search Section -->
+<header class="flex flex-col gap-space-md">
+<!-- Title & Counters -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Assigned Duty</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md font-bold">
+            14 Total
+          </span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+<span class="font-label-md text-label-md font-bold tracking-tight">Pune Cluster</span>
+</div>
+</div>
+<!-- Quick Search Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[20px] text-tertiary pointer-events-none">
+          search
+        </span>
+<input class="w-full h-12 pl-11 pr-10 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-tertiary shadow-sm focus:outline-none focus:bg-surface-container-low transition-colors" id="job-search-input" placeholder="Search #WO, site, or machine (e.g. CAT 320D)..." type="text"/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-tertiary hover:text-on-surface p-1" id="clear-search-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Filter Segmented Chips (Horizontal Scrollable) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5" id="category-filters">
+<button class="filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-bold shrink-0 bg-inverse-surface text-inverse-on-surface transition-transform active:scale-95 shadow-sm" data-filter="all" type="button">
+          All (14)
+        </button>
+<button class="filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-semibold shrink-0 bg-surface-container text-on-surface transition-transform active:scale-95 hover:bg-surface-container-high" data-filter="active" type="button">
+          Active (1)
+        </button>
+<button class="filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-semibold shrink-0 bg-surface-container text-on-surface transition-transform active:scale-95 hover:bg-surface-container-high" data-filter="assigned" type="button">
+          Assigned (2)
+        </button>
+<button class="filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-semibold shrink-0 bg-surface-container text-on-surface transition-transform active:scale-95 hover:bg-surface-container-high" data-filter="pending" type="button">
+          Pending Review (2)
+        </button>
+<button class="filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-semibold shrink-0 bg-surface-container text-on-surface transition-transform active:scale-95 hover:bg-surface-container-high" data-filter="completed" type="button">
+          Completed (8)
+        </button>
+<button class="filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-semibold shrink-0 bg-error-container text-on-error-container transition-transform active:scale-95" data-filter="rejected" type="button">
+          Needs Action (1)
+        </button>
+</div>
+</header>
+<!-- STATE 1: POPULATED JOB CARD LIST (Default) -->
+<div class="flex flex-col gap-space-md" id="state-populated-view">
+<!-- CARD 1: ACTIVE / RUNNING SHIFT -->
+<article class="job-item relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all" data-card-category="active">
+<!-- Rugged Left Status Indicator Strip -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-600"></div>
+<div class="pl-4 pr-3.5 pt-3.5 pb-4 flex flex-col gap-3">
+<!-- Card Header & Badges -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">#WO-2024-884</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">Shift A</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Today, 24 Oct 2024 • 08:00 - 17:00</span>
+</div>
+<!-- Active Pulse Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-900 shrink-0">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+<span class="font-label-sm text-label-sm font-bold tracking-wide uppercase">RUNNING</span>
+</div>
+</div>
+<!-- Machine & Asset Information -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[28px] text-primary">front_loader</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">JCB 3DX Super</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">Rental Unit #08</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2 py-1 rounded bg-surface-container font-label-md text-label-md font-bold text-on-surface tracking-wider">
+                MH-12-DE-4412
+              </span>
+</div>
+</div>
+<!-- Site & Attachment Grid -->
+<div class="grid grid-cols-1 gap-2 pt-1 text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">apartment</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Client Site</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Tata Infra • Hinjawadi Phase 3 Ring Road, Yard 4</span>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">build</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Equipped Tool</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Heavy Rock Trenching Bucket (0.26 cu.m)</span>
+</div>
+</div>
+</div>
+<!-- Live Shift Telemetry & Digital Counter Tape -->
+<div class="mt-1 p-3 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Start Reading</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-metric-num text-metric-num font-bold text-on-surface tracking-tighter">1,250.0</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">HRS</span>
+</div>
+<span class="font-label-sm text-label-sm text-emerald-800 font-medium">✓ Verified 08:30 AM</span>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/40"></div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Logged Elapsed</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[20px] text-primary">timelapse</span>
+<span class="font-display-sm text-display-sm font-extrabold text-on-surface">06h 45m</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Est. Pay: ₹1,050</span>
+</div>
+</div>
+<!-- Primary CTA Button (High Touch Target >= 48px) -->
+<div class="pt-1 flex flex-col gap-2">
+<button class="w-full h-12 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-[0.98] hover:brightness-105" onclick="openJobModal('#WO-2024-884', 'JCB 3DX Super', 'MH-12-DE-4412', 'Tata Infra • Hinjawadi', 'Active Running', '₹1,050')" type="button">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+<span>End Work &amp; Submit Meter Photo</span>
+</button>
+<button class="w-full h-9 rounded text-tertiary hover:text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-colors" onclick="toggleDetails('details-884', this)" type="button">
+<span>View Site Map &amp; Supervisors</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Expandable Collapsible Details -->
+<div class="hidden flex-col gap-2 pt-2 border-t border-surface-container text-on-surface" id="details-884">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-tertiary">Site Incharge:</span>
+<span class="font-semibold text-on-surface">Ramesh Kadam (+91 98231-XXXXX)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-tertiary">Geofence Status:</span>
+<span class="font-semibold text-emerald-800">Inside Yard Perimeter (99.8%)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-tertiary">Fuel In-Tank:</span>
+<span class="font-semibold text-on-surface">68% (~85 Litres)</span>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 2: ASSIGNED / UPCOMING SHIFT -->
+<article class="job-item relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all" data-card-category="assigned">
+<!-- Blue Left Status Strip -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-600"></div>
+<div class="pl-4 pr-3.5 pt-3.5 pb-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">#WO-2024-892</span>
+<span class="px-2 py-0.5 rounded bg-blue-100 text-blue-900 font-label-sm text-label-sm font-bold">Upcoming</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary">Tomorrow, 25 Oct • 07:00 AM Call</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 font-label-sm text-label-sm font-bold uppercase shrink-0">
+              ASSIGNED
+            </div>
+</div>
+<!-- Machine Identity Tile -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[28px] text-tertiary">precision_manufacturing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">CAT 320D Excavator</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">Rental Unit #15</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2 py-1 rounded bg-surface-container font-label-md text-label-md font-bold text-on-surface tracking-wider">
+                MH-14-GH-8821
+              </span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-2 text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">location_on</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Assigned Location</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">L&amp;T Construction • Pune Metro Line 4, Pier 18</span>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">construction</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Attachment Included</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hydraulic Rock Breaker (HB-200) + Heavy Chisel</span>
+</div>
+</div>
+</div>
+<!-- Dual Quick Action Buttons -->
+<div class="pt-1 grid grid-cols-2 gap-2">
+<a class="h-12 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-1.5 transition-transform active:scale-[0.98] hover:bg-surface-container-high" href="#directions">
+<span class="material-symbols-outlined text-[20px] text-tertiary">near_me</span>
+<span>Site Route</span>
+</a>
+<button class="h-12 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-1.5 transition-transform active:scale-[0.98] hover:opacity-95" onclick="acceptShift(this)" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary-container">check_circle</span>
+<span>Accept Duty</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 3: REJECTED / NEEDS ACTION (Meter Glare Alert) -->
+<article class="job-item relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all" data-card-category="rejected">
+<!-- Crimson Left Status Strip -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="pl-4 pr-3.5 pt-3.5 pb-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">#WO-2024-875</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">Action Needed</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary">23 Oct 2024 • Shift B</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold tracking-tight uppercase shrink-0">
+              RE-AUDIT NEEDED
+            </div>
+</div>
+<!-- Machine ID -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[28px] text-error">warning</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Komatsu PC210-10M0</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">Rental Unit #03</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2 py-1 rounded bg-surface-container font-label-md text-label-md font-bold text-on-surface tracking-wider">
+                MH-12-KF-3109
+              </span>
+</div>
+</div>
+<!-- High-Visibility Supervisor Audit Warning Card -->
+<div class="p-3 rounded-lg bg-error-container text-on-error-container flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">feedback</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wide">Supervisor Audit Remark</span>
+</div>
+<p class="font-body-sm text-body-sm font-medium leading-relaxed">
+              “Meter dial sun glare cut off the 3rd decimal digit. Could not verify closing hours. Please retake full instrument panel photo.”
+            </p>
+</div>
+<!-- Retake Camera Action (Minimum 48px touch target) -->
+<button class="w-full h-12 rounded-lg bg-error text-on-error font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-[0.98] hover:brightness-110" onclick="triggerCameraRetake('#WO-2024-875')" type="button">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+<span>Retake Meter Dial Photo</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: PENDING REVIEW / SUPERVISOR VERIFICATION -->
+<article class="job-item relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all" data-card-category="pending">
+<!-- Amber Left Strip -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-amber-500"></div>
+<div class="pl-4 pr-3.5 pt-3.5 pb-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">#WO-2024-881</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">Yesterday</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary">23 Oct 2024 • 9.0 Hours Logged</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 font-label-sm text-label-sm font-bold uppercase shrink-0">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+<span>PENDING REVIEW</span>
+</div>
+</div>
+<!-- Machine identity -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[28px] text-tertiary">agriculture</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Tata Hitachi EX200 LC</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">Rental Unit #11</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2 py-1 rounded bg-surface-container font-label-md text-label-md font-bold text-on-surface tracking-wider">
+                MH-14-AZ-9904
+              </span>
+</div>
+</div>
+<!-- Hour Reading Match Pill -->
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Hour Span</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">1,250.0 → 1,259.0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">OCR Match 98.4%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Est. Operator Pay</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">₹1,260</span>
+<span class="font-label-sm text-label-sm text-tertiary">Awaiting Arjun Singh sign-off</span>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1.5 transition-colors hover:bg-surface-container-high" onclick="openJobModal('#WO-2024-881', 'Tata Hitachi EX200 LC', 'MH-14-AZ-9904', 'Godrej Hinjawadi IT Park', 'Pending Review', '₹1,260')" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">receipt_long</span>
+<span>View Shift Slip &amp; OCR Image</span>
+</button>
+</div>
+</article>
+<!-- CARD 5: COMPLETED & CREDITED -->
+<article class="job-item relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm transition-all" data-card-category="completed">
+<!-- Slate / Subtle Strip -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="pl-4 pr-3.5 pt-3.5 pb-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">#WO-2024-870</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">Duty Slip #DS-9914</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary">22 Oct 2024 • 8.5 Hours Approved</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-bold uppercase shrink-0">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>CREDITED</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold">JCB 3DX Xtra</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pune Municipal Corp • Swargate Flyover</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-bold text-emerald-800">+₹1,190</span>
+<span class="font-label-sm text-label-sm text-tertiary">Paid to Wallet</span>
+</div>
+</div>
+<div class="pt-1 flex items-center justify-between border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-tertiary">Reg: MH-12-RT-6750 (Unit #05)</span>
+<a class="font-label-md text-label-md font-bold text-primary flex items-center gap-0.5 py-1" href="#slip">
+<span>View Signed Duty Slip</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- STATE 2: LOADING SKELETON (Simulates High-Latency 4G in Cab) -->
+<div class="hidden flex-col gap-space-md" id="state-loading-view">
+<!-- Skeleton Card 1 -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-4 flex flex-col gap-3.5 shadow-sm animate-pulse">
+<div class="flex justify-between items-center">
+<div class="h-5 w-28 bg-surface-container-highest rounded"></div>
+<div class="h-6 w-20 bg-surface-container-high rounded-full"></div>
+</div>
+<div class="h-14 w-full bg-surface-container-low rounded-lg"></div>
+<div class="space-y-2">
+<div class="h-4 w-3/4 bg-surface-container rounded"></div>
+<div class="h-4 w-1/2 bg-surface-container rounded"></div>
+</div>
+<div class="h-12 w-full bg-surface-container-highest rounded-lg mt-1"></div>
+</div>
+<!-- Skeleton Card 2 -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-4 flex flex-col gap-3.5 shadow-sm animate-pulse">
+<div class="flex justify-between items-center">
+<div class="h-5 w-32 bg-surface-container-highest rounded"></div>
+<div class="h-6 w-16 bg-surface-container-high rounded-full"></div>
+</div>
+<div class="h-14 w-full bg-surface-container-low rounded-lg"></div>
+<div class="space-y-2">
+<div class="h-4 w-2/3 bg-surface-container rounded"></div>
+<div class="h-4 w-1/3 bg-surface-container rounded"></div>
+</div>
+<div class="h-12 w-full bg-surface-container-highest rounded-lg mt-1"></div>
+</div>
+</div>
+<!-- STATE 3: EMPTY - NO ASSIGNMENTS TODAY -->
+<div class="hidden flex-col items-center justify-center text-center p-8 bg-surface-container-lowest rounded-xl shadow-sm my-4" id="state-empty-no-jobs-view">
+<div class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-4 text-on-surface">
+<span class="material-symbols-outlined text-[44px] text-primary">event_busy</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-1">No Shifts Assigned Today</h2>
+<p class="font-body-md text-body-md text-tertiary max-w-[280px] mb-6">
+        You are in standby status. Please check in with Pune Central Dispatch or report to Hadapsar Yard.
+      </p>
+<div class="flex flex-col gap-2.5 w-full max-w-[260px]">
+<a class="h-12 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm" href="tel:+91208889999">
+<span class="material-symbols-outlined text-[20px] text-primary-container">call</span>
+<span>Call Dispatch Desk</span>
+</a>
+<button class="h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center" onclick="switchSimState('populated')" type="button">
+          Check Duty Roster
+        </button>
+</div>
+</div>
+<!-- STATE 4: EMPTY - FILTER ZERO RESULTS -->
+<div class="hidden flex-col items-center justify-center text-center p-8 bg-surface-container-lowest rounded-xl shadow-sm my-4" id="state-empty-filter-view">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-3 text-tertiary">
+<span class="material-symbols-outlined text-[36px]">filter_list_off</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-1">No Matching Work Orders</h2>
+<p class="font-body-md text-body-md text-tertiary max-w-[260px] mb-5">
+        No records match this query. Clear filters to see all assigned heavy machinery.
+      </p>
+<button class="h-11 px-5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-bold flex items-center gap-1.5 transition-colors hover:bg-surface-container-high" onclick="resetAllFilters()" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Clear Filter Selection</span>
+</button>
+</div>
+<!-- STATE 5: NETWORK OFFLINE / SYNC FAILURE -->
+<div class="hidden flex-col gap-3 my-2" id="state-offline-view">
+<div class="p-4 bg-error-container text-on-error-container rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">signal_disconnected</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-error-container">Offline Mode Active</h3>
+<span class="font-body-sm text-body-sm font-medium">Remote Quarry Zone • Submissions Cached Locally</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm">
+          Meter photo submission #WO-2024-884 is stored in offline device storage. It will sync automatically as soon as 4G reconnects.
+        </p>
+<div class="flex items-center gap-2 pt-1">
+<button class="h-12 flex-1 rounded-lg bg-error text-on-error font-label-lg text-label-lg font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-95" onclick="retrySync()" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+<span>Retry Connection Now</span>
+</button>
+</div>
+</div>
+<!-- Cached Local Entries Notice -->
+<div class="p-3 bg-surface-container-lowest rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">1 Duty Slip Waiting for Network</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Cached 09:14 AM</span>
+</div>
+</div>
+</div>
+<!-- Job Detail Modal / Bottom Drawer Preview (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex-col justify-end" id="job-detail-modal">
+<div class="w-full bg-surface-container-lowest rounded-t-2xl p-5 flex flex-col gap-4 shadow-xl max-h-[85vh] overflow-y-auto">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="modal-wo">#WO-2024-884</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="modal-status">Shift Details</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface" onclick="closeJobModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-3 text-on-surface">
+<div class="flex justify-between items-center py-1">
+<span class="text-tertiary font-body-md">Machine:</span>
+<span class="font-bold text-body-md text-on-surface" id="modal-machine">-</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-tertiary font-body-md">Vehicle Plate:</span>
+<span class="font-bold font-metric-num text-on-surface" id="modal-reg">-</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-tertiary font-body-md">Assigned Location:</span>
+<span class="font-semibold text-body-md text-on-surface truncate max-w-[200px]" id="modal-site">-</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-tertiary font-body-md">Driver Shift Pay:</span>
+<span class="font-bold text-headline-sm text-emerald-800" id="modal-wage">-</span>
+</div>
+</div>
+<!-- Safe Map Preview Frame -->
+<div class="w-full h-36 bg-surface-container-high rounded-lg flex items-center justify-center relative overflow-hidden" data-alt="Satellite map geofence boundary view of Hinjawadi construction road yard showing heavy machinery parking bay and perimeter outline in golden yellow color." data-location="Hinjawadi, Pune, Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPMF3TxU4mZszNtESVJJt6lEMcnuofNwCyP1BxZ-SiWvbSARfxwkh3izliWCAdfFxR0E4WJgKvzgjviAbldBxwqvqVYgTQLBDTz4Y_S_3yz7kKGsUxe-sjSaV_vh2M4sq2VaUiErIvGB5Yp_PJhCJZjtkgM9ELrD4nEvpoK9FztUdh3Jvn5dTzGnS_O6T71MEb3-A2i1UUjhGbIPtFMrhVUNBkehL0r_UXxs19eRG27G3HBRxL7fXn')">
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<div class="px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md flex items-center gap-1.5 shadow">
+<span class="material-symbols-outlined text-[16px] text-error">fmd_good</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Site Geofence Verified</span>
+</div>
+</div>
+</div>
+<button class="w-full h-12 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center mt-2" onclick="closeJobModal()" type="button">
+        Close Duty Details
+      </button>
+</div>
+</div>
+<!-- Toast Notification Bar for Actions -->
+<div class="fixed bottom-20 left-4 right-4 z-50 bg-on-surface text-surface-container-lowest px-4 py-3 rounded-lg shadow-xl flex items-center justify-between transition-opacity duration-300 opacity-0 pointer-events-none" id="action-toast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary-container">info</span>
+<span class="font-label-md text-label-md font-medium" id="toast-text">Action complete</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">DISMISS</span>
+</div>
+</div>
+<script>
+  // Interactive State Switcher Simulator
+  const stateBtns = document.querySelectorAll('.state-pill');
+  const viewStates = {
+    'populated': document.getElementById('state-populated-view'),
+    'loading': document.getElementById('state-loading-view'),
+    'empty-no-jobs': document.getElementById('state-empty-no-jobs-view'),
+    'empty-filter': document.getElementById('state-empty-filter-view'),
+    'offline': document.getElementById('state-offline-view')
+  };
+
+  function switchSimState(selectedState) {
+    stateBtns.forEach(btn => {
+      const isActive = btn.getAttribute('data-state') === selectedState;
+      if (isActive) {
+        btn.className = 'state-pill px-3 py-1.5 rounded-full font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 bg-on-surface text-surface-container-lowest shrink-0 shadow-sm';
+      } else {
+        btn.className = 'state-pill px-3 py-1.5 rounded-full font-label-md text-label-md font-medium text-tertiary bg-surface-container shrink-0 transition-all hover:bg-surface-container-high';
+      }
+    });
+
+    Object.keys(viewStates).forEach(key => {
+      if (viewStates[key]) {
+        if (key === selectedState) {
+          viewStates[key].classList.remove('hidden');
+          viewStates[key].classList.add('flex');
+        } else {
+          viewStates[key].classList.add('hidden');
+          viewStates[key].classList.remove('flex');
+        }
+      }
+    });
+  }
+
+  stateBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetState = btn.getAttribute('data-state');
+      switchSimState(targetState);
+    });
+  });
+
+  // Filter Chips Functionality
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const jobCards = document.querySelectorAll('.job-item');
+
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => {
+        c.className = 'filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-semibold shrink-0 bg-surface-container text-on-surface transition-transform active:scale-95 hover:bg-surface-container-high';
+      });
+      chip.className = 'filter-chip px-3.5 py-2 rounded-full font-label-md text-label-md font-bold shrink-0 bg-inverse-surface text-inverse-on-surface transition-transform active:scale-95 shadow-sm';
+
+      const filterValue = chip.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      jobCards.forEach(card => {
+        const category = card.getAttribute('data-card-category');
+        if (filterValue === 'all' || category === filterValue) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Show filter zero empty state if no matches
+      if (visibleCount === 0) {
+        switchSimState('empty-filter');
+      } else {
+        // Ensure populated container is visible if currently in filter empty
+        if (!document.getElementById('state-empty-filter-view').classList.contains('hidden')) {
+          switchSimState('populated');
+        }
+      }
+    });
+  });
+
+  // Search Input Filter
+  const searchInput = document.getElementById('job-search-input');
+  const clearBtn = document.getElementById('clear-search-btn');
+
+  searchInput.addEventListener('input', (e) => {
+    const val = e.target.value.toLowerCase().trim();
+    if (val.length > 0) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+
+    let matchCount = 0;
+    jobCards.forEach(card => {
+      const cardText = card.textContent.toLowerCase();
+      if (cardText.includes(val)) {
+        card.classList.remove('hidden');
+        matchCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    if (matchCount === 0 && val.length > 0) {
+      switchSimState('empty-filter');
+    } else if (matchCount > 0 && !document.getElementById('state-empty-filter-view').classList.contains('hidden')) {
+      switchSimState('populated');
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.classList.add('hidden');
+    jobCards.forEach(card => card.classList.remove('hidden'));
+    switchSimState('populated');
+  });
+
+  function resetAllFilters() {
+    searchInput.value = '';
+    clearBtn.classList.add('hidden');
+    filterChips[0].click();
+    switchSimState('populated');
+  }
+
+  // Card Collapsible toggler
+  function toggleDetails(elementId, btn) {
+    const target = document.getElementById(elementId);
+    if (!target) return;
+    const isHidden = target.classList.contains('hidden');
+    if (isHidden) {
+      target.classList.remove('hidden');
+      target.classList.add('flex');
+      btn.querySelector('span:first-child').innerText = 'Hide Details';
+      btn.querySelector('.material-symbols-outlined').innerText = 'expand_less';
+    } else {
+      target.classList.add('hidden');
+      target.classList.remove('flex');
+      btn.querySelector('span:first-child').innerText = 'View Site Map & Supervisors';
+      btn.querySelector('.material-symbols-outlined').innerText = 'expand_more';
+    }
+  }
+
+  // Modal Detail Functions
+  const modal = document.getElementById('job-detail-modal');
+  function openJobModal(wo, machine, reg, site, status, wage) {
+    document.getElementById('modal-wo').innerText = wo;
+    document.getElementById('modal-machine').innerText = machine;
+    document.getElementById('modal-reg').innerText = reg;
+    document.getElementById('modal-site').innerText = site;
+    document.getElementById('modal-status').innerText = status;
+    document.getElementById('modal-wage').innerText = wage;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeJobModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeJobModal();
+  });
+
+  // Shift & Action Simulation Handlers
+  function acceptShift(btn) {
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-emerald-400">check</span><span>Accepted</span>';
+    btn.classList.remove('bg-inverse-surface');
+    btn.classList.add('bg-emerald-900', 'text-white');
+    showToast('Duty Accepted. Pre-shift inspection unlocked.');
+  }
+
+  function triggerCameraRetake(wo) {
+    showToast('Opening High-Contrast Camera for ' + wo + '...');
+  }
+
+  function retrySync() {
+    showToast('Re-connecting to Pune Server... 1 Cached Slip synced.');
+    setTimeout(() => {
+      switchSimState('populated');
+    }, 900);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('action-toast');
+    const toastText = document.getElementById('toast-text');
+    toastText.innerText = msg;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2800);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(11,28,48,0.06)]" data-active-classes="text-on-surface font-bold after:content-[''] after:absolute after:top-0 after:w-10 after:h-1 after:bg-primary-container after:rounded-full"><div class="flex items-center justify-around h-16 px-gutter"><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-md text-label-md tracking-tight uppercase">Home</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="my-work" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-label-md text-label-md tracking-tight uppercase">My Work</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="analytics" href="#"><span class="material-symbols-outlined text-[24px]">monitoring</span><span class="font-label-md text-label-md tracking-tight uppercase">Analytics</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-label-md text-label-md tracking-tight uppercase">Profile</span></a></div></nav></body></html>

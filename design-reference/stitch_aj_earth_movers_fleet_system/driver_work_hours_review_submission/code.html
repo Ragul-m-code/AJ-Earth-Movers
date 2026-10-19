@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#eff4ff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-primary-fixed": "#261a00", "secondary-fixed-dim": "#c3c6d0", "on-tertiary": "#ffffff", "on-tertiary-container": "#474f65", "on-background": "#0b1c30", "surface-container-highest": "#d3e4fe", "surface-variant": "#d3e4fe", "primary-fixed": "#ffdf9f", "outline": "#827660", "secondary-fixed": "#dfe2ec", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-high": "#dce9ff", "on-surface": "#0b1c30", "on-tertiary-fixed": "#131b2e", "on-primary-container": "#664b00", "primary-fixed-dim": "#fabd0d", "background": "#f8f9ff", "inverse-surface": "#213145", "primary": "#795900", "surface-container-lowest": "#ffffff", "outline-variant": "#d4c5ac", "surface-tint": "#795900", "on-primary": "#ffffff", "surface-container": "#e5eeff", "on-secondary-container": "#61646d", "on-primary-fixed-variant": "#5b4300", "surface": "#f8f9ff", "tertiary-fixed-dim": "#bec6e0", "on-secondary-fixed": "#181c23", "on-error": "#ffffff", "secondary-container": "#dfe2ec", "tertiary-container": "#bac1db", "on-tertiary-fixed-variant": "#3f465c", "inverse-on-surface": "#eaf1ff", "inverse-primary": "#fabd0d", "primary-container": "#f5b800", "secondary": "#5b5e67", "on-surface-variant": "#4f4632", "on-secondary-fixed-variant": "#43474f", "surface-bright": "#f8f9ff", "surface-dim": "#cbdbf5", "tertiary-fixed": "#dae2fd", "tertiary": "#565e74" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "margin": "1rem", "space-xl": "1.75rem", "space-sm": "0.5rem", "margin-sm": "0.75rem", "space-xs": "0.25rem", "space-lg": "1.25rem", "gutter-sm": "0.75rem", "space-md": "0.875rem" }, "fontFamily": { "body-lg": ["Inter"], "display-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "display-sm": ["Inter"], "metric-num": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-sm": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "800" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 -ml-1 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex items-center gap-space-sm min-w-0"><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI"/><div class="h-4 w-1 bg-primary-container rounded-full flex-shrink-0"></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold truncate">Operational Review</span><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate leading-none">Review Shift Hours</h1></div></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden sm:flex items-center gap-space-xs px-2 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span>4G LTE • GPS</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-gutter pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-36">
+<!-- ========================================== -->
+<!-- 1. TOP INTERACTIVE SIMULATOR HARNESS       -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-high rounded-xl p-space-sm mb-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-xs px-1">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold">Simulator Preset Harness</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">QA Test Gate</span>
+</div>
+<!-- Horizontally scrollable test state buttons -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1" id="state-selector-container">
+<button class="sim-btn px-3 py-2 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all shadow-sm" id="btn-state-normal" onclick="setSimState('normal')">
+        1. Normal Valid (+8.5h)
+      </button>
+<button class="sim-btn px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" id="btn-state-excess" onclick="setSimState('excess')">
+        2. Warning: Excess (+14.5h)
+      </button>
+<button class="sim-btn px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" id="btn-state-rollback" onclick="setSimState('rollback')">
+        3. Error: Rollback (&lt; Start)
+      </button>
+<button class="sim-btn px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" id="btn-state-submitting" onclick="setSimState('submitting')">
+        4. Submitting (Lock)
+      </button>
+<button class="sim-btn px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" id="btn-state-failed" onclick="setSimState('failed')">
+        5. Upload Failed (4G Drop)
+      </button>
+<button class="sim-btn px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all" id="btn-state-confirmed" onclick="setSimState('confirmed')">
+        6. Confirmed (Pending)
+      </button>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 2. WORK ORDER & VEHICLE SUMMARY CARD       -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<!-- Header strip with Priority tag -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">#WO-2024-892</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-container text-on-primary-fixed font-label-sm text-label-sm font-extrabold uppercase">
+            Priority 1 Shift
+          </span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate mt-0.5">L&amp;T Heavy Civil Infra • Hinjawadi Pier 18-24</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment</span>
+</div>
+</div>
+<!-- Machine & Operator Details Grid -->
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container-low rounded-lg p-space-sm mb-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Asset Assigned</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">CAT 320D (Unit #15)</span>
+<span class="font-label-md text-label-md text-primary font-bold tracking-wide mt-0.5">IND MH-14-GH-8821</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Operator</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Ramesh Kumar</span>
+<span class="font-body-sm text-body-sm text-secondary truncate mt-0.5">Emp #AJ-418 • Badge #OP-4409</span>
+</div>
+</div>
+<!-- Shift Duration Bar -->
+<div class="flex items-center justify-between bg-surface-container px-3 py-2.5 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">schedule</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Shift A: 07:00 AM – 17:45 PM</span>
+<span class="font-body-sm text-body-sm text-secondary">Logged Today (Standard Day Run)</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Elapsed Span</span>
+<div class="font-label-lg text-label-lg text-on-surface font-extrabold">10h 45m</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 3. DUAL PHOTOGRAPHIC AUDIT & METER TILES   -->
+<!-- ========================================== -->
+<section class="w-full mb-space-md">
+<div class="flex items-center justify-between mb-space-xs px-1">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">photo_camera</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Hour Meter Dial Telemetry</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Side-by-Side Verification</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- LEFT CARD: START PHOTO -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Start Photo</span>
+<button aria-label="Inspect Start Photo" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface active:scale-95" onclick="openInspectModal('start')">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+</div>
+<!-- Image thumbnail with live camera overlay -->
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-inverse-surface mb-2 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="High-contrast close-up photograph of heavy machinery Caterpillar 320D digital cab dial meter showing exactly 3412.0 hours, illuminated amber dashboard backlighting, dusty construction site cabin ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgiVdIkausS7IW0pMv376zkFzfUObvTVLGvT7vqCs-2mB10UkANI9KTv_ZQza9FEuCvaXl9y03dsq_RD6JRxA-t9W6dOaH64bGbsRtNRYANleF54z4rkNZEZRZgxp8Mkwm2u98hTl8t9vfQJy7WqjMgvtWPlyS0wUr0ZqJFhlx2PIpE06ZT_mUNG3eHzu079551ci8eAjXuy7G6pPn6X4wnhDaMgowN8P74iS3KzjouSKAWze5kse9"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface font-metric-num text-[11px] font-bold">
+              07:02:18 IST
+            </div>
+</div>
+</div>
+<div>
+<!-- Big tabular hour meter box -->
+<div class="bg-surface-container-low rounded-lg p-2 text-center mb-1.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold block">In-Check Meter</span>
+<span class="font-metric-num text-headline-lg text-on-surface font-extrabold tracking-tight" id="display-meter-start">3,412.0</span>
+<span class="font-label-sm text-label-sm text-primary font-bold block">HRS</span>
+</div>
+<div class="flex items-center justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">pin_drop</span>
+<span class="font-label-sm text-label-sm truncate">Site B (±1.2m)</span>
+</div>
+</div>
+</div>
+<!-- RIGHT CARD: END PHOTO -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between" id="end-photo-card">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">End Photo</span>
+<button aria-label="Inspect End Photo" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface active:scale-95" onclick="openInspectModal('end')">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+</div>
+<!-- Image thumbnail with live camera overlay -->
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-inverse-surface mb-2 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Clear photographic inspection view of heavy equipment excavator digital hour meter odometer reading 3420.5 hours with evening twilight backlight, crisp numbers, CAT cab interface dashboard." id="end-photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpZt1HujC_jt7J69nfNToAhviKERp2Kez71raQEo9uO-q5jDyHqwNdzWZita08Z7nAZnm8HewYfbeqTJY5nLBd-O3PZ56qrU38k9t260lrFVzJDqigc64sd6c8_MaO4vW4E4RMaFKNhn2GIwQDD35wg4ze4VzzGumW9soHZA5eRvqv_oVwX677VBtXWu24qIZAdCr6sHZxEwJhpZtZSQw-FLj_0lPynHVkwJl_GuECg-SqgHx4UrIE"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface font-metric-num text-[11px] font-bold" id="end-photo-time">
+              17:42:15 IST
+            </div>
+</div>
+</div>
+<div>
+<!-- Big tabular hour meter box -->
+<div class="bg-primary-container/20 rounded-lg p-2 text-center mb-1.5" id="end-meter-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold block">Out-Check Meter</span>
+<span class="font-metric-num text-headline-lg text-on-surface font-extrabold tracking-tight" id="display-meter-end">3,420.5</span>
+<span class="font-label-sm text-label-sm text-primary font-bold block">HRS</span>
+</div>
+<div class="flex items-center justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px] text-primary">pin_drop</span>
+<span class="font-label-sm text-label-sm truncate">Site B (±1.5m)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 4. CALCULATED OPERATING DELTA BREAKDOWN     -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md" id="computation-card">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Calculation Breakdown</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Ending − Starting = Delta</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">
+        Auto-Derived
+      </span>
+</div>
+<!-- Math equation box -->
+<div class="bg-surface-container-low rounded-lg p-space-sm mb-space-sm">
+<div class="flex items-center justify-between font-label-md text-label-md text-secondary pb-1">
+<span>End Reading:</span>
+<span class="font-metric-num text-on-surface font-bold" id="math-end">3,420.5 HRS</span>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md text-secondary pb-2">
+<span>Start Reading:</span>
+<span class="font-metric-num text-on-surface font-bold" id="math-start">− 3,412.0 HRS</span>
+</div>
+<div class="h-0.5 bg-surface-container rounded-full my-1"></div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Net Working Delta</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-num text-display-sm text-primary font-black tracking-tight" id="delta-value">+8.5</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">HRS</span>
+</div>
+</div>
+</div>
+<!-- Prominent Notice Label -->
+<div class="flex items-center gap-2 mb-space-sm bg-primary-container/15 px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">
+        Calculated Operating Hours — Pending Admin Verification
+      </span>
+</div>
+<!-- Estimated Driver Pay Credit Tile -->
+<div class="flex items-center justify-between bg-surface-container rounded-lg p-3 mb-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase">Provisional Driver Pay Credit</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium" id="driver-rate-math">8.5 hrs × ₹150.00/hr OT/Running</span>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md font-extrabold text-on-surface" id="driver-pay-total">₹1,275.00</span>
+<span class="block font-label-sm text-label-sm text-secondary">Added to Payslip</span>
+</div>
+</div>
+<!-- Strict Read-Only Audit Warning -->
+<div class="flex items-start gap-2 pt-1 px-1">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">lock</span>
+<p class="font-body-sm text-body-sm text-secondary">
+        Role Isolation Policy: Heavy equipment operators cannot alter meter telemetry, wage multipliers, or finalize approval. Final log is governed by Central Dispatch &amp; Supervisor Vikram Patil.
+      </p>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 5. VALIDATION STATUS & EXCEPTION HANDLING  -->
+<!-- ========================================== -->
+<section class="w-full mb-space-md" id="validation-section">
+<!-- Status Banner (Dynamic) -->
+<div class="w-full rounded-xl p-space-sm mb-space-sm bg-surface-container-lowest shadow-sm flex items-start gap-space-sm" id="status-banner">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center flex-shrink-0 text-primary" id="status-icon-box">
+<span class="material-symbols-outlined text-[22px]" id="status-icon">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate" id="status-title">Telemetry Check Passed</span>
+<span class="font-body-sm text-body-sm text-secondary" id="status-desc">0 Telemetry Discrepancies detected. Geofence &amp; optical AI matched Caterpillar OCR readings.</span>
+</div>
+</div>
+<!-- Exception & Discrepancy Policy Card -->
+<div class="w-full rounded-xl p-space-md bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">gavel</span>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface uppercase">Exception &amp; Discrepancy Policy</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm">
+        In case of gauge glass condensation, physical odometer swap, electrical dial flicker, or supervisor manual override, tap below to submit an Incident Exception Ticket with a signed supervisor physical slip.
+      </p>
+<button class="w-full h-11 rounded-lg bg-surface-container-lowest text-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all" onclick="triggerExceptionFlow()">
+<span class="material-symbols-outlined text-primary text-[20px]">report_problem</span>
+<span>Submit Incident Exception Ticket</span>
+</button>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 6. SHIFT NOTES & TELEMETRY SIGN-OFF        -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">edit_note</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Attached Driver Memo</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm">Shift Sign-Off</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm font-body-md text-body-md text-on-surface mb-space-sm">
+      “Trenching along Pier 21 completed. Track tension verified, hydraulic grease topped up 45L. Chisel point in good condition.”
+    </div>
+<!-- Cryptographic Proof Badges -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">cloud_done</span>
+        NTP Server Synced
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
+        GPS Geofenced (Pier 18-24)
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">fingerprint</span>
+        SHA-256 Sign: #9b2e...7d01
+      </span>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 7. FIXED / DOCKED BOTTOM ACTION FOOTER     -->
+<!-- ========================================== -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.06)] px-gutter pt-3 pb-safe">
+<div class="max-w-md mx-auto flex flex-col gap-2">
+<!-- Main Amber CTA Button -->
+<button class="w-full h-14 rounded-lg bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 shadow-md active:scale-98 transition-all uppercase tracking-wide" id="btn-submit-work" onclick="handlePrimaryAction()">
+<span class="material-symbols-outlined text-[24px]">send</span>
+<span id="btn-submit-label">Confirm &amp; Submit Work Record</span>
+</button>
+<!-- Secondary Return Button -->
+<button class="w-full h-10 rounded-lg bg-transparent text-secondary hover:text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1 transition-colors" id="btn-retake" onclick="handleEditAction()">
+<span class="material-symbols-outlined text-[18px]">photo_camera_back</span>
+<span>Edit Readings / Retake Photos</span>
+</button>
+<!-- Irreversible Policy Microcopy -->
+<div class="text-center font-label-sm text-label-sm text-secondary pb-1">
+        AJ Earth Movers Anti-Rollback Fleet Protocol • Submission is irreversible once confirmed by server.
+      </div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 8. MODAL 1: PRE-SUBMISSION CONFIRMATION    -->
+<!-- ========================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-gutter" id="modal-confirm">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-xl p-space-md shadow-2xl flex flex-col animate-in fade-in zoom-in-95 duration-150">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center mb-space-sm mx-auto shadow-sm">
+<span class="material-symbols-outlined text-[28px]">assignment_turned_in</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface text-center mb-1">Confirm Shift Submission?</h3>
+<p class="font-body-md text-body-md text-secondary text-center mb-space-md">
+        You are submitting <strong class="text-on-surface font-bold" id="modal-confirm-delta">8.5 Net Operating Hours</strong> for CAT 320D (Unit #15) on <strong class="text-on-surface font-bold">#WO-2024-892</strong>.
+        Once transmitted, hours route immediately to Site Supervisor <strong class="text-on-surface font-bold">Vikram Patil</strong> for billing authorization.
+      </p>
+<div class="bg-surface-container-low rounded-lg p-space-sm mb-space-md text-center">
+<span class="font-label-sm text-label-sm text-secondary uppercase block">Shift Hours Credited</span>
+<span class="font-metric-num text-headline-lg font-extrabold text-primary" id="modal-confirm-hours">+8.50 HRS</span>
+<span class="block font-label-md text-label-md text-on-surface font-semibold" id="modal-confirm-pay">Provisional Pay: ₹1,275.00</span>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full h-12 rounded-lg bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-95 shadow-sm" onclick="executeFinalSubmit()">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+<span>Confirm &amp; Transmit</span>
+</button>
+<button class="w-full h-11 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold active:scale-95" onclick="closeModal('modal-confirm')">
+          Review Again
+        </button>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 9. MODAL 2: SUCCESS DIALOG OVERLAY         -->
+<!-- ========================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/70 backdrop-blur-sm hidden flex items-center justify-center p-gutter" id="modal-success">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-xl p-space-md shadow-2xl flex flex-col text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high text-primary flex items-center justify-center mb-space-sm mx-auto shadow-sm">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-extrabold text-on-surface mb-1">Shift Record Submitted!</h3>
+<div class="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/20 text-on-surface mx-auto font-label-sm text-label-sm font-bold mb-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Status: Pending Admin Verification</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mb-space-md">
+        Transmission authenticated. Digital voucher <strong class="text-on-surface">#SR-892-REV</strong> queued for Supervisor Vikram Patil at Central Hinjawadi Terminal.
+      </p>
+<div class="bg-surface-container rounded-lg p-space-sm mb-space-md text-left font-label-md text-label-md text-on-surface flex flex-col gap-1">
+<div class="flex justify-between">
+<span class="text-secondary">Ref Ticket:</span>
+<span class="font-bold">#SR-892-REV</span>
+</div>
+<div class="flex justify-between">
+<span class="text-secondary">Machine:</span>
+<span class="font-bold">CAT 320D (MH-14-GH-8821)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-secondary">Approved Hours:</span>
+<span class="font-bold text-primary">8.50 Hours (Audit Logged)</span>
+</div>
+</div>
+<button class="w-full h-12 rounded-lg bg-inverse-surface text-inverse-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-95 shadow-sm" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Return to Work Hub</span>
+</button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 10. MODAL 3: PHOTO INSPECTION ZOOM DIALOG  -->
+<!-- ========================================== -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/90 backdrop-blur-md hidden flex flex-col p-gutter" id="modal-photo">
+<div class="flex items-center justify-between pb-4">
+<div class="flex flex-col text-inverse-on-surface">
+<span class="font-headline-sm text-headline-sm font-bold" id="inspect-title">Shift Start Dial Inspection</span>
+<span class="font-label-sm text-label-sm text-surface-container-highest" id="inspect-sub">CAT 320D Digital Cluster • Hinjawadi Site B</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container text-on-surface flex items-center justify-center active:scale-90" onclick="closeModal('modal-photo')">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="flex-1 w-full relative flex items-center justify-center bg-inverse-surface/60 rounded-xl overflow-hidden mb-4">
+<img class="w-full max-h-[60vh] object-contain rounded-lg shadow-2xl" data-alt="High magnification inspection view of Caterpillar industrial digital LCD cab hour meter showing clear digits, glare filter, timestamp watermark." id="inspect-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcb19kbauGNXbJmTBMtitkvkv6Bml5xRGT5shfE7TekedkME6SWk5kTE0aiOXiYJCjuJmXX3vSCGXk-8WaRykGvIwyyGqXE5I8B141QE6ig3sWlzifv50XQmAGgOxm5yEYACF7bJI24hDstJnMHjupAh1oNEiaXYwFYSnClw24VyGASL083GDGMe4WkqSGwLp9_ax09lqbNwS5XpQpcwDF5I-Fj9A3NiHpqTNrIT5JPU0uqRl0iVv5"/>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Audited Reading</span>
+<span class="font-metric-num text-headline-md font-bold text-on-surface" id="inspect-reading">3,412.0 HRS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">AI Optical Hash Valid</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- INTERACTIVE VANILLA JAVASCRIPT CONTROLLER  -->
+<!-- ========================================== -->
+<script>
+  let currentSimState = 'normal';
+
+  const simConfig = {
+    normal: {
+      start: 3412.0,
+      end: 3420.5,
+      delta: 8.5,
+      pay: 1275,
+      rateStr: '8.5 hrs × ₹150.00/hr OT/Running',
+      statusClass: 'bg-surface-container-lowest',
+      iconBoxClass: 'bg-surface-container-high text-primary',
+      icon: 'check_circle',
+      title: 'Telemetry Check Passed',
+      desc: '0 Telemetry Discrepancies detected. Geofence & optical AI matched Caterpillar OCR readings.',
+      btnLabel: 'Confirm & Submit Work Record',
+      btnDisabled: false,
+      btnClass: 'bg-primary-container text-on-primary-fixed',
+      deltaColor: 'text-primary'
+    },
+    excess: {
+      start: 3412.0,
+      end: 3426.5,
+      delta: 14.5,
+      pay: 2175,
+      rateStr: '14.5 hrs × ₹150.00/hr (Exceeds 12h Shift Limit)',
+      statusClass: 'bg-surface-container-lowest',
+      iconBoxClass: 'bg-primary-container text-on-primary-fixed',
+      icon: 'warning',
+      title: 'Warning: Shift Threshold Exceeded (+14.5h)',
+      desc: 'Machine running time exceeds the standard 12-hour duty window. Vikram Patil must co-authorize extra overtime billing.',
+      btnLabel: 'Submit with Overtime Override',
+      btnDisabled: false,
+      btnClass: 'bg-primary-container text-on-primary-fixed',
+      deltaColor: 'text-primary'
+    },
+    rollback: {
+      start: 3412.0,
+      end: 3409.0,
+      delta: -3.0,
+      pay: 0,
+      rateStr: 'Negative Delta detected (-3.0 hrs). Calculation blocked.',
+      statusClass: 'bg-error-container text-on-error-container',
+      iconBoxClass: 'bg-error text-on-error',
+      icon: 'dangerous',
+      title: 'Critical Error: Hour-Meter Rollback',
+      desc: 'Ending meter (3,409.0) is lower than starting check-in (3,412.0). Submission blocked by Fleet Anti-Tamper Policy.',
+      btnLabel: 'Submission Blocked: Rollback',
+      btnDisabled: true,
+      btnClass: 'bg-secondary text-on-secondary opacity-60 cursor-not-allowed',
+      deltaColor: 'text-error'
+    },
+    submitting: {
+      start: 3412.0,
+      end: 3420.5,
+      delta: 8.5,
+      pay: 1275,
+      rateStr: '8.5 hrs × ₹150.00/hr OT/Running',
+      statusClass: 'bg-surface-container-lowest',
+      iconBoxClass: 'bg-surface-container-high text-primary',
+      icon: 'sync',
+      title: 'Encrypting Payload & Handshaking...',
+      desc: 'Connecting to AJ Central Telematics Hub Hinjawadi. Please do not close application.',
+      btnLabel: 'Transmitting Payload...',
+      btnDisabled: true,
+      btnClass: 'bg-primary-container/80 text-on-primary-fixed cursor-wait',
+      deltaColor: 'text-primary'
+    },
+    failed: {
+      start: 3412.0,
+      end: 3420.5,
+      delta: 8.5,
+      pay: 1275,
+      rateStr: '8.5 hrs × ₹150.00/hr OT/Running',
+      statusClass: 'bg-error-container text-on-error-container',
+      iconBoxClass: 'bg-error text-on-error',
+      icon: 'signal_cellular_connected_no_internet_4_bar',
+      title: 'Upload Failed: 4G LTE Drop',
+      desc: 'Unable to reach NTP time server. Payload cached locally on device sandbox. Tap retry when signal restabilizes.',
+      btnLabel: 'Retry Submission (Cached Local)',
+      btnDisabled: false,
+      btnClass: 'bg-primary-container text-on-primary-fixed',
+      deltaColor: 'text-primary'
+    },
+    confirmed: {
+      start: 3412.0,
+      end: 3420.5,
+      delta: 8.5,
+      pay: 1275,
+      rateStr: '8.5 hrs × ₹150.00/hr OT/Running',
+      statusClass: 'bg-surface-container-lowest',
+      iconBoxClass: 'bg-surface-container-high text-primary',
+      icon: 'task_alt',
+      title: 'Shift Voucher Locked & Signed',
+      desc: 'Record #SR-892-REV successfully archived in cloud dispatch. Awaiting supervisor signoff.',
+      btnLabel: 'View Approved Work Record',
+      btnDisabled: false,
+      btnClass: 'bg-inverse-surface text-inverse-on-surface',
+      deltaColor: 'text-primary'
+    }
+  };
+
+  function setSimState(stateKey) {
+    currentSimState = stateKey;
+    const cfg = simConfig[stateKey];
+    if (!cfg) return;
+
+    // Update active tab buttons styling
+    document.querySelectorAll('.sim-btn').forEach(btn => {
+      btn.className = 'sim-btn px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all';
+    });
+    const activeBtn = document.getElementById('btn-state-' + stateKey);
+    if (activeBtn) {
+      activeBtn.className = 'sim-btn px-3 py-2 rounded-lg bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm whitespace-nowrap active:scale-95 transition-all shadow-sm';
+    }
+
+    // Update meter values
+    document.getElementById('display-meter-start').textContent = cfg.start.toFixed(1);
+    document.getElementById('display-meter-end').textContent = cfg.end.toFixed(1);
+    document.getElementById('math-start').textContent = '− ' + cfg.start.toFixed(1) + ' HRS';
+    document.getElementById('math-end').textContent = cfg.end.toFixed(1) + ' HRS';
+
+    // Delta display
+    const deltaSign = cfg.delta > 0 ? '+' : '';
+    const deltaElem = document.getElementById('delta-value');
+    deltaElem.textContent = deltaSign + cfg.delta.toFixed(1);
+    deltaElem.className = 'font-metric-num text-display-sm font-black tracking-tight ' + cfg.deltaColor;
+
+    // Pay calculation
+    document.getElementById('driver-rate-math').textContent = cfg.rateStr;
+    document.getElementById('driver-pay-total').textContent = '₹' + cfg.pay.toLocaleString('en-IN') + '.00';
+
+    // Status banner updates
+    const banner = document.getElementById('status-banner');
+    banner.className = 'w-full rounded-xl p-space-sm mb-space-sm shadow-sm flex items-start gap-space-sm ' + cfg.statusClass;
+    
+    const iconBox = document.getElementById('status-icon-box');
+    iconBox.className = 'w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ' + cfg.iconBoxClass;
+    
+    document.getElementById('status-icon').textContent = cfg.icon;
+    document.getElementById('status-title').textContent = cfg.title;
+    document.getElementById('status-desc').textContent = cfg.desc;
+
+    // Footer submit button
+    const submitBtn = document.getElementById('btn-submit-work');
+    submitBtn.className = 'w-full h-14 rounded-lg font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 shadow-md active:scale-98 transition-all uppercase tracking-wide ' + cfg.btnClass;
+    submitBtn.disabled = cfg.btnDisabled;
+    document.getElementById('btn-submit-label').textContent = cfg.btnLabel;
+
+    // Modal sync
+    document.getElementById('modal-confirm-delta').textContent = deltaSign + cfg.delta.toFixed(1) + ' Net Operating Hours';
+    document.getElementById('modal-confirm-hours').textContent = deltaSign + cfg.delta.toFixed(2) + ' HRS';
+    document.getElementById('modal-confirm-pay').textContent = 'Provisional Pay: ₹' + cfg.pay.toLocaleString('en-IN') + '.00';
+
+    // State specific actions
+    if (stateKey === 'submitting') {
+      setTimeout(() => {
+        setSimState('normal');
+      }, 2500);
+    }
+  }
+
+  function handlePrimaryAction() {
+    if (currentSimState === 'confirmed') {
+      document.getElementById('modal-success').classList.remove('hidden');
+      return;
+    }
+    if (currentSimState === 'rollback') {
+      alert('Action Blocked: Negative telemetry delta cannot be transmitted.');
+      return;
+    }
+    // Open Confirmation Dialog
+    document.getElementById('modal-confirm').classList.remove('hidden');
+  }
+
+  function handleEditAction() {
+    alert('Returning to Step 2: Camera Dial Retake & Meter Adjustment.');
+  }
+
+  function executeFinalSubmit() {
+    closeModal('modal-confirm');
+    setSimState('submitting');
+    setTimeout(() => {
+      setSimState('confirmed');
+      document.getElementById('modal-success').classList.remove('hidden');
+    }, 1200);
+  }
+
+  function triggerExceptionFlow() {
+    alert('Opening Incident Exception Ticket: Please prepare signed supervisor physical slip for CAT 320D.');
+  }
+
+  function openInspectModal(type) {
+    const modal = document.getElementById('modal-photo');
+    const title = document.getElementById('inspect-title');
+    const sub = document.getElementById('inspect-sub');
+    const reading = document.getElementById('inspect-reading');
+
+    if (type === 'start') {
+      title.textContent = 'Shift Start Dial (07:02:18 IST)';
+      sub.textContent = 'Site B Geofence Confirmed • Operator In-Check Stamp';
+      reading.textContent = '3,412.0 HRS';
+    } else {
+      title.textContent = 'Shift End Dial (17:42:15 IST)';
+      sub.textContent = 'Site B Geofence Confirmed • Operator Out-Check Stamp';
+      reading.textContent = document.getElementById('display-meter-end').textContent + ' HRS';
+    }
+
+    modal.classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('hidden');
+  }
+
+  // Initialize normal default state
+  setSimState('normal');
+</script></main></body></html>

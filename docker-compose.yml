@@ -1,0 +1,20 @@
+# Local development database only. Production should use a managed PostgreSQL with backups.
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: aj
+      POSTGRES_PASSWORD: aj_dev_password
+      POSTGRES_DB: aj_fleet
+      TZ: Asia/Kolkata
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/scripts/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aj -d aj_fleet"]
+      interval: 5s
+      retries: 10
+volumes:
+  pgdata:

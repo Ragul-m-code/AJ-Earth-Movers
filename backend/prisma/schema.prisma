@@ -1,0 +1,859 @@
+// AJ Earth Movers — shared relational model.
+// Hours are stored with 0.1 h precision, money in INR with 2 decimals.
+// Readings, reviews, approved work, invoices and payments are append-only or status-driven:
+// corrections add rows or change status with an audit entry; nothing financial is edited in place.
+
+generator client {
+  provider      = "prisma-client-js"
+  // "rhel-openssl-3.0.x" is the Vercel Functions runtime.
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url       = env("DATABASE_URL")
+  // Migrations need a direct (non-pooled) connection. Locally both URLs point at the same database.
+  directUrl = env("DIRECT_URL")
+}
+
+enum Role {
+  OWNER
+  MANAGER
+  ACCOUNTS
+  DRIVER
+}
+
+enum AccountStatus {
+  ACTIVE
+  DISABLED
+}
+
+/// Admin modules that MANAGER and ACCOUNTS users can be granted. OWNER implicitly has all of them.
+enum PermissionModule {
+  DASHBOARD
+  WORK_ORDERS
+  METER_APPROVAL
+  METER_CORRECTION
+  FLEET
+  MAINTENANCE
+  CUSTOMERS
+  RATES
+  INVOICES
+  PAYMENTS
+  DRIVERS
+  PAYROLL
+  EXPENSES
+  REPORTS
+  USERS
+  SETTINGS
+  TAX_VERIFY
+}
+
+enum DriverStatus {
+  ACTIVE
+  ON_LEAVE
+  INACTIVE
+}
+
+enum CompensationMethod {
+  HOURLY
+  FIXED
+}
+
+/// Stored status covers only states an admin sets. ASSIGNED and WORKING are derived from open work orders
+/// (see src/services/fleet.ts), so they can never drift out of sync.
+enum VehicleStatus {
+  AVAILABLE
+  MAINTENANCE
+  INACTIVE
+}
+
+enum BillingCycle {
+  PER_WORK_ORDER
+  DAILY
+  WEEKLY
+  MONTHLY
+  CUSTOM
+}
+
+enum WorkOrderStatus {
+  ASSIGNED // waiting for the driver to accept or decline
+  ACCEPTED
+  DECLINED
+  IN_PROGRESS // starting reading recorded
+  PENDING_APPROVAL // ending reading recorded, awaiting admin review
+  CORRECTION_REQUIRED // admin rejected; driver must resubmit
+  APPROVED // hours eligible for billing and payroll
+  CANCELLED
+}
+
+enum MeterKind {
+  START
+  END
+}
+
+enum ReviewDecision {
+  APPROVED
+  REJECTED
+}
+
+enum CorrectionTarget {
+  START
+  END
+  BOTH
+}
+
+/// Authorized reasons for approving hours that differ from end − start.
+enum MeterAdjustmentKind {
+  ROLLOVER
+  METER_REPLACED
+  ADMIN_CORRECTION
+}
+
+enum PayrollStatus {
+  DRAFT
+  APPROVED
+  PAID
+}
+
+enum AdjustmentKind {
+  ADDITION
+  DEDUCTION
+}
+
+enum AdjustmentStatus {
+  PENDING
+  APPROVED
+  VOID
+}
+
+enum InvoiceKind {
+  TAX_INVOICE
+  PROFORMA
+}
+
+/// OVERDUE is derived (ISSUED or PARTIALLY_PAID past dueDate), so it is never stored.
+enum InvoiceStatus {
+  DRAFT
+  ISSUED
+  PARTIALLY_PAID
+  PAID
+  CANCELLED
+}
+
+enum InvoiceLineKind {
+  MACHINE
+  BREAKER
+  OTHER
+  DISCOUNT
+}
+
+enum TaxSplit {
+  INTRA_STATE
+  INTER_STATE
+  NONE
+}
+
+enum VerificationStatus {
+  UNVERIFIED
+  VERIFIED
+}
+
+enum MaintenanceStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum NotificationType {
+  ASSIGNMENT
+  ASSIGNMENT_UPDATED
+  SUBMISSION_RECEIVED
+  READING_APPROVED
+  READING_REJECTED
+  PAYROLL_APPROVED
+  PAYROLL_PAID
+  METER_SUBMITTED
+  INVOICE_OVERDUE
+  GENERAL
+}
+
+model User {
+  id                 String        @id @default(uuid())
+  /// Driver code (DRV-104) for drivers; lower-cased email for admin users.
+  loginId            String        @unique
+  email              String?       @unique
+  phone              String?
+  passwordHash       String
+  displayName        String
+  role               Role
+  status             AccountStatus @default(ACTIVE)
+  /// Set for generated or reset passwords; the user must choose a new one before using the admin app.
+  mustChangePassword Boolean       @default(false)
+  failedLoginCount   Int           @default(0)
+  lockedUntil        DateTime?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  driver        Driver?
+  sessions      Session[]
+  notifications Notification[]
+  auditLogs     AuditLog[]       @relation("AuditActor")
+  readings      MeterReading[]
+  reviews       MeterReview[]
+  photos        Photo[]
+  createdOrders WorkOrder[]      @relation("WorkOrderCreator")
+  events        WorkOrderEvent[]
+  permissions   UserPermission[]
+}
+
+model UserPermission {
+  userId      String
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  module      PermissionModule
+  grantedById String?
+  grantedAt   DateTime         @default(now())
+
+  @@id([userId, module])
+}
+
+model Session {
+  id         String    @id @default(uuid())
+  tokenHash  String    @unique
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime  @default(now())
+  lastSeenAt DateTime  @default(now())
+  expiresAt  DateTime
+  revokedAt  DateTime?
+  userAgent  String?
+
+  @@index([userId])
+}
+
+model Driver {
+  id               String       @id @default(uuid())
+  userId           String       @unique
+  user             User         @relation(fields: [userId], references: [id])
+  driverCode       String       @unique
+  fullName         String
+  phone            String
+  emergencyContact String?
+  licenseNumber    String?
+  licenseExpiry    DateTime?    @db.Date
+  joinedOn         DateTime?    @db.Date
+  address          String?
+  status           DriverStatus @default(ACTIVE)
+  isSample         Boolean      @default(false)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  compensation DriverCompensation[]
+  workOrders   WorkOrder[]
+  approved     ApprovedWork[]
+  payrolls     PayrollRun[]
+  adjustments  SalaryAdjustment[]
+}
+
+/// Effective-dated driver pay terms: HOURLY (rate per approved hour) or FIXED (salary per calendar month).
+/// Never updated in place; a new row supersedes older ones. Independent of customer billing rates.
+model DriverCompensation {
+  id            String             @id @default(uuid())
+  driverId      String
+  driver        Driver             @relation(fields: [driverId], references: [id])
+  method        CompensationMethod
+  hourlyRate    Decimal?           @db.Decimal(10, 2)
+  monthlySalary Decimal?           @db.Decimal(12, 2)
+  effectiveFrom DateTime           @db.Date
+  note          String?
+  createdById   String?
+  createdAt     DateTime           @default(now())
+
+  @@unique([driverId, effectiveFrom])
+}
+
+model Customer {
+  id               String       @id @default(uuid())
+  name             String
+  contactName      String?
+  phone            String?
+  email            String?
+  address          String?
+  gstin            String?
+  /// Two-digit GST state code of the billing address. Used only together with a verified tax rule.
+  stateCode        String?
+  billingCycle     BillingCycle @default(PER_WORK_ORDER)
+  /// Days from issue date to due date for issued invoices.
+  paymentTermsDays Int          @default(30)
+  notes            String?
+  active           Boolean      @default(true)
+  isSample         Boolean      @default(false)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  workOrders      WorkOrder[]
+  sites           Site[]
+  rates           CustomerRate[]
+  attachmentRates CustomerAttachmentRate[]
+  invoices        Invoice[]
+  payments        Payment[]
+  approved        ApprovedWork[]
+}
+
+model Site {
+  id           String   @id @default(uuid())
+  customerId   String
+  customer     Customer @relation(fields: [customerId], references: [id])
+  name         String
+  address      String?
+  contactName  String?
+  contactPhone String?
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+
+  workOrders WorkOrder[]
+}
+
+/// Customer-agreed machine hourly rate for one vehicle or a whole vehicle category.
+/// Resolution: customer + vehicle, then customer + category, then the vehicle's default rate (VehicleRate).
+model CustomerRate {
+  id            String   @id @default(uuid())
+  customerId    String
+  customer      Customer @relation(fields: [customerId], references: [id])
+  vehicleId     String?
+  vehicle       Vehicle? @relation(fields: [vehicleId], references: [id])
+  category      String?
+  hourlyRate    Decimal  @db.Decimal(10, 2)
+  effectiveFrom DateTime @db.Date
+  createdById   String?
+  createdAt     DateTime @default(now())
+
+  @@index([customerId, effectiveFrom])
+}
+
+/// Customer-agreed breaker/attachment surcharge per hour; falls back to the attachment's default rate.
+model CustomerAttachmentRate {
+  id            String     @id @default(uuid())
+  customerId    String
+  customer      Customer   @relation(fields: [customerId], references: [id])
+  attachmentId  String
+  attachment    Attachment @relation(fields: [attachmentId], references: [id])
+  hourlyCharge  Decimal    @db.Decimal(10, 2)
+  effectiveFrom DateTime   @db.Date
+  createdById   String?
+  createdAt     DateTime   @default(now())
+
+  @@unique([customerId, attachmentId, effectiveFrom])
+}
+
+model Vehicle {
+  id                String        @id @default(uuid())
+  unitCode          String        @unique
+  registrationNo    String        @unique
+  make              String
+  model             String
+  category          String
+  status            VehicleStatus @default(AVAILABLE)
+  year              Int?
+  chassisNo         String?
+  engineNo          String?
+  insuranceExpiry   DateTime?     @db.Date
+  fitnessExpiry     DateTime?     @db.Date
+  /// Highest ending meter reading among approved work. Used to flag starting readings that go backwards.
+  lastApprovedMeter Decimal?      @db.Decimal(10, 1)
+  notes             String?
+  isSample          Boolean       @default(false)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  rates         VehicleRate[]
+  customerRates CustomerRate[]
+  workOrders    WorkOrder[]
+  approved      ApprovedWork[]
+  maintenance   MaintenanceRecord[]
+  expenses      Expense[]
+}
+
+/// Default customer hourly rental rate for a machine, used when no customer-specific rate exists.
+model VehicleRate {
+  id            String   @id @default(uuid())
+  vehicleId     String
+  vehicle       Vehicle  @relation(fields: [vehicleId], references: [id])
+  hourlyRate    Decimal  @db.Decimal(10, 2)
+  effectiveFrom DateTime @db.Date
+  createdById   String?
+  createdAt     DateTime @default(now())
+
+  @@unique([vehicleId, effectiveFrom])
+}
+
+model Attachment {
+  id         String   @id @default(uuid())
+  code       String   @unique
+  name       String
+  type       String
+  /// Chargeable attachments (e.g. breakers) add an hourly surcharge on top of the machine rate.
+  chargeable Boolean  @default(false)
+  notes      String?
+  active     Boolean  @default(true)
+  isSample   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  rates         AttachmentRate[]
+  customerRates CustomerAttachmentRate[]
+  workOrders    WorkOrderAttachment[]
+  approved      ApprovedWork[]
+}
+
+model AttachmentRate {
+  id            String     @id @default(uuid())
+  attachmentId  String
+  attachment    Attachment @relation(fields: [attachmentId], references: [id])
+  hourlyCharge  Decimal    @db.Decimal(10, 2)
+  effectiveFrom DateTime   @db.Date
+  createdById   String?
+  createdAt     DateTime   @default(now())
+
+  @@unique([attachmentId, effectiveFrom])
+}
+
+model WorkOrder {
+  id               String          @id @default(uuid())
+  code             String          @unique
+  customerId       String
+  customer         Customer        @relation(fields: [customerId], references: [id])
+  vehicleId        String
+  vehicle          Vehicle         @relation(fields: [vehicleId], references: [id])
+  driverId         String
+  driver           Driver          @relation(fields: [driverId], references: [id])
+  /// Calendar date (IST) the work is scheduled for. Working days and rates are keyed on this date.
+  workDate         DateTime        @db.Date
+  siteId           String?
+  site             Site?           @relation(fields: [siteId], references: [id])
+  shiftLabel       String?
+  /// Snapshot of the site at assignment time, so later site edits do not rewrite history.
+  siteName         String
+  siteAddress      String?
+  siteContactName  String?
+  siteContactPhone String?
+  instructions     String?
+  plannedHours     Decimal?        @db.Decimal(5, 1)
+  status           WorkOrderStatus @default(ASSIGNED)
+  declineReason    String?
+  cancelReason     String?
+  createdById      String
+  createdBy        User            @relation("WorkOrderCreator", fields: [createdById], references: [id])
+  assignedAt       DateTime        @default(now())
+  respondedAt      DateTime?
+  startedAt        DateTime?
+  submittedAt      DateTime?
+  reviewedAt       DateTime?
+  cancelledAt      DateTime?
+  isSample         Boolean         @default(false)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  attachments   WorkOrderAttachment[]
+  readings      MeterReading[]
+  reviews       MeterReview[]
+  events        WorkOrderEvent[]
+  photos        Photo[]
+  approved      ApprovedWork?
+  notifications Notification[]
+
+  @@index([driverId, workDate])
+  @@index([vehicleId, workDate])
+  @@index([status])
+}
+
+model WorkOrderAttachment {
+  workOrderId  String
+  workOrder    WorkOrder  @relation(fields: [workOrderId], references: [id])
+  attachmentId String
+  attachment   Attachment @relation(fields: [attachmentId], references: [id])
+
+  @@id([workOrderId, attachmentId])
+}
+
+/// Status history. One row per transition.
+model WorkOrderEvent {
+  id          String           @id @default(uuid())
+  workOrderId String
+  workOrder   WorkOrder        @relation(fields: [workOrderId], references: [id])
+  fromStatus  WorkOrderStatus?
+  toStatus    WorkOrderStatus
+  actorId     String?
+  actor       User?            @relation(fields: [actorId], references: [id])
+  note        String?
+  createdAt   DateTime         @default(now())
+
+  @@index([workOrderId, createdAt])
+}
+
+model Photo {
+  id           String        @id @default(uuid())
+  workOrderId  String
+  workOrder    WorkOrder     @relation(fields: [workOrderId], references: [id])
+  storageKey   String        @unique
+  mimeType     String
+  sizeBytes    Int
+  sha256       String
+  uploadedById String
+  uploadedBy   User          @relation(fields: [uploadedById], references: [id])
+  uploadedAt   DateTime      @default(now())
+  reading      MeterReading?
+}
+
+/// Immutable meter reading. A correction is a new row with a higher revision that points at the row it supersedes.
+model MeterReading {
+  id             String        @id @default(uuid())
+  workOrderId    String
+  workOrder      WorkOrder     @relation(fields: [workOrderId], references: [id])
+  kind           MeterKind
+  revision       Int
+  value          Decimal       @db.Decimal(10, 1)
+  photoId        String        @unique
+  photo          Photo         @relation(fields: [photoId], references: [id])
+  supersedesId   String?       @unique
+  supersedes     MeterReading? @relation("ReadingCorrection", fields: [supersedesId], references: [id])
+  supersededBy   MeterReading? @relation("ReadingCorrection")
+  note           String?
+  /// Anomaly codes the server computed when this reading was recorded (see src/domain/meter.ts).
+  flags          String[]
+  submittedById  String
+  submittedBy    User          @relation(fields: [submittedById], references: [id])
+  submittedAt    DateTime      @default(now())
+  /// Client-generated key so a retried upload cannot create a second reading.
+  idempotencyKey String        @unique
+
+  @@unique([workOrderId, kind, revision])
+}
+
+model MeterReview {
+  id               String               @id @default(uuid())
+  workOrderId      String
+  workOrder        WorkOrder            @relation(fields: [workOrderId], references: [id])
+  decision         ReviewDecision
+  correctionTarget CorrectionTarget?
+  reason           String?
+  startReadingId   String
+  endReadingId     String
+  computedHours    Decimal              @db.Decimal(10, 1)
+  approvedHours    Decimal?             @db.Decimal(10, 1)
+  /// Set only when approvedHours differs from computedHours through an authorized correction.
+  adjustmentKind   MeterAdjustmentKind?
+  adjustmentReason String?
+  breakerHours     Decimal?             @db.Decimal(10, 1)
+  flagsAtReview    String[]
+  reviewerId       String
+  reviewer         User                 @relation(fields: [reviewerId], references: [id])
+  createdAt        DateTime             @default(now())
+
+  @@index([workOrderId, createdAt])
+}
+
+/// Work record created when a submission is approved: the single source for billing and payroll.
+/// Driver pay terms are snapshotted here at approval; customer prices are snapshotted on invoice lines.
+model ApprovedWork {
+  id                  String             @id @default(uuid())
+  workOrderId         String             @unique
+  workOrder           WorkOrder          @relation(fields: [workOrderId], references: [id])
+  reviewId            String             @unique
+  driverId            String
+  driver              Driver             @relation(fields: [driverId], references: [id])
+  vehicleId           String
+  vehicle             Vehicle            @relation(fields: [vehicleId], references: [id])
+  customerId          String
+  customer            Customer           @relation(fields: [customerId], references: [id])
+  workDate            DateTime           @db.Date
+  startMeter          Decimal            @db.Decimal(10, 1)
+  endMeter            Decimal            @db.Decimal(10, 1)
+  approvedHours       Decimal            @db.Decimal(10, 1)
+  /// Breaker hours approved for billing; 0 when no chargeable attachment was used.
+  breakerAttachmentId String?
+  breakerAttachment   Attachment?        @relation(fields: [breakerAttachmentId], references: [id])
+  breakerHours        Decimal            @default(0) @db.Decimal(10, 1)
+  compensationMethod  CompensationMethod
+  /// HOURLY: rate in force on workDate, and hours × rate. FIXED: null and 0 (paid through the monthly salary).
+  driverRate          Decimal?           @db.Decimal(10, 2)
+  driverAmount        Decimal            @db.Decimal(12, 2)
+  /// Claimed by at most one payroll run. Released only if a DRAFT run is discarded.
+  payrollRunId        String?
+  payrollRun          PayrollRun?        @relation(fields: [payrollRunId], references: [id])
+  /// Claimed by at most one non-cancelled invoice. Released only when that invoice is cancelled.
+  invoiceId           String?
+  invoice             Invoice?           @relation(fields: [invoiceId], references: [id])
+  createdAt           DateTime           @default(now())
+
+  invoiceLines InvoiceLine[]
+
+  @@index([driverId, workDate])
+  @@index([customerId, workDate])
+  @@index([vehicleId, workDate])
+}
+
+model PayrollRun {
+  id              String             @id @default(uuid())
+  driverId        String
+  driver          Driver             @relation(fields: [driverId], references: [id])
+  periodStart     DateTime           @db.Date
+  periodEnd       DateTime           @db.Date
+  method          CompensationMethod
+  /// FIXED: the monthly salary snapshotted when the run is created. HOURLY: null.
+  fixedSalary     Decimal?           @db.Decimal(12, 2)
+  approvedHours   Decimal            @db.Decimal(10, 1)
+  workingDays     Int
+  grossAmount     Decimal            @db.Decimal(12, 2)
+  additionsTotal  Decimal            @db.Decimal(12, 2)
+  deductionsTotal Decimal            @db.Decimal(12, 2)
+  netAmount       Decimal            @db.Decimal(12, 2)
+  status          PayrollStatus      @default(DRAFT)
+  approvedById    String?
+  approvedAt      DateTime?
+  paidAt          DateTime?
+  paymentMode     String?
+  paymentRef      String?
+  paidById        String?
+  createdById     String
+  createdAt       DateTime           @default(now())
+
+  work        ApprovedWork[]
+  adjustments SalaryAdjustment[]
+
+  @@unique([driverId, periodStart, periodEnd])
+}
+
+model SalaryAdjustment {
+  id           String           @id @default(uuid())
+  driverId     String
+  driver       Driver           @relation(fields: [driverId], references: [id])
+  payrollRunId String?
+  payrollRun   PayrollRun?      @relation(fields: [payrollRunId], references: [id])
+  kind         AdjustmentKind
+  amount       Decimal          @db.Decimal(12, 2)
+  description  String
+  effectiveOn  DateTime         @db.Date
+  status       AdjustmentStatus @default(PENDING)
+  createdById  String
+  approvedById String?
+  approvedAt   DateTime?
+  createdAt    DateTime         @default(now())
+
+  @@index([driverId, effectiveOn])
+}
+
+/// Single-row company profile printed on invoices. Every value must be entered and verified by the business.
+model BusinessProfile {
+  id                 String             @id @default("default")
+  legalName          String?
+  tradeName          String?
+  gstin              String?
+  stateCode          String?
+  address            String?
+  phone              String?
+  email              String?
+  bankDetails        String?
+  invoicePrefix      String             @default("AJ")
+  invoiceTerms       String?
+  verificationStatus VerificationStatus @default(UNVERIFIED)
+  verifiedById       String?
+  verifiedAt         DateTime?
+  updatedById        String?
+  updatedAt          DateTime           @updatedAt
+}
+
+/// A tax treatment configured by the accountant. Only VERIFIED rules may be used on issued tax invoices.
+model TaxRule {
+  id                 String             @id @default(uuid())
+  name               String
+  sacCode            String?
+  /// Percentages, e.g. 9.00 for 9%. Null when not applicable.
+  cgstRate           Decimal?           @db.Decimal(5, 2)
+  sgstRate           Decimal?           @db.Decimal(5, 2)
+  igstRate           Decimal?           @db.Decimal(5, 2)
+  notes              String?
+  active             Boolean            @default(true)
+  verificationStatus VerificationStatus @default(UNVERIFIED)
+  verifiedById       String?
+  verifiedAt         DateTime?
+  createdById        String
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  invoices Invoice[]
+}
+
+model Invoice {
+  id             String        @id @default(uuid())
+  /// Assigned at issue (sequential per Indian financial year). Drafts have no number.
+  number         String?       @unique
+  kind           InvoiceKind
+  status         InvoiceStatus @default(DRAFT)
+  customerId     String
+  customer       Customer      @relation(fields: [customerId], references: [id])
+  periodStart    DateTime      @db.Date
+  periodEnd      DateTime      @db.Date
+  issueDate      DateTime?     @db.Date
+  dueDate        DateTime?     @db.Date
+  taxRuleId      String?
+  taxRule        TaxRule?      @relation(fields: [taxRuleId], references: [id])
+  taxSplit       TaxSplit      @default(NONE)
+  subtotal       Decimal       @default(0) @db.Decimal(14, 2)
+  discountTotal  Decimal       @default(0) @db.Decimal(14, 2)
+  taxableValue   Decimal       @default(0) @db.Decimal(14, 2)
+  cgstRate       Decimal?      @db.Decimal(5, 2)
+  sgstRate       Decimal?      @db.Decimal(5, 2)
+  igstRate       Decimal?      @db.Decimal(5, 2)
+  cgstAmount     Decimal       @default(0) @db.Decimal(14, 2)
+  sgstAmount     Decimal       @default(0) @db.Decimal(14, 2)
+  igstAmount     Decimal       @default(0) @db.Decimal(14, 2)
+  taxTotal       Decimal       @default(0) @db.Decimal(14, 2)
+  total          Decimal       @default(0) @db.Decimal(14, 2)
+  amountPaid     Decimal       @default(0) @db.Decimal(14, 2)
+  notes          String?
+  /// Business and customer details frozen at issue, so later profile edits never change an issued invoice.
+  sellerSnapshot Json?
+  buyerSnapshot  Json?
+  cancelReason   String?
+  idempotencyKey String?       @unique
+  createdById    String
+  issuedById     String?
+  issuedAt       DateTime?
+  cancelledById  String?
+  cancelledAt    DateTime?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  lines       InvoiceLine[]
+  allocations PaymentAllocation[]
+  work        ApprovedWork[]
+
+  @@index([customerId, status])
+}
+
+/// Amounts are computed on the server and frozen together with the rate used.
+model InvoiceLine {
+  id             String          @id @default(uuid())
+  invoiceId      String
+  invoice        Invoice         @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  kind           InvoiceLineKind
+  approvedWorkId String?
+  approvedWork   ApprovedWork?   @relation(fields: [approvedWorkId], references: [id])
+  description    String
+  quantity       Decimal?        @db.Decimal(10, 1)
+  unitRate       Decimal?        @db.Decimal(12, 2)
+  amount         Decimal         @db.Decimal(14, 2)
+  /// Where the rate came from: "customer:vehicle", "customer:category", "vehicle-default", "customer:attachment", "attachment-default", "manual".
+  rateSource     String?
+  sortOrder      Int             @default(0)
+
+  @@index([invoiceId])
+}
+
+model Payment {
+  id             String   @id @default(uuid())
+  customerId     String
+  customer       Customer @relation(fields: [customerId], references: [id])
+  receivedOn     DateTime @db.Date
+  amount         Decimal  @db.Decimal(14, 2)
+  mode           String
+  reference      String?
+  notes          String?
+  /// Client-generated key: a repeated request returns the first payment instead of recording it twice.
+  idempotencyKey String   @unique
+  recordedById   String
+  createdAt      DateTime @default(now())
+
+  allocations PaymentAllocation[]
+
+  @@index([customerId, receivedOn])
+}
+
+model PaymentAllocation {
+  id        String   @id @default(uuid())
+  paymentId String
+  payment   Payment  @relation(fields: [paymentId], references: [id])
+  invoiceId String
+  invoice   Invoice  @relation(fields: [invoiceId], references: [id])
+  amount    Decimal  @db.Decimal(14, 2)
+  createdAt DateTime @default(now())
+
+  @@unique([paymentId, invoiceId])
+}
+
+model MaintenanceRecord {
+  id           String            @id @default(uuid())
+  vehicleId    String
+  vehicle      Vehicle           @relation(fields: [vehicleId], references: [id])
+  title        String
+  category     String
+  description  String?
+  status       MaintenanceStatus @default(SCHEDULED)
+  scheduledOn  DateTime?         @db.Date
+  startedAt    DateTime?
+  completedAt  DateTime?
+  meterReading Decimal?          @db.Decimal(10, 1)
+  vendor       String?
+  cost         Decimal?          @db.Decimal(12, 2)
+  createdById  String
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  @@index([vehicleId, status])
+}
+
+model Expense {
+  id          String   @id @default(uuid())
+  category    String
+  vehicleId   String?
+  vehicle     Vehicle? @relation(fields: [vehicleId], references: [id])
+  spentOn     DateTime @db.Date
+  amount      Decimal  @db.Decimal(12, 2)
+  description String
+  vendor      String?
+  reference   String?
+  createdById String
+  createdAt   DateTime @default(now())
+
+  @@index([spentOn])
+}
+
+model Notification {
+  id          String           @id @default(uuid())
+  userId      String
+  user        User             @relation(fields: [userId], references: [id])
+  type        NotificationType
+  title       String
+  body        String
+  workOrderId String?
+  workOrder   WorkOrder?       @relation(fields: [workOrderId], references: [id])
+  readAt      DateTime?
+  createdAt   DateTime         @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  actorId    String?
+  actor      User?    @relation("AuditActor", fields: [actorId], references: [id])
+  action     String
+  entityType String
+  entityId   String
+  before     Json?
+  after      Json?
+  reason     String?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+/// Key/value business settings (thresholds, contact numbers). Values are JSON.
+model AppSetting {
+  key         String   @id
+  value       Json
+  updatedById String?
+  updatedAt   DateTime @updatedAt
+}

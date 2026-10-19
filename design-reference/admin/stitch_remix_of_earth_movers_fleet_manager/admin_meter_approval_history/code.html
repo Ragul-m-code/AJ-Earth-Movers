@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#a3b2ca", "primary": "#855300", "on-tertiary-fixed": "#0d1c2f", "inverse-surface": "#213145", "on-tertiary": "#ffffff", "on-surface-variant": "#534434", "on-secondary": "#ffffff", "surface-variant": "#d3e4fe", "secondary-fixed": "#dae2fd", "surface-tint": "#855300", "on-secondary-container": "#5c647a", "secondary-fixed-dim": "#bec6e0", "primary-fixed-dim": "#ffb95f", "inverse-on-surface": "#eaf1ff", "on-error-container": "#93000a", "error": "#ba1a1a", "surface-container-highest": "#d3e4fe", "surface-container": "#e5eeff", "surface": "#f8f9ff", "outline-variant": "#d8c3ad", "tertiary-fixed": "#d5e3fd", "inverse-primary": "#ffb95f", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "secondary-container": "#dae2fd", "primary-fixed": "#ffddb8", "surface-container-low": "#eff4ff", "on-tertiary-container": "#374559", "on-secondary-fixed": "#131b2e", "tertiary-fixed-dim": "#b9c7e0", "on-primary": "#ffffff", "outline": "#867461", "error-container": "#ffdad6", "on-primary-fixed": "#2a1700", "surface-dim": "#cbdbf5", "primary-container": "#f59e0b", "on-background": "#0b1c30", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-fixed-variant": "#3a485c", "secondary": "#565e74", "surface-bright": "#f8f9ff", "on-primary-container": "#613b00", "on-surface": "#0b1c30", "surface-container-high": "#dce9ff", "background": "#f8f9ff", "tertiary": "#515f74", "on-primary-fixed-variant": "#653e00" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "2rem", "margin": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "space-md": "1rem" }, "fontFamily": { "headline-sm": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "label-numeric-md": ["JetBrains Mono", "monospace"], "headline-md": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "body-lg": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "body-sm": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "label-caps": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "label-numeric-lg": ["JetBrains Mono", "monospace"], "label-numeric-sm": ["JetBrains Mono", "monospace"], "headline-lg-mobile": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "headline-xl": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "body-md": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "headline-xl-mobile": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"], "headline-lg": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-numeric-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "label-numeric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-numeric-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="AJ EARTH MOVERS primary horizontal brand lockup featuring a geometric, heavy-equipment emblem seamlessly synthesizing the letters 'A' and 'J' with a stylized excavator hydraulic boom arm and digging bucket tooth profile. Industrial construction yellow (#F5B800) and deep charcoal (#20242B) palette with bold, technical sans-serif wordmark 'AJ EARTH MOVERS'. Vector SVG composition.. Brand logo. - Primary color: #f59e0b - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UGAlBkl32KFqa3G8amfp683B8je_BJxf21BDK4gHXwVdKT5FMAuQuqOIwYqjjESR_E3cwPog3WLc665SdZgzJZsVwTFThczUWai81E_EZvi8FdZ14s9PjN2n7l_NpqLezCZshqIqb6jm6H4HN9fql-yuzDOmh0rY_80wZfdVNAmfc64PmopmghLTLzYCzmi8MvtFPlzeRdOASivK11ulmeBbmnlQSl3DyvAz2UQ-J09YzE0eVi9umVes0N"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps uppercase text-primary tracking-wider font-semibold">AJ Telematics</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight font-bold">Meter Audit Ledger</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Search telemetry records" class="w-11 h-11 flex items-center justify-center rounded-lg text-secondary hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="View alerts" class="w-11 h-11 flex items-center justify-center rounded-lg text-secondary hover:text-on-surface transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_1px_3px_rgba(15,23,42,0.15)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Operational Header & Ledger KPI Overview -->
+<section class="px-margin pt-space-md flex flex-col gap-space-sm bg-gradient-to-b from-surface-container-high/60 via-surface-container-low to-surface">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-wider font-bold">Audit &amp; Verification Vault</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-extrabold tracking-tight mt-0.5">
+          Meter Approval History
+        </h2>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+          Audited SMU readouts, decision records &amp; cryptographic trail
+        </p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-highest px-2 py-1 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">LEDGER v4.9</span>
+</div>
+</div>
+<!-- 4-Stat Metric Row (Scrollable on small devices) -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-xs">
+<!-- Total Records Decided -->
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps uppercase font-bold">Total Decided</span>
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+</div>
+<div class="mt-2">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">142</span>
+<span class="font-body-sm text-body-sm text-secondary ml-1 font-normal">Logs</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary/80 mt-0.5">Oct 2024 billing cycle</div>
+</div>
+<!-- Approved Hours Certified -->
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-primary-container">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">Certified Hours</span>
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">av_timer</span>
+</div>
+<div class="mt-2 flex items-baseline">
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary tracking-tight font-bold">1,184.2</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-primary-container font-semibold ml-1">hrs</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-primary-container/80 mt-0.5">Invoice certified SMU</div>
+</div>
+<!-- Interventions & Audits -->
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps uppercase font-bold">Interventions</span>
+<span class="material-symbols-outlined text-[18px] text-error">gavel</span>
+</div>
+<div class="mt-2">
+<span class="font-label-numeric-lg text-label-numeric-lg text-error tracking-tight font-bold">18</span>
+<span class="font-body-sm text-body-sm text-error/90 ml-1 font-semibold">Flags</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary/80 mt-0.5"><span class="font-label-numeric-sm">11</span> Corrected • <span class="font-label-numeric-sm">4</span> Rejected</div>
+</div>
+<!-- Ledger Lock Integrity -->
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps uppercase font-bold">Ledger Lock</span>
+<span class="material-symbols-outlined text-[18px] text-primary">lock</span>
+</div>
+<div class="mt-2 flex items-baseline">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">100%</span>
+<span class="font-body-sm text-body-sm text-secondary ml-1 font-medium">Sealed</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary/80 mt-0.5">RBAC immutable chain</div>
+</div>
+</div>
+</section>
+<!-- Filter & Search Toolbar Sticky Segment -->
+<section class="px-margin mt-space-md flex flex-col gap-space-sm">
+<!-- Prominent Search Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[22px]">search</span>
+<input aria-label="Filter audit history records" class="w-full bg-surface-container-lowest text-on-surface placeholder:text-secondary/70 pl-11 pr-4 py-3 rounded-xl shadow-sm font-body-md text-body-md focus:outline-none focus:ring-0" placeholder="Search by WO #, plate, driver, reviewer..." type="search"/>
+</div>
+<!-- Quick Status Filter Bar -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-inverse-surface text-inverse-on-surface shadow-sm shrink-0">
+<span class="font-label-caps text-label-caps tracking-wide font-bold">ALL</span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container/20 px-1.5 py-0.2 rounded font-semibold">142</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm shrink-0">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps tracking-wide font-bold">Approved</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">124</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm shrink-0">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps tracking-wide font-bold">Corrected</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">11</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm shrink-0">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-caps text-label-caps tracking-wide font-bold">Rejected</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">4</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps tracking-wide font-bold">Pending</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">3</span>
+</button>
+</div>
+<!-- Parameter Filter Pills Dropdown Mockups -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1.5 rounded-lg text-secondary font-body-sm text-body-sm shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="font-label-caps text-label-caps font-bold">Date: <span class="font-label-numeric-sm">Oct 2024</span></span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1.5 rounded-lg text-secondary font-body-sm text-body-sm shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">agriculture</span>
+<span class="font-label-caps text-label-caps font-bold">Fleet: All Units</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1.5 rounded-lg text-secondary font-body-sm text-body-sm shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+<span class="font-label-caps text-label-caps font-bold">Reviewer: Ramesh S.</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1.5 rounded-lg text-secondary font-body-sm text-body-sm shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+<span class="font-label-caps text-label-caps font-bold">Newest First</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Notice Banner: Critical distinction between Field Log vs Certified Ledger -->
+<section class="px-margin mt-space-md">
+<div class="bg-surface-container-highest p-3 rounded-xl flex items-start gap-2.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">shield</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface font-bold uppercase">Dual-Tier Audit Verification</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+          Driver submissions reflect raw in-cab submissions. Invoicing, batta calculations, and client billings adhere strictly to the high-contrast <strong class="text-on-surface font-semibold">Certified Ledger Value</strong>.
+        </p>
+</div>
+</div>
+</section>
+<!-- Feed of Audit Records -->
+<section class="px-margin mt-space-md flex flex-col gap-space-md">
+<!-- RECORD 1: APPROVED -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col gap-3 transition-transform active:scale-[0.99] cursor-pointer">
+<!-- Status Badge & Timestamp Header -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5 bg-primary-container/20 text-on-primary-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps font-bold">APPROVED • CERTIFIED</span>
+</div>
+<div class="flex items-center gap-1 text-secondary text-right font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>24 Oct, 18:25 IST</span>
+</div>
+</div>
+<!-- Vehicle & Pilot Lineage -->
+<div class="flex items-start justify-between gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[24px]">construction</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">JCB 3DX Super 4WD</span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container px-1 py-0.2 rounded text-secondary font-semibold">#JCB-01</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate"><span class="font-label-numeric-sm text-[12px]">KA-04-EA-2104</span> • Pilot: Suresh Kumar (<span class="font-label-numeric-sm text-[12px]">DRV-042</span>)</span>
+</div>
+</div>
+</div>
+<!-- Work Order Badge -->
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">assignment</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">#WO-2024-884</span>
+<span class="truncate max-w-[160px] text-secondary font-body-sm">Prestige Estates Phase 2</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant font-bold">SITE TANKER 01</span>
+</div>
+<!-- DUAL-TIER COMPARISON SECTION -->
+<div class="flex flex-col gap-2">
+<!-- Tier A: Field Raw Submission -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Field Raw Log (Driver Entry)</span>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> Dual Dials Verified
+            </span>
+</div>
+<div class="flex items-center justify-between font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
+<span>Start: <strong class="font-semibold text-on-surface">2,412.3h</strong> → End: <strong class="font-semibold text-on-surface">2,421.8h</strong></span>
+<span class="font-bold text-on-surface">Claimed: +9.5h</span>
+</div>
+</div>
+<!-- Tier B: Certified Ledger Value (HIGH CONTRAST) -->
+<div class="bg-inverse-surface text-inverse-on-surface p-3 rounded-lg flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-wider font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+              Certified Ledger Value
+            </span>
+<span class="font-label-caps text-label-caps bg-primary-container text-on-primary-container px-1.5 py-0.5 rounded font-bold">SMU ACCREDITED</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline">
+<span class="font-label-numeric-lg text-headline-sm text-primary-fixed font-black tracking-tight">9.5h SMU</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80 ml-1.5">Approved Operating Hours</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-md text-label-numeric-md text-inverse-on-surface font-bold">₹16,625</span>
+<span class="font-label-numeric-sm text-body-sm text-primary-fixed-dim block font-medium">+₹350 Batta</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-inverse-on-surface/10 text-body-sm text-inverse-on-surface/70">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">sensors</span> LiveLink ECU <span class="font-label-numeric-sm text-[12px]">100%</span> Match
+            </span>
+<span class="font-body-sm text-body-sm">Rate: <span class="font-label-numeric-sm text-[12px]">₹1,750/hr</span></span>
+</div>
+</div>
+</div>
+<!-- Reviewer Footnote & Expansion Affordance -->
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-secondary">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface text-[10px] font-bold font-label-caps">RS</div>
+<span class="truncate max-w-[170px]">Ramesh Sharma (<span class="font-label-numeric-sm text-[11px]">#ADM-001</span>)</span>
+</div>
+<div class="flex items-center gap-0.5 text-primary font-semibold hover:underline">
+<span class="font-body-sm text-body-sm">Evidence Trail</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- RECORD 2: CORRECTED (Typo rectified by Admin & Driver verification) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col gap-3 transition-transform active:scale-[0.99] cursor-pointer">
+<!-- Status Badge & Timestamp Header -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5 bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">edit_calendar</span>
+<span class="font-label-caps text-label-caps font-bold">CORRECTED • REVISED</span>
+</div>
+<div class="flex items-center gap-1 text-secondary text-right font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>23 Oct, 19:40 IST</span>
+</div>
+</div>
+<!-- Vehicle & Pilot Lineage -->
+<div class="flex items-start justify-between gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[24px]">construction</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">JCB 3DX Super 4WD</span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container px-1 py-0.2 rounded text-secondary font-semibold">#JCB-01</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate"><span class="font-label-numeric-sm text-[12px]">KA-04-EA-2104</span> • Pilot: Suresh Kumar (<span class="font-label-numeric-sm text-[12px]">DRV-042</span>)</span>
+</div>
+</div>
+</div>
+<!-- Work Order Badge -->
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">assignment</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">#WO-2024-884</span>
+<span class="truncate max-w-[160px] text-secondary font-body-sm">Prestige Estates Projects</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container-high px-1.5 py-0.5 rounded text-primary font-bold">AUDIT INTERVENED</span>
+</div>
+<!-- DUAL-TIER COMPARISON SECTION -->
+<div class="flex flex-col gap-2">
+<!-- Tier A: Field Raw Submission with Discrepancy Flag -->
+<div class="bg-error-container/20 p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> Raw Submission Discrepancy
+            </span>
+<span class="font-label-caps text-label-caps text-error bg-error-container px-1 py-0.2 rounded font-bold">TYPO OVERRIDE</span>
+</div>
+<div class="flex items-center justify-between font-label-numeric-sm text-label-numeric-sm text-on-surface">
+<span class="line-through text-secondary">Submitted End: 2,414.0h</span>
+<span class="text-error font-bold">Delta Out of Range (+10.9h)</span>
+</div>
+</div>
+<!-- Tier B: Certified Ledger Value (HIGH CONTRAST) -->
+<div class="bg-inverse-surface text-inverse-on-surface p-3 rounded-lg flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-wider font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">rule</span>
+              Rectified Certified Value
+            </span>
+<span class="font-label-caps text-label-caps bg-primary text-on-primary px-1.5 py-0.5 rounded font-bold">RECTIFIED &amp; SEALED</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline">
+<span class="font-label-numeric-lg text-headline-sm text-primary-fixed font-black tracking-tight">9.2h SMU</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80 ml-1.5 font-label-numeric-sm text-[12px]">Start 2,403.1 → End 2,412.3</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-md text-label-numeric-md text-inverse-on-surface font-bold">₹16,100</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/70 block">Certified Net</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Reason Callout Box -->
+<div class="bg-primary-fixed/20 p-2.5 rounded-lg flex items-start gap-2 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">rate_review</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps font-bold text-on-primary-fixed">Audit Override Justification:</span>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-0.5 leading-snug">
+            Operator mistakenly entered <span class="font-label-numeric-sm text-[12px]">2,414.0h</span>. High-resolution dial photo audit confirmed mechanical dial was <span class="font-label-numeric-sm text-[12px]">2,412.3h</span>. Cross-verified with LiveLink CANbus engine-off telemetry packet. Driver accepted revision via in-cab prompt.
+          </p>
+</div>
+</div>
+<!-- Reviewer Footnote & Expansion Affordance -->
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-secondary">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface text-[10px] font-bold font-label-caps">RS</div>
+<span class="truncate max-w-[170px]">Ramesh Sharma (<span class="font-label-numeric-sm text-[11px]">#ADM-001</span>)</span>
+</div>
+<div class="flex items-center gap-0.5 text-primary font-semibold hover:underline">
+<span class="font-body-sm text-body-sm">Review Dial Macro</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- RECORD 3: REJECTED (Meter Rollback / Tamper Disallowance) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col gap-3 transition-transform active:scale-[0.99] cursor-pointer">
+<!-- Status Badge & Timestamp Header -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5 bg-error-container text-on-error-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">error</span>
+<span class="font-label-caps text-label-caps font-bold">REJECTED • DISALLOWANCE</span>
+</div>
+<div class="flex items-center gap-1 text-secondary text-right font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>22 Oct, 21:10 IST</span>
+</div>
+</div>
+<!-- Vehicle & Pilot Lineage -->
+<div class="flex items-start justify-between gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[24px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Komatsu PC210 Heavy</span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container px-1 py-0.2 rounded text-secondary font-semibold">#KOM-02</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate"><span class="font-label-numeric-sm text-[12px]">KA-03-NB-4410</span> • Pilot: Mahesh Gowda (<span class="font-label-numeric-sm text-[12px]">DRV-018</span>)</span>
+</div>
+</div>
+</div>
+<!-- Work Order Badge -->
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">assignment</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">#WO-2024-871</span>
+<span class="truncate max-w-[160px] text-secondary font-body-sm">L&amp;T Metro Phase 2 (Pier 48)</span>
+</div>
+<span class="font-label-caps text-label-caps bg-error-container px-1.5 py-0.5 rounded text-on-error-container font-bold">BATTA FROZEN</span>
+</div>
+<!-- DUAL-TIER COMPARISON SECTION -->
+<div class="flex flex-col gap-2">
+<!-- Tier A: Field Raw Submission -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Field Raw Log (Flagged Rollback)</span>
+<span class="font-body-sm text-body-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cancel</span> Flash Glare Obscurity
+            </span>
+</div>
+<div class="flex items-center justify-between font-label-numeric-sm text-label-numeric-sm text-error">
+<span>Start: 3,110.2h → Submitted End: 3,108.5h</span>
+<span class="font-bold">Delta: -1.7h (Impossible)</span>
+</div>
+</div>
+<!-- Tier B: Certified Ledger Value (HIGH CONTRAST) -->
+<div class="bg-error text-on-error p-3 rounded-lg flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-error-container uppercase tracking-wider font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-error-container">lock_person</span>
+              Invoice Disallowance
+            </span>
+<span class="font-label-caps text-label-caps bg-on-error text-error px-1.5 py-0.5 rounded font-black">LOCKOUT</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline">
+<span class="font-label-numeric-lg text-headline-sm text-on-error font-black tracking-tight">0.0h RECOGNIZED</span>
+<span class="font-body-sm text-body-sm text-on-error/80 ml-1.5 font-medium">No SMU Certified</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-md text-label-numeric-md text-on-error font-bold">₹0.00</span>
+<span class="font-body-sm text-body-sm text-error-container block font-medium">Payment Blocked</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Rejection Audit Callout Box -->
+<div class="bg-error-container/30 p-2.5 rounded-lg flex items-start gap-2 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">report_problem</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps font-bold text-on-error-container">Rejection Reason &amp; Escaped Action:</span>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-0.5 leading-snug">
+            SMU Rollback detected. Submitted end dial is lower than morning start dial. Flash glare obscured tumbler 10s column. LiveLink telematics indicated machine was active for <span class="font-label-numeric-sm text-[12px]">7.8 hours</span>. Case escalated to depot inspection team.
+          </p>
+</div>
+</div>
+<!-- Action Footer for Rejected Case -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-secondary">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface text-[10px] font-bold font-label-caps">VP</div>
+<span class="truncate max-w-[150px]">V. Patel (<span class="font-label-numeric-sm text-[11px]">#MGR-002</span>)</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 bg-surface-container-high text-on-surface rounded-lg font-body-sm text-body-sm font-semibold hover:bg-surface-container-highest transition-colors">
+            Audit Log
+          </button>
+<button class="px-2.5 py-1 bg-error text-on-error rounded-lg font-body-sm text-body-sm font-semibold shadow-sm">
+            Re-audit
+          </button>
+</div>
+</div>
+</article>
+<!-- RECORD 4: APPROVED (Additive Breaker Attachment Shift) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col gap-3 transition-transform active:scale-[0.99] cursor-pointer">
+<!-- Status Badge & Timestamp Header -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5 bg-primary-container/20 text-on-primary-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps font-bold">APPROVED • CERTIFIED</span>
+</div>
+<div class="flex items-center gap-1 text-secondary text-right font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>22 Oct, 17:50 IST</span>
+</div>
+</div>
+<!-- Vehicle & Pilot Lineage -->
+<div class="flex items-start justify-between gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[24px]">front_loader</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">CAT 320D Excavator</span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container px-1 py-0.2 rounded text-secondary font-semibold">#CAT-04</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate"><span class="font-label-numeric-sm text-[12px]">KA-51-M-8821</span> • Pilot: Rajesh Nayak (<span class="font-label-numeric-sm text-[12px]">DRV-009</span>)</span>
+</div>
+</div>
+</div>
+<!-- Work Order Badge -->
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">assignment</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">#WO-2024-865</span>
+<span class="truncate max-w-[160px] text-secondary font-body-sm">BMRCL Dairy Circle Station</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant font-bold">BREAKER ATTACHED</span>
+</div>
+<!-- DUAL-TIER COMPARISON SECTION -->
+<div class="flex flex-col gap-2">
+<!-- Tier A: Field Raw Submission -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Field Raw Log (Driver Entry)</span>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_library</span> Start/End Photos Sealed
+            </span>
+</div>
+<div class="flex items-center justify-between font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
+<span>Start: <strong class="font-semibold text-on-surface">5,832.5h</strong> → End: <strong class="font-semibold text-on-surface">5,842.0h</strong></span>
+<span class="font-bold text-on-surface">Claimed: +9.5h</span>
+</div>
+</div>
+<!-- Tier B: Certified Ledger Value (HIGH CONTRAST) -->
+<div class="bg-inverse-surface text-inverse-on-surface p-3 rounded-lg flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-wider font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+              Certified Ledger Value
+            </span>
+<span class="font-label-caps text-label-caps bg-primary-container text-on-primary-container px-1.5 py-0.5 rounded font-bold">WET-RATE BILLED</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline">
+<span class="font-label-numeric-lg text-headline-sm text-primary-fixed font-black tracking-tight">9.5h SMU</span>
+<span class="font-body-sm text-body-sm text-inverse-on-surface/80 ml-1.5">Includes DXB170H Breaker</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-md text-label-numeric-md text-inverse-on-surface font-bold">₹27,075</span>
+<span class="font-label-numeric-sm text-body-sm text-primary-fixed-dim block font-medium">Tariff: ₹2,850/hr</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Reviewer Footnote & Expansion Affordance -->
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-secondary">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface text-[10px] font-bold font-label-caps">KS</div>
+<span class="truncate max-w-[170px]">Kavitha Sundaram (<span class="font-label-numeric-sm text-[11px]">#ACC-004</span>)</span>
+</div>
+<div class="flex items-center gap-0.5 text-primary font-semibold hover:underline">
+<span class="font-body-sm text-body-sm">Certified Slip</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</article>
+<!-- RECORD 5: PENDING AUDIT (Under Active In-Depot Verification) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md flex flex-col gap-3 transition-transform active:scale-[0.99] cursor-pointer">
+<!-- Status Badge & Timestamp Header -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">pending</span>
+<span class="font-label-caps text-label-caps font-bold">PENDING AUDIT REVIEW</span>
+</div>
+<div class="flex items-center gap-1 text-secondary text-right font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Today, 13:15 IST</span>
+</div>
+</div>
+<!-- Vehicle & Pilot Lineage -->
+<div class="flex items-start justify-between gap-2 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[24px]">rv_hookup</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Tata Hitachi EX200</span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container px-1 py-0.2 rounded text-secondary font-semibold">#HIT-07</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate"><span class="font-label-numeric-sm text-[12px]">KA-04-J-5512</span> • Pilot: Anand Patil (<span class="font-label-numeric-sm text-[12px]">DRV-025</span>)</span>
+</div>
+</div>
+</div>
+<!-- Work Order Badge -->
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">assignment</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">#WO-2024-890</span>
+<span class="truncate max-w-[160px] text-secondary font-body-sm">Sobha Balagere Road</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant font-bold">IN PROCESS</span>
+</div>
+<!-- DUAL-TIER COMPARISON SECTION -->
+<div class="flex flex-col gap-2">
+<!-- Tier A: Field Raw Submission -->
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold">Field Raw Log (Start Punch Logged)</span>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> 1 of 2 Uploaded
+            </span>
+</div>
+<div class="flex items-center justify-between font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">
+<span>Start Dial: <strong class="font-semibold text-on-surface">2,482.0h</strong></span>
+<span class="font-body-sm text-body-sm text-secondary font-normal">Awaiting Evening End Punch</span>
+</div>
+</div>
+<!-- Tier B: Certified Ledger Value (HIGH CONTRAST PENDING STATUS) -->
+<div class="bg-surface-container-high text-on-surface p-3 rounded-lg flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+              Pending Final Decision
+            </span>
+<span class="font-label-caps text-label-caps bg-surface-container-highest px-1.5 py-0.5 rounded text-secondary font-bold">QUEUE #3</span>
+</div>
+<div class="flex items-baseline justify-between">
+<div class="flex items-baseline">
+<span class="font-label-numeric-lg text-headline-sm text-secondary font-black tracking-tight">--.-h SMU</span>
+<span class="font-body-sm text-body-sm text-secondary ml-1.5">Shift In Progress</span>
+</div>
+<div class="text-right">
+<span class="font-label-numeric-md text-label-numeric-md text-secondary font-bold">Uncertified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Note -->
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">account_circle</span>
+<span class="truncate max-w-[170px]">Pending Assignment</span>
+</div>
+<div class="flex items-center gap-0.5 text-primary font-semibold hover:underline">
+<span class="font-body-sm text-body-sm">Open Approval Queue</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Cryptographic / Immutable Ledger Notice Card -->
+<section class="px-margin mt-space-lg">
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-3 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-label-caps text-label-caps text-on-surface font-extrabold tracking-wide uppercase">Cryptographic Audit Guardrail</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        All approved, rejected, and corrected meter decisions are cryptographically timestamped and bound to administrator credentials. Historical raw driver submissions are permanently preserved and cannot be overwritten.
+      </p>
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md active:translate-y-0.5 transition-all font-bold">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export Certified Audit Report (PDF/CSV)</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  // Simple interactive client-side handler for quick filter feedback & row inspection
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('button[class*="rounded-full"]');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+          b.classList.add('bg-surface-container-lowest', 'text-on-surface');
+        });
+        btn.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+      });
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.06)]" data-active-classes="text-on-primary-container bg-primary-container/20 rounded-lg font-headline-sm"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="fleet-overview" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-body-sm text-body-sm font-medium">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] px-2 py-1 transition-colors text-on-primary-container bg-primary-container/20 rounded-lg font-headline-sm" data-path="meter-audit-ledger" href="#"><span class="material-symbols-outlined text-[22px]">precision_manufacturing</span><span class="font-body-sm text-body-sm font-semibold">Operations</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="fleet-machinery" href="#"><span class="material-symbols-outlined text-[22px]">agriculture</span><span class="font-body-sm text-body-sm font-medium">Fleet</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="finance-billing" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-body-sm text-body-sm font-medium">Finance</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] px-2 py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-settings" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-body-sm text-body-sm font-medium">More</span></a></div></nav></body></html>

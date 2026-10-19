@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-high":"#dce9ff","on-secondary-fixed-variant":"#3f465c","surface-container-highest":"#d3e4fe","on-error":"#ffffff","on-primary":"#ffffff","primary":"#855300","tertiary":"#515f74","on-error-container":"#93000a","primary-fixed-dim":"#ffb95f","surface-container-low":"#eff4ff","inverse-on-surface":"#eaf1ff","on-secondary-fixed":"#131b2e","on-tertiary-fixed-variant":"#3a485c","surface-variant":"#d3e4fe","on-secondary-container":"#5c647a","primary-fixed":"#ffddb8","surface-bright":"#f8f9ff","outline":"#867461","primary-container":"#f59e0b","inverse-primary":"#ffb95f","surface-container-lowest":"#ffffff","on-tertiary-container":"#374559","tertiary-fixed":"#d5e3fd","tertiary-fixed-dim":"#b9c7e0","on-surface-variant":"#534434","background":"#f8f9ff","on-surface":"#0b1c30","outline-variant":"#d8c3ad","error-container":"#ffdad6","secondary-container":"#dae2fd","surface-container":"#e5eeff","tertiary-container":"#a3b2ca","error":"#ba1a1a","on-primary-container":"#613b00","inverse-surface":"#213145","on-tertiary-fixed":"#0d1c2f","on-primary-fixed-variant":"#653e00","surface-dim":"#cbdbf5","on-tertiary":"#ffffff","on-background":"#0b1c30","surface":"#f8f9ff","secondary-fixed":"#dae2fd","on-secondary":"#ffffff","on-primary-fixed":"#2a1700","surface-tint":"#855300","secondary":"#565e74","secondary-fixed-dim":"#bec6e0"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xl":"2.5rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-lg":"1.5rem","margin-desktop":"2rem","gutter":"1rem","margin":"1rem","space-md":"1rem","space-sm":"0.5rem"},"fontFamily":{"headline-md":["Inter"],"headline-xl-mobile":["Inter"],"label-numeric-sm":["JetBrains Mono"],"headline-lg-mobile":["Inter"],"body-lg":["Inter"],"label-numeric-md":["JetBrains Mono"],"body-sm":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"label-numeric-lg":["JetBrains Mono"],"body-md":["Inter"],"headline-xl":["Inter"],"label-caps":["Inter"]},"fontSize":{"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-numeric-sm":["13px",{"lineHeight":"18px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-numeric-md":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-numeric-lg":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}]}}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="AJ EARTH MOVERS Mobile App Icon &amp; Machine Emblem (Square 1:1 format). Rugged industrial aesthetic, deep charcoal (#20242B) squircle frame, high-visibility construction yellow (#F5B800) and pure white excavator boom &amp; bucket 'AJ' monogram. Optimized for 48px to 512px app icons, machine stickers, and driver uniform patches.. Brand logo. - Primary color: #f59e0b
+- Font: inter
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/d/1gUf_G8k5XyUvUe-zWffzXz8q3B7V6QyP"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant leading-none tracking-wider">AJ Earth Movers</span><span class="font-headline-sm text-headline-sm text-on-surface truncate">Fleet</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Segmented Fleet Switcher & Top Action Row -->
+<div class="px-margin pt-space-md pb-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span class="font-body-sm text-body-sm font-semibold">Fleet Inventory</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider bg-surface-container-high px-space-xs py-0.5 rounded">
+        DEPOT REGISTRY
+      </span>
+</div>
+<!-- Segmented Control Bar -->
+<div class="flex items-center p-1 bg-surface-container rounded-lg shadow-sm">
+<button class="flex-1 py-2 text-center rounded-lg text-on-surface-variant font-body-sm hover:text-on-surface transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">agriculture</span>
+<span>Machines <strong class="font-label-numeric-sm text-label-numeric-sm font-bold opacity-80">(18)</strong></span>
+</button>
+<button class="flex-1 py-2 text-center rounded-lg bg-surface-container-lowest text-on-surface font-body-sm font-bold shadow-sm flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">handyman</span>
+<span>Attachments <span class="bg-primary-container text-on-primary-container px-1.5 py-0.2 rounded-full font-label-numeric-sm text-[11px] font-bold">12 Active</span></span>
+</button>
+</div>
+<!-- Main Title & Add Action -->
+<div class="flex items-center justify-between mt-space-xs">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Attachments</h1>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-surface-container-highest text-on-secondary-container px-2 py-0.5 rounded-full font-bold">
+          12 Units
+        </span>
+</div>
+<button class="flex items-center gap-1 px-3 py-2 bg-primary-container text-on-primary-container rounded-lg font-body-sm font-bold shadow-sm active:translate-y-0.5 transition-transform" style="box-shadow: 0 2px 0 #b45309;">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add Tool</span>
+</button>
+</div>
+<!-- Search Input & Filter Button -->
+<div class="flex items-center gap-space-xs mt-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-12 pl-10 pr-9 bg-surface-container-lowest text-on-surface rounded-lg font-body-md text-body-md placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-bright shadow-sm" placeholder="Search attachment, tool ID, machine..." type="text"/>
+<button class="absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<button aria-label="Filter Attachments" class="h-12 w-12 flex items-center justify-center bg-surface-container-high text-on-surface rounded-lg shadow-sm active:bg-surface-container-highest transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Commercial Billing Protocol Banner -->
+<div class="px-margin my-space-xs">
+<div class="bg-surface-container-highest text-on-secondary-container p-space-sm rounded-lg shadow-sm flex items-start gap-space-sm relative overflow-hidden">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+</div>
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold tracking-wider">Commercial Billing Protocol</span>
+<span class="material-symbols-outlined text-primary text-[14px]">info</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+          Attachment rate is an additional add-on charged per operating hour on top of base machine rate (<span class="font-label-numeric-sm text-label-numeric-sm font-semibold text-on-surface">e.g. JCB Base ₹1,850/hr + Breaker ₹650/hr = ₹2,500/hr billing rate</span> during breaker shifts).
+        </p>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Grid -->
+<div class="px-margin py-space-xs">
+<div class="grid grid-cols-3 gap-2">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Fleet Total</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">construction</span>
+</div>
+<div class="mt-2">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">12</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Units</span>
+</div>
+<div class="mt-1 flex items-center gap-1 font-body-sm text-[11px] text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>8 Active • 3 Yard</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Tariff Cap</span>
+<span class="material-symbols-outlined text-primary text-[16px]">trending_up</span>
+</div>
+<div class="mt-2">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">₹4,850</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/hr</span>
+</div>
+<div class="mt-1 font-body-sm text-[11px] text-on-surface-variant truncate">
+          Total potential
+        </div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Breaker Run</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">speed</span>
+</div>
+<div class="mt-2">
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary font-bold">75%</span>
+</div>
+<div class="mt-1 font-body-sm text-[11px] text-on-surface-variant truncate">
+          6 of 8 Heavy in duty
+        </div>
+</div>
+</div>
+</div>
+<!-- Status Filter Pills (Horizontal Scrollable) -->
+<div class="py-space-xs">
+<div class="flex items-center gap-space-xs overflow-x-auto px-margin no-scrollbar">
+<!-- Active Pill -->
+<button class="px-3.5 py-1.5 rounded-full bg-inverse-surface text-inverse-on-surface font-body-sm font-bold flex-shrink-0 flex items-center gap-1 shadow-sm">
+<span>All</span>
+<span class="font-label-numeric-sm text-label-numeric-sm bg-primary-container text-on-primary-container px-1.5 py-0.2 rounded-full text-[10px]">12</span>
+</button>
+<!-- Assigned Pill -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-semibold flex-shrink-0 flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Assigned (8)</span>
+</button>
+<!-- Available Pill -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-semibold flex-shrink-0 flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Available (3)</span>
+</button>
+<!-- Maintenance Pill -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-semibold flex-shrink-0 flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Maintenance (1)</span>
+</button>
+<!-- Inactive Pill -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-body-sm font-semibold flex-shrink-0 shadow-sm opacity-60">
+<span>Inactive (0)</span>
+</button>
+</div>
+</div>
+<!-- Attachments List -->
+<div class="px-margin flex flex-col gap-space-md pt-space-xs pb-space-lg">
+<!-- Card 1: Hydraulic Rock Breaker (Heavy) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<!-- Header row: Type badge & Status Chip -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded">
+            #ATT-BRK-01
+          </span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">20T Excavator</span>
+</div>
+<div class="flex items-center gap-1.5 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>ASSIGNED • WORKING</span>
+</div>
+</div>
+<!-- Main info: Graphic + Title + Specs -->
+<div class="flex items-start gap-space-sm mt-0.5">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0 relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up heavy-duty hydraulic rock breaker attachment chisel mechanism painted industrial dark charcoal and safety yellow, rugged steel construction with grease and hydraulic hose couplings, bright outdoor Indian quarry setting with sharp sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE9yq1mPr-c5Icfu__KJ2Dv4ULlukexVcfKs0wn3zw2htgiDFt9oaq3ZvXFho-c-3KE7T8VNalTtpu0B6vUJWghYKKiJswfuhCds4YEy39sTddNL0bfw5YT9SyiK8qrYJR-l1N5qD06qervg77YWu9WZyI5Xbv4zi3MxSYQmDT4pLtEUUfVC9PwnRKu-KORGmdmnajIx5qGz1EhTbplU6tHXliHECMwwPfEgepUPBV6OwxSUv5cBAnFA"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 text-[10px] text-inverse-on-surface font-label-numeric-sm text-center py-0.5">
+            135mm
+          </div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Doosan DXB170H Breaker</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Heavy Hydraulic Rock Breaker Class</p>
+<div class="flex items-center gap-2 mt-1.5 text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">bolt</span> 4,200 J</span>
+<span>•</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">tune</span> N2 Gas</span>
+</div>
+</div>
+</div>
+<!-- Assignment Details Card Section -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">link</span>
+<span class="font-body-sm text-body-sm font-semibold truncate">CAT 320D (#CAT-04 • KA-51-M-8821)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">open_in_new</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>L&amp;T Metro Phase 2 - Pier 48</span>
+</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-on-surface-variant font-body-sm text-[12px]">
+<span class="material-symbols-outlined text-[15px]">badge</span>
+<span>Pilot: <strong class="text-on-surface font-medium">Mahesh G. Gowda (DRV-018)</strong></span>
+</div>
+</div>
+<!-- Commercial Hourly Tariff Box -->
+<div class="bg-inverse-surface text-inverse-on-surface p-space-sm rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed tracking-wider">ATTACHMENT ADD-ON TARIFF</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary-container font-bold">+₹750 / hr</span>
+</div>
+<div class="flex items-center justify-between text-surface-container-high font-body-sm text-[12px]">
+<span>Additive to CAT 320D base rate:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-inverse-on-surface">Total ₹2,850/hr wet</span>
+</div>
+</div>
+<!-- Footer Action Affordance -->
+<div class="flex items-center justify-between pt-1 text-on-surface-variant hover:text-on-surface cursor-pointer">
+<span class="font-body-sm text-body-sm font-medium">View Shift Logs &amp; Wear History</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 2: Backhoe Class Rock Breaker Hammer -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded">
+            #ATT-BRK-03
+          </span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Backhoe Loader</span>
+</div>
+<div class="flex items-center gap-1.5 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>ASSIGNED • WORKING</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm mt-0.5">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0 relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="JCB backhoe hydraulic breaker hammer attachment mounted on backhoe boom, industrial heavy steel assembly with hydraulic lines, working on construction road excavation in Bengaluru" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBk76pqoSd69pz6tq-ZXF3E2ixKie_ropdWjnnyLvcRp8cZWt00KkM8rFOcjdbpHux_cpwKTKFJnxtxpRmN577Vc5Ie22v9VzIeR_r8kZsE5GA0fSIRYutKb6mFKP8olZzD8wgvwrCWura0qSiSQAUc2iejIt-95gu7eU5Cyqe1zzy3mSvlp0TsAwxGGx8-PM2ctNfOl-nqEnTsyVJ0uFlb4hh9X3Kn3xXN3IrNIdrpJCTzX_LdsWJIg"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 text-[10px] text-inverse-on-surface font-label-numeric-sm text-center py-0.5">
+            80mm
+          </div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">JCB HM380 Breaker</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Backhoe Rock Breaker Unit</p>
+<div class="flex items-center gap-2 mt-1.5 text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">straighten</span> 80mm Pin</span>
+<span>•</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">water_drop</span> Auxiliary Aux-1</span>
+</div>
+</div>
+</div>
+<!-- Assignment Details -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">link</span>
+<span class="font-body-sm text-body-sm font-semibold truncate">JCB 3DX Super (#JCB-01 • KA-04-EA-2104)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">open_in_new</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Prestige Tech Park Ext. (Phase 2)</span>
+</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-on-surface-variant font-body-sm text-[12px]">
+<span class="material-symbols-outlined text-[15px]">badge</span>
+<span>Pilot: <strong class="text-on-surface font-medium">Suresh Kumar (DRV-042)</strong></span>
+</div>
+</div>
+<!-- Tariff -->
+<div class="bg-inverse-surface text-inverse-on-surface p-space-sm rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-primary-fixed tracking-wider">ATTACHMENT ADD-ON TARIFF</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary-container font-bold">+₹450 / hr</span>
+</div>
+<div class="flex items-center justify-between text-surface-container-high font-body-sm text-[12px]">
+<span>Additive to JCB 3DX base rate:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-inverse-on-surface">Total ₹2,300/hr breaker shifts</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant hover:text-on-surface cursor-pointer">
+<span class="font-body-sm text-body-sm font-medium">View Shift Logs &amp; Wear History</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 3: Earth Auger Drill (Available in Yard) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded">
+            #ATT-AUG-02
+          </span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Piling &amp; Drilling</span>
+</div>
+<div class="flex items-center gap-1.5 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-caps text-label-caps font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>AVAILABLE • YARD DEPOT</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm mt-0.5">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0 relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Earth auger spiral drill heavy planetary drive attachment for piling and fencing, high torque motor assembly sitting on timber dunnage in an equipment depot yard under bright sunny daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxm5K36VWEeq1PWvBaHTzKf_YSES2K65UlUTHr-ujQCiGQHkfcgGu5e3IYogEdUA7QHS4BwkWZeGJOkTsF5px5vC1HOh20W0kDvx1OLcecwirc52ushDxSC1ZWS1Y0TqLK-FYkkZfawD1Z2FEHSX_5CEUmq4_K5EZ_Khf0qb2tClH8fLHoRWQsoHBdG6yYxQWLh-BSONvSUoU-yhTu11P1qmZ7Rjl9qhaqhB2k9xqSa1a-TTiPZzUopA"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 text-[10px] text-inverse-on-surface font-label-numeric-sm text-center py-0.5">
+            450mm
+          </div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Auger Torque 5000MAX</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Earth Auger &amp; Foundation Drill</p>
+<div class="flex items-center gap-2 mt-1.5 text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">precision_manufacturing</span> S4 Mount</span>
+<span>•</span>
+<span>Fits 3-8T / JCB 3DX</span>
+</div>
+</div>
+</div>
+<!-- Current Location & Status -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface min-w-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">warehouse</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold truncate">Central Yard Depot Whitefield</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Rack Section C-04 • Inspected &amp; Greased</span>
+</div>
+</div>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-primary">+₹550/hr</span>
+</div>
+<!-- Quick Action: Direct Assign CTA -->
+<div class="pt-1">
+<button class="w-full py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg font-body-sm font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary font-bold">add_link</span>
+<span>Assign &amp; Mount to Machine</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Deep V-Ditch & Trenching Bucket -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded">
+            #ATT-BKT-05
+          </span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Profile Bucket</span>
+</div>
+<div class="flex items-center gap-1.5 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>ASSIGNED • WORKING</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm mt-0.5">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0 relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Heavy steel trapezoidal V-ditch trenching bucket attachment for 20 ton excavator, sharp reinforced cutting edge teeth, displayed on site soil ground during pipeline ditch digging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUHd4699yDb-FPPAq5Jm4HSOmFtAfmAroWruK-d8Ss6tmmTELOCDPp3vhCS_EzmkBVETEG6qUMyTju7DfycDYjG3xzc_Mkvtt7HzED_Iox1T3IXLDhO82IzaS-CKR84zRW97ExbmIq8Z-OCayxb_TNLe0dmnTqkC4nojoa60lVoSaZclzb1QzOmny2xnHj3DeC7MLg-8-Y5di19dUfIm-65nfu5UxK3GJbS6VpNnAZaVGN-iOoVcYWWg"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 text-[10px] text-inverse-on-surface font-label-numeric-sm text-center py-0.5">
+            1.5m V
+          </div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Trapezoidal Trenching Bucket</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Drainage &amp; Pipeline V-Profile</p>
+<div class="flex items-center gap-2 mt-1.5 text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">straighten</span> 1.5m Width</span>
+<span>•</span>
+<span>Hardox 450 Steel</span>
+</div>
+</div>
+</div>
+<!-- Assignment Details -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">link</span>
+<span class="font-body-sm text-body-sm font-semibold truncate">Komatsu PC210 (#KOM-02 • KA-03-NB-4410)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">open_in_new</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Central Metro Corridor Project</span>
+</span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold text-on-surface">+₹200 / hr tariff</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant hover:text-on-surface cursor-pointer">
+<span class="font-body-sm text-body-sm font-medium">View Shift Logs &amp; Wear History</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Card 5: Hydraulic Vibratory Compactor Plate (In Maintenance) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded">
+            #ATT-CMP-01
+          </span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Compactor</span>
+</div>
+<div class="flex items-center gap-1.5 bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-label-caps text-label-caps font-bold">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>MAINTENANCE • WORKSHOP</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm mt-0.5">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0 relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Heavy hydraulic vibratory plate compactor attachment inside an engineering machinery depot service workshop bay with tools, grease pumps, and steel workbenches" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3UbHG36KJtf__W6MQVCPTcnZ5elgGrdnPJp9C_C49bSVAtdM-SBuhB9GRm9EtMXhdNdca0zuH7WQbCI8aY1xyjQL9UEgaAuK1F_HXiwqxrWUc6jVEtaJo_B8r6s5V0FGTGvKGpWcacHs4U04p260zVGYn2HxSv1X5sBH_bsI_vGxZwA_M536C6gJfu8d3u6MMvyVgtk_ArUuqw5lmLQMbv3FnktKkWohyE8tFU-syEHk-odV-4crDTw"/>
+<div class="absolute bottom-0 inset-x-0 bg-error text-[10px] text-on-error font-label-numeric-sm text-center py-0.5 font-bold">
+            BAY 3
+          </div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Furukawa VCP-40 Compactor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Hydraulic Vibratory Trench Compactor</p>
+<div class="flex items-center gap-2 mt-1.5 text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">vibration</span> 2,000 cpm</span>
+<span>•</span>
+<span>Standby Tariff: +₹350/hr</span>
+</div>
+</div>
+</div>
+<!-- Workshop Repair Notice -->
+<div class="bg-error-container/40 p-space-sm rounded-lg flex items-start gap-2 text-on-surface">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5">build_circle</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">In Workshop: Bay 3 (Central Depot)</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-tight mt-0.5">
+            Rubber dampener replacement &amp; grease seal flush. ETA Completion: <strong class="text-on-surface font-semibold">Tomorrow 11:00 AM</strong>.
+          </p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-[12px] text-on-surface-variant">Mechanic: Somanna (Service Lead)</span>
+<button class="font-body-sm text-body-sm font-bold text-primary hover:underline">View Work Order</button>
+</div>
+</div>
+<!-- Card 6: Heavy Duty Clamshell Bucket -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-numeric-sm text-label-numeric-sm font-bold bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded">
+            #ATT-CLM-01
+          </span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Clamshell Grab</span>
+</div>
+<div class="flex items-center gap-1.5 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-caps text-label-caps font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>AVAILABLE • YARD DEPOT</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm mt-0.5">
+<div class="w-16 h-16 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0 relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Heavy dual-ram hydraulic clamshell grab bucket attachment for deep well foundation digging, resting on hard gravel depot ground with thick hydraulic cylinder rams, golden hour light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZjVT-IuhnSBhAo7b0W4FJ66vda0j9KKwWaJp0_QjuOMmLtdyOVynbg_4S-YsM0myaWuUdpq2Sg3jrSQXCvKspac1hBrgdCQOhogV8k6pQrR4rS9xOcQu1bO4zj2MogO2bEFuRShR_eMQjlGzcEGJjk31pSC2LLcAEACSHFQuM4dqbGDDTh4ivDlImKSgpGwQcBsQY_tiEdUrAQ6kuZvu4EPqsUgNKoT7GwKF_GkORi-QZ8aiDn0vL2w"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 text-[10px] text-inverse-on-surface font-label-numeric-sm text-center py-0.5">
+            0.8 m³
+          </div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">AJ Heavy Clamshell Grab</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Shaft &amp; Well Deep Digging Grab</p>
+<div class="flex items-center gap-2 mt-1.5 text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[15px]">layers</span> 0.8 cu.m</span>
+<span>•</span>
+<span>Fits 14-22T Excavators</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface min-w-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">warehouse</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold truncate">Hosakote Quarry Depot</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Standby for bridge piling jobs</span>
+</div>
+</div>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-primary">+₹400/hr</span>
+</div>
+<div class="pt-1">
+<button class="w-full py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-lg font-body-sm font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary font-bold">add_link</span>
+<span>Assign &amp; Mount to Machine</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Audit Ledger Notice & Info Stamp -->
+<div class="px-margin pb-space-xl">
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px] flex-shrink-0">verified_user</span>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+<strong>Fleet Billing Ledger Audit:</strong> All attachment additions, rate changes, and machine coupling hours are logged to the billing ledger and verified during supervisor SMU shift audits.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for status filter switching
+  document.querySelectorAll('.no-scrollbar button').forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.no-scrollbar button').forEach(btn => {
+        btn.classList.remove('bg-inverse-surface', 'text-inverse-on-surface');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+      });
+      this.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+      this.classList.add('bg-inverse-surface', 'text-inverse-on-surface');
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="h-16 flex items-center justify-around px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-body-sm text-body-sm leading-none mt-1">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="work" href="#"><span class="material-symbols-outlined text-[24px]">engineering</span><span class="font-body-sm text-body-sm leading-none mt-1">Work</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors text-primary font-bold" data-path="fleet" href="#"><span class="material-symbols-outlined text-[24px]">precision_manufacturing</span><span class="font-body-sm text-body-sm leading-none mt-1">Fleet</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="finance" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-body-sm text-body-sm leading-none mt-1">Finance</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="more" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-body-sm text-body-sm leading-none mt-1">More</span></a></div></nav></body></html>

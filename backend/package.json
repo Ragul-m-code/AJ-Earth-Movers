@@ -1,0 +1,41 @@
+{
+  "name": "@aj/backend",
+  "version": "1.0.0",
+  "description": "AJ Earth Movers shared backend API",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node --import tsx src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "prisma generate",
+    "vercel-build": "node scripts/vercel-build.mjs",
+    "test": "vitest run",
+    "test:unit": "vitest run test/unit",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed:sample": "tsx scripts/seed-sample.ts",
+    "db:local": "tsx scripts/dev-db.ts",
+    "create-owner": "tsx scripts/create-owner.ts"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@fastify/cors": "^11.3.1",
+    "@fastify/helmet": "^13.2.0",
+    "@fastify/multipart": "^10.1.4",
+    "@fastify/rate-limit": "^11.2.1",
+    "@prisma/client": "^6.19.3",
+    "@vercel/blob": "^2.8.2",
+    "bcryptjs": "^3.0.3",
+    "fastify": "^5.12.7",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "embedded-postgres": "^18.4.0-beta.17",
+    "prisma": "^6.19.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "private": true
+}

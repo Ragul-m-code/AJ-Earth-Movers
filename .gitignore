@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+backend/storage/
+.expo/
+*.log
+web-build/
+.pgdata/
+driver-app/android/
+driver-app/ios/
+admin-app/android/
+admin-app/ios/
+.vercel/
+.claude/
+expo-env.d.ts
+*.zip

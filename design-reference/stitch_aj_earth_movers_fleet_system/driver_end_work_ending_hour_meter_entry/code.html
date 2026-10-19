@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed-dim": "#bec6e0", "on-primary-fixed": "#261a00", "surface-container-highest": "#d3e4fe", "surface-dim": "#cbdbf5", "primary-fixed": "#ffdf9f", "error": "#ba1a1a", "outline-variant": "#d4c5ac", "surface-container-low": "#eff4ff", "on-surface-variant": "#4f4632", "on-tertiary-fixed-variant": "#3f465c", "on-error-container": "#93000a", "primary-container": "#f5b800", "tertiary": "#565e74", "inverse-on-surface": "#eaf1ff", "surface-container-high": "#dce9ff", "surface-variant": "#d3e4fe", "secondary-container": "#dfe2ec", "on-tertiary-fixed": "#131b2e", "on-tertiary": "#ffffff", "inverse-surface": "#213145", "on-secondary-fixed": "#181c23", "surface-container": "#e5eeff", "on-surface": "#0b1c30", "secondary-fixed-dim": "#c3c6d0", "secondary-fixed": "#dfe2ec", "on-error": "#ffffff", "surface": "#f8f9ff", "background": "#f8f9ff", "tertiary-fixed": "dae2fd", "on-primary-container": "#664b00", "tertiary-container": "#bac1db", "surface-tint": "#795900", "error-container": "#ffdad6", "outline": "#827660", "inverse-primary": "#fabd0d", "surface-container-lowest": "#ffffff", "on-background": "#0b1c30", "on-tertiary-container": "#474f65", "primary": "#795900", "on-primary-fixed-variant": "#5b4300", "on-secondary": "#ffffff", "on-secondary-container": "#61646d", "on-primary": "#ffffff", "surface-bright": "#f8f9ff", "primary-fixed-dim": "#fabd0d", "secondary": "#5b5e67", "on-secondary-fixed-variant": "#43474f" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1.25rem", "space-xl": "1.75rem", "space-sm": "0.5rem", "gutter-sm": "0.75rem", "margin": "1rem", "gutter": "1rem", "space-xs": "0.25rem", "margin-sm": "0.75rem", "space-md": "0.875rem" }, fontFamily: { "body-lg": ["Inter"], "label-sm": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-md": ["Inter"], "metric-num": ["Inter"], "headline-sm": ["Inter"], "display-sm": ["Inter"], "headline-lg": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Inter"] }, fontSize: { "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-sm": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Back to Job Details or Home HUD" class="w-11 h-11 shrink-0 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface active:scale-95 transition-transform" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-8 w-auto object-contain shrink-0 hidden xs:block" src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider truncate">AJ Earth Movers</span><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">End Work &amp; Close Shift</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-surface-container text-on-surface"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant font-bold">4G</span><span class="material-symbols-outlined text-[15px] text-on-surface-variant">signal_cellular_alt</span></div><button aria-label="Toggle High-Glare Mode" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-on-surface active:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-28">
+<!-- Interactive Demo Simulator State Bar -->
+<section class="bg-inverse-surface text-inverse-on-surface px-margin py-space-sm shadow-md">
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-bold text-primary-fixed truncate">QA Live Simulator</span>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-highest/20 text-inverse-on-surface">
+<span class="material-symbols-outlined text-[13px] text-emerald-400">my_location</span>
+<span class="font-label-sm text-label-sm truncate">Hinjawadi Pier 18-24 (GPS ±1.4m)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+<button class="sim-btn shrink-0 px-2.5 py-1 rounded bg-primary-container text-on-primary-fixed font-label-sm text-label-sm font-bold active:scale-95 transition-all" id="btn-state-normal" onclick="setSimState('normal')">
+        1. Normal Valid (+8.5h)
+      </button>
+<button class="sim-btn shrink-0 px-2.5 py-1 rounded bg-surface-variant/20 text-inverse-on-surface font-label-sm text-label-sm active:scale-95 transition-all" id="btn-state-rollback" onclick="setSimState('rollback')">
+        2. Rollback (&lt; Start)
+      </button>
+<button class="sim-btn shrink-0 px-2.5 py-1 rounded bg-surface-variant/20 text-inverse-on-surface font-label-sm text-label-sm active:scale-95 transition-all" id="btn-state-suspicious" onclick="setSimState('suspicious')">
+        3. Suspicious (&gt;16h)
+      </button>
+<button class="sim-btn shrink-0 px-2.5 py-1 rounded bg-surface-variant/20 text-inverse-on-surface font-label-sm text-label-sm active:scale-95 transition-all" id="btn-state-nophoto" onclick="setSimState('nophoto')">
+        4. Photo Missing
+      </button>
+<button class="sim-btn shrink-0 px-2.5 py-1 rounded bg-surface-variant/20 text-inverse-on-surface font-label-sm text-label-sm active:scale-95 transition-all" id="btn-state-uploading" onclick="setSimState('uploading')">
+        5. Uploading...
+      </button>
+<button class="sim-btn shrink-0 px-2.5 py-1 rounded bg-surface-variant/20 text-inverse-on-surface font-label-sm text-label-sm active:scale-95 transition-all" id="btn-state-offline" onclick="setSimState('offline')">
+        6. Network Offline
+      </button>
+<button class="sim-btn shrink-0 px-2.5 py-1 rounded bg-surface-variant/20 text-inverse-on-surface font-label-sm text-label-sm active:scale-95 transition-all" id="btn-state-pending" onclick="setSimState('pending')">
+        7. Submitted / Pending
+      </button>
+</div>
+</section>
+<!-- Network Offline Notification Banner (Conditional) -->
+<div class="hidden bg-amber-500 text-slate-950 px-margin py-2.5 flex items-center justify-between gap-space-sm shadow-sm transition-all duration-300" id="offline-banner">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[20px] shrink-0">cloud_off</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold leading-tight truncate">Offline Mode Engaged</span>
+<span class="font-body-sm text-body-sm leading-tight text-slate-900 truncate">Entry will be cryptographically signed &amp; queued locally.</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-slate-950 text-amber-400 font-label-sm text-label-sm shrink-0">Encrypted DB</span>
+</div>
+<div class="p-margin flex flex-col gap-space-lg max-w-xl mx-auto w-full">
+<!-- 1. Shift & Heavy Asset Overview Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start justify-between gap-space-sm pb-space-sm mb-space-sm">
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wider">#WO-2024-892</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-amber-100 text-amber-900 font-bold">
+              SHIFT CLOSING IN PROGRESS
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-extrabold truncate mt-0.5">Pune Metro Line 4 Trenching</h2>
+<p class="font-body-sm text-body-sm text-secondary truncate">Client: L&amp;T Construction Heavy Civil Infra</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">construction</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase block truncate">Assigned Unit #15</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate block">CAT 320D Excavator</span>
+<span class="font-body-sm text-body-sm text-secondary truncate block">MH-14-GH-8821</span>
+</div>
+</div>
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase block truncate">Shift A (Day Ops)</span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate block">07:00 AM Today</span>
+<span class="font-body-sm text-body-sm text-emerald-700 font-medium truncate block">Elapsed: 08h 45m</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Starting Meter Baseline Reference Section -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">history</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Shift Start Baseline Proof</h3>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Verified Check-In
+        </span>
+</div>
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low">
+<div class="relative w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-highest group">
+<img class="w-full h-full object-cover" data-alt="Close-up crisp photo of Caterpillar excavator digital mechanical hour meter dashboard display reading exactly 3412.0 hours, bathed in soft morning daylight inside the rugged cab." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIJ2DEpuBsBjk8hG2o4oK0YUMcHENb7FJrrCi6qRdC7DVTLq0keJHl_9GnG6v19YDuL-olVohiGZXancjjpGeb0PS7fFDTylDTRcTzjkeoJR1On_kCwRSXb93di74hp905ZqF8bgv3Cbj3wg1OYj7BJpfjy894wabe8bM9AJwKlRRK1hn6IZtfm3WZp6gzdh2epCtWNUWKg_GbX-FVc4y5Q5AUo3RuJZOHnMRaglKz7BCI5oTwqidt"/>
+<button aria-label="Zoom starting dial photo" class="absolute inset-0 bg-inverse-surface/40 flex items-center justify-center text-on-primary opacity-90 group-active:opacity-100 transition-opacity" onclick="inspectStartPhoto()">
+<span class="material-symbols-outlined text-[20px]">zoom_in</span>
+</button>
+<span class="absolute bottom-1 right-1 px-1 bg-inverse-surface/80 text-inverse-on-surface rounded font-label-sm text-[9px]">07:02 AM</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Start Hour-Meter Reading</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-metric-num text-metric-num font-extrabold text-on-surface tabular-nums" id="display-start-val">3,412.0</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">HRS</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-secondary font-body-sm text-body-sm truncate">
+<span class="material-symbols-outlined text-[15px] text-emerald-600">verified</span>
+<span>EXIF + Site Geo-Fenced match</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Ending Hour-Meter Entry Component (High contrast tactical LCD style) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">Step 1 of 2 • Telemetry Record</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Ending Hour-Meter Reading</h3>
+</div>
+<button class="flex items-center gap-1 text-primary font-label-sm text-label-sm font-bold hover:underline px-2 py-1 rounded bg-surface-container-low" onclick="toggleManualInputPrompt()">
+<span class="material-symbols-outlined text-[16px]">keyboard</span> Key-in
+        </button>
+</div>
+<!-- Odometer LCD Style Display Box -->
+<div class="bg-inverse-surface rounded-xl p-space-md text-inverse-on-surface flex flex-col items-center justify-center relative shadow-inner">
+<div class="w-full flex items-center justify-between text-surface-dim font-label-sm text-label-sm mb-1 px-1">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> CAB ODOMETER DIAL</span>
+<span class="font-mono">SYS CAL: CAT-STD-V2</span>
+</div>
+<!-- Metric Display Readout with Stepper buttons -->
+<div class="w-full flex items-center justify-between gap-space-sm my-1">
+<button aria-label="Decrease reading by 0.5 hours" class="w-14 h-14 rounded-xl bg-surface-variant/20 hover:bg-surface-variant/30 active:scale-90 flex items-center justify-center text-inverse-on-surface transition-transform touch-manipulation" onclick="adjustMeter(-0.5)">
+<span class="material-symbols-outlined text-[30px]">remove</span>
+</button>
+<div class="flex items-baseline justify-center gap-2 min-w-0">
+<span class="font-display-lg text-display-lg font-black tracking-tight text-primary-container font-mono tabular-nums" id="ending-meter-display">3420.5</span>
+<span class="font-headline-sm text-headline-sm font-bold text-surface-variant">HRS</span>
+</div>
+<button aria-label="Increase reading by 0.5 hours" class="w-14 h-14 rounded-xl bg-surface-variant/20 hover:bg-surface-variant/30 active:scale-90 flex items-center justify-center text-inverse-on-surface transition-transform touch-manipulation" onclick="adjustMeter(0.5)">
+<span class="material-symbols-outlined text-[30px]">add</span>
+</button>
+</div>
+<!-- Subtext dial status -->
+<div class="text-xs text-surface-dim font-mono tracking-wider mt-1">
+          DECIMAL PLACE PRECISION: TENTHS (0.1 HR)
+        </div>
+</div>
+<!-- Quick Step Touch Bars (Tailored for heavy gloves on site) -->
+<div class="grid grid-cols-4 gap-2 mt-space-sm">
+<button class="h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high active:scale-95 transition-all" onclick="adjustMeter(0.1)">
+          +0.1 h
+        </button>
+<button class="h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high active:scale-95 transition-all" onclick="adjustMeter(0.5)">
+          +0.5 h
+        </button>
+<button class="h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high active:scale-95 transition-all" onclick="adjustMeter(1.0)">
+          +1.0 h
+        </button>
+<button class="h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high active:scale-95 transition-all" onclick="adjustMeter(2.0)">
+          +2.0 h
+        </button>
+</div>
+</section>
+<!-- 4. Dynamic Operating Hours Computation & Guardrail Callouts -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-secondary">Live Operating Delta Computation</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">calculate</span>
+</div>
+<!-- Formula Breakdown Banner -->
+<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-sm font-mono text-body-sm text-body-sm text-on-surface">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<span class="text-secondary">End (<span class="text-on-surface font-bold" id="calc-end">3,420.5</span>)</span>
+<span class="text-secondary">−</span>
+<span class="text-secondary">Start (<span class="text-on-surface font-bold" id="calc-start">3,412.0</span>)</span>
+<span class="text-secondary">=</span>
+<span class="font-bold text-on-surface bg-surface-container-highest px-1.5 py-0.5 rounded text-emerald-800" id="calc-delta-badge">+8.5 HRS</span>
+</div>
+</div>
+<!-- Prominent Computed Value Display -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-primary-container/15" id="summary-delta-box">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant block">Net Machine Working Shift Hours</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-sm text-display-sm font-black text-on-surface tabular-nums" id="operating-delta-value">8.5</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">OPERATING HOURS</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">speed</span>
+</div>
+</div>
+<!-- Driver Shift Compensation Calculation Preview -->
+<div class="flex items-center justify-between mt-space-sm pt-space-sm bg-surface-container-low/60 p-space-sm rounded-lg">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">payments</span>
+<span class="font-body-sm text-body-sm text-secondary">Est. Driver Shift Credit:</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-on-surface">
+<span id="driver-rate-preview">8.5 hrs × ₹150.00 = ₹1,275.00</span>
+</div>
+</div>
+<!-- Caveat text -->
+<p class="font-body-sm text-body-sm text-secondary mt-space-xs leading-relaxed">
+        Note: Operating delta is provisional and subject to Central Yard supervisor audit and digital telemetry cross-match prior to payroll release.
+      </p>
+<!-- DYNAMIC VALIDATION: Rollback Critical Error -->
+<div class="hidden mt-space-sm p-space-sm rounded-lg bg-error-container text-on-error-container flex items-start gap-space-sm animate-pulse" id="error-rollback-box">
+<span class="material-symbols-outlined text-[24px] text-error shrink-0">error</span>
+<div class="min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold block">CRITICAL VALIDATION ERROR</span>
+<p class="font-body-sm text-body-sm mt-0.5" id="error-rollback-text">
+            Ending reading (<span id="err-end">3,405.0</span>) cannot be lower than starting reading (3,412.0). Negative operating delta (-7.0 hrs) is physically impossible. Check dial digits or report odometer malfunction.
+          </p>
+</div>
+</div>
+<!-- DYNAMIC VALIDATION: Suspicious Delta Warning -->
+<div class="hidden mt-space-sm p-space-sm rounded-lg bg-amber-100 text-amber-950 flex items-start gap-space-sm" id="warning-suspicious-box">
+<span class="material-symbols-outlined text-[24px] text-amber-700 shrink-0">warning</span>
+<div class="min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold block">AUDIT FLAGGED: HIGH DELTA</span>
+<p class="font-body-sm text-body-sm mt-0.5" id="warning-suspicious-text">
+            Operating delta (<span id="warn-delta">+18.5 HRS</span>) exceeds standard single shift threshold (14.0 hrs). Mandatory verification by Site Supervisor Vikram Patil will be initiated.
+          </p>
+</div>
+</div>
+</section>
+<!-- 5. Ending Meter Photographic Verification Section (Mandatory Proof) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">Step 2 of 2 • Proof Verification</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Ending Dial Photo Proof</h3>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-black">
+          REQUIRED
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm">
+        Capture clear, glare-free photo of physical cab gauge showing <strong class="text-on-surface" id="target-photo-val">3420.5</strong> hrs.
+      </p>
+<!-- Attached Photographic Evidence View (Shown in normal state) -->
+<div class="flex flex-col gap-space-sm" id="photo-preview-container">
+<div class="relative w-full h-56 rounded-xl overflow-hidden bg-surface-container-high group">
+<img class="w-full h-full object-cover" data-alt="High-resolution digital macro photograph of an excavator cabin instrumentation panel focusing sharply on an electronic hour meter displaying 3420.5 hours with green dashboard backlights and slight dust on the industrial bezel." id="ending-meter-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5K7wBEvSoulxnX1ZL8p2Sklf0M429DDOxd3XXFMETZJ_veS5Fp3PlPw_ofpbYE8fSoYqoygepQVWxCzmSraJJCmikO2J-svKA_Ig3xh1x5XJtgEDHvY8FFaxNqhCIRw6_CbWAzGW4zQmTFTdSdjb6AbZz8NcHfRiRUv-Lvx_xGDb4BGKktjKFhGYRh1qoYYpwsM5zDtXwe3878Cu3QSdXFEzTWPfKNrljEVKyeR-drzF0kExqjAfo"/>
+<!-- Timestamp & Verification Overlays -->
+<div class="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-emerald-400">schedule</span>
+              17:42:15 IST
+            </span>
+<span class="px-2 py-0.5 rounded bg-inverse-surface/85 backdrop-blur-sm text-emerald-400 font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified_user</span>
+              GPS Match 100%
+            </span>
+</div>
+<!-- Bottom Action Buttons Over Photo -->
+<div class="absolute bottom-2.5 inset-x-2.5 flex items-center justify-between gap-space-sm">
+<button class="flex-1 h-10 rounded-lg bg-inverse-surface/90 backdrop-blur-sm text-inverse-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-transform" onclick="retakePhoto()">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span> Retake
+            </button>
+<button class="h-10 px-3 rounded-lg bg-error/90 backdrop-blur-sm text-on-error font-label-md text-label-md font-bold flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="removePhoto()">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Clarity Self-Audit Quality Badges -->
+<div class="grid grid-cols-3 gap-2">
+<div class="p-2 rounded-lg bg-surface-container-low flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate">Digits Sharp</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate">Zero Glare</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium truncate">Bezel Visible</span>
+</div>
+</div>
+</div>
+<!-- Empty / Missing Photo Container (Hidden by default, triggered by QA pill) -->
+<div class="hidden flex-col items-center justify-center p-space-lg rounded-xl bg-surface-container-low text-center" id="photo-missing-container">
+<div class="w-16 h-16 rounded-full bg-error-container text-on-error-container flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">no_photography</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Proof Photo Missing</h4>
+<p class="font-body-sm text-body-sm text-secondary max-w-xs mt-1 mb-space-md">
+          AJ Earth Movers policy requires photographic meter proof before machine handoff.
+        </p>
+<div class="flex items-center gap-space-sm w-full max-w-xs">
+<button class="flex-1 h-12 rounded-lg bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 shadow-sm" onclick="retakePhoto()">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span> Open Camera
+          </button>
+<button class="h-12 px-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center" onclick="simulateUpload()">
+<span class="material-symbols-outlined text-[20px]">file_upload</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 6. Shift Completion & Machine Handoff Notes -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<label class="font-headline-sm text-headline-sm text-on-surface font-bold" for="shift-notes">Shift Notes &amp; Handoff (Optional)</label>
+<span class="font-label-sm text-label-sm text-secondary">Operator Memo</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-space-sm">
+        Report track tensions, hydraulic grease usage, fuel top-up or ground conditions for night crew.
+      </p>
+<div class="relative">
+<textarea class="w-full rounded-lg bg-surface-container-low p-space-sm text-body-md text-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="shift-notes" placeholder="e.g., Added 45L Diesel; track pins lubricated; ground rocky at Pier 21 trench." rows="3"></textarea>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 mt-space-sm">
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm active:scale-95" onclick="appendQuickTag('Diesel Top-up (50L)')">
+          + Diesel Top-up
+        </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm active:scale-95" onclick="appendQuickTag('Greased Track &amp; Bucket')">
+          + Greased Pins
+        </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm active:scale-95" onclick="appendQuickTag('Clean Air Filter')">
+          + Filter Checked
+        </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm active:scale-95" onclick="appendQuickTag('Hydraulic Breaker Swapped')">
+          + Breaker Fitted
+        </button>
+</div>
+</section>
+<!-- 7. Mandatory Audit & Policy Governance Notice -->
+<section class="rounded-xl p-space-md bg-inverse-surface text-inverse-on-surface shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-headline-sm text-headline-sm text-inverse-on-surface font-bold">Strict Yard Audit Protocol</h4>
+<p class="font-body-sm text-body-sm text-surface-dim mt-1 leading-relaxed">
+            Submitting this report digitally signs the machine hour record with device GPS, SIM tower data, and an immutable timestamp. Shifts immediately route to <strong>Central Admin &amp; Site Supervisor</strong>.
+          </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Sticky Action Tray -->
+<footer class="fixed bottom-0 inset-x-0 bg-surface/95 backdrop-blur-xl p-margin shadow-[0_-4px_16px_rgba(0,0,0,0.06)] z-40 pb-safe">
+<div class="max-w-xl mx-auto flex flex-col gap-2">
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 active:scale-98 transition-transform shadow-md" id="btn-submit-main" onclick="openReviewModal()">
+<span>REVIEW &amp; SUBMIT END OF SHIFT</span>
+<span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+</button>
+<button class="w-full h-10 rounded-lg text-secondary font-label-lg text-label-lg font-bold hover:text-on-surface active:bg-surface-container-low transition-colors" onclick="cancelShiftExit()">
+        Cancel &amp; Return to Shift HUD
+      </button>
+</div>
+</footer>
+<!-- MODAL A: Shift Summary Confirmation Modal -->
+<div class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity" id="modal-review">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-t-2xl sm:rounded-2xl p-space-lg shadow-2xl max-h-[90vh] overflow-y-auto">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Final Shift Verification</h3>
+<span class="font-label-sm text-label-sm text-secondary">CAT 320D • #WO-2024-892</span>
+</div>
+</div>
+<button aria-label="Close dialog" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface" onclick="closeReviewModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Comparison Metrics -->
+<div class="grid grid-cols-3 gap-2 bg-surface-container-low p-space-sm rounded-xl mb-space-md text-center">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block">Shift Start</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">3412.0</span>
+<span class="font-label-sm text-label-sm text-secondary">HRS</span>
+</div>
+<div class="border-x border-surface-container">
+<span class="font-label-sm text-label-sm text-secondary uppercase block">Shift End</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="modal-end-val">3420.5</span>
+<span class="font-label-sm text-label-sm text-secondary">HRS</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase block font-bold">Net Delta</span>
+<span class="font-headline-md text-headline-md font-black text-primary-container bg-inverse-surface px-1.5 py-0.5 rounded inline-block" id="modal-delta-val">+8.5</span>
+<span class="font-label-sm text-label-sm text-secondary block">HRS</span>
+</div>
+</div>
+<!-- Checkpoint List -->
+<div class="space-y-2 mb-space-md">
+<div class="flex items-center justify-between text-body-sm text-body-sm p-2 rounded bg-surface-container-low">
+<span class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span> Photo Proof Attached
+          </span>
+<span class="font-label-sm text-label-sm font-bold text-emerald-700">Verified</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm p-2 rounded bg-surface-container-low">
+<span class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span> Geofence Validation
+          </span>
+<span class="font-label-sm text-label-sm font-bold text-emerald-700">Inside Site (±1.4m)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm p-2 rounded bg-surface-container-low">
+<span class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">currency_rupee</span> Shift Wage Credit
+          </span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface" id="modal-wage-val">₹1,275.00</span>
+</div>
+</div>
+<div class="p-3 bg-amber-50 rounded-xl mb-space-md text-amber-950 font-body-sm text-body-sm">
+<p class="font-semibold">Declaration:</p>
+        I certify that the machine cab dial displays the entered reading and no unauthorized hour rollbacks or tampering occurred during my shift.
+      </div>
+<div class="flex flex-col gap-2">
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 active:scale-95 shadow-md" id="btn-modal-transmit" onclick="executeTransmission()">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>CONFIRM &amp; TRANSMIT TO YARD SERVER</span>
+</button>
+<button class="w-full h-10 rounded-lg text-secondary font-label-md text-label-md font-bold" onclick="closeReviewModal()">
+          Review Again
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL B: Transmission Success & Pending Approval State -->
+<div class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-margin" id="modal-success">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl p-space-lg shadow-2xl text-center flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[36px]">cloud_done</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full mb-1">
+        Transmission Confirmed
+      </span>
+<h3 class="font-display-sm text-display-sm text-on-surface font-black mt-1">Shift Successfully Closed</h3>
+<p class="font-body-md text-body-md text-secondary mt-1 mb-space-md">
+        Work Order <strong class="text-on-surface">#WO-2024-892</strong> is now locked.
+      </p>
+<!-- Status Pill Block -->
+<div class="w-full p-space-md rounded-xl bg-surface-container-low text-left mb-space-md">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs border-b border-surface-container">
+<span class="font-body-sm text-body-sm text-secondary">Current Stage:</span>
+<span class="font-label-md text-label-md font-bold text-amber-900 bg-amber-200 px-2 py-0.5 rounded">
+            Pending Admin Verification
+          </span>
+</div>
+<div class="flex items-center justify-between pb-space-xs mb-space-xs border-b border-surface-container">
+<span class="font-body-sm text-body-sm text-secondary">Logged Hours:</span>
+<span class="font-label-md text-label-md font-extrabold text-on-surface" id="success-logged-hrs">+8.5 Hours</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Assigned Auditor:</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Vikram Patil (Site Mgr)</span>
+</div>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-95 shadow-md" onclick="dismissSuccessAndExit()">
+<span>Return to Dashboard</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // State store
+  const START_METER = 3412.0;
+  let endingMeter = 3420.5;
+  let hasPhoto = true;
+  let isOffline = false;
+  let isUploading = false;
+
+  function updateUI() {
+    const delta = +(endingMeter - START_METER).toFixed(1);
+    
+    // Updates
+    document.getElementById('ending-meter-display').innerText = endingMeter.toFixed(1);
+    document.getElementById('calc-end').innerText = endingMeter.toLocaleString(undefined, {minimumFractionDigits: 1});
+    document.getElementById('calc-start').innerText = START_METER.toLocaleString(undefined, {minimumFractionDigits: 1});
+    document.getElementById('target-photo-val').innerText = endingMeter.toFixed(1);
+    document.getElementById('modal-end-val').innerText = endingMeter.toFixed(1);
+    
+    const deltaSign = delta >= 0 ? '+' : '';
+    document.getElementById('calc-delta-badge').innerText = `${deltaSign}${delta} HRS`;
+    document.getElementById('operating-delta-value').innerText = Math.abs(delta);
+    document.getElementById('modal-delta-val').innerText = `${deltaSign}${delta}`;
+    document.getElementById('success-logged-hrs').innerText = `${deltaSign}${delta} Hours`;
+
+    // Driver wage preview (₹150/hr)
+    const estWage = Math.max(0, delta * 150).toFixed(2);
+    const wageStr = `${delta} hrs × ₹150.00 = ₹${estWage}`;
+    document.getElementById('driver-rate-preview').innerText = wageStr;
+    document.getElementById('modal-wage-val').innerText = `₹${estWage}`;
+
+    // Error & warning conditions
+    const errorBox = document.getElementById('error-rollback-box');
+    const warningBox = document.getElementById('warning-suspicious-box');
+    const submitBtn = document.getElementById('btn-submit-main');
+    const photoMissingBox = document.getElementById('photo-missing-container');
+    const photoPreviewBox = document.getElementById('photo-preview-container');
+    const offlineBanner = document.getElementById('offline-banner');
+
+    // Offline bar
+    if (isOffline) {
+      offlineBanner.classList.remove('hidden');
+    } else {
+      offlineBanner.classList.add('hidden');
+    }
+
+    // Photo preview toggle
+    if (hasPhoto) {
+      photoPreviewBox.classList.remove('hidden');
+      photoMissingBox.classList.add('hidden');
+      photoMissingBox.classList.remove('flex');
+    } else {
+      photoPreviewBox.classList.add('hidden');
+      photoMissingBox.classList.remove('hidden');
+      photoMissingBox.classList.add('flex');
+    }
+
+    // Delta validation
+    let isDeltaInvalid = false;
+    if (delta < 0) {
+      // Rollback error
+      errorBox.classList.remove('hidden');
+      warningBox.classList.add('hidden');
+      document.getElementById('err-end').innerText = endingMeter.toFixed(1);
+      isDeltaInvalid = true;
+    } else if (delta > 14.0) {
+      // High delta warning
+      errorBox.classList.add('hidden');
+      warningBox.classList.remove('hidden');
+      document.getElementById('warn-delta').innerText = `+${delta} HRS`;
+      isDeltaInvalid = false; // Still auditable
+    } else {
+      errorBox.classList.add('hidden');
+      warningBox.classList.add('hidden');
+    }
+
+    // Primary action button disable logic
+    if (isDeltaInvalid || !hasPhoto || isUploading) {
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-50', 'pointer-events-none');
+      if (!hasPhoto) {
+        submitBtn.querySelector('span:first-child').innerText = 'PHOTO PROOF REQUIRED';
+      } else if (isDeltaInvalid) {
+        submitBtn.querySelector('span:first-child').innerText = 'INVALID READING: ROLLBACK ERROR';
+      }
+    } else {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-50', 'pointer-events-none');
+      if (isOffline) {
+        submitBtn.querySelector('span:first-child').innerText = 'QUEUE REPORT FOR SYNC (OFFLINE)';
+      } else {
+        submitBtn.querySelector('span:first-child').innerText = 'REVIEW & SUBMIT END OF SHIFT';
+      }
+    }
+  }
+
+  function adjustMeter(amount) {
+    endingMeter = Math.max(0, +(endingMeter + amount).toFixed(1));
+    updateUI();
+  }
+
+  function toggleManualInputPrompt() {
+    const val = prompt('Enter Ending Cab Hour-Meter dial reading (e.g. 3420.5):', endingMeter.toFixed(1));
+    if (val !== null) {
+      const parsed = parseFloat(val);
+      if (!isNaN(parsed) && parsed >= 0) {
+        endingMeter = parsed;
+        updateUI();
+      } else {
+        alert('Please enter a valid numeric hour meter reading.');
+      }
+    }
+  }
+
+  function appendQuickTag(text) {
+    const textarea = document.getElementById('shift-notes');
+    if (textarea.value) {
+      textarea.value += `; ${text}`;
+    } else {
+      textarea.value = text;
+    }
+  }
+
+  function removePhoto() {
+    hasPhoto = false;
+    updateUI();
+  }
+
+  function retakePhoto() {
+    hasPhoto = true;
+    updateUI();
+  }
+
+  function inspectStartPhoto() {
+    alert("Displaying Starting Meter Dial EXIF:\nAsset: CAT 320D #15\nDial Value: 3,412.0 HRS\nTimestamp: Today, 07:02:11 AM IST\nGPS: 18.5912° N, 73.7389° E (Hinjawadi Site B)");
+  }
+
+  function cancelShiftExit() {
+    if (confirm("Abandon shift closure and return to active work tracking?")) {
+      window.history.back();
+    }
+  }
+
+  // Simulator preset switcher
+  function setSimState(stateName) {
+    // Reset active button styling
+    document.querySelectorAll('.sim-btn').forEach(btn => {
+      btn.classList.remove('bg-primary-container', 'text-on-primary-fixed', 'font-bold');
+      btn.classList.add('bg-surface-variant/20', 'text-inverse-on-surface');
+    });
+    const target = document.getElementById(`btn-state-${stateName}`);
+    if (target) {
+      target.classList.remove('bg-surface-variant/20', 'text-inverse-on-surface');
+      target.classList.add('bg-primary-container', 'text-on-primary-fixed', 'font-bold');
+    }
+
+    // Close any open modals
+    closeReviewModal();
+    document.getElementById('modal-success').classList.add('hidden');
+
+    switch (stateName) {
+      case 'normal':
+        endingMeter = 3420.5; // +8.5 hrs
+        hasPhoto = true;
+        isOffline = false;
+        isUploading = false;
+        break;
+      case 'rollback':
+        endingMeter = 3405.0; // -7.0 hrs (Invalid)
+        hasPhoto = true;
+        isOffline = false;
+        isUploading = false;
+        break;
+      case 'suspicious':
+        endingMeter = 3430.5; // +18.5 hrs (>14h flag)
+        hasPhoto = true;
+        isOffline = false;
+        isUploading = false;
+        break;
+      case 'nophoto':
+        endingMeter = 3420.5;
+        hasPhoto = false;
+        isOffline = false;
+        isUploading = false;
+        break;
+      case 'uploading':
+        endingMeter = 3420.5;
+        hasPhoto = true;
+        isOffline = false;
+        isUploading = true;
+        openReviewModal();
+        const transmitBtn = document.getElementById('btn-modal-transmit');
+        transmitBtn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span> Uploading Encrypted Proofs...`;
+        transmitBtn.disabled = true;
+        break;
+      case 'offline':
+        endingMeter = 3420.5;
+        hasPhoto = true;
+        isOffline = true;
+        isUploading = false;
+        break;
+      case 'pending':
+        endingMeter = 3420.5;
+        hasPhoto = true;
+        isOffline = false;
+        isUploading = false;
+        document.getElementById('modal-success').classList.remove('hidden');
+        break;
+    }
+    updateUI();
+  }
+
+  function openReviewModal() {
+    document.getElementById('modal-review').classList.remove('hidden');
+  }
+
+  function closeReviewModal() {
+    document.getElementById('modal-review').classList.add('hidden');
+    const transmitBtn = document.getElementById('btn-modal-transmit');
+    transmitBtn.disabled = false;
+    transmitBtn.innerHTML = `<span class="material-symbols-outlined text-[20px]">send</span><span>CONFIRM &amp; TRANSMIT TO YARD SERVER</span>`;
+  }
+
+  function executeTransmission() {
+    const transmitBtn = document.getElementById('btn-modal-transmit');
+    transmitBtn.disabled = true;
+    transmitBtn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">sync</span> Securing Signatures...`;
+    
+    setTimeout(() => {
+      closeReviewModal();
+      document.getElementById('modal-success').classList.remove('hidden');
+    }, 1100);
+  }
+
+  function dismissSuccessAndExit() {
+    document.getElementById('modal-success').classList.add('hidden');
+    setSimState('normal');
+  }
+
+  // Initialize display
+  updateUI();
+</script></main></body></html>

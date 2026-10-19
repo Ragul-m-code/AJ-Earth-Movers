@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>AJ Earth Movers Driver</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface": "#0b1c30", "surface-bright": "#f8f9ff", "primary-fixed": "#ffdf9f", "surface-container-highest": "#d3e4fe", "on-error-container": "#93000a", "surface-variant": "#d3e4fe", "on-primary-container": "#664b00", "surface-dim": "#cbdbf5", "outline-variant": "#d4c5ac", "secondary-fixed": "#dfe2ec", "secondary-fixed-dim": "#c3c6d0", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#3f465c", "tertiary": "#565e74", "error": "#ba1a1a", "on-secondary-fixed": "#181c23", "on-surface-variant": "#4f4632", "primary": "#795900", "on-tertiary-container": "#474f65", "on-primary-fixed-variant": "#5b4300", "on-secondary-container": "#61646d", "error-container": "#ffdad6", "inverse-on-surface": "#eaf1ff", "surface-container": "#e5eeff", "secondary-container": "#dfe2ec", "primary-fixed-dim": "#fabd0d", "surface-container-high": "#dce9ff", "background": "#f8f9ff", "on-error": "#ffffff", "surface-tint": "#795900", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#43474f", "tertiary-fixed-dim": "#bec6e0", "on-primary": "#ffffff", "tertiary-fixed": "#dae2fd", "on-primary-fixed": "#261a00", "on-tertiary": "#ffffff", "primary-container": "#f5b800", "on-background": "#0b1c30", "inverse-primary": "#fabd0d", "secondary": "#5b5e67", "outline": "#827660", "on-tertiary-fixed": "#131b2e", "inverse-surface": "#213145", "tertiary-container": "#bac1db", "surface-container-low": "#eff4ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1rem", "space-lg": "1.25rem", "space-xl": "1.75rem", "gutter-sm": "0.75rem", "margin": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-sm": "0.75rem", "space-md": "0.875rem" }, "fontFamily": { "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "display-sm": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "metric-num": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["19px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-sm": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-sm": ["17px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 600,'GRAD' 0,'opsz' 24;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(11,28,48,0.06)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="AJ Earth Movers primary horizontal vector logo with transparent background, featuring the geometric 'AJ' excavator monogram and bold industrial typography." class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1U9_5po_xMcozyKVqZBMDrOL1MXgQF39AIvIgPOPNxWffbDJOy--8WRs1WuXJcaiHSmiarqfqBixfHaUSp3pSFE7vfoc5cf4ZAV-bzoi0t9jaXrOv5K7fvqEQpmm-KugVpSeIIz9Bi7LGihQ-nQp5b6yjM4_E9hL-wsC85DEX8iXle5EYi4QJWC2v1LeG_rXeZ69G5huv0b_0oJpKMyIxL6SXhWMSN2jX-J32VNwB6jcVx3k2UvOJuoKMI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-lg text-label-lg font-bold text-on-surface truncate">AJ Driver</span><span class="px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm tracking-wider uppercase font-bold">OPERATOR</span></div><span class="font-label-md text-label-md text-on-surface-variant truncate font-medium">Home</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="flex items-center gap-1 px-2 py-1 rounded-full bg-surface-container text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-sm text-label-sm font-bold tracking-tight text-on-surface">ONLINE 4G</span></div><a aria-label="Emergency SOS Call Supervisor" class="w-11 h-11 flex items-center justify-center rounded-xl bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors" href="tel:911"><span class="material-symbols-outlined text-[22px]">e911_emergency</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Section 1: Architecture Header Banner -->
+<div class="px-gutter pt-space-md pb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs pl-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wider uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+          V1.0 OPERATOR SYSTEM • 4-TAB ERGONOMICS
+        </span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-widest uppercase">SPEC-08</span>
+</div>
+<div class="pl-space-xs mb-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Driver Navigation & IA Spec</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Tactile Information Architecture tailored for JCB 3DX & heavy excavator operator field safety.</p>
+</div>
+<!-- High-contrast field principle callout -->
+<div class="bg-surface-container p-space-sm rounded-lg flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-on-surface text-surface flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">light_mode</span>
+</div>
+<div class="min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface block uppercase tracking-wide">Outdoor Field Hardening Guarantee</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Outdoor Daylight Contrast • Touch Zones ≥52px • Offline Lockout & Upload Retry Guarantees. Zero admin clutter.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Primary Bottom Bar Benchmark & State Indicator Model -->
+<div class="px-gutter pb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">dock_to_bottom</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Bottom Bar Ergonomics Model</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface font-bold uppercase">48-56px Target</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Live visual comparison of operator navigation states under high sunlight conditions with real-time sync indicators.</p>
+<!-- Simulated Bottom Bar In-Card -->
+<div class="bg-surface-container-high rounded-xl p-space-xs relative overflow-hidden shadow-inner">
+<div class="bg-surface-container-lowest rounded-lg p-space-xs flex items-center justify-around">
+<!-- Tab Item 1: Active (Home) -->
+<div class="flex flex-col items-center justify-center relative py-1 px-3 min-w-[70px] cursor-pointer" onclick="switchSpecTab('home')">
+<div class="w-10 h-1 bg-primary-container rounded-full mb-1"></div>
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px] text-on-surface" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping"></span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5 uppercase tracking-tight">Home</span>
+<span class="text-[9px] font-bold text-emerald-700 leading-none mt-0.5">SHIFT ON</span>
+</div>
+<!-- Tab Item 2: Inactive with Badge (My Work) -->
+<div class="flex flex-col items-center justify-center relative py-1 px-3 min-w-[70px] cursor-pointer opacity-85" onclick="switchSpecTab('work')">
+<div class="w-10 h-1 bg-transparent rounded-full mb-1"></div>
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px] text-tertiary">assignment</span>
+<span class="absolute -top-1.5 -right-3.5 px-1.5 py-0.2 rounded-full bg-amber-500 text-on-surface font-label-sm text-[10px] font-extrabold shadow-sm">1</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-tertiary mt-0.5 uppercase tracking-tight">My Work</span>
+<span class="text-[9px] font-bold text-amber-800 leading-none mt-0.5">1 PENDING</span>
+</div>
+<!-- Tab Item 3: Inactive (Analytics) -->
+<div class="flex flex-col items-center justify-center relative py-1 px-3 min-w-[70px] cursor-pointer opacity-80" onclick="switchSpecTab('analytics')">
+<div class="w-10 h-1 bg-transparent rounded-full mb-1"></div>
+<span class="material-symbols-outlined text-[24px] text-tertiary">monitoring</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary mt-0.5 uppercase tracking-tight">Analytics</span>
+<span class="text-[9px] font-medium text-tertiary leading-none mt-0.5">MY PAY</span>
+</div>
+<!-- Tab Item 4: Inactive (Profile) -->
+<div class="flex flex-col items-center justify-center relative py-1 px-3 min-w-[70px] cursor-pointer opacity-80" onclick="switchSpecTab('profile')">
+<div class="w-10 h-1 bg-transparent rounded-full mb-1"></div>
+<span class="material-symbols-outlined text-[24px] text-tertiary">badge</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary mt-0.5 uppercase tracking-tight">Profile</span>
+<span class="text-[9px] font-medium text-tertiary leading-none mt-0.5">DRV-084</span>
+</div>
+</div>
+</div>
+<!-- Spec Rules Grid -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-sm">
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center gap-1.5 text-on-surface font-label-md text-label-md font-bold mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+            Active Indicator Specs
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Top-anchored 40×4px Safety Amber pill (#F5B800), #0B1C30 bold text, solid icon glyph with high contrast luminance.</p>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center gap-1.5 text-on-surface font-label-md text-label-md font-bold mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+            Badge Status Rules
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">My Work counts pending supervisor approvals. Home shows pulsing green presence dot whenever an active shift clock is ticking.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: 4-Tab Screen Taxonomy & Content Model -->
+<div class="px-gutter pb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">4-Tab Screen Taxonomy</h2>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-tight">FIELD RUNTIME MODEL</span>
+</div>
+<!-- Accordion / Interactive Tab Cards -->
+<div class="space-y-space-sm" id="taxonomyContainer">
+<!-- TAB 1: HOME -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard('tax-home')">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tab 1: Home</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold uppercase">Cockpit</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Primary single-thumb field console for ongoing shifts</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" id="icon-tax-home">expand_less</span>
+</div>
+<div class="mt-space-md space-y-space-sm" id="body-tax-home">
+<!-- Active Assignment Live Mock -->
+<div class="bg-surface-container p-space-sm rounded-lg relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm font-bold uppercase text-tertiary tracking-wider">Live Assignment In-Progress</span>
+<span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-label-sm text-[11px] font-bold">WORKING</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-extrabold">JCB 3DX Super • #MH-12-EQ-8812</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">location_on</span>
+                  Metro Line 4 - Pier 14 North Yard
+                </div>
+</div>
+</div>
+<!-- Metric readout -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-sm">
+<div class="bg-surface-container-lowest p-space-xs rounded">
+<span class="font-label-sm text-label-sm text-tertiary block">Starting Meter</span>
+<span class="font-metric-num text-metric-num text-on-surface font-black">1248.5</span>
+<span class="font-label-sm text-label-sm text-tertiary">Hrs (08:00 AM)</span>
+</div>
+<div class="bg-surface-container-lowest p-space-xs rounded">
+<span class="font-label-sm text-label-sm text-tertiary block">Logged Today</span>
+<span class="font-metric-num text-metric-num text-emerald-700 font-black">5.5</span>
+<span class="font-label-sm text-label-sm text-tertiary">Engine Hours</span>
+</div>
+</div>
+<!-- Giant 1-Tap Field Button -->
+<button class="w-full h-12 mt-space-sm rounded-lg bg-on-surface text-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-md">
+<span class="material-symbols-outlined text-[20px] text-primary-container">camera_alt</span>
+              Record Closing Reading & End Shift
+            </button>
+</div>
+<!-- Pending Submission Alert Strip -->
+<div class="bg-amber-50 text-amber-900 p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-700 text-[20px]">pending_actions</span>
+<span class="font-body-sm text-body-sm font-semibold">Shift #8839 awaiting site supervisor verification</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-amber-800 underline">VIEW</span>
+</div>
+</div>
+</div>
+<!-- TAB 2: MY WORK -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard('tax-work')">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">assignment</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tab 2: My Work</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold uppercase">Logbook</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Filterable shift records, meter delta, and audit logs</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" id="icon-tax-work">expand_less</span>
+</div>
+<div class="mt-space-md space-y-space-sm" id="body-tax-work">
+<!-- Segmented Filter Bar Spec -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+<button class="h-9 px-3.5 rounded bg-on-surface text-surface font-label-md text-label-md font-bold whitespace-nowrap">All (28)</button>
+<button class="h-9 px-3.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap">Assigned (1)</button>
+<button class="h-9 px-3.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap">Pending (1)</button>
+<button class="h-9 px-3.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap">Completed (25)</button>
+<button class="h-9 px-3.5 rounded bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap">Rejected (1)</button>
+</div>
+<!-- Sample Work Card -->
+<div class="bg-surface-container p-space-sm rounded-lg relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">JCB 3DX #EQ-8812</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[10px] font-bold">APPROVED</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">YESTERDAY</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Southern Expressway Earth Cutting • Shift #8831</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs bg-surface-container-lowest p-2 rounded">
+<div class="text-left">
+<span class="font-label-sm text-label-sm text-tertiary block">Meter Interval</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">1239.5 → 1248.5</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-tertiary block">Approved Hours</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">9.0 Hrs</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: ANALYTICS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard('tax-analytics')">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tab 3: Analytics</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold uppercase">Driver Earnings</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Personal wage tracker with zero admin billing leak</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" id="icon-tax-analytics">expand_less</span>
+</div>
+<div class="mt-space-md space-y-space-sm" id="body-tax-analytics">
+<!-- Earnings Hero Card (Driver Rate Only) -->
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm font-bold uppercase text-tertiary">OCTOBER OPERATOR EARNINGS</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold">RATE: ₹130 / HR</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<span class="font-display-sm text-display-sm font-extrabold text-on-surface">₹24,960</span>
+<span class="font-body-sm text-body-sm text-emerald-700 font-bold ml-1">Est. Payable</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">192.0</span>
+<span class="font-body-sm text-body-sm text-tertiary">Total Hrs</span>
+</div>
+</div>
+<!-- Driver Wage Safety Callout -->
+<div class="mt-space-sm p-2 rounded bg-surface-container-lowest text-on-surface-variant font-body-sm text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">security</span>
+<span><strong>Data Isolation:</strong> Client billing (₹1,150/hr machinery rental markup) is strictly blocked by backend auth. Driver views strictly driver-payout mechanics.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 4: PROFILE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard('tax-profile')">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tab 4: Profile</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold uppercase">Identity & Hub</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Operator ID, heavy equipment badge, duty toggle</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" id="icon-tax-profile">expand_less</span>
+</div>
+<div class="mt-space-md space-y-space-sm" id="body-tax-profile">
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-on-surface text-surface flex items-center justify-center font-bold text-lg">
+                RS
+              </div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Rameshwar Shinde</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">ID: DRV-084 • Heavy Machine Class A</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              ON-DUTY
+            </div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm">
+<div class="bg-surface-container p-space-xs rounded">
+<span class="font-label-sm text-label-sm text-tertiary block">Yard Hub Contact</span>
+<span class="font-bold text-on-surface">+91 98200 44102</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded">
+<span class="font-label-sm text-label-sm text-tertiary block">App Release</span>
+<span class="font-bold text-on-surface">v2.4.1 (Build 412)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Strict Network Connectivity & Work Submission Rules -->
+<div class="px-gutter pb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-error text-[22px]">wifi_off</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Strict Network Connectivity Spec</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Mandatory online connectivity enforcement for hour meter photo submission & chronological integrity.</p>
+<!-- Rule Card -->
+<div class="bg-error-container text-on-error-container p-space-sm rounded-lg mb-space-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-error text-[20px]">gavel</span>
+<span class="font-label-lg text-label-lg font-bold">Zero Offline Submissions Rule</span>
+</div>
+<p class="font-body-sm text-body-sm leading-snug">
+          Offline work completion is <strong>STRICTLY DISABLED</strong>. Meter verification requires cryptographic timestamping and GPS geofence handshake to prevent chronological desync and meter rollback.
+        </p>
+</div>
+<!-- Live Comparison UI: Network Dropped State -->
+<div class="space-y-space-sm">
+<span class="font-label-md text-label-md font-bold uppercase text-tertiary tracking-wide">Graceful Failure & Upload Sandbox UI</span>
+<div class="bg-surface-container p-space-sm rounded-lg relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-amber-500 text-on-surface flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">cloud_sync</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Submission Held in Local Cache</span>
+<span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-label-sm text-label-sm font-extrabold uppercase">SECURE SANDBOX</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Network connection dropped during upload. Photo, GPS (18.5204° N, 73.8567° E), and Ending Meter <strong>1259.0</strong> safely encrypted on device.
+              </p>
+<!-- Giant Action Button for Retry -->
+<button class="w-full h-11 mt-space-sm rounded-lg bg-primary-container text-on-surface font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                Tap to Retry Upload When Connected
+              </button>
+</div>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-700 text-[18px]">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface">No fake green checks. State remains explicitly unverified until confirmed by server ACK.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 5: Back-Navigation Rules & Deep-Linking Matrix -->
+<div class="px-gutter pb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">alt_route</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Deep-Linking & Back Stack Matrix</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Deterministic push notification routing for outdoor glove navigation.</p>
+<!-- Matrix Table as Mobile Stack -->
+<div class="space-y-space-sm">
+<!-- Push Event 1 -->
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold uppercase">Push Notification</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">ACTION #1</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">"New Shift Assigned #WO-890"</div>
+<div class="mt-2 space-y-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[16px]">arrow_forward</span>
+<span><strong>Destination:</strong> Work Order Acceptance Bottom Sheet Modal</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[16px]">keyboard_backspace</span>
+<span><strong>Back Button Target:</strong> Tab 1: Home Dashboard (Clears modal stack)</span>
+</div>
+</div>
+</div>
+<!-- Push Event 2 -->
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold uppercase">Push Notification</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">ACTION #2</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">"Reading Approved by Admin (9.0 Hrs)"</div>
+<div class="mt-2 space-y-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[16px]">arrow_forward</span>
+<span><strong>Destination:</strong> Tab 2: My Work > Completed Shift Detail View</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[16px]">keyboard_backspace</span>
+<span><strong>Back Button Target:</strong> Tab 2 Root Filtered View</span>
+</div>
+</div>
+</div>
+<!-- Push Event 3 -->
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold uppercase">Critical Alert</span>
+<span class="font-label-sm text-label-sm text-error font-bold">DISPUTE</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">"Reading Rejected: Blurry Meter Image"</div>
+<div class="mt-2 space-y-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[16px]">arrow_forward</span>
+<span><strong>Destination:</strong> Dispute Resolution View + Camera Re-take Trigger</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[16px]">keyboard_backspace</span>
+<span><strong>Back Button Target:</strong> Prompts exit confirmation before aborting retake</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 6: Interactive Simulation Button -->
+<div class="px-gutter pb-space-xl">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="mb-space-sm text-center">
+<span class="font-label-md text-label-md font-bold text-tertiary uppercase tracking-wider">Field Test Dispatch Trigger</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold mt-0.5">Validate IA Deep-Link Navigation</h3>
+</div>
+<!-- Industrial Amber CTA -->
+<button class="w-full h-14 rounded-lg bg-primary-container text-on-surface font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-space-sm shadow-md active:scale-95 transition-all" id="simBtn" onclick="simulateDispatchNotification()">
+<span class="material-symbols-outlined text-[24px]">notification_important</span>
+        Simulate Shift Notification Event
+      </button>
+<!-- Simulation Feedback Toast (Hidden by default) -->
+<div class="hidden mt-space-sm p-space-sm bg-on-surface text-surface rounded-lg" id="simFeedback">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[22px] flex-shrink-0">notifications_active</span>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-primary-container">PUSH EVENT RECEIVED</span>
+<span class="text-[10px] text-surface-container-highest font-mono">JUST NOW</span>
+</div>
+<p class="font-body-sm text-body-sm mt-0.5 font-bold">New Work Order #WO-890: Trenching at Sector 11 Hub</p>
+<p class="font-label-sm text-label-sm text-surface-container-highest mt-1">Deep-link handler resolving stack: Home > Shift Modal</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleCard(cardId) {
+    var body = document.getElementById('body-' + cardId);
+    var icon = document.getElementById('icon-' + cardId);
+    if (!body || !icon) return;
+    if (body.classList.contains('hidden')) {
+      body.classList.remove('hidden');
+      icon.textContent = 'expand_less';
+    } else {
+      body.classList.add('hidden');
+      icon.textContent = 'expand_more';
+    }
+  }
+
+  function switchSpecTab(tabName) {
+    var taxonomyCards = {
+      'home': 'tax-home',
+      'work': 'tax-work',
+      'analytics': 'tax-analytics',
+      'profile': 'tax-profile'
+    };
+    
+    // Expand matching card, scroll smoothly into view
+    var targetId = taxonomyCards[tabName];
+    if (targetId) {
+      var body = document.getElementById('body-' + targetId);
+      var icon = document.getElementById('icon-' + targetId);
+      if (body && body.classList.contains('hidden')) {
+        body.classList.remove('hidden');
+        if (icon) icon.textContent = 'expand_less';
+      }
+      var el = document.getElementById(targetId) || body;
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  }
+
+  function simulateDispatchNotification() {
+    var feedback = document.getElementById('simFeedback');
+    var btn = document.getElementById('simBtn');
+    if (!feedback || !btn) return;
+    
+    btn.classList.add('opacity-75');
+    feedback.classList.remove('hidden');
+    
+    // Trigger visual highlight on Home Card
+    var homeBody = document.getElementById('body-tax-home');
+    var homeIcon = document.getElementById('icon-tax-home');
+    if (homeBody && homeBody.classList.contains('hidden')) {
+      homeBody.classList.remove('hidden');
+      if (homeIcon) homeIcon.textContent = 'expand_less';
+    }
+
+    setTimeout(function() {
+      btn.classList.remove('opacity-75');
+    }, 1200);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(11,28,48,0.06)]" data-active-classes="text-on-surface font-bold after:content-[''] after:absolute after:top-0 after:w-10 after:h-1 after:bg-primary-container after:rounded-full"><div class="flex items-center justify-around h-16 px-gutter"><a aria-current="page" class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] transition-colors active:scale-95 text-on-surface font-bold after:content-[''] after:absolute after:top-0 after:w-10 after:h-1 after:bg-primary-container after:rounded-full" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-md text-label-md tracking-tight uppercase">Home</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="my-work" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-label-md text-label-md tracking-tight uppercase">My Work</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="analytics" href="#"><span class="material-symbols-outlined text-[24px]">monitoring</span><span class="font-label-md text-label-md tracking-tight uppercase">Analytics</span></a><a class="relative flex flex-col items-center justify-center gap-0.5 flex-1 h-full min-h-[44px] text-tertiary transition-colors active:scale-95" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-label-md text-label-md tracking-tight uppercase">Profile</span></a></div></nav></body></html>

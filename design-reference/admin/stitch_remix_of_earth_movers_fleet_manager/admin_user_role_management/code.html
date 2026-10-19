@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#dae2fd", "surface": "#f8f9ff", "primary-container": "#f59e0b", "surface-bright": "#f8f9ff", "inverse-primary": "#ffb95f", "secondary-fixed": "#dae2fd", "surface-tint": "#855300", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#3a485c", "on-surface-variant": "#534434", "secondary": "#565e74", "primary-fixed": "#ffddb8", "surface-variant": "#d3e4fe", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "on-tertiary-fixed": "#0d1c2f", "surface-container-highest": "#d3e4fe", "surface-dim": "#cbdbf5", "tertiary-fixed-dim": "#b9c7e0", "background": "#f8f9ff", "outline-variant": "#d8c3ad", "tertiary-container": "#a3b2ca", "on-primary": "#ffffff", "on-primary-fixed-variant": "#653e00", "primary-fixed-dim": "#ffb95f", "on-error-container": "#93000a", "surface-container-low": "#eff4ff", "primary": "#855300", "outline": "#867461", "on-background": "#0b1c30", "on-primary-fixed": "#2a1700", "on-secondary": "#ffffff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "tertiary": "#515f74", "secondary-fixed-dim": "#bec6e0", "inverse-surface": "#213145", "on-primary-container": "#613b00", "surface-container-high": "#dce9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#374559", "surface-container": "#e5eeff", "tertiary-fixed": "#d5e3fd", "error-container": "#ffdad6", "on-surface": "#0b1c30", "inverse-on-surface": "#eaf1ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter": "1rem", "gutter-desktop": "1.5rem", "margin-desktop": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "margin": "1rem" }, fontFamily: { "headline-xl": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "label-caps": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "label-numeric-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Inter"], "label-numeric-sm": ["JetBrains Mono"], "headline-xl-mobile": ["Inter"], "label-numeric-md": ["JetBrains Mono"] }, fontSize: { "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-numeric-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-numeric-sm": ["13px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-numeric-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="AJ EARTH MOVERS Mobile App Icon &amp; Machine Emblem (Square 1:1 format). Rugged industrial aesthetic, deep charcoal (#20242B) squircle frame, high-visibility construction yellow (#F5B800) and pure white excavator boom &amp; bucket 'AJ' monogram. Optimized for 48px to 512px app icons, machine stickers, and driver uniform patches.. Brand logo. - Primary color: #f59e0b - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1ULY_2Q2RTWx22EUwBaHJ-VV1iK2wtViKwm1BkX1yhmdADTgcLkOqlmFzDvz4B2xr_CDjtavtCRm-LL_jEOP0CMK-_F-MBjSOUx7Rv5QjnYo5wz4fOnYEIj4Tco4-p7QryNh4PTXW3TQIAicctMzy5ksMwCVmdpXM0meHsmf9l49qbeEpWI3HbrvarIoWkmQojJHWTOEPH4DwyvCY1yj1XuXAsP_s_ESvm5DwUw0vqj1VnRGIWq2X4Iv3s"/><div class="flex flex-col"><span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">AJ Earth Movers</span><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Dashboard</span></div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-surface-variant rounded-lg"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive View State Selector (Admin Demonstration Bar) -->
+<div class="px-gutter pt-3 pb-2 bg-surface-container-high/60 backdrop-blur-md">
+<div class="flex items-center justify-between gap-space-xs overflow-x-auto no-scrollbar py-1">
+<span class="font-label-caps text-label-caps text-primary uppercase whitespace-nowrap flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span> View State:
+      </span>
+<div class="inline-flex rounded-lg bg-surface-container-lowest p-0.5 shadow-sm">
+<button class="px-2.5 py-1 text-xs font-semibold rounded-md bg-inverse-surface text-inverse-on-surface shadow-xs transition-all" id="viewBtnActive" onclick="switchState('active')">
+          Active (5)
+        </button>
+<button class="px-2.5 py-1 text-xs font-medium rounded-md text-secondary hover:text-on-surface transition-all" id="viewBtnEmpty" onclick="switchState('empty')">
+          Empty Search
+        </button>
+<button class="px-2.5 py-1 text-xs font-medium rounded-md text-secondary hover:text-on-surface transition-all" id="viewBtnDenied" onclick="switchState('denied')">
+          Staff View (Denied)
+        </button>
+</div>
+</div>
+</div>
+<!-- Breadcrumb & RBAC Security Header -->
+<div class="px-gutter pt-4 pb-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button aria-label="Go back to settings" class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-xs active:translate-y-0.5 transition-transform">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">User &amp; Roles</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-primary/10 text-primary rounded text-[10px] font-bold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[12px]">security</span> RBAC SECURED
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Depot staff credentials &amp; module permissions</span>
+</div>
+</div>
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-container/20 text-on-primary-container">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</span>
+</div>
+<!-- Security Notification Banner -->
+<div class="p-2.5 bg-surface-container-low rounded-xl shadow-xs flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">admin_panel_settings</span>
+<div class="flex-1">
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold tracking-wider">Owner Authority Enforced</p>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight mt-0.5">
+          Only Ramesh Sharma can authorize <span class="font-semibold text-primary">Meter Sign-Off</span> &amp; <span class="font-semibold text-primary">Financial Settlement</span> keys.
+        </p>
+</div>
+</div>
+</div>
+<!-- Main View States Container -->
+<div class="flex flex-col gap-4 px-gutter pb-6" id="contentActiveState">
+<!-- Stat Counter & Primary Action Button -->
+<div class="flex flex-col sm:flex-row gap-3 items-stretch justify-between">
+<!-- Quick Counter Pills -->
+<div class="grid grid-cols-3 gap-2 flex-1">
+<div class="bg-surface-container-lowest rounded-xl p-2.5 shadow-xs flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Total Staff</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">8</span>
+<span class="font-body-sm text-body-sm text-secondary">Seats</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-2.5 shadow-xs flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Active</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">7</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-2.5 shadow-xs flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Pending</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">1</span>
+</div>
+</div>
+</div>
+<!-- High-Tactile Primary CTA -->
+<button class="h-12 px-4 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md hover:bg-primary-container/90 active:translate-y-0.5 transition-all" onclick="openDrawer('addAdminModal')">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Add Administrator</span>
+</button>
+</div>
+<!-- Search Bar & Role Filter Pills -->
+<div class="flex flex-col gap-2">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]">search</span>
+<input class="w-full h-12 pl-10 pr-9 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-xs focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-secondary/70" id="searchInput" oninput="handleSearch(this.value)" placeholder="Search by name, phone or email..." type="text"/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-secondary hover:text-on-surface" id="clearSearchBtn" onclick="clearSearch()">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+<button class="role-pill active h-8 px-3 rounded-full text-xs font-semibold bg-inverse-surface text-inverse-on-surface shadow-xs whitespace-nowrap transition-all" onclick="filterRole('all', this)">
+          All (8)
+        </button>
+<button class="role-pill h-8 px-3 rounded-full text-xs font-medium bg-surface-container-lowest text-secondary shadow-xs whitespace-nowrap transition-all" onclick="filterRole('Owner', this)">
+          Owner (1)
+        </button>
+<button class="role-pill h-8 px-3 rounded-full text-xs font-medium bg-surface-container-lowest text-secondary shadow-xs whitespace-nowrap transition-all" onclick="filterRole('Manager', this)">
+          Manager (3)
+        </button>
+<button class="role-pill h-8 px-3 rounded-full text-xs font-medium bg-surface-container-lowest text-secondary shadow-xs whitespace-nowrap transition-all" onclick="filterRole('Accounts Staff', this)">
+          Accounts Staff (4)
+        </button>
+</div>
+</div>
+<!-- User Cards List -->
+<div class="flex flex-col gap-3" id="usersList">
+<!-- Card 1: Owner (Ramesh Sharma) -->
+<div class="user-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative" data-name="Ramesh Sharma" data-role="Owner" data-status="Active">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-inverse-surface flex items-center justify-center text-primary-container shadow-xs">
+<span class="material-symbols-outlined text-[24px]">shield_person</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Ramesh Sharma</span>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-high text-secondary">You</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 font-label-numeric-sm text-label-numeric-sm text-secondary">
+<span>+91 98450 •••••</span>
+<span>•</span>
+<span class="font-body-sm text-body-sm truncate max-w-[140px]">ramesh.admin@ajearthmovers.com</span>
+</div>
+</div>
+</div>
+<!-- Role Pill -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">military_tech</span> Owner
+          </span>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg flex items-center justify-between text-xs">
+<div class="flex items-center gap-1.5 text-emerald-700 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Active • Active now
+          </div>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-semibold">Depot: All Karnataka Yards</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-secondary">Privilege Scope:</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Full Fleet Telematics</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Driver Payroll &amp; Batta</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Work Order Sign-Off</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Meter Approvals</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Financial Settlements</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">RBAC Security Admin</span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="pt-2 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-secondary italic flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span> Primary Root Admin (Locked)
+          </span>
+<button class="h-9 px-3 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold flex items-center gap-1 active:scale-95 transition-transform" onclick="openPermissionMatrix('Ramesh Sharma', 'Owner')">
+<span>View Permissions</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Manager (Vikramaditya Patel) -->
+<div class="user-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative" data-name="Vikramaditya Patel" data-role="Manager" data-status="Active">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-xs font-headline-sm font-bold">
+              VP
+            </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Vikramaditya Patel</span>
+<div class="flex items-center gap-2 mt-0.5 font-label-numeric-sm text-label-numeric-sm text-secondary">
+<span>+91 94481 20912</span>
+<span>•</span>
+<span class="font-body-sm text-body-sm truncate max-w-[140px]">vikram.ops@ajearthmovers.com</span>
+</div>
+</div>
+</div>
+<!-- Role Pill -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface text-xs font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">engineering</span> Manager
+          </span>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg flex items-center justify-between text-xs">
+<div class="flex items-center gap-1.5 text-emerald-700 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Active • 18m ago (Shift dispatch)
+          </div>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-semibold">Whitefield &amp; Peenya Yard</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-secondary">Authorized Modules:</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Fleet &amp; Heavy Units</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Driver Shifts</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Work Orders</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Hour Meter Log</span>
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error text-[11px] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">block</span> Invoices Restricted
+            </span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="pt-2 flex items-center justify-end gap-2">
+<button class="h-9 px-3 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold flex items-center gap-1 active:scale-95 transition-transform" onclick="openPermissionMatrix('Vikramaditya Patel', 'Manager')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Roles</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container text-error text-xs font-semibold flex items-center gap-1 hover:bg-error-container active:scale-95 transition-all" onclick="promptDeactivate('Vikramaditya Patel', 'Manager')">
+<span class="material-symbols-outlined text-[16px]">no_accounts</span>
+<span>Deactivate</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Accounts Staff (Kavitha Sundaram) -->
+<div class="user-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative" data-name="Kavitha Sundaram" data-role="Accounts Staff" data-status="Active">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shadow-xs font-headline-sm font-bold">
+              KS
+            </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Kavitha Sundaram</span>
+<div class="flex items-center gap-2 mt-0.5 font-label-numeric-sm text-label-numeric-sm text-secondary">
+<span>+91 98862 44109</span>
+<span>•</span>
+<span class="font-body-sm text-body-sm truncate max-w-[140px]">accounts1@ajearthmovers.com</span>
+</div>
+</div>
+</div>
+<!-- Role Pill -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span> Accounts Staff
+          </span>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg flex items-center justify-between text-xs">
+<div class="flex items-center gap-1.5 text-emerald-700 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Active • Today 11:30 AM
+          </div>
+<span class="font-label-caps text-label-caps text-secondary uppercase font-semibold">Central Accounts HQ</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-secondary">Authorized Modules:</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">GST Invoices &amp; Ledger</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Diesel Vendor Payments</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-[11px] font-medium">Work Order (Read-Only)</span>
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error text-[11px] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">block</span> Machine Allocation
+            </span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="pt-2 flex items-center justify-end gap-2">
+<button class="h-9 px-3 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold flex items-center gap-1 active:scale-95 transition-transform" onclick="openPermissionMatrix('Kavitha Sundaram', 'Accounts Staff')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Roles</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container text-error text-xs font-semibold flex items-center gap-1 hover:bg-error-container active:scale-95 transition-all" onclick="promptDeactivate('Kavitha Sundaram', 'Accounts Staff')">
+<span class="material-symbols-outlined text-[16px]">no_accounts</span>
+<span>Deactivate</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Manager (Rajesh M. Gowda - Pending Setup) -->
+<div class="user-card bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative" data-name="Rajesh M. Gowda" data-role="Manager" data-status="Pending">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shadow-xs font-headline-sm font-bold">
+              RG
+            </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Rajesh M. Gowda</span>
+<div class="flex items-center gap-2 mt-0.5 font-label-numeric-sm text-label-numeric-sm text-secondary">
+<span>+91 97410 88320</span>
+<span>•</span>
+<span class="font-body-sm text-body-sm truncate max-w-[140px]">rajesh.site@ajearthmovers.com</span>
+</div>
+</div>
+</div>
+<!-- Role Pill -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">pending</span> Pending Setup
+          </span>
+</div>
+<div class="p-2.5 bg-amber-50 rounded-lg flex items-center justify-between text-xs text-amber-900">
+<span class="flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-[16px]">mail</span> Invite sent 2 days ago
+          </span>
+<span class="font-label-numeric-sm text-label-numeric-sm font-semibold">Expires in 5 days</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps uppercase text-secondary">Pre-assigned Role:</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Site Supervisor (Bellary Quarry Sector 4)</span>
+</div>
+<!-- Action Row -->
+<div class="pt-2 flex items-center justify-end gap-2">
+<button class="h-9 px-3 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold flex items-center gap-1 active:scale-95 transition-transform" onclick="showToast('Invitation SMS &amp; Email re-sent to Rajesh M. Gowda!')">
+<span class="material-symbols-outlined text-[16px]">forward_to_inbox</span>
+<span>Resend Invite</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container text-error text-xs font-semibold flex items-center gap-1 hover:bg-error-container active:scale-95 transition-all" onclick="promptRevoke('Rajesh M. Gowda')">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Revoke</span>
+</button>
+</div>
+</div>
+<!-- Card 5: Accounts Staff (Suresh Kumar Sen - Deactivated) -->
+<div class="user-card bg-surface-container-lowest/80 rounded-xl p-3.5 shadow-sm flex flex-col gap-3 relative opacity-85" data-name="Suresh Kumar Sen" data-role="Accounts Staff" data-status="Deactivated">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-secondary shadow-xs font-headline-sm font-bold">
+              SS
+            </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary line-through">Suresh Kumar Sen</span>
+<span class="font-body-sm text-body-sm text-secondary truncate max-w-[200px]">suresh.k@ajearthmovers.com</span>
+</div>
+</div>
+<!-- Role Pill -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container text-xs font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">lock_person</span> Deactivated
+          </span>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg flex items-center justify-between text-xs text-secondary">
+<span>Deactivated on 12 Oct 2024 by Owner</span>
+<span class="font-label-caps text-label-caps uppercase">All Keys Revoked</span>
+</div>
+<!-- Action Row -->
+<div class="pt-2 flex items-center justify-end gap-2">
+<button class="h-9 px-3 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold flex items-center gap-1 active:scale-95 transition-transform" onclick="showToast('Suresh Kumar Sen account restored.')">
+<span class="material-symbols-outlined text-[16px]">restore</span>
+<span>Reactivate</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container text-secondary text-xs font-semibold flex items-center gap-1 hover:text-error active:scale-95 transition-all" onclick="showToast('Permanent audit record archived.')">
+<span class="material-symbols-outlined text-[16px]">delete_outline</span>
+<span>Purge Data</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Role Definition Reference Accordion -->
+<div class="mt-2 bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between cursor-pointer" onclick="togglePrivilegeMatrix()">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">format_list_bulleted</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Standard Permission Matrix (6 Modules)</span>
+</div>
+<span class="material-symbols-outlined text-secondary transition-transform" id="matrixChevron">expand_more</span>
+</div>
+<div class="hidden flex-col gap-2.5 pt-2" id="matrixBody">
+<p class="font-body-sm text-body-sm text-secondary">AJ Earth Movers implements strict multi-tier segregation of operational duty across quarry yards.</p>
+<div class="grid grid-cols-1 gap-2 pt-1">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">precision_manufacturing</span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-bold text-on-surface">1. Fleet &amp; Vehicle Allocation</span>
+<p class="font-body-sm text-body-sm text-secondary">Asset mobilization, GPS corridor alerts, service yard maintenance punches.</p>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">badge</span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-bold text-on-surface">2. Operator &amp; Driver Payroll</span>
+<p class="font-body-sm text-body-sm text-secondary">Batta daily allowances, overtime calculation, operator punch-in verification.</p>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">assignment</span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-bold text-on-surface">3. Work Orders &amp; Site Dispatch</span>
+<p class="font-body-sm text-body-sm text-secondary">Client PO matching, machine mobilization trip sheets, site clearance.</p>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">speed</span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-bold text-on-surface">4. Meter &amp; Fuel Sign-Off</span>
+<p class="font-body-sm text-body-sm text-secondary">SMU hour-meter photo audits, diesel log slip approval (Owner + Lead Manager only).</p>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">receipt</span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-bold text-on-surface">5. Invoices &amp; Ledger Settlements</span>
+<p class="font-body-sm text-body-sm text-secondary">GST billing, wet-rate client statements, credit memos, bank reconciliation.</p>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">bar_chart</span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-bold text-on-surface">6. Telemetry &amp; Corporate Settings</span>
+<p class="font-body-sm text-body-sm text-secondary">Yard machine depreciation rates, hourly client rate cards, staff credentials.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- VIEW STATE: Empty Search State -->
+<div class="hidden flex-col items-center justify-center px-gutter py-12 text-center" id="contentEmptyState">
+<div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-[36px]">person_search</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">No administrators match your criteria</span>
+<p class="font-body-sm text-body-sm text-secondary max-w-[280px] mt-1">
+      We couldn't find any team member matching this filter. Try adjusting your query or role tabs.
+    </p>
+<button class="mt-5 h-10 px-4 rounded-xl bg-surface-container-high text-on-surface text-xs font-semibold flex items-center gap-1.5 shadow-xs" onclick="switchState('active')">
+<span class="material-symbols-outlined text-[16px]">refresh</span> Reset Filters
+    </button>
+</div>
+<!-- VIEW STATE: Access Denied (Simulated Accounts Staff View) -->
+<div class="hidden flex-col items-center justify-center px-gutter py-12 text-center" id="contentDeniedState">
+<div class="w-20 h-20 rounded-full bg-error-container text-on-error-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[36px]">gpp_bad</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Restricted Authority Zone</span>
+<p class="font-body-sm text-body-sm text-secondary max-w-[290px] mt-2">
+      You are currently viewing this terminal under the <strong class="text-on-surface">Accounts Staff</strong> profile. Role management and permission elevations require <strong class="text-primary">Owner credentials</strong>.
+    </p>
+<div class="mt-6 w-full max-w-[320px] bg-surface-container-lowest p-3.5 rounded-xl shadow-xs text-left flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-bold text-secondary uppercase font-label-caps">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span> Incident Logged
+      </div>
+<p class="text-xs text-secondary leading-relaxed">
+        Terminal: Mobile Android Web • User: kavitha.s@ajearthmovers.com • Status: Unauthorized attempt prevented.
+      </p>
+</div>
+<button class="mt-6 h-11 px-5 rounded-xl bg-inverse-surface text-inverse-on-surface text-xs font-semibold flex items-center gap-2 shadow-sm" onclick="switchState('active')">
+<span class="material-symbols-outlined text-[18px]">verified_user</span> Return to Fleet Owner View
+    </button>
+</div>
+<!-- MODAL A: Deactivate Confirmation Dialog -->
+<div class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-inverse-surface/60 backdrop-blur-xs p-4" id="deactivateModal">
+<div class="bg-surface-container-lowest w-full max-w-sm rounded-2xl p-5 shadow-2xl flex flex-col gap-4 animate-in fade-in zoom-in duration-200">
+<div class="flex items-center gap-3 text-error">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Confirm Deactivation</span>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Immediate Key Revocation</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+        Deactivating <strong class="text-on-surface" id="deactivateUserName">Vikramaditya Patel</strong> will immediately terminate their active session, cancel their yard sign-off token, and redirect unapproved fuel logs to the Fleet Owner.
+      </p>
+<div class="p-2.5 bg-surface-container-low rounded-lg text-xs text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-amber-700">lock_reset</span>
+<span>Reactivation requires SMS OTP approval from Ramesh Sharma.</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-11 rounded-xl bg-surface-container text-on-surface text-xs font-semibold active:scale-95 transition-all" onclick="closeModal('deactivateModal')">
+          Cancel
+        </button>
+<button class="h-11 rounded-xl bg-error text-on-error text-xs font-semibold shadow-xs active:scale-95 transition-all" onclick="confirmDeactivation()">
+          Deactivate Staff
+        </button>
+</div>
+</div>
+</div>
+<!-- DRAWER B: Add Administrator / Edit Roles Drawer -->
+<div class="hidden fixed inset-0 z-50 flex items-end justify-center bg-inverse-surface/60 backdrop-blur-xs" id="addAdminModal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-t-2xl p-5 shadow-2xl flex flex-col gap-4 max-h-[751px] overflow-y-auto">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="drawerTitle">Add Administrator</span>
+<p class="font-body-sm text-body-sm text-secondary">Assign depot &amp; custom RBAC modules</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary" onclick="closeModal('addAdminModal')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Form Inputs -->
+<div class="flex flex-col gap-3">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps uppercase text-secondary">Full Name</label>
+<input class="h-11 px-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" id="adminNameInput" placeholder="e.g., Harish N. Reddy" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps uppercase text-secondary">Mobile (+91)</label>
+<input class="h-11 px-3 rounded-xl bg-surface-container-low text-on-surface font-label-numeric-sm text-label-numeric-sm focus:outline-none focus:ring-2 focus:ring-primary" id="adminPhoneInput" placeholder="98451 00000" type="tel"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps uppercase text-secondary">Depot Location</label>
+<select class="h-11 px-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary">
+<option>Whitefield Depot</option>
+<option>Peenya Heavy Yard</option>
+<option>Bellary Quarry Zone</option>
+<option>Central Accounts HQ</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps uppercase text-secondary">Official Work Email</label>
+<input class="h-11 px-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" id="adminEmailInput" placeholder="harish.ops@ajearthmovers.com" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps uppercase text-secondary">Primary Role Tier</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 p-2.5 rounded-xl bg-surface-container-low cursor-pointer">
+<input checked="" class="text-primary focus:ring-0" name="adminRole" type="radio" value="Manager"/>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Manager</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl bg-surface-container-low cursor-pointer">
+<input class="text-primary focus:ring-0" name="adminRole" type="radio" value="Accounts Staff"/>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Accounts Staff</span>
+</label>
+</div>
+</div>
+<!-- Granular Checkboxes -->
+<div class="flex flex-col gap-2 pt-1">
+<span class="font-label-caps text-label-caps uppercase text-secondary">Select Authorized Permission Keys</span>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low text-xs">
+<span class="font-medium text-on-surface">1. Fleet &amp; Vehicle Allocation</span>
+<input checked="" class="rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low text-xs">
+<span class="font-medium text-on-surface">2. Driver Shift &amp; Batta Payroll</span>
+<input checked="" class="rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low text-xs">
+<span class="font-medium text-on-surface">3. Work Orders &amp; Machine Dispatch</span>
+<input checked="" class="rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low text-xs">
+<span class="font-medium text-on-surface">4. Meter Audit &amp; Diesel Slip Sign-Off</span>
+<input class="rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low text-xs">
+<span class="font-medium text-on-surface">5. Invoices &amp; Ledger Settlements</span>
+<input class="rounded text-primary focus:ring-0 w-4 h-4" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="pt-2 flex flex-col gap-2">
+<button class="h-12 w-full rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-md active:translate-y-0.5 transition-all" onclick="submitAdminUser()">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Send Access Invite</span>
+</button>
+<button class="h-10 w-full text-secondary font-body-sm text-body-sm hover:text-on-surface" onclick="closeModal('addAdminModal')">
+          Dismiss
+        </button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2 px-4 py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface font-body-sm text-body-sm shadow-xl transition-all" id="toastNotification">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span id="toastMessage">Action completed successfully</span>
+</div>
+</div>
+<script>
+  // UI Interactive State Logic
+  let activeRoleFilter = 'all';
+
+  function switchState(stateName) {
+    const activeView = document.getElementById('contentActiveState');
+    const emptyView = document.getElementById('contentEmptyState');
+    const deniedView = document.getElementById('contentDeniedState');
+
+    const btnActive = document.getElementById('viewBtnActive');
+    const btnEmpty = document.getElementById('viewBtnEmpty');
+    const btnDenied = document.getElementById('viewBtnDenied');
+
+    // Reset Buttons
+    [btnActive, btnEmpty, btnDenied].forEach(b => {
+      b.className = "px-2.5 py-1 text-xs font-medium rounded-md text-secondary hover:text-on-surface transition-all";
+    });
+
+    if (stateName === 'active') {
+      activeView.classList.remove('hidden');
+      emptyView.classList.add('hidden');
+      deniedView.classList.add('hidden');
+      btnActive.className = "px-2.5 py-1 text-xs font-semibold rounded-md bg-inverse-surface text-inverse-on-surface shadow-xs transition-all";
+    } else if (stateName === 'empty') {
+      activeView.classList.add('hidden');
+      emptyView.classList.remove('hidden');
+      deniedView.classList.add('hidden');
+      btnEmpty.className = "px-2.5 py-1 text-xs font-semibold rounded-md bg-inverse-surface text-inverse-on-surface shadow-xs transition-all";
+    } else if (stateName === 'denied') {
+      activeView.classList.add('hidden');
+      emptyView.classList.add('hidden');
+      deniedView.classList.remove('hidden');
+      btnDenied.className = "px-2.5 py-1 text-xs font-semibold rounded-md bg-inverse-surface text-inverse-on-surface shadow-xs transition-all";
+    }
+  }
+
+  function handleSearch(query) {
+    const term = query.toLowerCase().trim();
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const cards = document.querySelectorAll('.user-card');
+    let matchedCount = 0;
+
+    if (term.length > 0) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+
+    cards.forEach(card => {
+      const name = (card.getAttribute('data-name') || '').toLowerCase();
+      const role = (card.getAttribute('data-role') || '');
+      const roleMatches = activeRoleFilter === 'all' || role === activeRoleFilter;
+      const termMatches = name.includes(term);
+
+      if (roleMatches && termMatches) {
+        card.classList.remove('hidden');
+        matchedCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    const emptyState = document.getElementById('contentEmptyState');
+    const activeContent = document.getElementById('usersList');
+    if (matchedCount === 0) {
+      activeContent.classList.add('hidden');
+      emptyState.classList.remove('hidden');
+    } else {
+      activeContent.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+    }
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('searchInput');
+    input.value = '';
+    handleSearch('');
+  }
+
+  function filterRole(roleName, element) {
+    activeRoleFilter = roleName;
+    document.querySelectorAll('.role-pill').forEach(btn => {
+      btn.className = "role-pill h-8 px-3 rounded-full text-xs font-medium bg-surface-container-lowest text-secondary shadow-xs whitespace-nowrap transition-all";
+    });
+    element.className = "role-pill active h-8 px-3 rounded-full text-xs font-semibold bg-inverse-surface text-inverse-on-surface shadow-xs whitespace-nowrap transition-all";
+
+    const currentQuery = document.getElementById('searchInput').value;
+    handleSearch(currentQuery);
+  }
+
+  function togglePrivilegeMatrix() {
+    const body = document.getElementById('matrixBody');
+    const chevron = document.getElementById('matrixChevron');
+    if (body.classList.contains('hidden')) {
+      body.classList.remove('hidden');
+      body.classList.add('flex');
+      chevron.style.transform = 'rotate(180deg)';
+    } else {
+      body.classList.add('hidden');
+      body.classList.remove('flex');
+      chevron.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  let userToDeactivate = '';
+  function promptDeactivate(name, role) {
+    userToDeactivate = name;
+    document.getElementById('deactivateUserName').innerText = name + ' (' + role + ')';
+    document.getElementById('deactivateModal').classList.remove('hidden');
+  }
+
+  function promptRevoke(name) {
+    showToast('Invitation link for ' + name + ' was revoked.');
+  }
+
+  function confirmDeactivation() {
+    closeModal('deactivateModal');
+    showToast(userToDeactivate + ' successfully deactivated.');
+  }
+
+  function openPermissionMatrix(name, role) {
+    document.getElementById('drawerTitle').innerText = 'Edit Privileges: ' + name;
+    document.getElementById('adminNameInput').value = name;
+    openDrawer('addAdminModal');
+  }
+
+  function openDrawer(modalId) {
+    document.getElementById(modalId).classList.remove('hidden');
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add('hidden');
+  }
+
+  function submitAdminUser() {
+    const name = document.getElementById('adminNameInput').value || 'New Staff';
+    closeModal('addAdminModal');
+    showToast('Security invite dispatched to ' + name);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = msg;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 3200);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-caps text-label-caps mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="work-orders" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-label-caps text-label-caps mt-0.5">Work</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="fleet-inventory" href="#"><span class="material-symbols-outlined text-[22px]">precision_manufacturing</span><span class="font-label-caps text-label-caps mt-0.5">Fleet</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="finance-ledgers" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-caps text-label-caps mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant transition-colors" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-caps text-label-caps mt-0.5">More</span></a></div></nav>
+</body></html>
