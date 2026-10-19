@@ -1,5 +1,6 @@
 import "./loadEnv.js";
 // Vercel only accepts an entry file that imports fastify itself, so the factory is passed in from here.
+import type { IncomingMessage, ServerResponse } from "node:http";
 import Fastify from "fastify";
 import { buildApp } from "./buildApp.js";
 import { loadConfig } from "./config.js";
@@ -15,14 +16,23 @@ const db = createDb();
 const storage = config.PHOTO_STORAGE === "vercel-blob" ? vercelBlobPhotoStorage() : localPhotoStorage(config.PHOTO_STORAGE_DIR);
 const app = await buildApp({ config, db, storage }, { fastify: Fastify });
 
-const shutdown = async () => {
-  await app.close();
-  await db.$disconnect();
-  process.exit(0);
-};
-process.on("SIGINT", shutdown);
-process.on("SIGTERM", shutdown);
+/**
+ * Vercel entry: Vercel calls this for every request. The app is built once per instance
+ * (module scope) and reused while the instance stays warm.
+ */
+const ready = app.ready();
+export default async function handler(req: IncomingMessage, res: ServerResponse) {
+  await ready;
+  app.server.emit("request", req, res);
+}
 
-// On Vercel, listen exactly as its Fastify integration documents (port 3000 unless PORT is given, default host),
-// so the platform can route requests to the server. Locally, use the configured address.
-await app.listen(process.env.VERCEL ? { port: Number(process.env.PORT) || 3000 } : { port: config.PORT, host: config.HOST });
+if (!process.env.VERCEL) {
+  const shutdown = async () => {
+    await app.close();
+    await db.$disconnect();
+    process.exit(0);
+  };
+  process.on("SIGINT", shutdown);
+  process.on("SIGTERM", shutdown);
+  await app.listen({ port: config.PORT, host: config.HOST });
+}
