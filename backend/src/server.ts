@@ -1,5 +1,5 @@
 import "./loadEnv.js";
-import { buildApp } from "./app.js";
+import { buildApp } from "./buildApp.js";
 import { loadConfig } from "./config.js";
 import { createDb } from "./db.js";
 import { localPhotoStorage, vercelBlobPhotoStorage } from "./lib/storage.js";

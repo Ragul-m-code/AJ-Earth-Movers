@@ -1,6 +1,6 @@
 import type { FastifyPluginAsync } from "fastify";
 import { z } from "zod";
-import type { AppDeps } from "../app.js";
+import type { AppDeps } from "../buildApp.js";
 import { hashSecret, login, requireAdmin, requireAuth, validateNewPassword } from "../lib/auth.js";
 import { audit } from "../lib/audit.js";
 import { AppError } from "../lib/errors.js";

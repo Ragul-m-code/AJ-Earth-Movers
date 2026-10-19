@@ -1,6 +1,6 @@
 import type { FastifyPluginAsync, FastifyRequest } from "fastify";
 import { z } from "zod";
-import type { AppDeps } from "../app.js";
+import type { AppDeps } from "../buildApp.js";
 import { istDateString, monthRange } from "../domain/time.js";
 import { requireAdmin } from "../lib/auth.js";
 import { ALL_MODULES } from "../lib/permissions.js";

@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { Prisma } from "@prisma/client";
 import type { FastifyInstance } from "fastify";
-import { buildApp } from "../../src/app.js";
+import { buildApp } from "../../src/buildApp.js";
 import { loadConfig } from "../../src/config.js";
 import { createDb, type Db } from "../../src/db.js";
 import { dateOnly } from "../../src/domain/time.js";

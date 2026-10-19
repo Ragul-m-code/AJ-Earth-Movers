@@ -1,6 +1,6 @@
 import type { FastifyPluginAsync, FastifyRequest } from "fastify";
 import { z } from "zod";
-import type { AppDeps } from "../app.js";
+import type { AppDeps } from "../buildApp.js";
 import { dateOnly, dateOnlyString, istDateString } from "../domain/time.js";
 import { requireDriver } from "../lib/auth.js";
 import { badRequest } from "../lib/errors.js";
