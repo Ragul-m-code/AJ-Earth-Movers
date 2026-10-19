@@ -23,4 +23,6 @@ const shutdown = async () => {
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
 
-await app.listen({ port: config.PORT, host: config.HOST });
+// On Vercel, listen exactly as its Fastify integration documents (port 3000 unless PORT is given, default host),
+// so the platform can route requests to the server. Locally, use the configured address.
+await app.listen(process.env.VERCEL ? { port: Number(process.env.PORT) || 3000 } : { port: config.PORT, host: config.HOST });
