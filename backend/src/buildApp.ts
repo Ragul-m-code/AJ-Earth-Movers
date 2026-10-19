@@ -20,8 +20,8 @@ export interface AppDeps {
   storage: PhotoStorage;
 }
 
-export async function buildApp(deps: AppDeps, opts: { logger?: boolean } = {}): Promise<FastifyInstance> {
-  const app = Fastify({
+export async function buildApp(deps: AppDeps, opts: { logger?: boolean; fastify?: typeof Fastify } = {}): Promise<FastifyInstance> {
+  const app = (opts.fastify ?? Fastify)({
     logger: opts.logger === false ? false : { redact: ["req.headers.authorization", "req.body.pin", "req.body.password"] },
     trustProxy: deps.config.TRUST_PROXY ? deps.config.TRUST_PROXY === "true" : Boolean(process.env.VERCEL),
   });

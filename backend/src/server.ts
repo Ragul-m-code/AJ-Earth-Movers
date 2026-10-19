@@ -1,4 +1,6 @@
 import "./loadEnv.js";
+// Vercel only accepts an entry file that imports fastify itself, so the factory is passed in from here.
+import Fastify from "fastify";
 import { buildApp } from "./buildApp.js";
 import { loadConfig } from "./config.js";
 import { createDb } from "./db.js";
@@ -11,7 +13,7 @@ if (process.env.VERCEL && config.PHOTO_STORAGE !== "vercel-blob") {
 }
 const db = createDb();
 const storage = config.PHOTO_STORAGE === "vercel-blob" ? vercelBlobPhotoStorage() : localPhotoStorage(config.PHOTO_STORAGE_DIR);
-const app = await buildApp({ config, db, storage });
+const app = await buildApp({ config, db, storage }, { fastify: Fastify });
 
 const shutdown = async () => {
   await app.close();
