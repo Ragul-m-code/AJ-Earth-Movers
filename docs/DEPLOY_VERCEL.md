@@ -21,6 +21,13 @@ Vercel's disk is not persistent, so photos **must** go to the private Blob store
 
 Migrations run automatically on **production** deployments (`scripts/vercel-build.mjs`). Preview deployments never touch the schema.
 
+If the build fails with `P1001: Can't reach database server`, the Vercel build machine (US) cannot reach the database. The API itself runs in Mumbai and usually can. Add `MIGRATE_ON_BUILD=false` to the backend project, and apply migrations from your computer instead:
+```bash
+cd backend
+DATABASE_URL="<direct url>" DIRECT_URL="<direct url>" npm run db:deploy
+```
+Repeat that before deploying any commit that adds a migration.
+
 ## 2. Backend project
 
 1. In Vercel, choose **Add New → Project**, import this repository, and set **Root Directory = `backend`**. Vercel detects Fastify from `src/server.ts`. Leave the build and output settings empty.
