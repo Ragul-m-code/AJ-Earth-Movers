@@ -92,6 +92,10 @@
 - **Photo storage monitoring:** usage against the quota, a dashboard warning, and owner alerts at 80% and 95%.
 - **Deployment ready:** Vercel config for the API and the admin web app, a private Blob photo store, and EAS profiles for the phone apps. See [DEPLOY_VERCEL.md](DEPLOY_VERCEL.md).
 
+- **Live (2026-10-20):** API at `aj-earth-movers.vercel.app` and admin site at `aj-earth-movers-admin-app.vercel.app`. The Owner can sign in. Live security checks pass (401 without a sign-in, other sites get no CORS access, security headers present).
+- **Accessibility:** an axe audit (WCAG 2.1 A/AA) of 23 admin screens now reports zero violations. Fixed: text contrast, logo alt text, filter-chip roles, unlabelled spinners.
+- **Backend tests:** 83 pass.
+
 ## Remaining
 1. **Tax:** your accountant enters and verifies the real GSTIN, tax rule and SAC code (More › Business profile & tax). Until then only proformas can be issued.
 2. **Admin logo:** the file supplied is a 144 px image inside an SVG, so the admin launcher icon is soft. Please supply a vector SVG or a PNG of at least 1024 px.

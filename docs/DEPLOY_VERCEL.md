@@ -82,6 +82,16 @@ Native apps do not need CORS.
 - [ ] In **More → Operational settings**, set **Photo storage quota (GB)** to your Blob plan's size. Owners are alerted at 80% and 95%.
 - [ ] Enter and **verify** the business profile and tax rule before issuing any tax invoice (see `DECISIONS_NEEDED.md`).
 
+## Clearing test data before go-live
+
+`backend/scripts/reset-keep-owner.ts` deletes all business data and all non-owner users, but keeps every Owner account and its sign-in. In PowerShell, from `backend\`:
+```
+$env:DATABASE_URL="<direct url>"; $env:DIRECT_URL="<direct url>"
+npx tsx scripts/reset-keep-owner.ts                              # dry run: shows the database and what would go
+npx tsx scripts/reset-keep-owner.ts --confirm "DELETE ALL DATA"  # actually delete
+```
+Check the `Database:` line before confirming. To delete the meter-photo files too, also set `$env:BLOB_READ_WRITE_TOKEN` (Vercel → Storage → your Blob store → `.env.local` tab).
+
 ## Photo storage
 
 Photos are compressed **once, on the phone** (1600 px JPEG, roughly 0.2–0.6 MB) and then kept unchanged. They are billing and payroll evidence, and each one's SHA-256 is recorded, so the system never re-compresses or deletes them automatically. Instead:
