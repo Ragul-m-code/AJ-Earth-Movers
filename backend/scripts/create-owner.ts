@@ -1,5 +1,7 @@
 // Creates the first OWNER account for a real installation.
 //   npm run create-owner -- --email owner@yourcompany.in --name "Full Name" [--phone 9876543210]
+// In PowerShell, npm drops the "--" separator; run it directly instead:
+//   npx tsx scripts/create-owner.ts --email owner@yourcompany.in --name "Full Name" --phone 9876543210
 // A one-time temporary password is printed once. The owner must change it at first sign-in.
 // Refuses to run if an active owner already exists (pass --additional to add a second owner deliberately).
 import "../src/loadEnv.js";
@@ -10,10 +12,12 @@ import { hashSecret, temporaryPassword } from "../src/lib/auth.js";
 const { values } = parseArgs({ options: { email: { type: "string" }, name: { type: "string" }, phone: { type: "string" }, additional: { type: "boolean", default: false } } });
 const email = values.email?.trim().toLowerCase();
 if (!email || !/^\S+@\S+\.\S+$/.test(email) || !values.name?.trim()) {
-  console.error('Usage: npm run create-owner -- --email owner@company.in --name "Full Name" [--phone 98xxxxxxxx]');
+  console.error('Usage: npx tsx scripts/create-owner.ts --email owner@company.in --name "Full Name" [--phone 98xxxxxxxx]');
   process.exit(1);
 }
 
+// Say where the account is going, so a local .env never silently receives a production owner (or vice versa).
+console.log(`Database: ${new URL(process.env.DATABASE_URL ?? "postgresql://unset").hostname}`);
 const db = createDb();
 try {
   const owners = await db.user.count({ where: { role: "OWNER", status: "ACTIVE" } });
