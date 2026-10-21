@@ -12,6 +12,10 @@ const config = loadConfig();
 if (process.env.VERCEL && config.PHOTO_STORAGE !== "vercel-blob") {
   throw new Error("PHOTO_STORAGE must be 'vercel-blob' on Vercel: the function disk is not persistent.");
 }
+if (config.PHOTO_STORAGE === "vercel-blob" && !process.env.BLOB_READ_WRITE_TOKEN && !process.env.BLOB_STORE_ID) {
+  // Don't refuse to start (sign-in and approvals still work), but make the cause obvious in the logs.
+  console.error("PHOTO STORAGE NOT CONNECTED: no BLOB_READ_WRITE_TOKEN or BLOB_STORE_ID. Meter photo uploads will fail. Connect a private Vercel Blob store to this project.");
+}
 const db = createDb();
 const storage = config.PHOTO_STORAGE === "vercel-blob" ? vercelBlobPhotoStorage() : localPhotoStorage(config.PHOTO_STORAGE_DIR);
 const app = await buildApp({ config, db, storage }, { fastify: Fastify });

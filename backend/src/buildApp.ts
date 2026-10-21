@@ -75,7 +75,8 @@ export async function buildApp(deps: AppDeps, opts: { logger?: boolean; fastify?
 
   app.get("/api/health", async () => {
     await deps.db.$queryRaw`SELECT 1`;
-    return { ok: true, time: new Date().toISOString() };
+    const photoStorageReady = deps.config.PHOTO_STORAGE !== "vercel-blob" || Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
+    return { ok: true, photoStorageReady, time: new Date().toISOString() };
   });
 
   await app.register(authRoutes(deps), { prefix: "/api/auth" });
